@@ -3,7 +3,7 @@
      @method('patch')
      <div class="row">
         {{-- <div class="col-md-6 my-1">
-            <x-input-group :type="'text'" :placeholder="__('auth.full_name')" :id="'name'" :name="'name'" :value="old('name', $user->name)"
+            <x-input-group :type="'text'" :placeholder="'Full Name'" :id="'name'" :name="'name'" :value="old('name', $user->name)"
                 :autocomplete="'name'">
                 <i class="lni lni-user"></i>
             </x-input-group>
@@ -34,8 +34,8 @@
             @enderror
         </div>
          <div class="col-md-6 my-1">
-            <label for="fname" class="mb-1"><strong>{{ __('auth.email') }}</strong></label>
-             <x-input-group :type="'email'" :placeholder="__('auth.email_address')" :id="'email'" :name="'email'" :value="old('email', $user->email)"
+            <label for="fname" class="mb-1"><strong>{{ 'Email' }}</strong></label>
+             <x-input-group :type="'email'" :placeholder="'Email Address'" :id="'email'" :name="'email'" :value="old('email', $user->email)"
                  :autocomplete="'email'">
                  <i class="lni lni-envelope"></i>
              </x-input-group>
@@ -48,7 +48,7 @@
          <div class="col-md-6 my-2">
             <label for="password" class="mb-1"><strong>{{ 'Password' }}</strong></label>
              <div class="input-style-1">
-                <input type="password" placeholder="{{ __('auth.password') }}" name="password" id="password" autocomplete="password"
+                <input type="password" placeholder="{{ 'Password' }}" name="password" id="password" autocomplete="password"
                     value="{{ old('password') }}" />
                 <span class="mdi mdi-eye fs-5 toggle-password cursor-pointer" toggle="#password"
                     style="position: absolute; top: 50%; left: 95%; transform: translateY(-50%);"></span>

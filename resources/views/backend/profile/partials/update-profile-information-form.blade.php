@@ -7,20 +7,20 @@
         @method('patch')
         <div class="row">
             <div class="col-md-6 my-1">
-                <x-input-group :type="'text'" :placeholder="__('auth.first_name')" :id="'fname'" :name="'fname'" :value="old('fname', $user->fname)"
+                <x-input-group :type="'text'" :placeholder="'First Name'" :id="'fname'" :name="'fname'" :value="old('fname', $user->fname)"
                     :required="'required'" :autocomplete="'fname'">
                     <i class="lni lni-user"></i>
                 </x-input-group>
 
             </div>
             <div class="col-md-6 my-1">
-                <x-input-group :type="'text'" :placeholder="__('auth.last_name')" :id="'lname'" :name="'lname'" :value="old('lname', $user->lname)"
+                <x-input-group :type="'text'" :placeholder="'Last Name'" :id="'lname'" :name="'lname'" :value="old('lname', $user->lname)"
                     :autocomplete="'lname'">
                     <i class="lni lni-user"></i>
                 </x-input-group>
             </div>
             <div class="col-md-6 my-1">
-                <x-input-group :type="'email'" :placeholder="__('auth.email_address')" :id="'email'" :name="'email'"
+                <x-input-group :type="'email'" :placeholder="'Email Address'" :id="'email'" :name="'email'"
                     :value="old('email', $user->email)" :required="'required'" :autocomplete="'email'">
                     <i class="lni lni-envelope"></i>
                 </x-input-group>
@@ -36,17 +36,17 @@
                 @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !$user->hasVerifiedEmail())
                     <div>
                         <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">
-                            {{ __('auth.your_email_address_is_unverified') }}
+                            {{ 'Your email address is unverified.' }}
 
                             <button form="send-verification"
                                 class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
-                                {{ __('auth.click_here_to_re_send_the_verification_email') }}
+                                {{ 'Click here to re-send the verification email.' }}
                             </button>
                         </p>
 
                         @if (session('status') === 'verification-link-sent')
                             <p class="mt-2 font-medium text-sm text-green-600 dark:text-green-400">
-                                {{ __('auth.a_new_verification_link_has_been_sent_to_your_email_address') }}
+                                {{ 'A new verification link has been sent to your email address.' }}
                             </p>
                         @endif
                     </div>

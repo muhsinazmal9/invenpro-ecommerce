@@ -1,11 +1,11 @@
 <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('auth.signup_greetings') }}
+        {{ 'Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you did not receive the email, we will gladly send you another.' }}
     </div>
 
     @if (session('status') == 'verification-link-sent')
         <div class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
-            {{ __('auth.verification_link_sent_message') }}
+            {{ 'A new verification link has been sent to the email address you provided during registration.' }}
         </div>
     @endif
 
@@ -15,7 +15,7 @@
 
             <div class="flex items-center">
                 <button type="submit" class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 transition ease-in-out duration-150">
-                    {{ __('auth.resend_verification_email') }}
+                    {{ 'Resend Verification Email' }}
                 </button>
             </div>
         </form>

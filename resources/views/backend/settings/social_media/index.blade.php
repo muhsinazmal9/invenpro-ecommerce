@@ -116,8 +116,8 @@
         </div>
 
         <div class="col-md-12 mt-2">
-            <label for="username" class="mb-1"><strong>{{ __('auth.username') }}</strong></label>
-            <x-input-group :type="'text'" :name="'username'" :placeholder="__('auth.enter_username')" :id="'username'"
+            <label for="username" class="mb-1"><strong>{{ 'Username' }}</strong></label>
+            <x-input-group :type="'text'" :name="'username'" :placeholder="'Enter username'" :id="'username'"
                 :class="'username'">
                 <span class="mdi mdi-shape"></span>
             </x-input-group>
@@ -156,8 +156,8 @@
         </div>
 
         <div class="col-md-12 mt-2">
-            <label for="username_edit" class="mb-1"><strong>{{ __('auth.username') }}</strong></label>
-            <x-input-group :type="'text'" :name="'username_edit'" :placeholder="__('auth.enter_username')"
+            <label for="username_edit" class="mb-1"><strong>{{ 'Username' }}</strong></label>
+            <x-input-group :type="'text'" :name="'username_edit'" :placeholder="'Enter username'"
                 :id="'username_edit'" :class="'username_edit'">
                 <span class="mdi mdi-shape"></span>
             </x-input-group>

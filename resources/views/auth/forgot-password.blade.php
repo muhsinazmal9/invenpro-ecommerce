@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', __('auth.reset_password'))
+@section('title', 'Reset Password')
 
 @section('content')
     <div class="container-fluid p-0">
@@ -23,7 +23,7 @@
                                 <img class="img-fluid" src="{{ asset(getSetting(App\Models\Settings::PRIMARY_LOGO)) }}" alt="primary_logo"
                                     loading="lazy">
                             </div>
-                            <h2 class="mb-5 fusionshop-primary fw-bold text-uppercase">{{ __('auth.reset_password') }}</h6>
+                            <h2 class="mb-5 fusionshop-primary fw-bold text-uppercase">{{ 'Reset Password' }}</h6>
                         </div>
 
                         @include('auth.partials.forgot_password_form')

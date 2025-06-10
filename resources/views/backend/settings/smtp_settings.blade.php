@@ -75,10 +75,10 @@
 
                                     <div class="col-md-6 mt-1">
                                         <label for="smtp_username"
-                                            class="mb-1"><strong>{{ __('auth.username') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Username' }}</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('smtp_username', getSetting('smtp_username') ?? '')" :name="'smtp_username'"
-                                            :placeholder="__('auth.enter_username')" :id="'smtp_username'">
+                                            :placeholder="'Enter username'" :id="'smtp_username'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -92,7 +92,7 @@
                                             class="mb-1"><strong>{{ __('passwords.password') }}</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('smtp_password', getSetting('smtp_password') ?? '')" :name="'smtp_password'"
-                                            :placeholder="__('auth.enter_password')" :id="'smtp_password'">
+                                            :placeholder="'Enter password'" :id="'smtp_password'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -102,7 +102,7 @@
 
                                     </div>
                                     <div class="col-md-6 mt-1">
-                                        <x-input-select :label="__('auth.encryption')" :name="'smtp_encryption'" :id="'smtp_encryption'"
+                                        <x-input-select :label="'Encryption'" :name="'smtp_encryption'" :id="'smtp_encryption'"
                                             :class="'select2'">
                                             <option value="tls" @selected(old('smtp_encryption', getSetting('smtp_encryption') ?? '') == 'tls')>TLS</option>
                                             <option value="ssl" @selected(old('smtp_encryption', getSetting('smtp_encryption') ?? '') == 'ssl')>SSL</option>
