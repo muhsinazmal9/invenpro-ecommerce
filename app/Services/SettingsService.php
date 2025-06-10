@@ -24,7 +24,7 @@ class SettingsService
     public function updateLogoSettings(UpdateLogoSettingsRequest $request): JsonResponse
     {
         if (!checkUserPermission(Settings::LOGO_SETTINGS)) {
-            return error(__('app.permission_denied'));
+            return error('Permission Denied!');
         }
 
         try {
@@ -40,18 +40,18 @@ class SettingsService
                 $this->uploadFile($request->file('favicon'), Settings::FAVICON);
             }
 
-            return success(__('app.logo_settings_updated_successfully'));
+            return success('Logo settings updated successfully');
         } catch (\Exception $e) {
             logError('Error updating logo settings', $e);
 
-            return error(__('app.error_updating_logo_settings'));
+            return error('Error updating logo settings');
         }
     }
 
     public function updateAuthenticationSettings(UpdateAuthenticationSettingsRequest $request): JsonResponse
     {
         if (!checkUserPermission(Settings::AUTHENTICATION_SETTING)) {
-            return error(__('app.permission_denied'));
+            return error('Permission Denied!');
         }
 
         try {
@@ -75,11 +75,11 @@ class SettingsService
 
             Artisan::call('cache:clear');
 
-            return success(__('app.authentication_settings_updated_successfully'));
+            return success('Authentication Settings Updated Successfully');
         } catch (\Exception $e) {
             logError('Error updating authentication settings', $e);
 
-            return error(__('app.error_updating_authentication_settings'));
+            return error('Error updating authentication settings');
         }
     }
 
@@ -141,11 +141,11 @@ class SettingsService
 
             Artisan::call('cache:clear');
 
-            return success(__('app.settings_updated_successfully'));
+            return success('Settings updated successfully');
         } catch (\Exception $e) {
             logError('Error updating  settings', $e);
 
-            return error(__('app.error_updating_settings'));
+            return error('Error updating settings');
         }
     }
 

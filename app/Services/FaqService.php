@@ -18,7 +18,7 @@ class FaqService
             $input['slug'] = generateSlug($request->question);
             $faq = Faq::create($input);
 
-            return success(__('app.faq_created_successfully'), $faq);
+            return success('FAQ created successfully!', $faq);
         } catch (\Exception $e) {
             logError('Faq Store Error ', $e);
 
@@ -34,7 +34,7 @@ class FaqService
             $input['slug'] = generateSlug($request->question);
             $faq->update($input);
 
-            return success(__('app.faq_updated_successfully'), $faq);
+            return success('FAQ updated successfully!', $faq);
         } catch (\Exception $e) {
             logError('FAQ Update Error ', $e);
 
@@ -45,7 +45,7 @@ class FaqService
     public function getList(Request $request): JsonResponse
     {
         if (! checkUserPermission(Faq::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -104,12 +104,12 @@ class FaqService
             if (! empty($faqs)) {
                 foreach ($faqs as $faq) {
 
-                    $faqStatus = $faq->status ? __('app.enabled') : __('app.disabled');
+                    $faqStatus = $faq->status ? 'Enabled' : 'Disabled';
                     $faqStatusClass = $faq->status ? 'success' : 'danger';
                     $editLink = route('admin.faq.edit', $faq->slug);
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
 
                     $status = "<button onclick=statusUpdate('{$faq->slug}',this) class='main-btn {$faqStatusClass}-btn-light btn-hover btn-sm' style='padding:4px 10px' type='button'>{$faqStatus}</button>";
@@ -149,7 +149,7 @@ class FaqService
                 'data' => $data,
             ];
 
-            return success(__('app.faq_list'), $json_data);
+            return success('FAQ List', $json_data);
         } catch (\Exception $e) {
             logError('Faq List Error ', $e);
 

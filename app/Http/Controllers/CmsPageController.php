@@ -93,7 +93,7 @@ class CmsPageController extends Controller
     {
         $page->delete();
 
-        return success(__('app.page_deleted_successfully'));
+        return success('Page deleted successfully');
     }
 
     public function getList(Request $request): JsonResponse
@@ -112,7 +112,7 @@ class CmsPageController extends Controller
         $page->status = ! $page->status;
         $page->save();
 
-        return success(__('app.banner_status_updated_successfully'), $page);
+        return success('Banner status updated successfully!', $page);
 
     }
 }

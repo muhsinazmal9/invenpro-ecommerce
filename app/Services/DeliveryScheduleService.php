@@ -14,7 +14,7 @@ class DeliveryScheduleService
     {
 
         if (! checkUserPermission(DeliverySchedule::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {

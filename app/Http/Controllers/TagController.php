@@ -85,7 +85,7 @@ class TagController extends Controller
     {
         $tag->delete();
 
-        return success(__('app.tag_deleted_successfully'));
+        return success('Tag deleted successfully');
     }
 
     public function getList(Request $request): JsonResponse
@@ -105,6 +105,6 @@ class TagController extends Controller
         $tags->status = ! $tags->status;
         $tags->save();
 
-        return success(__('app.tag_status_updated_successfully'), $tags);
+        return success('Tag status updated successfully', $tags);
     }
 }

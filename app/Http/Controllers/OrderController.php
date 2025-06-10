@@ -134,7 +134,7 @@ class OrderController extends Controller
                 ]);
             }
 
-            return success(__('app.payment_status_updated'), $order);
+            return success('Payment status updated', $order);
         } catch (\Exception $e) {
             logError('Order Payment Status Error ', $e);
 
@@ -164,7 +164,7 @@ class OrderController extends Controller
                 ]);
             }
 
-            return success(__('app.gift_status_updated'), $order);
+            return success('Gift status updated', $order);
         } catch (\Exception $e) {
             logError('Gift Status Error ', $e);
 

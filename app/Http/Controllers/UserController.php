@@ -113,6 +113,6 @@ class UserController extends Controller
         $user->status = $user->status === User::STATUS['active'] ? User::STATUS['blocked'] : User::STATUS['active'];
         $user->save();
 
-        return success(__('app.user_status_updated_successfully'), $user);
+        return success('User status updated successfully', $user);
     }
 }

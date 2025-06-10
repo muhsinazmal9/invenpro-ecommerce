@@ -3,7 +3,7 @@
         <thead>
             <tr>
                 <th>{{ __('app.question') }}</th>
-                <th>{{ __('app.category') }}</th>
+                <th>{{ 'Category' }}</th>
                 <th>{{ __('app.status') }}</th>
                 <th>{{ __('app.created_at') }}</th>
                 <th>{{ __('app.actions') }}</th>
@@ -70,7 +70,7 @@
                             <td class="p-2">${faq['answer']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.category') }} </th>
+                            <th class="p-2">{{ 'Category' }} </th>
                             <td class="p-2">${faq.category.name}</td>
                         </tr>
                         <tr class="mt-5">

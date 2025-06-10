@@ -50,7 +50,7 @@ class SocialMediaService
     public function getList(Request $request): JsonResponse
     {
         if (! checkUserPermission(SocialMedia::SOCIAL_MEDIA_SETTINGS)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -127,7 +127,7 @@ class SocialMediaService
             if (! empty($socialMedia)) {
                 foreach ($socialMedia as $socialMedia) {
 
-                    $socialStatus = $socialMedia->status ? __('app.enabled') : __('app.disabled');
+                    $socialStatus = $socialMedia->status ? 'Enabled' : 'Disabled';
                     $socialStatusClass = $socialMedia->status ? 'success' : 'danger';
                     $socialData = [
                         'id' => $socialMedia->id,
@@ -143,9 +143,9 @@ class SocialMediaService
                                 class='main-btn {$socialStatusClass}-btn-light btn-hover btn-sm'
                                 style='padding:4px 10px'
                                 type='button'>{$socialStatus}</button>";
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     $editBtn = "<button data-bs-toggle='modal'  data='{$socialData}' data-bs-target='#editModal' class='dropdown-item social_edit_btn' >{$edit}</button>";
                     $deleteBtn = "<button type='button' class='dropdown-item' onclick=deleteSocial('.$socialMedia->id.',this.parentElement.parentElement) >{$delete}</button>";
@@ -178,12 +178,12 @@ class SocialMediaService
                 'data' => $data,
             ];
 
-            return success(__('app.social_media_list'), $json_data);
+            return success('Social Media List', $json_data);
 
         } catch (\Exception $e) {
             logError('Social Media List Error', $e);
 
-            return error(__('app.error_getting_settings'));
+            return error('Error getting settings');
         }
 
     }

@@ -96,10 +96,10 @@ class FeatureHighlightController extends Controller
     public function destroy(FeatureHighlight $feature_highlight): JsonResponse
     {
          if ($feature_highlight->delete()) {
-            return success(__('app.feature_highlight_deleted_successfully'));
+            return success('Feature Highlight Deleted Successfully');
         }
 
-        return error(__('app.feature_highlight_deleted_error'));
+        return error('Feature Highlight Deleted Error');
     }
 
     public function statusUpdate(FeatureHighlight $feature_highlight) : JsonResponse
@@ -107,7 +107,7 @@ class FeatureHighlightController extends Controller
         $feature_highlight->status = ! $feature_highlight->status;
         $feature_highlight->save();
 
-        return success(__('app.feature_highlight_status_updated_successfully'), $feature_highlight);
+        return success('Feature Highlight Status Updated Successfully', $feature_highlight);
     }
 
 }

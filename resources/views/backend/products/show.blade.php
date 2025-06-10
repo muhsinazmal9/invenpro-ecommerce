@@ -136,7 +136,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ __('app.dashboard') }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
                                         <a href="{{ route('admin.products.index') }}">{{ __('app.products') }}</a>
@@ -362,13 +362,13 @@
                                                                 {{ $product->brand?->title ?? __('app.none') }}
                                                             </td>
                                                             <td>
-                                                                <span class="fw-bold">{{ __('app.category') }}:</span>
+                                                                <span class="fw-bold">{{ 'Category' }}:</span>
                                                                 {{ $product->category?->name ?? __('app.none') }}
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <span class="fw-bold">{{ __('app.subcategory') }}:</span>
+                                                                <span class="fw-bold">{{ 'Subcategory' }}:</span>
                                                                 {{ $product->subcategory?->title ?? __('app.none') }}
                                                             </td>
                                                             <td>

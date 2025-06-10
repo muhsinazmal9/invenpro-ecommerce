@@ -31,7 +31,7 @@ class SubcategoryService
 
             $subcategory = Subcategory::create($input);
 
-            return success(__('app.subcategory_created_successfully'), $subcategory);
+            return success('Subcategory created successfully', $subcategory);
         } catch (\Exception $e) {
             logError('Subcategory Store error:', $e);
 
@@ -62,7 +62,7 @@ class SubcategoryService
 
             $subcategory->update($input);
 
-            return success(__('app.subcategory_updated_successfully'), $subcategory);
+            return success('Subcategory updated successfully', $subcategory);
         } catch (\Exception $e) {
             info('Subcategory Update error:', [$e]);
 
@@ -74,7 +74,7 @@ class SubcategoryService
     {
 
         if (! checkUserPermission(Subcategory::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -135,14 +135,14 @@ class SubcategoryService
                      * HTMLs
                      */
                     $statusClass = $subcategory->status ? 'success' : 'danger';
-                    $SubCategoryStatus = $subcategory->status ? __('app.enabled') : __('app.disabled');
+                    $SubCategoryStatus = $subcategory->status ? 'Enabled' : 'Disabled';
 
                     $status = "<button type='button'' onclick=statusUpdate('{$subcategory->slug}',this) class='main-btn {$statusClass}-btn-light btn-hover btn-sm' style='padding:4px 10px'>
                                     {$SubCategoryStatus}
                                 </button>";
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     $editBtn = "<a href='".route('admin.subcategory.edit', $subcategory->slug)."'  class='dropdown-item'>{$edit}</a>";
                     $deleteBtn = "<button type='button' onclick=deleteSubCat('{$subcategory->slug}',this.parentElement.parentElement)  class='dropdown-item'>{$delete}</button>";
@@ -185,7 +185,7 @@ class SubcategoryService
                 'data' => $data,
             ];
 
-            return success(__('app.subcategory_list'), $json_data);
+            return success('Subcategory List', $json_data);
         } catch (\Exception $e) {
             logError('Subcategory List Error ', $e);
 

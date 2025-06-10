@@ -88,7 +88,7 @@ class FaqController extends Controller
     {
         $faq->delete();
 
-        return success(__('app.FAQ_deleted_successfully'));
+        return success('FAQ deleted successfully!');
     }
 
     public function getList(Request $request): JsonResponse
@@ -107,6 +107,6 @@ class FaqController extends Controller
         $faq->status = ! $faq->status;
         $faq->save();
 
-        return success(__('app.faq_status_updated_successfully'), $faq);
+        return success('FAQ status updated successfully!', $faq);
     }
 }

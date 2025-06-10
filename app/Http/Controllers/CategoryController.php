@@ -90,24 +90,24 @@ class CategoryController extends Controller
 
         if ($category->products->count()) {
             $isError = true;
-            $errorData[] = __('app.product');
+            $errorData[] = 'product';
         }
 
         if ($category->subcategories->count()) {
             $isError = true;
-            $errorData[] = __('app.subcategory');
+            $errorData[] = 'subcategory';
         }
 
         if ($isError) {
 
-            $message = __('app.this_category_contains').' '.implode(',', $errorData);
+            $message = 'This category contains'.' '.implode(',', $errorData);
 
             return error($message);
         }
 
         $category->delete();
 
-        return success(__('app.category_deleted_successfully'));
+        return success('Category deleted successfully');
 
     }
 

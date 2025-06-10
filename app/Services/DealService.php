@@ -137,14 +137,14 @@ class DealService
                     $detailsLink = route('admin.deals.show', $deal->slug);
 
                     $statusClass = $deal->status ? 'success' : 'danger';
-                    $SubCategoryStatus = $deal->status ? __('app.enabled') : __('app.disabled');
+                    $SubCategoryStatus = $deal->status ? 'Enabled' : 'Disabled';
 
                     $status = "<button type='button'' onclick=statusUpdate('{$deal->slug}',this) class='main-btn {$statusClass}-btn-light btn-hover btn-sm' style='padding:4px 10px'>
                                     {$SubCategoryStatus}
                                 </button>";
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     $editBtn = "<a href='{$editLink}' class='dropdown-item' >{$edit}</a>";
                     $deleteBtn = "<button type='button' onclick=deleteDeal('{$deal->slug}',this.parentElement.parentElement) class='dropdown-item' >{$delete} </button>";
@@ -250,11 +250,11 @@ class DealService
                     /**
                      * HTMLs
                      */
-                    $productStatus = $product->status == 'published' ? __('app.published') : __('app.draft');
+                    $productStatus = $product->status == 'published' ? 'Published' : 'Draft';
                     $statusClass = $product->status == 'published' ? 'success' : 'secondary';
-                    $isFeatured = $product->featured ? __('app.yes') : __('app.no');
+                    $isFeatured = $product->featured ? 'Yes' : 'No';
                     $featuredClass = $product->featured ? 'success' : 'danger';
-                    $isnewArrival = $product->new_arrival ? __('app.yes') : __('app.no');
+                    $isnewArrival = $product->new_arrival ? 'Yes' : 'No';
                     $newarrivalClass = $product->new_arrival ? 'success' : 'danger';
 
                     $detailsLink = route('admin.products.show', $product->slug);

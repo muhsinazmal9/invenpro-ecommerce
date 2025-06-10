@@ -18,7 +18,7 @@ class PromoService
             $input['status'] = (bool) $request->status;
             $promo = Promo::create($input);
 
-            return success(__('app.promo_created_successfully'), $promo);
+            return success('Promo created successfully', $promo);
         } catch (\Exception $e) {
             logError('promo Store Error ', $e);
 
@@ -35,7 +35,7 @@ class PromoService
             $input['status'] = (bool) $request->status;
             $promo->update($input);
 
-            return success(__('app.promo_updated_successfully'), $promo);
+            return success('Promo updated successfully', $promo);
         } catch (\Exception $e) {
             logError('Promo Update Error ', $e);
 
@@ -47,7 +47,7 @@ class PromoService
     {
 
         if (! checkUserPermission(Promo::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -108,7 +108,7 @@ class PromoService
             if (! empty($promos)) {
                 foreach ($promos as $promo) {
 
-                    $promoStatus = $promo->status ? __('app.enabled') : __('app.disabled');
+                    $promoStatus = $promo->status ? 'Enabled' : 'Disabled';
                     $promoStatusClass = $promo->status ? 'success' : 'danger';
                     $slug = $promo->slug;
 
@@ -118,9 +118,9 @@ class PromoService
                                 style='padding:4px 10px'
                                 type='button'>{$promoStatus}
                                 </button>";
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
 
                     $editBtn = "<a
@@ -174,7 +174,7 @@ class PromoService
                 'data' => $data,
             ];
 
-            return success(__('app.promo_list'), $json_data);
+            return success('Promo List', $json_data);
         } catch (\Exception $e) {
             logError('Promo List Error ', $e);
 

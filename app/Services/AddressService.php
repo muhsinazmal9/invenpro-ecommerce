@@ -33,7 +33,7 @@ class AddressService
             $input = $request->except('_token', '_method');
             $address->update($input);
 
-            return success(__('app.address_updated_successfully'), $address);
+            return success('Address Updated Successfully', $address);
         } catch (\Exception $e) {
             logError('Address Update Error ', $e);
 
@@ -114,7 +114,7 @@ class AddressService
                 'data' => $data,
             ];
 
-            return success(__('app.address_list'), $json_data);
+            return success('Address List', $json_data);
         } catch (\Exception $e) {
             logError('Address List Error ', $e);
 

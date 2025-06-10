@@ -86,19 +86,19 @@ class BrandController extends Controller
 
         if ($brand->products->count()) {
             $isError = true;
-            $errorData[] = __('app.product');
+            $errorData[] = 'product';
         }
 
         if ($isError) {
 
-            $message = __('app.this_brand_contains').' '.implode(',', $errorData);
+            $message = 'this brand contains'.' '.implode(',', $errorData);
 
             return error($message);
         }
 
         $brand->delete();
 
-        return success(__('app.brand_deleted_successfully'));
+        return success('Brand deleted successfully');
     }
 
     /**
@@ -120,6 +120,6 @@ class BrandController extends Controller
         $brand->status = ! $brand->status;
         $brand->save();
 
-        return success(__('app.brand_status_updated_successfully'), $brand);
+        return success('Brand status updated successfully', $brand);
     }
 }

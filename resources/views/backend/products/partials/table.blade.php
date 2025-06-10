@@ -18,8 +18,8 @@
                 <th>{{ __('app.sku') }}</th>
                 <th>{{ __('app.price') }}</th>
                 <th>{{ __('app.stock') }}</th>
-                <th>{{ __('app.category') }}</th>
-                <th>{{ __('app.subcategory') }}</th>
+                <th>{{ 'Category' }}</th>
+                <th>{{ 'Subcategory' }}</th>
                 <th>{{ __('app.subsub_category') }}</th>
                 <th>{{ __('app.brand') }}</th>
                 <th>{{ __('app.featured') }}</th>

@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.dashboard'))
+@section('title', 'Dashboard')
 @section('content')
     <!-- ========== section start ========== -->
     <section class="section">
@@ -9,7 +9,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.dashboard') }}</h2>
+                            <h2>{{ 'Dashboard' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -18,7 +18,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.dashboard') }}
+                                        {{ 'Dashboard' }}
                                     </li>
                                 </ol>
                             </nav>

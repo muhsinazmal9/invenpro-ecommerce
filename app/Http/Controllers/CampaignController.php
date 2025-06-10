@@ -75,7 +75,7 @@ class CampaignController extends Controller
     {
         $campaign->delete();
 
-        return success(__('app.campaign_deleted_successfully'));
+        return success('Campaign Deleted Successfully');
     }
 
     public function update(UpdateCampaignRequest $request, Campaign $campaign): RedirectResponse

@@ -14,7 +14,7 @@ class OrderService
     {
 
         if (!checkUserPermission(Order::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -169,20 +169,20 @@ class OrderService
     public function status(Request $request, Order $order): JsonResponse
     {
         if (!checkUserPermission(Order::STATUS_UPDATE)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
 
             if (!$request->input('status') || !in_array($request->input('status'), Order::ORDER_STATUS)) {
-                return error(__('app.invalid_order_status'));
+                return error('Invalid order status');
             }
 
             $order->update([
                 'order_status' => $request->input('status'),
             ]);
 
-            return success(__('app.order_status_updated'), $order);
+            return success('Order status updated', $order);
         } catch (\Exception $e) {
             logError('Order Status Error ', $e);
 
@@ -192,7 +192,7 @@ class OrderService
     public function getUserOrderList(Request $request, User $user): JsonResponse
     {
         if (!checkUserPermission(Order::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {

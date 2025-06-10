@@ -1,10 +1,6 @@
 <?php
 
 return [
-    'dashboard' => 'Dashboard',
-    'category' => 'category',
-    'categories' => 'Categories',
-    'subcategory' => 'subcategory',
     'subcategories' => 'Subcategories',
     'brands' => 'Brands',
     'brand' => 'Brand',

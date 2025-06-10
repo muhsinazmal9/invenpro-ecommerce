@@ -22,20 +22,20 @@ class TransactionController extends Controller
     public function paymentSuccess(Request $request, Order $order): JsonResponse
     {
         if ($order->payment_status == Order::PAYMENT_STATUS['paid']) {
-            return success(__('app.payment_success'), new OrderResource($order->load('products')));
+            return success('Payment Success', new OrderResource($order->load('products')));
         }
 
         $stripeSecretKey = getSetting(Settings::STRIPE_SECRET_KEY);
         Stripe::setApiKey($stripeSecretKey);
 
         if ($order->stripe_session_id == null) {
-            return error(__('app.payment_failed'));
+            return error('Payment Failed');
         }
 
         $session = \Stripe\Checkout\Session::retrieve($order->stripe_session_id);
 
         if ($session->payment_status != 'paid') {
-            return error(__('app.payment_failed'));
+            return error('Payment Failed');
         }
 
         $order->payment_status = Order::PAYMENT_STATUS['paid'];
@@ -44,13 +44,13 @@ class TransactionController extends Controller
 
         $this->checkoutController->addTransaction($order, Transaction::STATUS['success']);
 
-        return success(__('app.payment_success'), new OrderResource($order->load('products')));
+        return success('Payment Success', new OrderResource($order->load('products')));
     }
 
     public function paymentFailed(Request $request, Order $order): JsonResponse
     {
         if ($order->payment_status == Order::PAYMENT_STATUS['failed']) {
-            return error(__('app.payment_failed'));
+            return error('Payment Failed');
         }
 
         $order->update([
@@ -60,7 +60,7 @@ class TransactionController extends Controller
 
         $this->checkoutController->addTransaction($order, Transaction::STATUS['failed']);
 
-        return error(__('app.payment_failed'));
+        return error('Payment Failed');
 
     }
 

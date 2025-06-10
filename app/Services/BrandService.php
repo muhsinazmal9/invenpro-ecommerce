@@ -30,7 +30,7 @@ class BrandService
 
             $brand = Brand::create($input);
 
-            return success(__('app.brand_created_successfully'), $brand);
+            return success('Brand created successfully', $brand);
         } catch (\Exception $e) {
             logError('Brand Store Error ', $e);
 
@@ -61,7 +61,7 @@ class BrandService
 
             $brand->update($input);
 
-            return success(__('app.brand_updated_successfully'), $brand);
+            return success('Brand updated successfully', $brand);
         } catch (\Exception $e) {
             logError('Brand Update Error ', $e);
 
@@ -72,7 +72,7 @@ class BrandService
     public function getList(Request $request): JsonResponse
     {
         if (! checkUserPermission(Brand::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -134,9 +134,9 @@ class BrandService
                     $brandStatus = $brand->status ? 'Enabled' : 'Disabled';
 
                     $status = "<button class='main-btn {$statusClass}-btn-light btn-hover btn-sm' style='padding:4px 10px' type='button' onclick=statusUpdate('{$brand->slug}',this)>{$brandStatus}</button>";
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     $editBtn = "<a href='{$editLink}'  type='button' class='dropdown-item'>{$edit}</a>";
                     $deleteBtn = "<button onclick=\"deleteBrand('{$brand->slug}', this.parentElement.parentElement)\" class='dropdown-item'>
@@ -173,7 +173,7 @@ class BrandService
                 'data' => $data,
             ];
 
-            return success(__('app.brand_list'), $json_data);
+            return success('Brand list', $json_data);
         } catch (\Exception $e) {
             logError('Brand List Error ', $e);
 

@@ -34,12 +34,12 @@ class TaxSettingsController extends Controller
         try {
             $taxSettings = $this->taxSettingsService->store($request);
 
-            return success(__('app.tax_settings_created_successfully'), $taxSettings);
+            return success('TAX settings created successfully!', $taxSettings);
 
         } catch (\Exception $e) {
             logError('Tax Settings Store Error ', $e);
 
-            return error(__('app.error_updating_settings'));
+            return error('Error updating settings');
         }
     }
 
@@ -51,12 +51,12 @@ class TaxSettingsController extends Controller
         try {
             $this->taxSettingsService->update($request, $tax);
 
-            return success(__('app.tax_settings_updated_successfully'));
+            return success('Tax settings updated successfully');
 
         } catch (\Exception $e) {
             logError('Tax Settings Update Error ', $e);
 
-            return error(__('app.error_updating_settings'));
+            return error('Error updating settings');
         }
     }
 
@@ -72,7 +72,7 @@ class TaxSettingsController extends Controller
         }
         $tax->delete();
 
-        return success(__('app.tax_settings_deleted_successfully'));
+        return success('TAX settings deleted successfully');
     }
 
     public function getList(Request $request): JsonResponse

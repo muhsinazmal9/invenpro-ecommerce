@@ -13,10 +13,10 @@
                     <h6 class="text-sm text-medium">{{ __('app.products') }}</h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium">{{ __('app.category') }}</h6>
+                    <h6 class="text-sm text-medium">{{ 'Category' }}</h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium">{{ __('app.subcategory') }}</h6>
+                    <h6 class="text-sm text-medium">{{ 'Subcategory' }}</h6>
                 </th>
                 <th class="min-width">
                     <h6 class="text-sm text-medium">{{ __('app.price') }}</h6>

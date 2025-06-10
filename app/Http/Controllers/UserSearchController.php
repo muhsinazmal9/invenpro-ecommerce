@@ -30,7 +30,7 @@ class UserSearchController extends Controller
     {
         $userSearch->delete();
 
-        return success(__('app.user_search_deleted_successfully'));
+        return success('User Search Deleted Successfully');
 
     }
 

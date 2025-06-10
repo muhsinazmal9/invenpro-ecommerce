@@ -41,7 +41,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ __('app.dashboard') }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         {{ request()->input('type') == 'customers' ? \App\Models\User::CUSTOMER : \App\Models\User::USER  }}

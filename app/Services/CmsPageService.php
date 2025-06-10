@@ -20,7 +20,7 @@ class CmsPageService
 
             $cmsPage = CmsPage::create($input);
 
-            return success(__('app.page_created_successfully'), $cmsPage);
+            return success('Page created successfully!', $cmsPage);
         } catch (\Exception $e) {
 
             logError('CMS Page Store Error ', $e);
@@ -39,7 +39,7 @@ class CmsPageService
 
             $page->update($input);
 
-            return success(__('app.page_updated_successfully'), $page);
+            return success('Page updated successfully!', $page);
         } catch (\Exception $e) {
             logError('CMS Page Update Error ', $e);
 
@@ -50,7 +50,7 @@ class CmsPageService
     public function getList(Request $request): JsonResponse
     {
         if (! checkUserPermission(CmsPage::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -112,12 +112,12 @@ class CmsPageService
                     $editLink = route('admin.pages.edit', $page->slug);
                     $showLink = route('admin.pages.show', $page->slug);
                     $statusClass = $page->status ? 'success' : 'danger';
-                    $pageStatus = $page->status ? __('app.enabled') : __('app.disabled');
+                    $pageStatus = $page->status ? 'Enabled' : 'Disabled';
 
                     $status = "<button onclick=statusUpdate('{$page->slug}',this) class='main-btn {$statusClass}-btn-light btn-hover btn-sm' style='padding:4px 10px' type='button'>{$pageStatus}</button>";
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     $editBtn = "<a href='{$editLink}' class='dropdown-item' type='button'>{$edit}</a>";
                     $deleteBtn = "<button onclick=\"deletePage('{$page->slug}', this.parentElement.parentElement)\" class='dropdown-item'>
@@ -154,7 +154,7 @@ class CmsPageService
                 'data' => $data,
             ];
 
-            return success(__('app.page_list'), $json_data);
+            return success('Page List', $json_data);
         } catch (\Exception $e) {
             logError('CMS Page List Error ', $e);
 

@@ -48,7 +48,7 @@ class TransactionController extends Controller
 
         $this->apiCheckoutController->addTransaction($order, Transaction::STATUS['success']);
 
-        return redirect()->route('admin.orders.show', $order->id)->with('success', __('app.payment_success'));
+        return redirect()->route('admin.orders.show', $order->id)->with('success', 'Payment Success');
     }
 
     public function paymentFail(Request $request, Order $order)
@@ -64,6 +64,6 @@ class TransactionController extends Controller
 
         $this->apiCheckoutController->addTransaction($order, Transaction::STATUS['failed']);
 
-        return redirect()->route('admin.orders.show', $order->id)->with('error', __('app.payment_failed'));
+        return redirect()->route('admin.orders.show', $order->id)->with('error', 'Payment Failed');
     }
 }

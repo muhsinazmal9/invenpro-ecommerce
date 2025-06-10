@@ -95,28 +95,28 @@ class SubcategoryController extends Controller
 
         if ($subcategory->products?->count()) {
             $isError = true;
-            $errorData[] = __('app.product');
+            $errorData[] = 'product';
         }
 
         if ($subcategory->category?->count()) {
             $isError = true;
-            $errorData[] = __('app.category');
+            $errorData[] = 'category';
         }
         if ($subcategory->subsubCategories?->count()) {
             $isError = true;
-            $errorData[] = __('app.sub_subcategory');
+            $errorData[] = 'sub subcategory';
         }
 
         if ($isError) {
 
-            $message = __('app.this_subcategory_contains').' '.implode(',', $errorData);
+            $message = 'this subcategory contains'.' '.implode(',', $errorData);
 
             return error($message);
         }
 
         $subcategory->delete();
 
-        return success(__('app.subcategory_deleted_successfully'));
+        return success('Subcategory deleted successfully');
     }
 
     public function getList(Request $request): JsonResponse

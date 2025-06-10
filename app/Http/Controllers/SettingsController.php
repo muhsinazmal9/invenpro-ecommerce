@@ -52,10 +52,10 @@ class SettingsController extends Controller
         $siteSettings = $this->settingsService->updateQuery($request);
 
         if ($siteSettings->getData()->success) {
-            return back()->with('success', __('app.site_settings_updated_successfully'));
+            return back()->with('success', 'Site settings updated successfully');
         }
 
-        return back()->with('error', __('app.error_updating_site_settings'));
+        return back()->with('error', 'Error updating site settings');
     }
 
     public function businessSettings(): View
@@ -73,10 +73,10 @@ class SettingsController extends Controller
         $businessSettings = $this->settingsService->updateQuery($request);
 
         if ($businessSettings->getData()->success) {
-            return back()->with('success', __('app.business_settings_updated_successfully'));
+            return back()->with('success', 'Business settings updated successfully');
         }
 
-        return back()->with('error', __('app.error_updating_business_settings'));
+        return back()->with('error', 'Error updating business settings');
     }
 
     public function getStates(int $country_id)
@@ -111,10 +111,10 @@ class SettingsController extends Controller
         $logoSettings = $this->settingsService->updateLogoSettings($request);
 
         if ($logoSettings->getData()->success) {
-            return back()->with('success', __('app.logo_settings_updated_successfully'));
+            return back()->with('success', 'Logo settings updated successfully');
         }
 
-        return back()->with('error', __('app.error_updating_logo_settings'));
+        return back()->with('error', 'Error updating logo settings');
     }
 
     public function stripeSettings(): View
@@ -127,10 +127,10 @@ class SettingsController extends Controller
         $stripeSettings = $this->settingsService->updateQuery($request);
 
         if ($stripeSettings->getData()->success) {
-            return back()->with('success', __('app.stripe_settings_updated_successfully'));
+            return back()->with('success', 'Stripe settings updated successfully');
         }
 
-        return back()->with('error', __('app.error_updating_stripe_settings'));
+        return back()->with('error', 'Error updating stripe settings');
     }
 
     public function smtpSettings(): View
@@ -153,10 +153,10 @@ class SettingsController extends Controller
                 return back()->with('error', __('app.updated_to_database_but_could_not_update_env_file'));
             }
 
-            return back()->with('success', __('app.smtp_settings_updated_successfully'));
+            return back()->with('success', 'SMTP settings updated successfully');
         }
 
-        return back()->with('error', __('app.error_updating_smtp_settings'));
+        return back()->with('error', 'Error updating SMTP settings');
     }
 
     public function chargesSettings(): View
@@ -169,10 +169,10 @@ class SettingsController extends Controller
         $chargesSettings = $this->settingsService->updateQuery($request);
 
         if ($chargesSettings->getData()->success) {
-            return back()->with('success', __('app.charges_settings_updated_successfully'));
+            return back()->with('success', 'Charges settings updated successfully');
         }
 
-        return back()->with('error', __('app.error_updating_charges_settings'));
+        return back()->with('error', 'Error updating charges settings');
     }
 
     public function stockSettings(): View
@@ -185,10 +185,10 @@ class SettingsController extends Controller
         $stockSettings = $this->settingsService->updateQuery($request);
 
         if ($stockSettings->getData()->success) {
-            return back()->with('success', __('app.stock_settings_updated_successfully'));
+            return back()->with('success', 'Stock Settings updated successfully');
         }
 
-        return back()->with('error', __('app.error_updating_stock_settings'));
+        return back()->with('error', 'Error updating stock settings');
     }
 
     public function orderSettings(): view
@@ -202,10 +202,10 @@ class SettingsController extends Controller
         $orderSettings = $this->settingsService->updateQuery($request);
 
         if ($orderSettings->getData()->success) {
-            return back()->with('success', __('app.order_settings_updated_successfully'));
+            return back()->with('success', 'Order Settings  Updated Successfully');
         }
 
-        return back()->with('error', __('app.error_updating_order_settings'));
+        return back()->with('error', 'Error updating order settings');
     }
 
     public function colorSettings(): View
@@ -218,7 +218,7 @@ class SettingsController extends Controller
         $colorSettings = $this->settingsService->updateQuery($request);
 
         if ($colorSettings->getData()->success) {
-            return back()->with('success', __('app.color_settings_updated_successfully'));
+            return back()->with('success', 'Color Settings Updated Successfully');
         }
 
         return back()->with('error', __('app.error_updating_color_settings'));
@@ -234,10 +234,10 @@ class SettingsController extends Controller
         $authenticationSettings = $this->settingsService->updateAuthenticationSettings($request);
 
         if ($authenticationSettings->getData()->success) {
-            return back()->with('success', __('app.authentication_settings_updated_successfully'));
+            return back()->with('success', 'Authentication Settings Updated Successfully');
         }
 
-        return back()->with('error', __('app.error_updating_authentication_settings'));
+        return back()->with('error', 'Error updating authentication settings');
 
     }
 
@@ -251,7 +251,7 @@ class SettingsController extends Controller
         $emailTemplate = $this->settingsService->updateQuery($request);
 
         if ($emailTemplate->getData()->success) {
-            return back()->with('success', __('app.email_template_updated_successfully'));
+            return back()->with('success', 'Email Template Updated Successfully');
         }
 
         return back()->with('error', __('app.error_updating__'));
@@ -267,9 +267,9 @@ class SettingsController extends Controller
         $externalApi = $this->settingsService->updateQuery($request);
 
         if ($externalApi->getData()->success) {
-            return back()->with('success', __('app.external_api_keys_updated_successfully'));
+            return back()->with('success', 'External API Keys updated successfully');
         }
 
-        return back()->with('error', __('app.error_updating_external_api_keys'));
+        return back()->with('error', 'Error updating External API Keys');
     }
 }

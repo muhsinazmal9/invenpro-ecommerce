@@ -30,7 +30,7 @@ class CampaignService
 
             $campaign->create($input);
 
-            return success(__('app.campaign_created_successfully'), $campaign);
+            return success('Campaign Created Successfully', $campaign);
         } catch (\Exception $e) {
             logError('Campaign Store Error ', $e);
 
@@ -61,7 +61,7 @@ class CampaignService
             }
             $campaign->update($input);
 
-            return success(__('app.campaign_update_successfully'), $campaign);
+            return success('Campaign Update Successfully', $campaign);
 
         } catch (\Exception $e) {
             logError('Campaign Update Error', $e);
@@ -122,14 +122,14 @@ class CampaignService
 
             if (! empty($campaigns)) {
                 foreach ($campaigns as $campaign) {
-                    $campaignStatus = $campaign->status ? __('app.enabled') : __('app.disabled');
+                    $campaignStatus = $campaign->status ? 'Enabled' : 'Disabled';
                     $campaignStatusClass = $campaign->status ? 'success' : 'danger';
                     $status = "<button class='main-btn {$campaignStatusClass}-btn-light btn-hover btn-sm' onclick=statusUpdate('{$campaign->id}',this) style='padding:4px 10px' type='button'>{$campaignStatus}</button>";
 
                     $image = '<img src="'.asset($campaign->image).'" alt="'.$campaign->title.'" class="img-fluid rounded" style="max-width: 100px">';
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     $editLink = route('admin.campaign.edit', $campaign->id);
                     $editBtn = "<a href='{$editLink}' class='dropdown-item'>{$edit}</a>";

@@ -38,7 +38,7 @@ class BannerService
 
             $banner = Banner::create($input);
 
-            return success(__('app.banner_created_successfully'), $banner);
+            return success('Banner created successfully!', $banner);
         } catch (\Exception $e) {
             logError('Banner Store Error ', $e);
 
@@ -77,7 +77,7 @@ class BannerService
 
             $banner->update($input);
 
-            return success(__('app.banner_updated_successfully'), $banner);
+            return success('Banner updated successfully!', $banner);
         } catch (\Exception $e) {
             logError('Banner Update Error ', $e);
 
@@ -88,7 +88,7 @@ class BannerService
     public function getList(Request $request): JsonResponse
     {
         if (!checkUserPermission('banner_list')) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -160,12 +160,12 @@ class BannerService
             if (!empty($banners)) {
                 foreach ($banners as $banner) {
 
-                    $bannerStatus = $banner->status ? __('app.enabled') : __('app.disabled');
+                    $bannerStatus = $banner->status ? 'Enabled' : 'Disabled';
                     $statusClass = $banner->status ? 'success' : 'danger';
                     $editLink = route('admin.banner.edit', $banner->slug);
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     $status = "<button class='main-btn {$statusClass}-btn-light btn-hover btn-sm' onclick=statusUpdate('{$banner->slug}',this) style='padding:4px 10px' type='button'>{$bannerStatus}</button>";
                     $detailsBtn = "<button type='button' class='dropdown-item' onclick='detailsModal({$banner})' data-bs-toggle='modal' data-bs-target='#detailsModal'>{$view}</button>";
@@ -199,7 +199,7 @@ class BannerService
                 'data' => $data,
             ];
 
-            return success(__('app.banner_list'), $json_data);
+            return success('Banner List', $json_data);
         } catch (\Exception $e) {
             logError('Banner List Error ', $e);
 

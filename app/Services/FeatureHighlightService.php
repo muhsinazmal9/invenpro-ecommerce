@@ -58,14 +58,14 @@ class FeatureHighlightService
 
             if (! empty($featureHighlights)) {
                 foreach ($featureHighlights as $featureHighlight) {
-                    $featureHighlightStatus = $featureHighlight->status ? __('app.enabled') : __('app.disabled');
+                    $featureHighlightStatus = $featureHighlight->status ? 'Enabled' : 'Disabled';
                     $featureHighlightStatusClass = $featureHighlight->status ? 'success' : 'danger';
                     $status = "<button class='main-btn {$featureHighlightStatusClass}-btn-light btn-hover btn-sm' onclick=statusUpdate('{$featureHighlight->id}',this) style='padding:4px 10px' type='button'>{$featureHighlightStatus}</button>";
 
                     $image = '<img src="'.asset($featureHighlight->image).'" alt="'.$featureHighlight->title.'" class="img-fluid rounded" style="max-width: 100px">';
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     $editLink = route('admin.feature-highlights.edit', $featureHighlight->id);
                     $editBtn = "<a href='{$editLink}' class='dropdown-item'>{$edit}</a>";
@@ -131,7 +131,7 @@ class FeatureHighlightService
             }
             $featureHighlight->create($input);  
              
-            return success(__('app.feature_highlight_created_successfully'), $featureHighlight);
+            return success('Feature Highlight Created Successfully', $featureHighlight);
         } catch (Exception $e) {
             logError('Feature Highlight Store Error', $e);
             return error('Something went wrong');
@@ -165,7 +165,7 @@ class FeatureHighlightService
  
             $featureHighlight->update($input);
 
-            return success(__('app.feature_highlight_updated_successfully'), $featureHighlight);
+            return success('Feature Highlight updated Successfully', $featureHighlight);
         } catch (\Exception $e) {
             logError('Feature Highlight Update Error ', $e);
 

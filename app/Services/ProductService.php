@@ -52,7 +52,7 @@ class ProductService
             $this->addAttributes($product, $request);
             $this->addCustomAttributes($product, $request);
 
-            return success(__('app.product_created_successfully'), $product);
+            return success('Product created successfully', $product);
 
         } catch (\Exception $e) {
             logError('Product Store Error', $e);
@@ -117,7 +117,7 @@ class ProductService
             $product->customAttributes()->delete();
             $this->addCustomAttributes($product, $request);
 
-            return success(__('app.product_updated_successfully'), $product);
+            return success('Product updated successfully', $product);
 
         } catch (\Exception $e) {
             logError('Product Store Error', $e);
@@ -348,11 +348,11 @@ class ProductService
                     /**
                      * HTMLs
                      */
-                    $productStatus = $product->status == Product::STATUS['published'] ? __('app.published') : __('app.draft');
+                    $productStatus = $product->status == Product::STATUS['published'] ? 'Published' : 'Draft';
                     $statusClass = $product->status == Product::STATUS['published'] ? 'success' : 'secondary';
-                    $isFeatured = $product->featured ? __('app.yes') : __('app.no');
+                    $isFeatured = $product->featured ? 'Yes' : 'No';
                     $featuredClass = $product->featured ? 'success' : 'danger';
-                    $isNewArrival = $product->new_arrival ? __('app.yes') : __('app.no');
+                    $isNewArrival = $product->new_arrival ? 'Yes' : 'No';
                     $newArrivalClass = $product->new_arrival ? 'success' : 'danger';
 
                     $editLink = route('admin.products.edit', $product->slug);
@@ -363,9 +363,9 @@ class ProductService
                     $newArrivalHtml = "<button class='main-btn {$newArrivalClass}-btn-light btn-hover btn-sm' style='padding:4px 20px' type='button' onclick=newarrivalUpdate('{$product->slug}',this) >{$isNewArrival}</button>";
 
                     // action buttons
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
                     $detailsBtn = "<a href='{$detailsLink}' class='dropdown-item'>{$view}</a>";
                     $editBtn = "<a href='{$editLink}' class='dropdown-item'>{$edit}</a>";
                     $deleteBtn = "<button type='button' class='dropdown-item' onclick='deleteProduct(\"{$product->slug}\")'>{$delete}</a>";

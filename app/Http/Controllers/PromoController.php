@@ -84,7 +84,7 @@ class PromoController extends Controller
     {
         $promo->delete();
 
-        return success(__('app.promo_deleted_successfully'));
+        return success('Promo deleted successfully');
 
     }
 
@@ -106,7 +106,7 @@ class PromoController extends Controller
         $promo->status = ! $promo->status;
         $promo->save();
 
-        return success(__('app.promo_status_updated_successfully'), $promo);
+        return success('Promo status updated successfully', $promo);
 
     }
 }

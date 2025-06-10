@@ -105,23 +105,23 @@ class SubsubCategoryController extends Controller
 
         if ($SubsubCategory->products?->count()) {
             $isError = true;
-            $errorData[] = __('app.product');
+            $errorData[] = 'product';
         }
         if ($SubsubCategory->subsubCategories?->count()) {
             $isError = true;
-            $errorData[] = __('app.subcategory');
+            $errorData[] = 'subcategory';
         }
 
         if ($isError) {
 
-            $message = __('app.this_sub_subcategory_contains').' '.implode(',', $errorData);
+            $message = 'this sub subcategory contains'.' '.implode(',', $errorData);
 
             return error($message);
         }
 
         $SubsubCategory->delete();
 
-        return success(__('app.subsubcategory_deleted_successfully'));
+        return success('Subsubcategory Deleted Successfully');
 
     }
 

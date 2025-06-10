@@ -32,7 +32,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
                                         <a href="{{ route('admin.dashboard.index') }}">
-                                            {{ __('app.dashboard') }}
+                                            {{ 'Dashboard' }}
                                         </a>
                                     </li>
                                     <li class="breadcrumb-item ">

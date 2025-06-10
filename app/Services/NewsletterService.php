@@ -50,7 +50,7 @@ class NewsletterService
                 ]);
             }
 
-            return success(__('app.newsletter_mail_created_successfully'), $newsletter);
+            return success('Newsletter mail created successfully', $newsletter);
         } catch (\Exception $e) {
 
             logError('News Letter MAil Store Error ', $e);
@@ -107,10 +107,10 @@ class NewsletterService
                 foreach ($newsletters as $newsletter) {
 
                     match ($newsletter->status) {
-                        0 => $newsletterStatus = __('app.draft'),
-                        1 => $newsletterStatus = __('app.sent'),
-                        2 => $newsletterStatus = __('app.failed'),
-                        default => $newsletterStatus = __('app.draft'),
+                        0 => $newsletterStatus = 'Draft',
+                        1 => $newsletterStatus = 'Sent',
+                        2 => $newsletterStatus = 'Failed',
+                        default => $newsletterStatus = 'Draft',
                     };
                     match ($newsletter->status) {
                         0 => $newsletterStatusClass = 'danger',
@@ -123,9 +123,9 @@ class NewsletterService
                                         style='padding:4px 10px'
                                         type='button'>$newsletterStatus
                                         </button>";
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     if ($newsletter->status == 1) {
                         $editBtn = "<a
@@ -171,7 +171,7 @@ class NewsletterService
                 'data' => $data,
             ];
 
-            return success(__('app.news_letter_list'), $json_data);
+            return success('News letter list', $json_data);
         } catch (\Exception $e) {
             logError('Newsletter List Error', $e);
 
@@ -222,7 +222,7 @@ class NewsletterService
                 ]);
             }
 
-            return success(__('app.newsletter_mail_updated_successfully'), $newsletter);
+            return success('Newsletter mail updated successfully', $newsletter);
         } catch (\Exception $e) {
             logError('Mail Update Error ', $e);
 

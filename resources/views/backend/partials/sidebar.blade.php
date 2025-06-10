@@ -2,7 +2,7 @@
 $sidebarItems = [
     [
         'type' => 'link',
-        'name' => __('app.dashboard'),
+        'name' => 'Dashboard',
         'route' => 'admin.dashboard.index',
         'icon' => 'mdi mdi-view-dashboard',
         'permission' => 'dashboard',
@@ -67,7 +67,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.categories'),
+        'name' => 'Categories',
         'route' => 'admin.category.index',
         'icon' => 'mdi mdi-shape',
         'permission' => App\Models\Category::LIST,

@@ -32,7 +32,7 @@ class CategoryService
 
             $category->create($input);
 
-            return success(__('app.category_created_successfully'), $category);
+            return success('Category created successfully', $category);
 
         } catch (\Exception $e) {
             logError('Category Store Error ', $e);
@@ -68,7 +68,7 @@ class CategoryService
             $input['slug'] = generateSlug($request->name);
             $category->update($input);
 
-            return success(__('app.category_updated_successfully'), $category);
+            return success('Category updated successfully', $category);
         } catch (\Exception $e) {
             logError('Category Update Error ', $e);
 
@@ -80,7 +80,7 @@ class CategoryService
     {
 
         if (! checkUserPermission(Category::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -141,11 +141,11 @@ class CategoryService
 
                     $editLink = route('admin.category.edit', $category->slug);
 
-                    $categoryStatus = $category->status ? __('app.enabled') : __('app.disabled');
+                    $categoryStatus = $category->status ? 'Enabled' : 'Disabled';
                     $categoryStatusClass = $category->status ? 'success' : 'danger';
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
 
                     $status = "<button class='main-btn {$categoryStatusClass}-btn-light btn-hover btn-sm' onclick=statusUpdate('{$category->slug}',this) style='padding:4px 10px' type='button'>{$categoryStatus}</button>";
@@ -161,8 +161,8 @@ class CategoryService
 
                     $nestedData['name'] = $name;
                     $nestedData['status'] = $status;
-                    $nestedData['show_in_quick_menu'] = $category->show_in_quick_menu ? '<div class="main-btn success-btn-light btn-hover btn-sm" style="padding:4px 10px" type="button">'.__('app.enabled').'</div>' : '<div class="main-btn danger-btn-light btn-hover btn-sm" style="padding:4px 10px" type="button">'.__('app.disabled').'</div>';
-                    $nestedData['show_in_home_page'] = $category->show_in_home_page ? '<div class="main-btn success-btn-light btn-hover btn-sm" style="padding:4px 10px" type="button">'.__('app.enabled').'</div>' : '<div class="main-btn danger-btn-light btn-hover btn-sm" style="padding:4px 10px" type="button">'.__('app.disabled').'</div>';
+                    $nestedData['show_in_quick_menu'] = $category->show_in_quick_menu ? '<div class="main-btn success-btn-light btn-hover btn-sm" style="padding:4px 10px" type="button">'.'Enabled'.'</div>' : '<div class="main-btn danger-btn-light btn-hover btn-sm" style="padding:4px 10px" type="button">'.'Disabled'.'</div>';
+                    $nestedData['show_in_home_page'] = $category->show_in_home_page ? '<div class="main-btn success-btn-light btn-hover btn-sm" style="padding:4px 10px" type="button">'.'Enabled'.'</div>' : '<div class="main-btn danger-btn-light btn-hover btn-sm" style="padding:4px 10px" type="button">'.'Disabled'.'</div>';
                     $nestedData['created_at'] = $category->created_at?->format('d/m/y') ?? '';
                     $nestedData['actions'] = "<div class='dropdown text-center'>
                     <button class='dropdown-toggle' onclick='toggleActions(this)' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -186,7 +186,7 @@ class CategoryService
                 'data' => $data,
             ];
 
-            return success(__('app.category_list'), $json_data);
+            return success('Category List', $json_data);
         } catch (\Exception $e) {
             logError('Category List Error ', $e);
 

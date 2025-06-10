@@ -114,7 +114,7 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return success(__('app.product_deleted_successfully'));
+        return success('Product deleted successfully');
     }
 
     public function statusUpdate(Product $product): JsonResponse
@@ -122,7 +122,7 @@ class ProductController extends Controller
         $product->status = $product->status === Product::STATUS['published'] ? Product::STATUS['draft'] : Product::STATUS['published'];
         $product->save();
 
-        return success(__('app.product_status_updated_successfully'), $product);
+        return success('Product status updated successfully', $product);
     }
 
     public function featuredUpdate(Product $product): JsonResponse
@@ -130,7 +130,7 @@ class ProductController extends Controller
         $product->featured = ! $product->featured;
         $product->save();
 
-        return success(__('app.product_featured_status_updated_successfully'), $product);
+        return success('Product featured status updated successfully', $product);
     }
 
     public function newArrivalUpdate(Product $product): JsonResponse
@@ -138,7 +138,7 @@ class ProductController extends Controller
         $product->new_arrival = ! $product->new_arrival;
         $product->save();
 
-        return success(__('app.product_new_arrival_status_updated_successfully'), $product);
+        return success('Product  New Arrival Status Updated Successfully', $product);
     }
 
     public function getList(Request $request): JsonResponse
@@ -164,7 +164,7 @@ class ProductController extends Controller
 
         $image->delete();
 
-        return success(__('app.product_image_deleted_successfully'));
+        return success('Product image deleted successfully');
     }
 
     private function makeTagsData($tags): string

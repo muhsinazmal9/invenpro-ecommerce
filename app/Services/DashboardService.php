@@ -106,7 +106,7 @@ class DashboardService
                 'data' => $data,
             ];
 
-            return success(__('app.list'), $json_data);
+            return success('list', $json_data);
         } catch (\Exception $e) {
             logError(' List Error ', $e);
 
@@ -235,7 +235,7 @@ class DashboardService
                 'data' => $data,
             ];
 
-            return success(__('app.list'), $json_data);
+            return success('list', $json_data);
         } catch (\Exception $e) {
             logError(' List Error ', $e);
 
@@ -297,7 +297,7 @@ class DashboardService
                 'data' => $data,
             ];
 
-            return success(__('app.list'), $json_data);
+            return success('list', $json_data);
         } catch (\Exception $e) {
             logError(' List Error ', $e);
 

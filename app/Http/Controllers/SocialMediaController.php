@@ -38,7 +38,7 @@ class SocialMediaController extends Controller
             $socialMedia = $this->socialMediaService->store($request);
 
             if ($socialMedia->getData()->status) {
-                return success(__('app.social_media_added_successfully'), $socialMedia->getData()->data);
+                return success('Social media added successfully', $socialMedia->getData()->data);
             } else {
                 return error(__($socialMedia->getData()->message));
             }
@@ -60,7 +60,7 @@ class SocialMediaController extends Controller
             $socialMedia = $this->socialMediaService->update($request, $social_medium);
 
             if ($socialMedia->getData()->status) {
-                return success(__('app.social_media_added_successfully'), $socialMedia->getData()->data);
+                return success('Social media added successfully', $socialMedia->getData()->data);
             } else {
                 return error(__($socialMedia->getData()->message));
             }
@@ -81,7 +81,7 @@ class SocialMediaController extends Controller
     {
         $social_medium->delete();
 
-        return success(__('app.social_media_deleted_successfully'));
+        return success('Social media deleted successfully');
     }
 
     public function getList(Request $request): JsonResponse

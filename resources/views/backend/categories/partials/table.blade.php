@@ -1,4 +1,4 @@
-<x-table :title="__('app.categories')" :addItemRoute="route('admin.category.create')" :permissionName="App\Models\Category::CREATE">
+<x-table :title="'Categories'" :addItemRoute="route('admin.category.create')" :permissionName="App\Models\Category::CREATE">
     <table class="table" id="categoryTable">
         <thead>
             <tr>

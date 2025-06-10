@@ -38,7 +38,7 @@ class SubscriberController extends Controller
     {
         $subscriber->delete();
 
-        return success(__('app.mail_deleted_successfully'));
+        return success('Mail deleted successfully');
     }
 
     public function toggleSubscribe(Subscriber $subscriber)
@@ -66,7 +66,7 @@ class SubscriberController extends Controller
     //    $subscriber->is_subscribed =! $subscriber->is_subscribed;
     //    $subscriber->save();
 
-    //     return success(__('app.product_featured_status_updated_successfully'), $subscriber);
+    //     return success('Product featured status updated successfully', $subscriber);
 
     // }
 
@@ -76,7 +76,7 @@ class SubscriberController extends Controller
         $create = $this->subscriberService->create($request);
 
         if ($create->getData()->success) {
-            return success(__('app.subscriber_created_successfully'));
+            return success('Subscriber created successfully');
 
         }
 

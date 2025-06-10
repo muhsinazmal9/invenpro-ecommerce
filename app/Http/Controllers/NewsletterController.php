@@ -70,7 +70,7 @@ class NewsletterController extends Controller
     {
         $newsletter->delete();
 
-        return success(__('app.newsletter_deleted_successfully'));
+        return success('Newsletter deleted successfully');
     }
 
     public function edit(Newsletter $newsletter): View|RedirectResponse

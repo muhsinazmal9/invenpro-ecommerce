@@ -53,9 +53,9 @@ class RoleManagementService
             if (!empty($roles)) {
                 foreach ($roles as $role) {
 
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
-                    $view = __('app.view');
+                    $edit = 'Edit';
+                    $delete = 'Delete';
+                    $view = 'View';
                     $permissions = json_encode($role->permissions->pluck('name')->toArray());
                     $viewHtml = "
                                 <button class='show-permissions-btn main-btn success-btn-light btn-hover btn-sm'  onclick='viewRole($permissions)' data-permissions= '$role->permissions' data-bs-toggle='modal'
