@@ -25,7 +25,7 @@ class CmsPageService
 
             logError('CMS Page Store Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -43,7 +43,7 @@ class CmsPageService
         } catch (\Exception $e) {
             logError('CMS Page Update Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -158,7 +158,7 @@ class CmsPageService
         } catch (\Exception $e) {
             logError('CMS Page List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

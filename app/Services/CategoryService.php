@@ -37,7 +37,7 @@ class CategoryService
         } catch (\Exception $e) {
             logError('Category Store Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -72,7 +72,7 @@ class CategoryService
         } catch (\Exception $e) {
             logError('Category Update Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -190,7 +190,7 @@ class CategoryService
         } catch (\Exception $e) {
             logError('Category List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

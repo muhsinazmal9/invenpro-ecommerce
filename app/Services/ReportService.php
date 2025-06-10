@@ -197,7 +197,7 @@ class ReportService
         } catch (\Exception $e) {
             logError(' List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

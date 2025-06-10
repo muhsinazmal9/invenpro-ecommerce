@@ -10,7 +10,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.dashboard') }}</h2>
+                            <h2>{{ __('app.profile') }}</h2>
                         </div>
                     </div>
                     <!-- end col -->

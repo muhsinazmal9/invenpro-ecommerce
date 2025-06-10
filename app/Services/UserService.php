@@ -45,7 +45,7 @@ class UserService
         } catch (\Exception $e) {
             logError('User Create Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -78,7 +78,7 @@ class UserService
         } catch (\Exception $e) {
             logError('User Update Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 

@@ -82,7 +82,7 @@ class UserSearchService
         } catch (\Exception $e) {
             logError('User Search List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

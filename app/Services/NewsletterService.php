@@ -55,7 +55,7 @@ class NewsletterService
 
             logError('News Letter MAil Store Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
 
     }
@@ -175,7 +175,7 @@ class NewsletterService
         } catch (\Exception $e) {
             logError('Newsletter List Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
 
     }
@@ -226,7 +226,7 @@ class NewsletterService
         } catch (\Exception $e) {
             logError('Mail Update Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

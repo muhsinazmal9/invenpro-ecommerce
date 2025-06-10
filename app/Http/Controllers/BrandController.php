@@ -47,9 +47,9 @@ class BrandController extends Controller
         $create = $this->brandService->create($request);
 
         if ($create->getData()->success) {
-            return redirect()->route('admin.brand.index')->with('success', __('app.brand_created_successfully'));
+            return redirect()->route('admin.brand.index')->with('success', 'Brand created successfully');
         } else {
-            return back()->with('error', __('app.something_went_wrong'));
+            return back()->with('error', 'Something went wrong');
         }
     }
 
@@ -71,7 +71,7 @@ class BrandController extends Controller
         if ($update->getData()->success) {
             return redirect()->route('admin.brand.index')->with('success', $update->getData()->message);
         } else {
-            return back()->with('error', __('app.something_went_wrong'));
+            return back()->with('error', 'Something went wrong');
         }
 
     }

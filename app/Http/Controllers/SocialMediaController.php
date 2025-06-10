@@ -47,7 +47,7 @@ class SocialMediaController extends Controller
 
             logError('SocialMediaController@store', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -69,7 +69,7 @@ class SocialMediaController extends Controller
 
             logError('SocialMediaController@store', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
 
     }

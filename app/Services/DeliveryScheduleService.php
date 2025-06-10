@@ -91,7 +91,7 @@ class DeliveryScheduleService
         } catch (\Exception $e) {
             logError('DeliverySchedule List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 

@@ -89,20 +89,20 @@ if (! function_exists('logError')) {
 if (! function_exists('deleteMessage')) {
     function deleteMessage(string $modelName): string
     {
-        return $modelName.' '.__('app.deleted_successfully');
+        return $modelName.' '. 'Deleted Successfully';
     }
 }
 
 if (! function_exists('updateMessage')) {
     function updateMessage(string $modelName): string
     {
-        return $modelName.' '.__('app.updated_successfully');
+        return $modelName.' '. 'Updated Successfully';
     }
 }
 if (! function_exists('createMessage')) {
     function createMessage(string $modelName): string
     {
-        return $modelName.' '.__('app.created_successfully');
+        return $modelName.' '. 'Created Successfully';
     }
 }
 

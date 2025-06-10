@@ -35,7 +35,7 @@ class SubcategoryService
         } catch (\Exception $e) {
             logError('Subcategory Store error:', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -66,7 +66,7 @@ class SubcategoryService
         } catch (\Exception $e) {
             info('Subcategory Update error:', [$e]);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -189,7 +189,7 @@ class SubcategoryService
         } catch (\Exception $e) {
             logError('Subcategory List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

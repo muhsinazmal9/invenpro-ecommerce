@@ -22,7 +22,7 @@ class TagService
         } catch (\Exception $e) {
             logError('tags Store Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -156,7 +156,7 @@ class TagService
         } catch (\Exception $e) {
             logError('tags List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -173,7 +173,7 @@ class TagService
         } catch (\Exception $e) {
             logError('Tags Update Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

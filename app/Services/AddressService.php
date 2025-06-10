@@ -23,7 +23,7 @@ class AddressService
         } catch (\Exception $e) {
             logError('Address Store Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -37,7 +37,7 @@ class AddressService
         } catch (\Exception $e) {
             logError('Address Update Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
 
     }
@@ -118,7 +118,7 @@ class AddressService
         } catch (\Exception $e) {
             logError('Address List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

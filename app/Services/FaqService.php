@@ -22,7 +22,7 @@ class FaqService
         } catch (\Exception $e) {
             logError('Faq Store Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -38,7 +38,7 @@ class FaqService
         } catch (\Exception $e) {
             logError('FAQ Update Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -153,7 +153,7 @@ class FaqService
         } catch (\Exception $e) {
             logError('Faq List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

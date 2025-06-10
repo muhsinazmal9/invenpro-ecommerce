@@ -104,7 +104,7 @@ class RoleManagementService
         } catch (\Exception $e) {
             logError('role List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

@@ -96,7 +96,7 @@ class BannerController extends Controller
     {
         $banner->delete();
 
-        return success(__('app.banner_deleted_successfully'));
+        return success('Banner deleted successfully');
     }
 
     public function getList(Request $request): JsonResponse
@@ -115,6 +115,6 @@ class BannerController extends Controller
         $banner->status = ! $banner->status;
         $banner->save();
 
-        return success(__('app.banner_status_update_successfully'), $banner);
+        return success('Banner status updated successfully', $banner);
     }
 }

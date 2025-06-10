@@ -78,7 +78,7 @@ class SubscriberService
         } catch (\Exception $e) {
             logError('Newsletter List Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -97,7 +97,7 @@ class SubscriberService
         } catch (\Exception $e) {
             logError('Subscriber Store error:', $e);
 
-            return error(__('app.something_went_wrong'), $e->getMessage());
+            return error('Something went wrong', $e->getMessage());
         }
 
     }

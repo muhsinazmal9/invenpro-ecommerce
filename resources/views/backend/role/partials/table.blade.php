@@ -6,10 +6,10 @@
     <table class="table" id="rolesTable">
         <thead>
             <tr>
-                <th>{{ __("app.name") }}</th>
-                <th>{{ __("app.permissions") }}</th>
-                <th>{{ __("app.created_at") }}</th>
-                <th>{{ __("app.actions") }}</th>
+                <th>Name</th>
+                <th>Permissions</th>
+                <th>Created at</th>
+                <th>Actions</th>
             </tr>
         </thead>
     </table>

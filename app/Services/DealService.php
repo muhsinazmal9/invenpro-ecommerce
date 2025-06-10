@@ -39,7 +39,7 @@ class DealService
         } catch (\Exception $ex) {
             logError('Deal Store Error ', $ex);
 
-            return error(__('app.something_went_wrong'), data: $ex);
+            return error('Something went wrong', data: $ex);
         }
     }
 
@@ -293,7 +293,7 @@ class DealService
         } catch (\Exception $e) {
             logError('Product List Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

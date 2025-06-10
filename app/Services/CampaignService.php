@@ -34,7 +34,7 @@ class CampaignService
         } catch (\Exception $e) {
             logError('Campaign Store Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
 
     }
@@ -66,7 +66,7 @@ class CampaignService
         } catch (\Exception $e) {
             logError('Campaign Update Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
 
     }
@@ -173,7 +173,7 @@ class CampaignService
         } catch (\Exception $e) {
             logError('Product List Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
 
     }

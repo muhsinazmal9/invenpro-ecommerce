@@ -104,7 +104,7 @@ class FeatureHighlightService
         } catch (\Exception $e) {
             logError('Feature highlight List Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -134,7 +134,7 @@ class FeatureHighlightService
             return success(__('app.feature_highlight_created_successfully'), $featureHighlight);
         } catch (Exception $e) {
             logError('Feature Highlight Store Error', $e);
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -169,7 +169,7 @@ class FeatureHighlightService
         } catch (\Exception $e) {
             logError('Feature Highlight Update Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
  

@@ -138,7 +138,7 @@ class OrderController extends Controller
         } catch (\Exception $e) {
             logError('Order Payment Status Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -168,7 +168,7 @@ class OrderController extends Controller
         } catch (\Exception $e) {
             logError('Gift Status Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 

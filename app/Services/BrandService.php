@@ -34,7 +34,7 @@ class BrandService
         } catch (\Exception $e) {
             logError('Brand Store Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -65,7 +65,7 @@ class BrandService
         } catch (\Exception $e) {
             logError('Brand Update Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -177,7 +177,7 @@ class BrandService
         } catch (\Exception $e) {
             logError('Brand List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

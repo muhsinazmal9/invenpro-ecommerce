@@ -162,7 +162,7 @@ class OrderService
         } catch (\Exception $e) {
             logError('Order List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -186,7 +186,7 @@ class OrderService
         } catch (\Exception $e) {
             logError('Order Status Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
     public function getUserOrderList(Request $request, User $user): JsonResponse
@@ -280,7 +280,7 @@ class OrderService
         } catch (\Exception $e) {
             logError('Order List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

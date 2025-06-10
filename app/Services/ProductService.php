@@ -57,7 +57,7 @@ class ProductService
         } catch (\Exception $e) {
             logError('Product Store Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -122,7 +122,7 @@ class ProductService
         } catch (\Exception $e) {
             logError('Product Store Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -417,7 +417,7 @@ class ProductService
         } catch (\Exception $e) {
             logError('Product List Error', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }

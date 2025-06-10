@@ -25,7 +25,7 @@ class SocialMediaService
         } catch (\Exception $e) {
             logError('SocialMediaService@store', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -43,7 +43,7 @@ class SocialMediaService
         } catch (\Exception $e) {
             logError('SocialMediaService@store', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 

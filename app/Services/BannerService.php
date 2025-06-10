@@ -42,7 +42,7 @@ class BannerService
         } catch (\Exception $e) {
             logError('Banner Store Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -81,7 +81,7 @@ class BannerService
         } catch (\Exception $e) {
             logError('Banner Update Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 
@@ -203,7 +203,7 @@ class BannerService
         } catch (\Exception $e) {
             logError('Banner List Error ', $e);
 
-            return error(__('app.something_went_wrong'));
+            return error('Something went wrong');
         }
     }
 }
