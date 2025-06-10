@@ -1,0 +1,9 @@
+<?php
+
+namespace App\Services;
+
+
+class {{serviceClassName}}
+{
+    // Add your service logic here
+}

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Facebook",
+        "url": "https://www.facebook.com",
+        "icon": "fa-brands fa-facebook"
+    },
+    {
+        "id": 2,
+        "name": "Twitter",
+        "url": "https://www.twitter.com",
+        "icon": "fa-brands fa-twitter"
+    },
+    {
+        "id": 3,
+        "name": "Instagram",
+        "url": "https://www.instagram.com",
+        "icon": "fa-brands fa-instagram"
+    },
+    {
+        "id": 4,
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com",
+        "icon": "fa-brands fa-linkedin"
+    },
+    {
+        "id": 5,
+        "name": "YouTube",
+        "url": "https://www.youtube.com",
+        "icon": "fa-brands fa-youtube"
+    },
+    {
+        "id": 6,
+        "name": "TikTok",
+        "url": "https://www.tiktok.com",
+        "icon": "fa-brands fa-tiktok"
+    }
+]
