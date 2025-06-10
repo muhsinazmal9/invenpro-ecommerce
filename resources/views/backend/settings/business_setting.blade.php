@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.business_settings'))
+@section('title', 'Business Settings')
 @section('content')
     <!-- ========== section start ========== -->
     <section class="section">
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.business_settings') }} </h2>
+                            <h2>{{ 'Business Settings' }} </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -23,7 +23,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.business_settings') }}
+                                        {{ 'Business Settings' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -47,10 +47,10 @@
                                 @method('patch')
                                 <div class="row">
                                     <div class="col-md-12 mt-1">
-                                        <label for="email" class="mb-1"><strong>{{ __('app.email') }}</strong></label>
+                                        <label for="email" class="mb-1"><strong>{{ 'Email' }}</strong></label>
 
                                         <x-input-group :type="'email'" :value="old('email', getSetting('email') ?? '')" :name="'email'"
-                                            :placeholder="__('app.enter_email_address')" :id="'email'">
+                                            :placeholder="'Enter email address'" :id="'email'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -62,9 +62,9 @@
 
                                     <div class="col-md-12 mt-2">
                                         <label for="business_description"
-                                            class="mb-1"><strong>{{ __('app.business_description') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Business Description' }}</strong></label>
 
-                                            <x-textarea-group :placeholder="__('app.business_description')"
+                                            <x-textarea-group :placeholder="'Business Description'"
                                             :name="'business_description'">{{ old('business_description') }}</x-textarea-group>
 
                                         @error('business_description')
@@ -75,10 +75,10 @@
 
                                     <div class="col-md-6 mt-1">
                                         <label for="phone_1"
-                                            class="mb-1"><strong>{{ __('app.phone_1') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Phone 1' }}</strong></label>
 
                                         <x-input-group :type="'number'" :value="old('phone_1', getSetting('phone_1') ?? '')" :name="'phone_1'"
-                                            :placeholder="__('app.enter_phone_number')" :id="'phone_1'">
+                                            :placeholder="'Enter phone number'" :id="'phone_1'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -90,10 +90,10 @@
 
                                     <div class="col-md-6 mt-1">
                                         <label for="phone_2"
-                                            class="mb-1"><strong>{{ __('app.phone_2') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Phone 2' }}</strong></label>
 
                                         <x-input-group :type="'number'" :value="old('phone_2', getSetting('phone_2') ?? '')" :name="'phone_2'"
-                                            :placeholder="__('app.enter_phone_number')" :id="'phone_2'">
+                                            :placeholder="'Enter phone number'" :id="'phone_2'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -104,10 +104,10 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="phone_3"
-                                            class="mb-1"><strong>{{ __('app.phone_3') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Phone 3' }}</strong></label>
 
                                         <x-input-group :type="'number'" :value="old('phone_3', getSetting('phone_3') ?? '')" :name="'phone_3'"
-                                            :placeholder="__('app.enter_phone_number')" :id="'phone_3'">
+                                            :placeholder="'Enter phone number'" :id="'phone_3'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -118,10 +118,10 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="address"
-                                            class="mb-1"><strong>{{ __('app.full_address') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Full Address' }}</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('address', getSetting('address') ?? '')" :name="'address'"
-                                            :placeholder="__('app.enter_address')" :id="'address'">
+                                            :placeholder="'Enter address'" :id="'address'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -132,10 +132,10 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="latitude"
-                                            class="mb-1"><strong>{{ __('app.latitude') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Latitude' }}</strong></label>
 
                                         <x-input-group :step="0.00000000001" :type="'number'" :value="old('latitude', getSetting('latitude') ?? '')"
-                                            :name="'latitude'" :placeholder="__('app.enter_latitude')" :id="'latitude'">
+                                            :name="'latitude'" :placeholder="'Enter latitude'" :id="'latitude'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -146,10 +146,10 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="longitude"
-                                            class="mb-1"><strong>{{ __('app.longitude') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Longitude' }}</strong></label>
 
                                         <x-input-group :step="0.00000000001" :type="'number'" :value="old('longitude', getSetting('longitude') ?? '')"
-                                            :name="'longitude'" :placeholder="__('app.enter_longitude')" :id="'longitude'">
+                                            :name="'longitude'" :placeholder="'Enter longitude'" :id="'longitude'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -159,9 +159,9 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="country_id"
-                                            class="mb-1"><strong>{{ __('app.country') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Country' }}</strong></label>
                                         <x-input-select :name="'country_id'" :id="'country_id'" :class="'select2'">
-                                            <option value="">{{ __('app.select_country') }}</option>
+                                            <option value="">{{ 'Select Country' }}</option>
                                             @foreach (json_decode($countries_json) as $country)
                                                 <option value="{{ $country->id }}" @selected(old('country_id', getSetting('country_id')) == $country->id)>
                                                     {{ $country->name }}
@@ -175,10 +175,10 @@
                                     </div>
 
                                     <div class="col-md-6 mt-1">
-                                        <label for="state_id" class="mb-1"><strong>{{ __('app.state') }}</strong></label>
+                                        <label for="state_id" class="mb-1"><strong>{{ 'State' }}</strong></label>
 
                                         <x-input-select :name="'state_id'" :id="'state_id'" :class="'select2'">
-                                            <option value="">{{ __('app.select_state') }}</option>
+                                            <option value="">{{ 'Select State' }}</option>
                                         </x-input-select>
 
                                         @error('state_id')
@@ -187,11 +187,11 @@
                                     </div>
 
                                     <div class="col-md-6 mt-1">
-                                        <label for="city_id" class="mb-1"><strong>{{ __('app.city') }}</strong></label>
+                                        <label for="city_id" class="mb-1"><strong>{{ 'City' }}</strong></label>
 
                                         <x-input-select :value="old('city_id', getSetting('city_id') ?? '')" :name="'city_id'" :id="'city_id'"
                                             :class="'select2'">
-                                            <option value="">{{ __('app.select_city') }}</option>
+                                            <option value="">{{ 'Select City' }}</option>
                                         </x-input-select>
 
                                         @error('city_id')
@@ -202,7 +202,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ __('app.update') }}
+                                            {{ 'Update' }}
                                         </x-primary-button>
                                     </div>
                                 </div>
@@ -235,9 +235,9 @@
             $(country_id).on('change', function() {
                 if ($(this).val()) {
                     $(state_id).empty();
-                    $(state_id).append(`<option value="">{{ __('app.select_state') }}</option>`);
+                    $(state_id).append(`<option value="">{{ 'Select State' }}</option>`);
                     $(city_id).empty();
-                    $(city_id).append(`<option value="">{{ __('app.select_city') }}</option>`);
+                    $(city_id).append(`<option value="">{{ 'Select City' }}</option>`);
                     getStates(country_id)
                 }
             });
@@ -245,7 +245,7 @@
             $(state_id).on('change', function() {
                 if ($(this).val()) {
                     $(city_id).empty();
-                    $(city_id).append(`<option value="">{{ __('app.select_city') }}</option>`);
+                    $(city_id).append(`<option value="">{{ 'Select City' }}</option>`);
                     getCities(state_id)
                 }
             });

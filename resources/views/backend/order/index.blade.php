@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.order'))
+@section('title', 'Order')
 @push('css')
     <style>
         .details-btn:hover {
@@ -18,7 +18,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.order') }}</h2>
+                            <h2>{{ 'Order' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -30,7 +30,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.orders') }}
+                                        {{ 'Orders' }}
                                     </li>
                                 </ol>
                             </nav>

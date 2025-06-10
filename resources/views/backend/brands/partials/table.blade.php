@@ -1,17 +1,17 @@
-<x-table :title="__('app.brands')" :addItemRoute="route('admin.brand.create')" :permissionName="App\Models\Brand::CREATE">
+<x-table :title="'Brands'" :addItemRoute="route('admin.brand.create')" :permissionName="App\Models\Brand::CREATE">
     <table class="table" id="brandTable">
         <thead>
             <tr>
-                <th>{{ __('app.title') }}</th>
-                <th>{{ __('app.status') }}</th>
-                <th>{{ __('app.created_at') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Title' }}</th>
+                <th>{{ 'Status' }}</th>
+                <th>{{ 'Created at' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
 
 </x-table>
-<x-modal-center :id="'detailsModal'" :modal_title="__('app.brand_details')" :method="'PUT'" :action="'javascript:void(0)'">
+<x-modal-center :id="'detailsModal'" :modal_title="'Brand Details'" :method="'PUT'" :action="'javascript:void(0)'">
     <div id="brand-details"></div>
 </x-modal-center>
 
@@ -67,16 +67,16 @@
                 <div class="">
                     <table  class="table-bordered p-5 mx-auto" style="border-color:#00000052 !important; width: 100%">
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.image') }}</th>
+                            <th class="p-2">{{ 'Image' }}</th>
                             <td class="p-2"><img src="${brand['image'] ? (brand['image'].startsWith('/') ? '' : '/') + brand['image'] : '{{ getPlaceholderImage('160','100') }}'}" alt="brand image" style="width:100px;height:60px;object-fit:cover;border-radius:4px;" onerror="this.onerror=null;this.src='{{ getPlaceholderImage('160','100') }}';"></td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.title') }} </th>
+                            <th class="p-2">{{ 'Title' }} </th>
                             <td class="p-2">${brand['title']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.status') }} </th>
-                            <td class="p-2">${brand['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ __('app.enabled') }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ __('app.disabled') }}</span"}</td>
+                            <th class="p-2">{{ 'Status' }} </th>
+                            <td class="p-2">${brand['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ 'Enabled' }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ 'Disabled' }}</span"}</td>
                         </tr>
                     </table>
                 </div>`;
@@ -90,14 +90,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You will not be able to revert this!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_delete_it') }}",
-            cancelButtonText: "{{ __('app.cancel') }}"
+            confirmButtonText: "{{ 'Yes, delete it!' }}",
+            cancelButtonText: "{{ 'Cancel' }}"
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -114,13 +114,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_change_the_status_of_this_brand') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want to change the status of this brand?' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_change_it') }}",
+            confirmButtonText: "{{ 'Yes, change it' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -136,17 +136,17 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Status has been updated!' }}",
                                 icon: 'success',
                             });
 
                             if (response.data.status) {
-                                $(btn).text("{{ __('app.enabled') }}");
+                                $(btn).text("{{ 'Enabled' }}");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ __('app.disabled') }}");
+                                $(btn).text("{{ 'Disabled' }}");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }

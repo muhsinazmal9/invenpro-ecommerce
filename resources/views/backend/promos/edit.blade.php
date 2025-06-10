@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.edit_promo'))
+@section('title', 'Edit Promo')
 @section('content')
     <style>
         .image-wrapper {
@@ -22,7 +22,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.edit_promo') }}</h2>
+                            <h2>{{ 'Edit Promo' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -34,10 +34,10 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.promo.index') }}">{{ __('app.promos') }}</a>
+                                        <a href="{{ route('admin.promo.index') }}">{{ 'Promos' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.edit') }}
+                                        {{ 'Edit' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -56,8 +56,8 @@
                             @method('patch')
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="name" class="mb-1"><strong>{{ __('app.title') }}</strong></label>
-                                    <x-input-group :type="'text'" :value="old('title', $promo->title)" :name="'title'" :placeholder="__('app.enter_title_of_promo')"
+                                    <label for="name" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <x-input-group :type="'text'" :value="old('title', $promo->title)" :name="'title'" :placeholder="'Enter title of promo'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -66,12 +66,12 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="limit" class="mb-1"><strong>{{ __('app.limit') }}</strong></label>
+                                    <label for="limit" class="mb-1"><strong>{{ 'Limit' }}</strong></label>
                                     <x-input-group
                                         :type="'number'"
                                         :value="old('limit',$promo->limit)"
                                         :name="'limit'"
-                                        :placeholder="__('app.enter_limit_of_promo')"
+                                        :placeholder="'Enter limit of promo'"
                                         :id="'limit'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -81,12 +81,12 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="code" class="mb-1"><strong>{{ __('app.code') }}</strong></label>
+                                    <label for="code" class="mb-1"><strong>{{ 'Code' }}</strong></label>
                                     <x-input-group
                                         :type="'text'"
                                         :value="old('code',$promo->code)"
                                         :name="'code'"
-                                        :placeholder="__('app.enter_code_of_promo')"
+                                        :placeholder="'Enter Code of Promo'"
                                         :id="'code'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -96,12 +96,12 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="discount" class="mb-1"><strong>{{ __('app.discount') }}</strong></label>
+                                    <label for="discount" class="mb-1"><strong>{{ 'Discount' }}</strong></label>
                                     <x-input-group
                                         :type="'number'"
                                         :value="old('discount',$promo->discount)"
                                         :name="'discount'"
-                                        :placeholder="__('app.enter_discount_of_promo')"
+                                        :placeholder="'Enter discount of promo'"
                                         :id="'discount'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -111,10 +111,10 @@
                                     @enderror
                                 </div>
                                  <div class="col-md-6 my-2">
-                                     <x-input-select :label="__('app.discount_type')" :name="'discount_type'" :id="'discount_type'">
+                                     <x-input-select :label="'Discount Type'" :name="'discount_type'" :id="'discount_type'">
 
-                                            <option value="FIXED" @selected(old('discount_type') == 'FIXED')>{{ __('app.fixed') }}</option>
-                                            <option value="PERCENTAGE" @selected(old('discount_type') == 'PERCENTAGE')>{{ __('app.percentage') }}</option>
+                                            <option value="FIXED" @selected(old('discount_type') == 'FIXED')>{{ 'Fixed' }}</option>
+                                            <option value="PERCENTAGE" @selected(old('discount_type') == 'PERCENTAGE')>{{ 'PERCENTAGE' }}</option>
 
                                     </x-input-select>
 
@@ -126,11 +126,11 @@
                                     @if ($promo->status == '1')
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'"
                                             :checked="'status'">
-                                            {{ __('app.status') }}
+                                            {{ 'Status' }}
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                            {{ __('app.status') }}
+                                            {{ 'Status' }}
                                         </x-success-checkbox>
                                     @endif
                                     @error('status')
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ __('app.update') }}
+                                        {{ 'Update' }}
                                     </x-primary-button>
                                 </div>
                             </div>

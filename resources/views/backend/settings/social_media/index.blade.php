@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.business_settings'))
+@section('title', 'Business Settings')
 @push('css')
 <style>
     .table-responsive {
@@ -33,7 +33,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ __('app.social_media') }} </h2>
+                        <h2>{{ 'Social Media' }} </h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -45,7 +45,7 @@
                                     <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ __('app.social_media') }}
+                                    {{ 'Social Media' }}
                                 </li>
                             </ol>
                         </nav>
@@ -66,13 +66,13 @@
                     <div class="card-body">
                         <div class="title-section d-flex justify-content-between w-100">
                             <div class="title">
-                                <h3>{{ __('app.social_media') }}</h3>
+                                <h3>{{ 'Social Media' }}</h3>
                             </div>
                             <div class="title">
                                 <button class='main-btn primary-btn icon-btn btn-hover btn-sm details-btn'
                                     data-bs-toggle='modal' data-bs-target='#createModal'>
                                     <i class="fas fa-plus"></i>
-                                    {{ __('app.add_social') }}
+                                    {{ 'Add Social' }}
                                 </button>
                             </div>
                         </div>
@@ -80,12 +80,12 @@
                             <table class="table" id="socialTable">
                                 <thead>
                                     <tr>
-                                        <th>{{ __('app.name') }}</th>
-                                        <th>{{ __('app.icon') }}</th>
-                                        <th>{{ __('app.url') }}</th>
-                                        <th>{{ __('app.status') }}</th>
-                                        <th>{{ __('app.created_at') }}</th>
-                                        <th>{{ __('app.actions') }}</th>
+                                        <th>{{ 'Name' }}</th>
+                                        <th>{{ 'Icon' }}</th>
+                                        <th>{{ 'URL' }}</th>
+                                        <th>{{ 'Status' }}</th>
+                                        <th>{{ 'Created at' }}</th>
+                                        <th>{{ 'Actions' }}</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -100,13 +100,13 @@
 
 
 {{-- Create Modal --}}
-<x-modal-center :id="'createModal'" :modal_title="__('app.add_social')" :method="'PUT'" :action="'javascript:void(0)'">
+<x-modal-center :id="'createModal'" :modal_title="'Add Social'" :method="'PUT'" :action="'javascript:void(0)'">
 
     @csrf
     <div class="row">
 
         <div class="col-md-12">
-            <x-input-select :label="__('app.platform')" :name="'platform_id'" :id="'platform_id'">
+            <x-input-select :label="'Platform'" :name="'platform_id'" :id="'platform_id'">
 
                 @foreach ($platforms as $platform)
                 <option value="{{ $platform->id }}">{{ $platform->name }}</option>
@@ -127,26 +127,26 @@
 
         <div class="col-md-6">
             <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                {{ __('app.status') }}
+                {{ 'Status' }}
             </x-success-checkbox>
         </div>
 
         <div class="col-md-12 mt-3 text-center">
             <x-primary-button :id="'social_create_btn'" :type="'submit'" :style="'padding:8px 50px'">
-                {{ __('app.save') }}
+                {{ 'Save' }}
             </x-primary-button>
         </div>
     </div>
 </x-modal-center>
 
 {{-- Edit Modal --}}
-<x-modal-center :id="'editModal'" :modal_title="__('app.edit_social_media')" :method="'PUT'"
+<x-modal-center :id="'editModal'" :modal_title="'Edit Social Media'" :method="'PUT'"
     :action="'javascript:void(0)'">
     @csrf
     <div class="row">
 
         <div class="col-md-12">
-            <x-input-select :label="__('app.platform')" :name="'platform_id_edit'" :id="'platform_id_edit'">
+            <x-input-select :label="'Platform'" :name="'platform_id_edit'" :id="'platform_id_edit'">
 
                 @foreach ($platforms as $platform)
                 <option value="{{ $platform->id }}">{{ $platform->name }}</option>
@@ -167,13 +167,13 @@
 
         <div class="col-md-6">
             <x-success-checkbox :id="'status_edit'" :value="'1'" :name="'status_edit'">
-                {{ __('app.status') }}
+                {{ 'Status' }}
             </x-success-checkbox>
         </div>
 
         <div class="col-md-12 mt-3 text-center">
             <x-primary-button :id="'social_edit_btn'" :type="'submit'" :style="'padding:8px 50px'">
-                {{ __('app.update') }}
+                {{ 'Update' }}
             </x-primary-button>
         </div>
     </div>
@@ -392,14 +392,14 @@
             let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
             Swal.fire({
-                title: "{{ __('app.are_you_sure') }}",
-                text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+                title: "{{ 'Are you sure?' }}",
+                text: "{{ 'You will not be able to revert this!' }}",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: "{{ __('app.yes_delete_it') }}",
-                cancelButtonText: "{{ __('app.cancel') }}",
+                confirmButtonText: "{{ 'Yes, delete it!' }}",
+                cancelButtonText: "{{ 'Cancel' }}",
             }).then((result) => {
                 if (result.value) {
                     event.preventDefault();
@@ -418,13 +418,13 @@
             let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
             Swal.fire({
-                title: "{{ __('app.are_you_sure') }}",
-                text: "{{ __('app.you_want_to_change_the_status_of_this_social_media') }}",
+                title: "{{ 'Are you sure?' }}",
+                text: "{{ 'You want to change the status of this social media?' }}",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: "{{ __('app.yes_update_it') }}",
+                confirmButtonText: "{{ 'Yes, Update it' }}",
             }).then((result) => {
                 if (result.value) {
                     event.preventDefault();
@@ -438,8 +438,8 @@
 
                             if (response.success) {
                                 Swal.fire({
-                                    title: "{{ __('app.updated') }}",
-                                    text: "{{ __('app.social_status_has_been_updated') }}",
+                                    title: "{{ 'Updated!' }}",
+                                    text: "{{ 'Social status has been updated' }}",
                                     icon: 'success',
                                 });
                                 if (response.data.status) {

@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.logo_and_favicon_settings'))
+@section('title', 'Logo and Favicon Settings')
 @section('content')
     <!-- ========== section start ========== -->
     <section class="section">
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.logo_and_favicon_settings') }} </h2>
+                            <h2>{{ 'Logo and Favicon Settings' }} </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -23,7 +23,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.logo_and_favicon_settings') }}
+                                        {{ 'Logo and Favicon Settings' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -52,7 +52,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <label for="primary_logo" class="mb-1">
-                                                    <strong>{{ __('app.primary_logo') }}</strong>
+                                                    <strong>{{ 'Primary Logo' }}</strong>
                                                 </label>
 
                                                 <div class="input-style-3 row align-items-center">
@@ -83,7 +83,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <label for="secondary_logo" class="mb-1">
-                                                    <strong>{{ __('app.secondary_logo') }}</strong>
+                                                    <strong>{{ 'Secondary Logo' }}</strong>
                                                 </label>
 
                                                 <div class="input-style-3 row align-items-center">
@@ -114,7 +114,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <label for="favicon"class="mb-1">
-                                                    <strong>{{ __('app.favicon') }}</strong>
+                                                    <strong>{{ 'Favicon' }}</strong>
                                                 </label>
 
                                                 <div class="input-style-3 row align-items-center">
@@ -142,7 +142,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ __('app.update') }}
+                                            {{ 'Update' }}
                                         </x-primary-button>
                                     </div>
                                 </div>

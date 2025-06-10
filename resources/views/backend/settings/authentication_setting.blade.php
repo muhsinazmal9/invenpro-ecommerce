@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.business_settings'))
+@section('title', 'Business Settings')
 @section('content')
 <!-- ========== section start ========== -->
 <section class="section">
@@ -11,7 +11,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ __('app.authentication_settings') }} </h2>
+                        <h2>{{ 'Authentication settings' }} </h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -23,7 +23,7 @@
                                     <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ __('app.authentication_settings') }}
+                                    {{ 'Authentication settings' }}
                                 </li>
                             </ol>
                         </nav>
@@ -47,12 +47,12 @@
                             @method('patch')
                             <div class="row">
                                 <div class="col-md-6 mt-1">
-                                    <label for="otp_validation_time" class="mb-1"><strong>{{ __('app.otp_expiry_time')
+                                    <label for="otp_validation_time" class="mb-1"><strong>{{ 'OTP Expiry time (Min)'
                                             }}</strong></label>
 
                                     <x-input-group :type="'text'"
                                         :value="old('otp_validation_time', getSetting('otp_validation_time') ?? '')"
-                                        :name="'otp_validation_time'" :placeholder="__('app.otp_validation_time')"
+                                        :name="'otp_validation_time'" :placeholder="'OTP Validation time'"
                                         :id="'otp_validation_time'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -63,7 +63,7 @@
 
                                 </div>
                                 <div class="col-md-6 mt-1">
-                                    <label for="default_avatar" class="mb-1"><strong>{{ __('app.default_avatar')}}</strong></label>
+                                    <label for="default_avatar" class="mb-1"><strong>{{ 'Default Avatar'}}</strong></label>
 
                                     <div class="input-style-3 row align-items-center">
                                         <div class="col-10">
@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ __('app.update') }}
+                                        {{ 'Update' }}
                                     </x-primary-button>
                                 </div>
                             </div>

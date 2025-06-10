@@ -2,15 +2,15 @@
     <table class="table" id="tagsTable">
         <thead>
             <tr>
-                <th>{{ __('app.title') }}</th>
-                <th>{{ __('app.status') }}</th>
-                <th  style="max-width: 15%">{{ __('app.actions') }}</th>
+                <th>{{ 'Title' }}</th>
+                <th>{{ 'Status' }}</th>
+                <th  style="max-width: 15%">{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
 
 </x-table>
-<x-modal-center :id="'detailsModal'" :modal_title="__('app.tag_details')" :method="'PUT'" :action="'javascript:void(0)'">
+<x-modal-center :id="'detailsModal'" :modal_title="'Tag details'" :method="'PUT'" :action="'javascript:void(0)'">
     <div id="tags-details"></div>
 </x-modal-center>
 
@@ -69,11 +69,11 @@
                 <div class="">
                     <table  class="table-bordered p-5 mx-auto" style="border-color:#00000052 !important; width: 100%">
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.title') }}</th>
+                            <th class="p-2">{{ 'Title' }}</th>
                             <td class="p-2">${tag['title']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.status') }} </th>
+                            <th class="p-2">{{ 'Status' }} </th>
                             <td class="p-2">${tag['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm tagStatusUpdate'>Enabled</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>Disabled</span"}</td>
                         </tr>
                     </table>
@@ -90,13 +90,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_delete_this_tag') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want to delete this tag?' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_delete_it') }}",
+            confirmButtonText: "{{ 'Yes, delete it!' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -115,13 +115,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_change_the_status_of_this_tag') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want to change the status of this tag?' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_change_it') }}",
+            confirmButtonText: "{{ 'Yes, change it' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -135,20 +135,20 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.success') }}",
+                                title: "{{ 'Success' }}",
                                 text: response.message,
                                 icon: 'success',
                             });
 
                             if (response.data.status) {
 
-                                $(btn).text("{{ __('app.enabled') }}");
+                                $(btn).text("{{ 'Enabled' }}");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
 
                             } else {
 
-                                $(btn).text("{{ __('app.disabled') }}");
+                                $(btn).text("{{ 'Disabled' }}");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
 

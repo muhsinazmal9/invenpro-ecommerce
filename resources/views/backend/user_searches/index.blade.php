@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.user_searches'))
+@section('title', 'User searches')
 @section('content')
 
     <!-- ========== section start ========== -->
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.user_searches') }}</h2>
+                            <h2>{{ 'User searches' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -23,7 +23,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.user_searches') }}
+                                        {{ 'User searches' }}
                                     </li>
                                 </ol>
                             </nav>

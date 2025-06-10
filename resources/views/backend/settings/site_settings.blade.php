@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.site_settings'))
+@section('title', 'Site Settings')
 @section('content')
     <!-- ========== section start ========== -->
     <section class="section">
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.site_settings') }} </h2>
+                            <h2>{{ 'Site Settings' }} </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -23,7 +23,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.site_settings') }}
+                                        {{ 'Site Settings' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -48,10 +48,10 @@
                                 <div class="row">
                                     <div class="col-md-6 mt-1">
                                         <label for="site_title"
-                                            class="mb-1"><strong>{{ __('app.site_title') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Site Title' }}</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('site_title', getSetting('site_title') ?? '')" :name="'site_title'"
-                                            :placeholder="__('app.enter_site_title')" :id="'site_title'">
+                                            :placeholder="'Enter site title'" :id="'site_title'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -62,10 +62,10 @@
                                     {{-- <div class="col-md-6 mt-1">
 
                                         <label for="frontend_url"
-                                            class="mb-1"><strong>{{ __('app.frontend_url') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Frontend URL' }}</strong></label>
 
                                         <x-input-group :type="'url'" :value="old('frontend_url', getSetting('frontend_url') ?? '')" :name="'frontend_url'"
-                                            :placeholder="__('app.enter_frontend_url')" :id="'frontend_url'">
+                                            :placeholder="'Enter frontend URL'" :id="'frontend_url'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -75,7 +75,7 @@
 
                                     </div> --}}
                                     <div class="col-md-6 mt-1">
-                                        <x-input-select :label="__('app.phone_code')" :name="'default_phone_code'" :id="'default_phone_code'"
+                                        <x-input-select :label="'Phone Code'" :name="'default_phone_code'" :id="'default_phone_code'"
                                             :class="'select2'">
                                             @php 
                                             $getSetting = getSetting('default_phone_code') ?? '';
@@ -94,7 +94,7 @@
 
                                     </div>
                                     <div class="col-md-6 mt-1">
-                                        <x-input-select :label="__('app.default_language')" :name="'default_language'" :id="'default_language'"
+                                        <x-input-select :label="'Default Language'" :name="'default_language'" :id="'default_language'"
                                             :class="'select2'">
                                             <option value="en" @selected(old('default_language', getSetting('default_language') ?? '') == 'en')>en</option>
                                         </x-input-select>
@@ -104,7 +104,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-6 mt-1">
-                                        <x-input-select :label="__('app.default_currency')" :name="'default_currency'" :id="'default_currency'"
+                                        <x-input-select :label="'Default Currency'" :name="'default_currency'" :id="'default_currency'"
                                             :class="'select2'">
                                             @php
                                                 $getSettingCurrency = getSetting('default_currency') ?? '';
@@ -124,10 +124,10 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="currency_symbol"
-                                            class="mb-1"><strong>{{ __('app.currency_symbol') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Currency Symbol' }}</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('currency_symbol', getSetting('currency_symbol') ?? '')" :name="'currency_symbol'"
-                                            :placeholder="__('app.enter_currency_symbol')" :id="'currency_symbol'">
+                                            :placeholder="'Enter currency symbol'" :id="'currency_symbol'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -137,7 +137,7 @@
                                     </div>
 
                                     <div class="col-md-6 mt-1">
-                                        <x-input-select :label="__('app.timezone')" :name="'timezone'" :id="'timezone'"
+                                        <x-input-select :label="'Timezone'" :name="'timezone'" :id="'timezone'"
                                             :class="'select2'">
                                             @php
                                                 $getSettingTimezone = getSetting('timezone') ?? '';
@@ -152,10 +152,10 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-6 mt-1">
-                                        <label for="copy_right_text" class="mb-1"><strong>{{ __('app.copy_right_text') }}</strong></label>
+                                        <label for="copy_right_text" class="mb-1"><strong>{{ 'Copy Right Text' }}</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('copy_right_text', getSetting('copy_right_text') ?? '')" :name="'copy_right_text'"
-                                            :placeholder="__('app.enter_copy_right_text')" :id="'copy_right_text'">
+                                            :placeholder="'Enter copy right text'" :id="'copy_right_text'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -166,7 +166,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ __('app.update') }}
+                                            {{ 'Update' }}
                                         </x-primary-button>
                                     </div>
                                 </div>

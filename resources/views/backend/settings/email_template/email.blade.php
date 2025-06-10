@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.email_template'))
+@section('title', 'Email Template')
 @section('content')
 <!-- ========== section start ========== -->
 <section class="section">
@@ -11,7 +11,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ __('app.email_template') }} </h2>
+                        <h2>{{ 'Email Template' }} </h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -23,7 +23,7 @@
                                     <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ __('app.email_template') }}
+                                    {{ 'Email Template' }}
                                 </li>
                             </ol>
                         </nav>
@@ -72,12 +72,12 @@
                             @method('patch')
                             <div class="row">
                                 <div class="col-md-12 mt-1">
-                                    <label for="email_template" class="mb-1"><strong>{{ __('app.description')
+                                    <label for="email_template" class="mb-1"><strong>{{ 'Description'
                                             }}</strong></label>
 
                                     <x-textarea-group :type="'text'"
                                         :value="old('email_template', getSetting('email_template') ?? '')"
-                                         :placeholder="__('app.enter_the_description')" :id="'email_template'">
+                                         :placeholder="'Enter the description'" :id="'email_template'">
                                     </x-textarea-group>
 
                                     @error('email_template')
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ __('app.update') }}
+                                        {{ 'Update' }}
                                     </x-primary-button>
                                 </div>
                             </div>

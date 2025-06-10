@@ -1,18 +1,18 @@
-<x-table :title="__('app.feature_highlight')" :addItemRoute="route('admin.feature-highlights.create')" :permissionName="App\Models\FeatureHighlight::CREATE">
+<x-table :title="'Feature Highlight'" :addItemRoute="route('admin.feature-highlights.create')" :permissionName="App\Models\FeatureHighlight::CREATE">
     <table class="table" id="featureHighlightTable">
         <thead>
             <tr>
-                <th>{{ __('app.image') }}</th>
-                <th>{{ __('app.title') }}</th>
-                <th>{{ __('app.description') }}</th> 
-                <th>{{ __('app.status') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Image' }}</th>
+                <th>{{ 'Title' }}</th>
+                <th>{{ 'Description' }}</th> 
+                <th>{{ 'Status' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
 
 </x-table>
-<x-modal-center :id="'detailsModal'" :modal_title="__('app.feature_highlight_details')" :method="'PUT'" :action="'javascript:void(0)'">
+<x-modal-center :id="'detailsModal'" :modal_title="'Feature Highlight Details'" :method="'PUT'" :action="'javascript:void(0)'">
     <div id="feature-highlight-details"></div>
 </x-modal-center>
 <script>
@@ -63,16 +63,16 @@
                             </td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.title') }}</th>
+                            <th class="p-2">{{ 'Title' }}</th>
                             <td class="p-2">${campaign['title']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.description') }}</th>
+                            <th class="p-2">{{ 'Description' }}</th>
                             <td class="p-2">${campaign['description']}</td>
                         </tr> 
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.status') }}</th>
-                            <td class="p-2">${campaign['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ __('app.enabled') }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ __('app.disabled') }}</span"}</td>
+                            <th class="p-2">{{ 'Status' }}</th>
+                            <td class="p-2">${campaign['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ 'Enabled' }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ 'Disabled' }}</span"}</td>
                         </tr>
                         
                     </table>
@@ -88,13 +88,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_change_the_status') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want change the status' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_update_it') }}",
+            confirmButtonText: "{{ 'Yes, Update it' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -110,17 +110,17 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Status has been updated!' }}",
                                 icon: 'success',
                             });
 
                             if (response.data.status) {
-                                $(btn).text("{{ __('app.enabled') }}");
+                                $(btn).text("{{ 'Enabled' }}");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ __('app.disabled') }}");
+                                $(btn).text("{{ 'Disabled' }}");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }
@@ -139,14 +139,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You will not be able to revert this!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_delete_it') }}",
-            cancelButtonText: "{{ __('app.cancel') }}",
+            confirmButtonText: "{{ 'Yes, delete it!' }}",
+            cancelButtonText: "{{ 'Cancel' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();

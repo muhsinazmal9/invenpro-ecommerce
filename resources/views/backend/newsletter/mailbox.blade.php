@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.news_letter'))
+@section('title', 'News Letter')
 @push('css')
 <style>
     .table-responsive {
@@ -22,7 +22,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ __('app.news_letter') }} </h2>
+                        <h2>{{ 'News Letter' }} </h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -34,7 +34,7 @@
                                     <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ __('app.news_letter') }}
+                                    {{ 'News Letter' }}
                                 </li>
                             </ol>
                         </nav>

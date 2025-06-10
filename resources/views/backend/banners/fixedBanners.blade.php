@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.banners'))
+@section('title', 'Banners')
 
 @section('content')
     <!-- ========== section start ========== -->
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.banners') }}
+                            <h2>{{ 'Banners' }}
                         </div>
                     </div>
                     <!-- end col -->
@@ -23,7 +23,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.banners') }}
+                                        {{ 'Banners' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -38,20 +38,20 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card-style mb-30">
-                        <h4 class="mb-10">{{ __('app.fixed_banners') }}</h4>
+                        <h4 class="mb-10">{{ 'Fixed Banners' }}</h4>
 
                         <div class="table-wrapper table-responsive">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>
-                                            <h6>{{ __('app.banner_name') }}</h6>
+                                            <h6>{{ 'Banner Name' }}</h6>
                                         </th>
                                         <th>
-                                            <h6>{{ __('app.banner_image') }}</h6>
+                                            <h6>{{ 'Banner Image' }}</h6>
                                         </th>
                                         <th>
-                                            <h6>{{ __('app.actions') }}</h6>
+                                            <h6>{{ 'Actions' }}</h6>
                                         </th>
                                     </tr>
                                     <!-- end table row-->

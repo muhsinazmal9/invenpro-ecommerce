@@ -1,24 +1,24 @@
-<x-table :title="__('app.order')" :addItemRoute="route('admin.orders.create')" :permissionName="''">
+<x-table :title="'Order'" :addItemRoute="route('admin.orders.create')" :permissionName="''">
     <table class="table" id="orderTable">
         <thead>
             <tr>
-                <th>{{ __('app.invoice_id') }}</th>
-                <th>{{ __('app.customer') }}</th>
-                <th>{{ __('app.email') }}</th>
-                <th>{{ __('app.amount') }}</th>
-                <th>{{ __('app.payment_method') }}</th>
-                <th>{{ __('app.payment_status') }}</th>
-                <th>{{ __('app.status') }}</th>
+                <th>{{ 'Invoice Id' }}</th>
+                <th>{{ 'Customer' }}</th>
+                <th>{{ 'Email' }}</th>
+                <th>{{ 'Amount' }}</th>
+                <th>{{ 'Payment Method' }}</th>
+                <th>{{ 'Payment Status' }}</th>
+                <th>{{ 'Status' }}</th>
                 @if (request()->input('cancel_request') == 'true')
-                    <th>{{ __('app.cancel_request') }}</th>
+                    <th>{{ 'Cancel Request' }}</th>
                 @endif
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
 
 </x-table>
-<x-modal-center :id="'detailsModal'" :modal_title="__('app.order_details')" :method="'PUT'" :action="'javascript:void(0)'">
+<x-modal-center :id="'detailsModal'" :modal_title="'Order Details'" :method="'PUT'" :action="'javascript:void(0)'">
 
     <div id="order-details"></div>
 </x-modal-center>
@@ -132,7 +132,7 @@
                     "{{ App\Models\Order::ORDER_STATUS['cancelled'] }}": "{{ Str::ucfirst(App\Models\Order::ORDER_STATUS['cancelled']) }}",
                 },
                 showCancelButton: true,
-                confirmButtonText: "{{ __('app.confirm') }}",
+                confirmButtonText: "{{ 'Confirm ' }}",
                 allowOutsideClick: () => !Swal.isLoading(),
                 showLoaderOnConfirm: true,
 
@@ -140,8 +140,8 @@
                 if (status.isConfirmed) {
 
                     Swal.fire({
-                        title: "{{ __('app.loading') }}",
-                        text: "{{ __('app.please_wait') }}",
+                        title: "{{ 'Loading...' }}",
+                        text: "{{ 'Please wait...' }}",
                         allowOutsideClick: false,
                         showConfirmButton: false,
                         willOpen: () => {
@@ -165,7 +165,7 @@
 
                                 setTimeout(() => {
                                     Swal.fire({
-                                        title: "{{ __('app.updated') }}",
+                                        title: "{{ 'Updated!' }}",
                                         text: response.message,
                                         icon: "success",
                                     });
@@ -176,7 +176,7 @@
 
                                 setTimeout(() => {
                                     Swal.fire({
-                                        title: "{{ __('app.error') }}",
+                                        title: "{{ 'Error' }}",
                                         text: response.message,
                                         icon: "error",
                                     });
@@ -187,7 +187,7 @@
                         error: function(response) {
                             setTimeout(() => {
                                 Swal.fire({
-                                    title: "{{ __('app.error') }}",
+                                    title: "{{ 'Error' }}",
                                     text: response.message,
                                     icon: "error",
                                 });
@@ -210,7 +210,7 @@
                     "3": "Reject",
                 },
                 showCancelButton: true,
-                confirmButtonText: "{{ __('app.confirm') }}",
+                confirmButtonText: "{{ 'Confirm ' }}",
                 allowOutsideClick: () => !Swal.isLoading(),
                 showLoaderOnConfirm: true,
 
@@ -218,8 +218,8 @@
                 if (status.isConfirmed) {
 
                     Swal.fire({
-                        title: "{{ __('app.loading') }}",
-                        text: "{{ __('app.please_wait') }}",
+                        title: "{{ 'Loading...' }}",
+                        text: "{{ 'Please wait...' }}",
                         allowOutsideClick: false,
                         showConfirmButton: false,
                         willOpen: () => {
@@ -243,7 +243,7 @@
 
                                 setTimeout(() => {
                                     Swal.fire({
-                                        title: "{{ __('app.updated') }}",
+                                        title: "{{ 'Updated!' }}",
                                         text: response.message,
                                         icon: "success",
                                     });
@@ -261,7 +261,7 @@
 
                                 setTimeout(() => {
                                     Swal.fire({
-                                        title: "{{ __('app.error') }}",
+                                        title: "{{ 'Error' }}",
                                         text: response.message,
                                         icon: "error",
                                     });
@@ -273,7 +273,7 @@
                         error: function(response) {
                             setTimeout(() => {
                                 Swal.fire({
-                                    title: "{{ __('app.error') }}",
+                                    title: "{{ 'Error' }}",
                                     text: response.message,
                                     icon: "error",
                                 });

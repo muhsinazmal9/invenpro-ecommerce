@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
-@section('title',request()->input('type') == 'popup' ? __('app.popup') : __('app.banners') )
-@section('title', __('app.banners'))
+@section('title',request()->input('type') == 'popup' ? 'Popup' : 'Banners' )
+@section('title', 'Banners')
 @push('css')
 <style>
     .table-responsive {

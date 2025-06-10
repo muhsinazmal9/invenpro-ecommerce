@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.business_settings'))
+@section('title', 'Business Settings')
 @section('content')
     <!-- ========== section start ========== -->
     <section class="section">
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.order_settings') }} </h2>
+                            <h2>{{ 'Order settings' }} </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -23,7 +23,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.order_settings') }}
+                                        {{ 'Order settings' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -47,10 +47,10 @@
                                 @method('patch')
                                 <div class="row">
                                     <div class="col-md-6 mt-1">
-                                        <label for="invoice_prefix" class="mb-1"><strong>{{ __('app.invoice_prefix') }}</strong></label>
+                                        <label for="invoice_prefix" class="mb-1"><strong>{{ 'Invoice Prefix' }}</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('invoice_prefix', getSetting('invoice_prefix') ?? '')" :name="'invoice_prefix'"
-                                            :placeholder="__('app.invoice_prefix')" :id="'invoice_prefix'">
+                                            :placeholder="'Invoice Prefix'" :id="'invoice_prefix'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -69,7 +69,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ __('app.update') }}
+                                            {{ 'Update' }}
                                         </x-primary-button>
                                     </div>
                                 </div>

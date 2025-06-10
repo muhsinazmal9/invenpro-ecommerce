@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', $page->title .' - '. __('app.pages'))
+@section('title', $page->title .' - '. 'Pages')
 @section('content')
     <style>
         .image-wrapper {
@@ -22,7 +22,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.pages') }}</h2>
+                            <h2>{{ 'Pages' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -34,7 +34,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.pages.index') }}">{{ __('app.pages') }}</a>
+                                        <a href="{{ route('admin.pages.index') }}">{{ 'Pages' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         {{ $page->title }}

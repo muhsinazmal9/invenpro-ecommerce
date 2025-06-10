@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.newsletter_details'))
+@section('title', 'Newsletter Details')
 @section('content')
 
 <!-- ========== section start ========== -->
@@ -11,7 +11,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ __('app.newsletter_details') }}</h2>
+                        <h2>{{ 'Newsletter Details' }}</h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -23,10 +23,10 @@
                                     <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                 </li>
                                 <li class="breadcrumb-item ">
-                                    <a href="{{ route('admin.newsletter.index') }}">{{ __('app.news_letter') }}</a>
+                                    <a href="{{ route('admin.newsletter.index') }}">{{ 'News Letter' }}</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ __('app.newsletter_details') }}
+                                    {{ 'Newsletter Details' }}
                                 </li>
                             </ol>
                         </nav>
@@ -44,18 +44,18 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="">
-                                <h4>{{ __('app.subject') }}: <u><em>{{ $newsletter->subject }}</em></u></h4>
+                                <h4>{{ 'Subject' }}: <u><em>{{ $newsletter->subject }}</em></u></h4>
 
                             </div>
                             <div class="mt-4">
-                                <h4>{{ __('app.body') }}</h4>
+                                <h4>{{ 'Body' }}</h4>
                                 {!! $newsletter->body !!}
                             </div>
                             <div class="mt-4">
-                                <h4>{{ __('app.created_at') }}: <u><em>{{ $newsletter->created_at->format('d/m/y') }}</em></u></h4>
+                                <h4>{{ 'Created at' }}: <u><em>{{ $newsletter->created_at->format('d/m/y') }}</em></u></h4>
                             </div>
                             <div>
-                                <h4>{{ __('app.status') }}
+                                <h4>{{ 'Status' }}
                                     &nbsp;
                                     @if($newsletter->status==1)
                                         <span class="success-btn-light fs-6" style='padding:2px 4px'>Sent</span>

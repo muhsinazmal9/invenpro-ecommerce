@@ -13,22 +13,22 @@
             <thead>
                 <tr>
                     <th>
-                        <h6 class="text-sm text-medium">{{ __('app.customer') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Customer' }}</h6>
                     </th>
                     <th>
-                        <h6 class="text-sm text-medium">{{ __('app.transaction_id') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Transaction ID' }}</h6>
                     </th>
                     <th class="min-width">
-                        <h6 class="text-sm text-medium">{{ __('app.payment_method') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Payment Method' }}</h6>
                     </th>
                     <th class="min-width">
-                        <h6 class="text-sm text-medium">{{ __('app.status') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Status' }}</h6>
                     </th>
                     <th class="min-width">
-                        <h6 class="text-sm text-medium">{{ __('app.created_at') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Created at' }}</h6>
                     </th>
                     <th class="min-width">
-                        <h6 class="text-sm text-medium">{{ __('app.amount') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Amount' }}</h6>
                     </th>
                 </tr>
             </thead>

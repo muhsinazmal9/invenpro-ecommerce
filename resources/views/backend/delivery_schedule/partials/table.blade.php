@@ -1,9 +1,9 @@
-<x-table :title="__('app.delivery_schedules')" >
+<x-table :title="'Delivery Schedules'" >
     <table class="table" id="deliveryscheduleTable">
         <thead>
             <tr>
-                <th>{{ __('app.name') }}</th>
-                <th>{{ __('app.status') }}</th>
+                <th>{{ 'Name' }}</th>
+                <th>{{ 'Status' }}</th>
             </tr>
         </thead>
     </table>
@@ -49,8 +49,8 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_change_the_status_of_this_delivery_schedule_status') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want to change the status of this delivery schedule status' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
@@ -71,8 +71,8 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Status has been updated!' }}",
                                 icon: 'success',
                             });
                             $('#deliveryscheduleTable').DataTable().ajax.reload();

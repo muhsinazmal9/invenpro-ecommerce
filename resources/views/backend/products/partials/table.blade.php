@@ -1,32 +1,32 @@
 <div class="mb-2 d-flex gap-2">
     <x-primary-anchor :href="route('admin.products.index')">
-        {{ __('app.all') }}
+        {{ 'All' }}
     </x-primary-anchor>
     <x-primary-anchor :href="route('admin.products.index') . '?query=topproduct'">
-        {{ __('app.top_products') }}
+        {{ 'Top Products' }}
     </x-primary-anchor>
     <x-primary-anchor :href="route('admin.products.index') . '?query=lowstock'">
-        {{ __('app.low_stock') }}
+        {{ 'Low Stock' }}
     </x-primary-anchor>
 </div>
-<x-table :title="__('app.products')" :addItemRoute="route('admin.products.create')" :permissionName="App\Models\PRODUCT::CREATE">
+<x-table :title="'Products'" :addItemRoute="route('admin.products.create')" :permissionName="App\Models\PRODUCT::CREATE">
     <table class="table" id="productsTable">
         <thead>
             <tr>
-                <th>{{ __('app.thumbnail') }}</th>
-                <th>{{ __('app.title') }}</th>
-                <th>{{ __('app.sku') }}</th>
-                <th>{{ __('app.price') }}</th>
-                <th>{{ __('app.stock') }}</th>
+                <th>{{ 'Thumbnail' }}</th>
+                <th>{{ 'Title' }}</th>
+                <th>{{ 'SKU' }}</th>
+                <th>{{ 'Price' }}</th>
+                <th>{{ 'Stock' }}</th>
                 <th>{{ 'Category' }}</th>
                 <th>{{ 'Subcategory' }}</th>
-                <th>{{ __('app.subsub_category') }}</th>
-                <th>{{ __('app.brand') }}</th>
-                <th>{{ __('app.featured') }}</th>
-                <th>{{ __('app.new_arrival') }}</th>
-                <th>{{ __('app.status') }}</th>
-                <th>{{ __('app.created_at') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Sub subcategory' }}</th>
+                <th>{{ 'Brand' }}</th>
+                <th>{{ 'Featured' }}</th>
+                <th>{{ 'New Arrival' }}</th>
+                <th>{{ 'Status' }}</th>
+                <th>{{ 'Created at' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
@@ -116,14 +116,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You will not be able to revert this!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_delete_it') }}",
-            cancelButtonText: "{{ __('app.cancel') }}",
+            confirmButtonText: "{{ 'Yes, delete it!' }}",
+            cancelButtonText: "{{ 'Cancel' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -137,8 +137,8 @@
                     success: function(response) {
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.deleted') }}",
-                                text: "{{ __('app.product_deleted_successfully') }}",
+                                title: "{{ 'Deleted' }}",
+                                text: "{{ 'Product deleted successfully' }}",
                                 icon: 'success',
                             });
 
@@ -159,13 +159,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_change_the_status_of_this_product') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want to change the status of this product?' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_update_it') }}",
+            confirmButtonText: "{{ 'Yes, Update it' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -181,18 +181,18 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Status has been updated!' }}",
                                 icon: 'success',
                             });
 
                             if (response.data.status ===
                                 "{{ App\Models\PRODUCT::STATUS['published'] }}") {
-                                $(btn).text("{{ __('app.published') }}");
+                                $(btn).text("{{ 'Published' }}");
                                 $(btn).removeClass('secondary-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ __('app.draft') }}");
+                                $(btn).text("{{ 'Draft' }}");
                                 $(btn).addClass('secondary-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }
@@ -211,13 +211,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.are_you_sure_to_update_featured_status') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'Are you sure to update featured status?' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_update_it') }}",
+            confirmButtonText: "{{ 'Yes, Update it' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -233,17 +233,17 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.featured_status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Featured status has been updated' }}",
                                 icon: 'success',
                             });
 
                             if (response.data.featured) {
-                                $(btn).text("{{ __('app.yes') }}");
+                                $(btn).text("{{ 'Yes' }}");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ __('app.no') }}");
+                                $(btn).text("{{ 'No' }}");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }
@@ -262,13 +262,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.are_you_sure_to_update_new_arrival_status') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'Are aou sure to update new arrival status' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_update_it') }}",
+            confirmButtonText: "{{ 'Yes, Update it' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -284,17 +284,17 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.new_arrival_status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'New arrival status has been updated' }}",
                                 icon: 'success',
                             });
 
                             if (response.data.new_arrival) {
-                                $(btn).text("{{ __('app.yes') }}");
+                                $(btn).text("{{ 'Yes' }}");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ __('app.no') }}");
+                                $(btn).text("{{ 'No' }}");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }

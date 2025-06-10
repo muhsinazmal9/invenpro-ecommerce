@@ -1,19 +1,19 @@
-<x-table :title="__('app.deal_products')">
+<x-table :title="'Deal Products'">
     <table class="table" id="dealsTable">
         <thead>
             <tr>
-                <th>{{ __('app.thumbnail') }}</th>
-                <th>{{ __('app.title') }}</th>
-                <th>{{ __('app.sku') }}</th>
-                <th>{{ __('app.price') }}</th>
-                <th>{{ __('app.stock') }}</th>
+                <th>{{ 'Thumbnail' }}</th>
+                <th>{{ 'Title' }}</th>
+                <th>{{ 'SKU' }}</th>
+                <th>{{ 'Price' }}</th>
+                <th>{{ 'Stock' }}</th>
                 <th>{{ 'Category' }}</th>
                 <th>{{ 'Subcategory' }}</th>
-                <th>{{ __('app.subsub_category') }}</th>
-                <th>{{ __('app.brand') }}</th>
-                <th>{{ __('app.featured') }}</th>
-                <th>{{ __('app.new_arrival') }}</th>
-                <th>{{ __('app.status') }}</th>
+                <th>{{ 'Sub subcategory' }}</th>
+                <th>{{ 'Brand' }}</th>
+                <th>{{ 'Featured' }}</th>
+                <th>{{ 'New Arrival' }}</th>
+                <th>{{ 'Status' }}</th>
             </tr>
         </thead>
     </table>

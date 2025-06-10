@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.business_settings'))
+@section('title', 'Business Settings')
 @section('content')
     <!-- ========== section start ========== -->
     <section class="section">
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.stock_settings') }} </h2>
+                            <h2>{{ 'Stock Settings' }} </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -23,7 +23,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.stock_settings') }}
+                                        {{ 'Stock Settings' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -47,10 +47,10 @@
                                 @method('patch')
                                 <div class="row">
                                     <div class="col-md-6 mt-1">
-                                        <label for="low_stock" class="mb-1"><strong>{{ __('app.minimum_products_for_alert') }}</strong></label>
+                                        <label for="low_stock" class="mb-1"><strong>{{ 'Minimum Products for Alert' }}</strong></label>
 
                                         <x-input-group :type="'number'" :value="old('low_stock', getSetting('low_stock') ?? '')" :name="'low_stock'"
-                                            :placeholder="__('app.minimum_products_for_alert')" :id="'low_stock'">
+                                            :placeholder="'Minimum Products for Alert'" :id="'low_stock'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -65,7 +65,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ __('app.update') }}
+                                            {{ 'Update' }}
                                         </x-primary-button>
                                     </div>
                                 </div>

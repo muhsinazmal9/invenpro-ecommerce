@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.edit_tag'))
+@section('title', 'Edit Tag')
 @section('content')
     <style>
         .image-wrapper {
@@ -22,7 +22,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.edit_tag') }}</h2>
+                            <h2>{{ 'Edit Tag' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -37,11 +37,11 @@
                                     </li>
                                     <li class="breadcrumb-item ">
                                         <a href="{{ route('admin.tags.index') }}">
-                                            {{ __('app.tags') }}
+                                            {{ 'Tags' }}
                                         </a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.edit') }}
+                                        {{ 'Edit' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -61,9 +61,9 @@
                             <div class="row">
                                 <div class="col-md-12 my-2">
                                     <label for="name" class="mb-1"><strong>
-                                            {{ __('app.title') }}
+                                            {{ 'Title' }}
                                         </strong></label>
-                                    <x-input-group :type="'text'" :value="old('title', $tag->title)" :name="'title'" :placeholder="__('app.enter_title_of_tag')"
+                                    <x-input-group :type="'text'" :value="old('title', $tag->title)" :name="'title'" :placeholder="'Enter title of tag'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -75,11 +75,11 @@
                                     @if ($tag->status == '1')
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'"
                                             :checked="'status'">
-                                            {{ __('app.status') }}
+                                            {{ 'Status' }}
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                            {{ __('app.status') }}
+                                            {{ 'Status' }}
                                         </x-success-checkbox>
                                     @endif
                                     @error('status')
@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ __('app.update') }}
+                                        {{ 'Update' }}
                                     </x-primary-button>
                                 </div>
                             </div>

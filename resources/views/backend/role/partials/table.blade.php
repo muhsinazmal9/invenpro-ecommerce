@@ -1,5 +1,5 @@
 <x-table
-    :title="__('app.roles')"
+    :title="'Roles'"
     :addItemRoute="route('admin.role.create')"
     :permissionName="'create_role'"
 >
@@ -68,13 +68,13 @@
             .getAttribute("content");
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You will not be able to revert this!' }}",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "{{ __('app.yes_delete_it') }}",
+            confirmButtonText: "{{ 'Yes, delete it!' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();

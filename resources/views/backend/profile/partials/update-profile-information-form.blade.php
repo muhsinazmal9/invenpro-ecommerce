@@ -28,7 +28,7 @@
             <div class="col-md-12 my-1">
                 <x-primary-button :type="'submit'">
                     <span class="mdi mdi-content-save-settings"></span>
-                    {{ __('app.save') }}
+                    {{ 'Save' }}
                 </x-primary-button>
             </div>
 

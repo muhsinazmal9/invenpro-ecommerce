@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title',(request()->input('type') == 'popup') ? __('app.edit_popup') : __('app.edit_banner'))
+@section('title',(request()->input('type') == 'popup') ? __('app.edit_popup') : 'Edit Banner')
 @php
     $bannerWidth = 680;
     $bannerHeight = 465;
@@ -49,7 +49,7 @@
                         <div class="title">
                             @php
                                 $type = request()->input('type');
-                                $editTitle = $banner->type == \App\Enums\BannerTypeEnum::FIXED->value ? 'Edit' . ' ' . $banner->banner_name : __('app.edit_banner');
+                                $editTitle = $banner->type == \App\Enums\BannerTypeEnum::FIXED->value ? 'Edit' . ' ' . $banner->banner_name : 'Edit Banner';
                                 $title = ($type == 'popup') ? __('app.edit_popup') : $editTitle;
                             @endphp
 
@@ -68,7 +68,7 @@
                                         @php
                                             $isFixed = $banner->type == \App\Enums\BannerTypeEnum::FIXED->value ? true : false;
                                         @endphp
-                                        <a href="{{ $isFixed ? route('admin.banner.fixedBanners') : route('admin.banner.index') }}">{{ __('app.banners') }}</a>
+                                        <a href="{{ $isFixed ? route('admin.banner.fixedBanners') : route('admin.banner.index') }}">{{ 'Banners' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
                                         <a href="{{ route('admin.banner.index').((request()->input('type') == 'popup') ? '?type=popup' : '') }}">{{
@@ -92,7 +92,7 @@
                             @method('PATCH')
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="title" class="mb-1"><strong>{{ __('app.title') }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
                                     <x-input-group :type="'text'" :value="old('title', $banner->title)" :name="'title'" :placeholder="'Enter title of banner'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -104,8 +104,8 @@
                                 @if($banner->type == \App\Enums\BannerTypeEnum::FIXED->value)
                                 <!-- short description -->
                                 <div class="col-md-6 my-2">
-                                    <label for="short_description" class="mb-1"><strong>{{ __('app.short_description') }}</strong></label>
-                                    <x-textarea-group :placeholder="__('app.enter_short_description')" :name="'short_description'" :id="'short_description'">
+                                    <label for="short_description" class="mb-1"><strong>{{ 'Short Description' }}</strong></label>
+                                    <x-textarea-group :placeholder="'Enter short description'" :name="'short_description'" :id="'short_description'">
                                         {{ old('short_description', $banner->short_description) }} </x-textarea-group>
                                     @error('short_description')
                                         <span class="text-danger">{{ $message }}</span>
@@ -113,8 +113,8 @@
                                 </div>
                                 @endif
                                 <div class="col-md-6 my-2">
-                                    <label for="link" class="mb-1"><strong>{{ __('app.link') }}</strong></label>
-                                    <x-input-group :type="'url'" :value="old('link', $banner->link)" :name="'link'" :placeholder="__('app.enter_link_of_banner')"
+                                    <label for="link" class="mb-1"><strong>{{ 'Link' }}</strong></label>
+                                    <x-input-group :type="'url'" :value="old('link', $banner->link)" :name="'link'" :placeholder="'Enter link of banner'"
                                         :id="'link'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -124,9 +124,9 @@
                                 </div>
                                 @if($banner->type == 'popup')
                                 <div class="col-md-6 my-2">
-                                    <label for="countdown_start" class="mb-1"><strong>{{ __('app.countdown_start') }}</strong></label>
+                                    <label for="countdown_start" class="mb-1"><strong>{{ 'Countdown Start' }}</strong></label>
                                     <x-input-group :type="'datetime-local'" :value="old('countdown_start', $banner->countdown_start)" :name="'countdown_start'"
-                                        :placeholder="__('app.enter_link_of_banner')" :id="'countdown_start'">
+                                        :placeholder="'Enter link of banner'" :id="'countdown_start'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
                                     @error('countdown_start')
@@ -134,9 +134,9 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="countdown_end" class="mb-1"><strong>{{ __('app.countdown_end') }}</strong></label>
+                                    <label for="countdown_end" class="mb-1"><strong>{{ 'Countdown End' }}</strong></label>
                                     <x-input-group :type="'datetime-local'" :value="old('countdown_start', $banner->countdown_end)" :name="'countdown_end'"
-                                        :placeholder="__('app.enter_link_of_banner')" :id="'countdown_end'">
+                                        :placeholder="'Enter link of banner'" :id="'countdown_end'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
                                     @error('countdown_end')
@@ -148,7 +148,7 @@
                                 <div class="col-md-12 my-2">
 
                                     <label for="image"
-                                        class="mb-1"><strong>{{ __('app.choose_an_image') }}</strong></label>
+                                        class="mb-1"><strong>{{ 'Choose an image' }}</strong></label>
                                     <div class="image-wrapper border-red-500 cursor-pointer">
                                         <label for="image_input">
                                             <input type="hidden" name="image" id="image"
@@ -170,12 +170,12 @@
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                             id="change_image">
                                             <span class="mdi mdi-file-image"></span>
-                                            {{ __('app.change_image') }}
+                                            {{ 'Change Image' }}
                                         </button>
                                         <button type="button" class="main-btn danger-btn btn-hover btn-sm"
                                             id="reset_image">
                                             <span class="mdi mdi-refresh"></span>
-                                            {{ __('app.reset') }}
+                                            {{ 'Reset' }}
                                         </button>
                                     </div>
 
@@ -188,11 +188,11 @@
                                         @if ($banner->status)
                                             <x-success-checkbox :id="'status'" :value="'1'" :name="'status'"
                                                 :checked="'status'">
-                                                {{ __('app.status') }}
+                                                {{ 'Status' }}
                                             </x-success-checkbox>
                                         @else
                                             <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                                {{ __('app.status') }}
+                                                {{ 'Status' }}
                                             </x-success-checkbox>
                                         @endif
                                         @error('status')
@@ -202,7 +202,7 @@
                                 @endif
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ __('app.update') }}
+                                        {{ 'Update' }}
                                     </x-primary-button>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.business_settings'))
+@section('title', 'Business Settings')
 @push('css')
 <style>
     .table-responsive {
@@ -33,7 +33,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ __('app.tax_settings') }} </h2>
+                        <h2>{{ 'TAX Settings' }} </h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -45,7 +45,7 @@
                                     <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ __('app.tax_settings') }}
+                                    {{ 'TAX Settings' }}
                                 </li>
                             </ol>
                         </nav>
@@ -66,13 +66,13 @@
                     <div class="card-body">
                         <div class="title-section d-flex justify-content-between w-100">
                             <div class="title ">
-                                <h3>{{ __('app.tax_settings') }}</h3>
+                                <h3>{{ 'TAX Settings' }}</h3>
                             </div>
                             <div class="title">
                                 <button class='main-btn primary-btn icon-btn btn-hover btn-sm details-btn'
                                     data-bs-toggle='modal' data-bs-target='#createModal'>
                                     <i class="fas fa-plus"></i>
-                                    {{ __('app.add_tax') }}
+                                    {{ 'Add TAX' }}
                                 </button>
                             </div>
                         </div>
@@ -80,11 +80,11 @@
                             <table class="table" id="taxTable">
                                 <thead>
                                     <tr>
-                                        <th>{{ __('app.code') }}</th>
-                                        <th>{{ __('app.rate') }}</th>
-                                        <th>{{ __('app.status') }}</th>
-                                        <th>{{ __('app.created_at') }}</th>
-                                        <th>{{ __('app.actions') }}</th>
+                                        <th>{{ 'Code' }}</th>
+                                        <th>{{ 'Rate' }}</th>
+                                        <th>{{ 'Status' }}</th>
+                                        <th>{{ 'Created at' }}</th>
+                                        <th>{{ 'Actions' }}</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -99,13 +99,13 @@
 
 
 {{-- Create Modal --}}
-<x-modal-center :id="'createModal'" :modal_title="__('app.create_tax')" :method="'PUT'" :action="'javascript:void(0)'">
+<x-modal-center :id="'createModal'" :modal_title="'Create Tax'" :method="'PUT'" :action="'javascript:void(0)'">
 
     @csrf
     <div class="row">
         <div class="col-md-6">
-            <label for="code" class="mb-1"><strong>{{ __('app.code') }}</strong></label>
-            <x-input-group :type="'text'" :value="''" :name="'code'" :placeholder="__('app.enter_tax_code')"
+            <label for="code" class="mb-1"><strong>{{ 'Code' }}</strong></label>
+            <x-input-group :type="'text'" :value="''" :name="'code'" :placeholder="'Enter TAX code'"
                 :id="'code'" :class="'codeInput'">
                 <span class="mdi mdi-shape"></span>
             </x-input-group>
@@ -113,9 +113,9 @@
             <span class="text-danger tax_code_error"></span>
         </div>
         <div class="col-md-6">
-            <label for="rate" class="mb-1"><strong>{{ __('app.rate') }}</strong></label>
+            <label for="rate" class="mb-1"><strong>{{ 'Rate' }}</strong></label>
             <x-input-group :max="100" :min="0" :type="'number'" :step="'any'" :value="''" :name="'text'"
-                :placeholder="__('app.enter_tax_rate')" :id="'rate'">
+                :placeholder="'Enter TAX rate'" :id="'rate'">
                 <span class="mdi mdi-shape"></span>
             </x-input-group>
 
@@ -123,25 +123,25 @@
         </div>
         <div class="col-md-6">
             <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                {{ __('app.status') }}
+                {{ 'Status' }}
             </x-success-checkbox>
         </div>
 
         <div class="col-md-12 mt-3 text-center">
             <x-primary-button :id="'tax_create_btn'" :type="'submit'" :style="'padding:8px 50px'">
-                {{ __('app.save') }}
+                {{ 'Save' }}
             </x-primary-button>
         </div>
     </div>
 </x-modal-center>
 
 {{-- Edit Modal --}}
-<x-modal-center :id="'editModal'" :modal_title="__('app.edit_tax')" :method="'PUT'" :action="'javascript:void(0)'">
+<x-modal-center :id="'editModal'" :modal_title="'Edit Tax'" :method="'PUT'" :action="'javascript:void(0)'">
     @csrf
     <div class="row">
         <div class="col-md-6">
-            <label for="code" class="mb-1"><strong>{{ __('app.code') }}</strong></label>
-            <x-input-group :type="'text'" :name="'codeEdit'" :placeholder="__('app.enter_tax_code')" :id="'codeEdit'"
+            <label for="code" class="mb-1"><strong>{{ 'Code' }}</strong></label>
+            <x-input-group :type="'text'" :name="'codeEdit'" :placeholder="'Enter TAX code'" :id="'codeEdit'"
                 :class="'codeInput'">
                 <span class="mdi mdi-shape"></span>
             </x-input-group>
@@ -149,9 +149,9 @@
             <span class="text-danger tax_edit_code_error"></span>
         </div>
         <div class="col-md-6">
-            <label for="rate" class="mb-1"><strong>{{ __('app.rate') }}</strong></label>
+            <label for="rate" class="mb-1"><strong>{{ 'Rate' }}</strong></label>
             <x-input-group :max="100" :min="0" :type="'number'" :step="'any'" :name="'rateEdit'"
-                :placeholder="__('app.enter_tax_rate')" :id="'rateEdit'">
+                :placeholder="'Enter TAX rate'" :id="'rateEdit'">
                 <span class="mdi mdi-shape"></span>
             </x-input-group>
 
@@ -159,13 +159,13 @@
         </div>
         <div class="col-md-6">
             <x-success-checkbox :id="'statusEdit'" :value="'1'" :name="'statusEdit'">
-                {{ __('app.status') }}
+                {{ 'Status' }}
             </x-success-checkbox>
         </div>
 
         <div class="col-md-12 mt-3 text-center">
             <x-primary-button :id="'tax_update_btn'" :type="'submit'" :style="'padding:8px 50px'">
-                {{ __('app.update') }}
+                {{ 'Update' }}
             </x-primary-button>
         </div>
     </div>
@@ -401,14 +401,14 @@
             let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
             Swal.fire({
-                title: "{{ __('app.are_you_sure') }}",
-                text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+                title: "{{ 'Are you sure?' }}",
+                text: "{{ 'You will not be able to revert this!' }}",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: "{{ __('app.yes_delete_it') }}",
-                cancelButtonText: "{{ __('app.cancel') }}",
+                confirmButtonText: "{{ 'Yes, delete it!' }}",
+                cancelButtonText: "{{ 'Cancel' }}",
             }).then((result) => {
                 if (result.value) {
                     event.preventDefault();
@@ -427,13 +427,13 @@
             let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
             Swal.fire({
-                title: "{{ __('app.are_you_sure') }}",
-                text: "{{ __('app.you_want_to_change_the_status_of_this_tax_settings') }}",
+                title: "{{ 'Are you sure?' }}",
+                text: "{{ 'You want to change the status of this TAX settings?' }}",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: "{{ __('app.yes_update_it') }}",
+                confirmButtonText: "{{ 'Yes, Update it' }}",
             }).then((result) => {
                 if (result.value) {
                     event.preventDefault();
@@ -447,8 +447,8 @@
 
                             if (response.success) {
                                 Swal.fire({
-                                    title: "{{ __('app.updated') }}",
-                                    text: "{{ __('app.tax_status_has_been_updated') }}",
+                                    title: "{{ 'Updated!' }}",
+                                    text: "{{ 'Tax status has been updated' }}",
                                     icon: 'success',
                                 });
 

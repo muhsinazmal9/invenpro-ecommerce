@@ -2,11 +2,11 @@
     <table class="table" id="pagesTable">
         <thead>
             <tr>
-                <th>{{ __('app.title') }}</th>
-                <th>{{ __('app.slug') }}</th>
-                <th>{{ __('app.status') }}</th>
-                <th>{{ __('app.created_at') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Title' }}</th>
+                <th>{{ 'Slug' }}</th>
+                <th>{{ 'Status' }}</th>
+                <th>{{ 'Created at' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
@@ -94,8 +94,8 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_change_the_status_of_this_page') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want to change the status of this page!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
@@ -116,17 +116,17 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Status has been updated!' }}",
                                 icon: 'success',
                             });
 
                             if (response.data.status) {
-                                $(btn).text("{{ __('app.enabled') }}");
+                                $(btn).text("{{ 'Enabled' }}");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ __('app.disabled') }}");
+                                $(btn).text("{{ 'Disabled' }}");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }

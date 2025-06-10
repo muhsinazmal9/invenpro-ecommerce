@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.create_campaign'))
+@section('title', 'Create Campaign')
 @push('css')
     <link rel="stylesheet" href="{{ asset('assets/backend/css/image_cropper.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.4.1/croppie.min.js"></script>
@@ -39,7 +39,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.edit') }}</h2>
+                            <h2>{{ 'Edit' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -51,10 +51,10 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.campaign.index') }}">{{ __('app.campaigns') }}</a>
+                                        <a href="{{ route('admin.campaign.index') }}">{{ 'Campaigns' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.edit') }}
+                                        {{ 'Edit' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -74,8 +74,8 @@
                             @method('patch')
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="title" class="mb-1"><strong>{{ __('app.title') }}</strong></label>
-                                    <x-input-group :type="'text'" :value="old('title', $campaign->title)" :name="'title'" :placeholder="__('app.enter_title_of_campaign')"
+                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <x-input-group :type="'text'" :value="old('title', $campaign->title)" :name="'title'" :placeholder="'Enter title of campaign'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -85,8 +85,8 @@
                                 </div>
                                 <div class="col-md-6 my-2">
                                     <label for="discount"
-                                        class="mb-1"><strong>{{ __('app.discount_upto') }}</strong></label>
-                                    <x-input-group :type="'number'" :value="old('discount', $campaign->discount)" :name="'discount'" :placeholder="__('app.enter_discount_of_campaign')"
+                                        class="mb-1"><strong>{{ 'Discount up to' }}</strong></label>
+                                    <x-input-group :type="'number'" :value="old('discount', $campaign->discount)" :name="'discount'" :placeholder="'Enter discount of campaign'"
                                         :id="'discount'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -96,12 +96,12 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <x-input-select :label="__('app.discount_type')" :name="'discount_type'" :id="'discount_type'"
+                                    <x-input-select :label="'Discount Type'" :name="'discount_type'" :id="'discount_type'"
                                         :value="old('discount', $campaign->discount_type)">
 
-                                        <option value="FIXED" @selected(old('discount_type') == 'FIXED')>{{ __('app.fixed') }}</option>
+                                        <option value="FIXED" @selected(old('discount_type') == 'FIXED')>{{ 'Fixed' }}</option>
                                         <option value="PERCENTAGE" @selected(old('discount_type') == 'PERCENTAGE')>
-                                            {{ __('app.percentage') }}
+                                            {{ 'PERCENTAGE' }}
                                         </option>
 
                                     </x-input-select>
@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="col-md-6 my-2">
                                     <label for="start_date"
-                                        class="mb-1"><strong>{{ __('app.start_date') }}</strong></label>
+                                        class="mb-1"><strong>{{ 'Start Date' }}</strong></label>
                                     <x-input-group :type="'date'" :value="old('start_date', $campaign->start_date)" :name="'start_date'"
                                         :placeholder="__('app.enter_start_date_of_campaign')" :id="'start_date'">
                                         <span class="mdi mdi-shape"></span>
@@ -124,7 +124,7 @@
                                 </div>
                                 <div class="col-md-6 my-2">
                                     <label for="start_time"
-                                        class="mb-1"><strong>{{ __('app.start_time') }}</strong></label>
+                                        class="mb-1"><strong>{{ 'Start Time' }}</strong></label>
                                     <x-input-group :type="'time'" :value="old('start_time', $campaign->start_time)" :name="'start_time'"
                                         :placeholder="__('app.enter_start_time')" :id="'start_time'">
                                         <span class="mdi mdi-shape"></span>
@@ -135,7 +135,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="end_date" class="mb-1"><strong>{{ __('app.end_date') }}</strong></label>
+                                    <label for="end_date" class="mb-1"><strong>{{ 'End Date' }}</strong></label>
                                     <x-input-group :type="'date'" :value="old('end_date', $campaign->end_date)" :name="'end_date'"
                                         :placeholder="__('app.enter_end_date_of_campaign')" :id="'end_date'">
                                         <span class="mdi mdi-shape"></span>
@@ -146,7 +146,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="end_time" class="mb-1"><strong>{{ __('app.end_time') }}</strong></label>
+                                    <label for="end_time" class="mb-1"><strong>{{ 'End Time' }}</strong></label>
                                     <x-input-group :type="'time'" :value="old('end_time', $campaign->end_time)" :name="'end_time'"
                                         :placeholder="__('app.enter_end_time')" :id="'end_time'">
                                         <span class="mdi mdi-shape"></span>
@@ -158,7 +158,7 @@
                                 </div>
                                 <div class="col-md-12 my-2">
                                     <label for="image"
-                                        class="mb-1"><strong>{{ __('app.change_image') }}</strong></label>
+                                        class="mb-1"><strong>{{ 'Change Image' }}</strong></label>
                                     <div class="image-wrapper border-red-500 cursor-pointer">
                                         <label for="image_input">
                                             <input type="hidden" name="image" id="image"
@@ -173,12 +173,12 @@
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                             id="change_image">
                                             <span class="mdi mdi-file-image"></span>
-                                            {{ __('app.change_image') }}
+                                            {{ 'Change Image' }}
                                         </button>
                                         <button type="button" class="main-btn danger-btn btn-hover btn-sm"
                                             id="reset_image">
                                             <span class="mdi mdi-refresh"></span>
-                                            {{ __('app.reset') }}
+                                            {{ 'Reset' }}
                                         </button>
                                     </div>
                                     @error('image')
@@ -189,11 +189,11 @@
                                     @if ($campaign->status == '1')
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'"
                                             :checked="'status'">
-                                            {{ __('app.status') }}
+                                            {{ 'Status' }}
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                            {{ __('app.status') }}
+                                            {{ 'Status' }}
                                         </x-success-checkbox>
                                     @endif
                                     @error('status')
@@ -202,7 +202,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ __('app.update') }}
+                                        {{ 'Update' }}
                                     </x-primary-button>
                                 </div>
                             </div>

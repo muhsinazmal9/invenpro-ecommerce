@@ -29,13 +29,13 @@
         <li class="divider"></li>
         <li>
             <a href="{{ route('admin.profile.edit') }}">
-                <i class="lni lni-user"></i> {{ __('app.view_profile') }}
+                <i class="lni lni-user"></i> {{ 'View Profile' }}
             </a>
         </li>
         <li class="divider"></li>
         <li>
             <a onclick="document.getElementById('logout_form').submit()" href="javascript:void(0)"> <i
-                    class="lni lni-exit"></i> {{ __('app.sign_out') }} </a>
+                    class="lni lni-exit"></i> {{ 'Sign Out' }} </a>
             <form id="logout_form" action="{{ route('logout') }}" method="POST">
                 @csrf
             </form>

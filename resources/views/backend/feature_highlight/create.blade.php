@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.create_feature_highlight'))
+@section('title', 'Create Feature Highlight')
 @push('css')
     <link rel="stylesheet" href="{{ asset('assets/backend/css/image_cropper.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.4.1/croppie.min.js"></script>
@@ -37,7 +37,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.feature_highlight') }}</h2>
+                            <h2>{{ 'Feature Highlight' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -49,10 +49,10 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.feature-highlights.index') }}">{{ __('app.feature_highlight') }}</a>
+                                        <a href="{{ route('admin.feature-highlights.index') }}">{{ 'Feature Highlight' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.create') }}
+                                        {{ 'Create' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -70,8 +70,8 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="title" class="mb-1"><strong>{{ __('app.title') }}</strong></label>
-                                    <x-input-group :type="'text'" :value="old('title')" :name="'title'" :placeholder="__('app.enter_title_of_campaign')"
+                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <x-input-group :type="'text'" :value="old('title')" :name="'title'" :placeholder="'Enter title of campaign'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -80,8 +80,8 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="description" class="mb-1"><strong>{{ __('app.description') }}</strong></label>
-                                    <x-input-group :type="'text'" :value="old('description')" :name="'description'" :placeholder="__('app.enter_description_of_feature_highlight')"
+                                    <label for="description" class="mb-1"><strong>{{ 'Description' }}</strong></label>
+                                    <x-input-group :type="'text'" :value="old('description')" :name="'description'" :placeholder="'Enter description of feature highlight'"
                                         :id="'description'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -91,7 +91,7 @@
                                 </div> 
                                 <div class="col-md-12 my-2">
                                     <label for="image"
-                                        class="mb-1"><strong>{{ __('app.choose_an_image') }}</strong></label>
+                                        class="mb-1"><strong>{{ 'Choose an image' }}</strong></label>
                                     <div class="image-wrapper border-red-500 cursor-pointer">
                                         <label for="image_input">
                                             <input type="hidden" name="image" id="image"
@@ -108,12 +108,12 @@
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                             id="choose_image">
                                             <span class="mdi mdi-file-image"></span>
-                                            {{ __('app.choose_image') }}
+                                            {{ 'Choose Image' }}
                                         </button>
                                         <button type="button" class="main-btn danger-btn btn-hover btn-sm"
                                             id="reset_image">
                                             <span class="mdi mdi-refresh"></span>
-                                            {{ __('app.reset') }}
+                                            {{ 'Reset' }}
                                         </button>
                                     </div>
                                     @error('image')
@@ -122,7 +122,7 @@
                                 </div>
                                 <div class="col-md-12 my-2">
                                     <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                        {{ __('app.status') }}
+                                        {{ 'Status' }}
                                     </x-success-checkbox>
                                     @error('status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -130,7 +130,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ __('app.create') }}
+                                        {{ 'Create' }}
                                     </x-primary-button>
                                 </div>
                             </div>

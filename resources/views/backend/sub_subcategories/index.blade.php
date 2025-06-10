@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.subsubcategories'))
+@section('title', 'Sub Subcategories')
 @push('css')
 <style>
     .table-responsive {
@@ -22,7 +22,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.subsubcategories') }}</h2>
+                            <h2>{{ 'Sub Subcategories' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -34,7 +34,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.subsubcategories') }}
+                                        {{ 'Sub Subcategories' }}
                                     </li>
                                 </ol>
                             </nav>

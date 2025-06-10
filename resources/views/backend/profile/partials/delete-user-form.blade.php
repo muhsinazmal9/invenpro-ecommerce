@@ -3,7 +3,7 @@
         {{ __('auth.account_delete_warning') }}
     </p>
     <button data-bs-toggle="modal" data-bs-target="#exampleModal"
-        class="main-btn danger-btn btn-hover btn-sm rounded-full">{{ __('app.delete_account') }}</button>
+        class="main-btn danger-btn btn-hover btn-sm rounded-full">{{ 'Delete Account' }}</button>
 
     <x-modal-center :success_btn="'Delete'" :id="'exampleModal'" :modal_title="__('auth.security_check')" :method="'POST'" :methodSecond="'delete'"
         :action="route('admin.profile.destroy')">

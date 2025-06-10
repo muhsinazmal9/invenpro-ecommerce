@@ -56,7 +56,7 @@ class SubscriberService
             if (! empty($subscribers)) {
                 foreach ($subscribers as $subscriber) {
 
-                    $subscriberStatus = $subscriber->is_subscribed ? __('app.subscribed') : __('app.unsubscribed');
+                    $subscriberStatus = $subscriber->is_subscribed ? 'Subscribed' : 'Unsubscribed';
                     $subscriberStatusClass = $subscriber->is_subscribed ? 'success' : 'danger';
                     $status = "<button class='main-btn {$subscriberStatusClass}-btn-light btn-hover btn-sm' style='padding:4px 20px' type='button' onclick=toggleSubscribe('{$subscriber->token}',this) >{$subscriberStatus}</button>";
                     $deleteBtn = "<button type='button' onclick=deleteSubscriber('{$subscriber->token}',this.parentElement.parentElement)  class='main-btn danger-btn btn-hover btn-sm delete-btn'><i class='mdi mdi-trash-can-outline'></i></button>";
@@ -74,7 +74,7 @@ class SubscriberService
                 'data' => $data,
             ];
 
-            return success(__('app.news_letter_list'), $json_data);
+            return success('News letter list', $json_data);
         } catch (\Exception $e) {
             logError('Newsletter List Error', $e);
 
@@ -93,7 +93,7 @@ class SubscriberService
                 'token' => Str::random(20).'--'.Str::random(15),
             ]);
 
-            return success(__('app.subscriber_created_successfully'));
+            return success('Subscriber created successfully');
         } catch (\Exception $e) {
             logError('Subscriber Store error:', $e);
 

@@ -36,7 +36,7 @@
                             <i class="lni lni-cart-full"></i>
                         </div>
                         <div class="content">
-                            <h6 class="mb-10">{{ __('app.new_orders') }}</h6>
+                            <h6 class="mb-10">{{ 'New Orders' }}</h6>
                             <h3 class="text-bold mb-10">{{ $newOrder }}</h3>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             <i class="lni lni-dollar"></i>
                         </div>
                         <div class="content">
-                            <h6 class="mb-10">{{ __('app.total_income') }}</h6>
+                            <h6 class="mb-10">{{ 'Total Income' }}</h6>
                             <h3 class="text-bold mb-10">{{ getSetting('currency_symbol').number_format($totalIncome, 2) }}</h3>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                             <i class="lni lni-credit-cards"></i>
                         </div>
                         <div class="content">
-                            <h6 class="mb-10">{{ __('app.total_expense') }}</h6>
+                            <h6 class="mb-10">{{ 'Total Expense' }}</h6>
                             <h3 class="text-bold mb-10">0</h3>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                             <i class="lni lni-user"></i>
                         </div>
                         <div class="content">
-                            <h6 class="mb-10">{{ __('app.total_customer') }}</h6>
+                            <h6 class="mb-10">{{ 'Total Customer' }}</h6>
                             <h3 class="text-bold mb-10">{{ $totalCustomer }}</h3>
                         </div>
                     </div>

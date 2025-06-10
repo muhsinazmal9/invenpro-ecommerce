@@ -10,54 +10,54 @@ $sidebarItems = [
     ],
     [
         'type' => 'dropdown',
-        'name' => __('app.orders'),
+        'name' => 'Orders',
         'id' => 'orders',
         'icon' => 'mdi mdi-shape',
         'active' => Route::is('admin.orders.*'),
         'children' => [
             [
-                'name' => __('app.all_orders'),
+                'name' => 'All Orders',
                 'route' => 'admin.orders.index',
                 'permission' => App\Models\Order::LIST,
                 'active' => Route::is('admin.orders.index') && !request()->has('status') && !request()->has('cancel_request'),
             ],
             [
-                'name' => __('app.placed'),
+                'name' => 'Placed',
                 'route' => 'admin.orders.index',
                 'query' => '?status=placed',
                 'permission' => App\Models\Order::LIST,
                 'active' => Route::is('admin.orders.index') && request()->get('status') === 'placed',
             ],
             [
-                'name' => __('app.approved'),
+                'name' => 'Approved',
                 'route' => 'admin.orders.index',
                 'query' => '?status=approved',
                 'permission' => App\Models\Order::LIST,
                 'active' => Route::is('admin.orders.index') && request()->get('status') === 'approved',
             ],
             [
-                'name' => __('app.shipped'),
+                'name' => 'Shipped',
                 'route' => 'admin.orders.index',
                 'query' => '?status=shipped',
                 'permission' => App\Models\Order::LIST,
                 'active' => Route::is('admin.orders.index') && request()->get('status') === 'shipped',
             ],
             [
-                'name' => __('app.delivered'),
+                'name' => 'Delivered',
                 'route' => 'admin.orders.index',
                 'query' => '?status=delivered',
                 'permission' => App\Models\Order::LIST,
                 'active' => Route::is('admin.orders.index') && request()->get('status') === 'delivered',
             ],
             [
-                'name' => __('app.cancelled'),
+                'name' => 'Cancelled',
                 'route' => 'admin.orders.index',
                 'query' => '?status=cancelled',
                 'permission' => App\Models\Order::LIST,
                 'active' => Route::is('admin.orders.index') && request()->get('status') === 'cancelled',
             ],
             [
-                'name' => __('app.cancel_request') . (getTotalCancelRequestCount() ? "<span class='pro-badge'>" . getTotalCancelRequestCount() . "</span>" : ''),
+                'name' => 'Cancel Request' . (getTotalCancelRequestCount() ? "<span class='pro-badge'>" . getTotalCancelRequestCount() . "</span>" : ''),
                 'route' => 'admin.orders.index',
                 'query' => '?cancel_request=true',
                 'permission' => App\Models\Order::CANCEL_REQUEST_APPROVE,
@@ -75,7 +75,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.subcategories'),
+        'name' => 'Subcategories',
         'route' => 'admin.subcategory.index',
         'icon' => 'mdi mdi-shape',
         'permission' => App\Models\Subcategory::LIST,
@@ -83,7 +83,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.subsubcategories'),
+        'name' => 'Sub Subcategories',
         'route' => 'admin.subsub-category.index',
         'icon' => 'mdi mdi-shape',
         'permission' => App\Models\SubsubCategory::LIST,
@@ -91,7 +91,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.deals'),
+        'name' => 'Deals',
         'route' => 'admin.deals.index',
         'icon' => 'mdi mdi-shape',
         'permission' => App\Models\Deal::LIST,
@@ -99,7 +99,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.brands'),
+        'name' => 'Brands',
         'route' => 'admin.brand.index',
         'icon' => 'mdi mdi-shape',
         'permission' => App\Models\Brand::LIST,
@@ -107,7 +107,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.products'),
+        'name' => 'Products',
         'route' => 'admin.products.index',
         'icon' => 'mdi mdi-shape',
         'permission' => App\Models\Product::LIST,
@@ -115,7 +115,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.promos'),
+        'name' => 'Promos',
         'route' => 'admin.promo.index',
         'icon' => 'mdi mdi-shape',
         'permission' => App\Models\Campaign::LIST,
@@ -123,7 +123,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.campaigns'),
+        'name' => 'Campaigns',
         'route' => 'admin.campaign.index',
         'icon' => 'mdi mdi-shape',
         'permission' => App\Models\Promo::LIST,
@@ -131,7 +131,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.delivery_schedules'),
+        'name' => 'Delivery Schedules',
         'route' => 'admin.delivery-schedule.index',
         'icon' => 'mdi mdi-shape',
         'permission' => App\Models\DeliverySchedule::LIST,
@@ -139,7 +139,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.tags'),
+        'name' => 'Tags',
         'route' => 'admin.tags.index',
         'icon' => 'mdi mdi-shape',
         'permission' => App\Models\Tag::LIST,
@@ -147,7 +147,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.pages'),
+        'name' => 'Pages',
         'route' => 'admin.pages.index',
         'icon' => 'mdi mdi-format-page-break',
         'permission' => App\Models\CmsPage::LIST,
@@ -155,7 +155,7 @@ $sidebarItems = [
     ],
     // [
     //     'type' => 'link',
-    //     'name' => __('app.faqs'),
+    //     'name' => 'FAQs',
     //     'route' => 'admin.faq.index',
     //     'icon' => 'mdi mdi-frequently-asked-questions',
     //     'permission' => App\Models\Faq::LIST,
@@ -163,7 +163,7 @@ $sidebarItems = [
     // ],
     [
         'type' => 'link',
-        'name' => __('app.user_searches'),
+        'name' => 'User searches',
         'route' => 'admin.user-searches.index',
         'icon' => 'mdi mdi-search-web',
         'permission' => App\Models\Transaction::LIST,
@@ -171,7 +171,7 @@ $sidebarItems = [
     ],
     // [
     //     'type' => 'link',
-    //     'name' => __('app.subscribers'),
+    //     'name' => 'Subscribers',
     //     'route' => 'admin.subscriber.index',
     //     'icon' => 'mdi mdi-shape',
     //     'permission' => App\Models\Subscriber::LIST,
@@ -179,7 +179,7 @@ $sidebarItems = [
     // ],
     [
         'type' => 'link',
-        'name' => __('app.news_letters'),
+        'name' => 'News Letters',
         'route' => 'admin.newsletter.index',
         'icon' => 'mdi mdi-newspaper',
         'permission' => App\Models\NewsLetter::LIST,
@@ -187,7 +187,7 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
-        'name' => __('app.feature_highlight'),
+        'name' => 'Feature Highlight',
         'route' => 'admin.feature-highlights.index',
         'icon' => 'mdi mdi-newspaper',
         'permission' => App\Models\FeatureHighlight::LIST,
@@ -195,25 +195,25 @@ $sidebarItems = [
     ],
     [
         'type' => 'dropdown',
-        'name' => __('app.banners'),
+        'name' => 'Banners',
         'id' => 'banners',
         'icon' => 'mdi mdi-image-area',
         'active' => Route::is('admin.banner.*'),
         'children' => [
             [
-                'name' => __('app.fixed'),
+                'name' => 'Fixed',
                 'route' => 'admin.banner.fixedBanners',
                 'permission' => App\Models\Banner::LIST,
                 'active' => Route::is('admin.banner.fixedBanners'),
             ],
             [
-                'name' => __('app.slider'),
+                'name' => 'Slider',
                 'route' => 'admin.banner.index',
                 'permission' => App\Models\Banner::LIST,
                 'active' => Route::is('admin.banner.index') && !request()->has('type'),
             ],
             [
-                'name' => __('app.popup'),
+                'name' => 'Popup',
                 'route' => 'admin.banner.index',
                 'query' => '?type=popup',
                 'permission' => App\Models\Banner::LIST,
@@ -223,19 +223,19 @@ $sidebarItems = [
     ],
     [
         'type' => 'dropdown',
-        'name' => __('app.reports'),
+        'name' => 'Reports',
         'id' => 'reports',
         'icon' => 'mdi mdi-chart-line',
         'active' => Route::is('admin.reports.*'),
         'children' => [
             [
-                'name' => __('app.sales'),
+                'name' => 'Sales',
                 'route' => 'admin.reports.sales.index',
                 'permission' => App\Models\Settings::REPORTS_LIST,
                 'active' => Route::is('admin.reports.sales.index'),
             ],
             [
-                'name' => __('app.transactions'),
+                'name' => 'Transactions',
                 'route' => 'admin.reports.transactions.index',
                 'permission' => App\Models\Settings::REPORTS_LIST,
                 'active' => Route::is('admin.reports.transactions.index'),
@@ -244,24 +244,24 @@ $sidebarItems = [
     ],
     [
         'type' => 'dropdown',
-        'name' => __('app.settings'),
+        'name' => 'Settings',
         'id' => 'settings',
         'icon' => 'mdi mdi-cog',
         'active' => Route::is('admin.settings.*'),
         'children' => [
             [
-                'name' => __('app.site_settings'),
+                'name' => 'Site Settings',
                 'route' => 'admin.settings.site',
                 'active' => Route::is('admin.settings.site'),
             ],
             [
-                'name' => __('app.payment_gateways'),
+                'name' => 'Payment Gateways',
                 'route' => 'admin.settings.payment-gateway.stripe',
                 'permission' => App\Models\Settings::STRIPE_SETTINGS,
                 'active' => Route::is('admin.settings.payment-gateway.stripe'),
             ],
             [
-                'name' => __('app.email_template'),
+                'name' => 'Email Template',
                 'route' => 'admin.settings.email-template.reset-password',
                 'active' => Route::is('admin.settings.email-template.reset-password'),
             ],
@@ -269,26 +269,26 @@ $sidebarItems = [
     ],
     [
         'type' => 'dropdown',
-        'name' => __('app.administration'),
+        'name' => 'Administration',
         'id' => 'administration',
         'icon' => 'mdi mdi-account-key',
         'active' => Route::is('admin.role.*') || Route::is('admin.users.*'),
         'condition' => auth()->user()->can('Role Management') || auth()->user()->can('User Management'),
         'children' => [
             [
-                'name' => __('app.role_manager'),
+                'name' => 'Role Manager',
                 'route' => 'admin.role.index',
                 'permission' => 'Role Management',
                 'active' => Route::is('admin.role.*'),
             ],
             [
-                'name' => __('app.users'),
+                'name' => 'Users',
                 'route' => 'admin.users.index',
                 'permission' => 'User Management',
                 'active' => Route::is('admin.users.index') && !request()->has('type'),
             ],
             [
-                'name' => __('app.customers'),
+                'name' => 'Customers',
                 'route' => 'admin.users.index',
                 'query' => '?type=customers',
                 'permission' => 'User Management',

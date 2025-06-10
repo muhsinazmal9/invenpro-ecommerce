@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title',request()->input('type') == 'customers' ? __('app.customers') : __('app.users') )
+@section('title',request()->input('type') == 'customers' ? 'Customers' : 'Users' )
 @push('css')
 <style>
     .table-responsive {

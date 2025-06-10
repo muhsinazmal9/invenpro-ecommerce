@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.external_api_keys_settings'))
+@section('title', 'External API Keys Settings')
 @section('content')
     <!-- ========== section start ========== -->
     <section class="section">
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.external_api_keys_settings') }} </h2>
+                            <h2>{{ 'External API Keys Settings' }} </h2>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -22,7 +22,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.external_api_keys_settings') }}
+                                        {{ 'External API Keys Settings' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -43,12 +43,12 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="google_places_api_key"
-                                            class="mb-2"><strong>{{ __('app.google_places_api_key') }}</strong></label>
+                                            class="mb-2"><strong>{{ 'Google Places API Key' }}</strong></label>
                                         <div class="input-style-1 mb-3">
                                             <input type="password" name="google_places_api_key" id="google_places_api_key"
                                                 class="form-control"
                                                 value="{{ old('google_places_api_key', getSetting('google_places_api_key') ?? '') }}"
-                                                placeholder="{{ __('app.enter_google_places_api_key') }}" />
+                                                placeholder="{{ 'Enter Google Places API Key' }}" />
                                             <span class="mdi mdi-eye fs-5 toggle-password cursor-pointer"
                                                 toggle="#google_places_api_key"
                                                 style="position: absolute; top: 50%; left: 90%; transform: translateY(-50%);"></span>
@@ -63,7 +63,7 @@
 
                                     <div class="col-md-12">
                                         <x-primary-button :type="'submit'">
-                                            {{ __('app.update') }}
+                                            {{ 'Update' }}
                                         </x-primary-button>
                                     </div>
                                 </div>

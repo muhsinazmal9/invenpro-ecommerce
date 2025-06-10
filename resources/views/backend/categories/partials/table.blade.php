@@ -2,18 +2,18 @@
     <table class="table" id="categoryTable">
         <thead>
             <tr>
-                <th>{{ __('app.title') }}</th>
-                <th>{{ __('app.status') }}</th>
-                <th width="100px">{{ __('app.show_in_quick_menu') }}</th>
-                <th width="100px">{{ __('app.show_in_home_page') }}</th>
-                <th>{{ __('app.created_at') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Title' }}</th>
+                <th>{{ 'Status' }}</th>
+                <th width="100px">{{ 'Show in Quick Menu' }}</th>
+                <th width="100px">{{ 'Show in Home Page' }}</th>
+                <th>{{ 'Created at' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
 
 </x-table>
-<x-modal-center :id="'detailsModal'" :modal_title="__('app.category_details')" :method="'PUT'" :action="'javascript:void(0)'">
+<x-modal-center :id="'detailsModal'" :modal_title="'Category Details'" :method="'PUT'" :action="'javascript:void(0)'">
     <div id="category-details"></div>
 </x-modal-center>
 
@@ -86,20 +86,20 @@
                             </td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.title') }} </th>
+                            <th class="p-2">{{ 'Title' }} </th>
                             <td class="p-2">${category['name']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.status') }}</th>
-                            <td class="p-2">${category['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ __('app.enabled') }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ __('app.disabled') }}</span"}</td>
+                            <th class="p-2">{{ 'Status' }}</th>
+                            <td class="p-2">${category['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ 'Enabled' }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ 'Disabled' }}</span"}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.show_in_quick_menu') }}</th>
-                            <td class="p-2">${category['show_in_quick_menu'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ __('app.enabled') }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ __('app.disabled') }}</span"}</td>
+                            <th class="p-2">{{ 'Show in Quick Menu' }}</th>
+                            <td class="p-2">${category['show_in_quick_menu'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ 'Enabled' }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ 'Disabled' }}</span"}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.show_in_home_page') }}</th>
-                            <td class="p-2">${category['show_in_home_page'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ __('app.enabled') }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ __('app.disabled') }}</span"}</td>
+                            <th class="p-2">{{ 'Show in Home Page' }}</th>
+                            <td class="p-2">${category['show_in_home_page'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ 'Enabled' }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ 'Disabled' }}</span"}</td>
                         </tr>
                     </table>
                 </div>`;
@@ -114,14 +114,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You will not be able to revert this!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_delete_it') }}",
-            cancelButtonText: "{{ __('app.cancel') }}",
+            confirmButtonText: "{{ 'Yes, delete it!' }}",
+            cancelButtonText: "{{ 'Cancel' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -138,13 +138,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_change_the_status_of_this_category') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want to change the status of this category?' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_update_it') }}",
+            confirmButtonText: "{{ 'Yes, Update it' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -160,17 +160,17 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Status has been updated!' }}",
                                 icon: 'success',
                             });
 
                             if (response.data.status) {
-                                $(btn).text("{{ __('app.enabled') }}");
+                                $(btn).text("{{ 'Enabled' }}");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ __('app.disabled') }}");
+                                $(btn).text("{{ 'Disabled' }}");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }

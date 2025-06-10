@@ -5,7 +5,7 @@
         <h4 class="mb-10 card-title">{{ $title }}</h4>
         @if (isset($addItemRoute, $permissionName) && $addItemRoute != '' && checkUserPermission($permissionName))
             <x-primary-anchor :href="$addItemRoute" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                {{ __('app.add') }}
+                {{ 'Add' }}
             </x-primary-anchor>
         @endif
     </div>

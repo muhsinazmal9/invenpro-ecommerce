@@ -41,7 +41,7 @@ class UserService
             $user = User::create($inputs);
             $user->assignRole($request->role);
 
-            return success(__('app.user_created_successfully'), $user);
+            return success('User created successfully', $user);
         } catch (\Exception $e) {
             logError('User Create Error', $e);
 
@@ -74,7 +74,7 @@ class UserService
             $user->update($inputs);
             $user->syncRoles($request->role);
 
-            return success(__('app.user_updated_successfully'), $user);
+            return success('User updated successfully', $user);
         } catch (\Exception $e) {
             logError('User Update Error', $e);
 
@@ -85,7 +85,7 @@ class UserService
     public function getList(Request $request): JsonResponse
     {
         if (! checkUserPermission(User::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -176,7 +176,7 @@ class UserService
                     $editLink = route('admin.users.edit', $user->username ?? $user->id);
                     $showLink = route('admin.users.show', $user->username ?? $user->id);
 
-                    $userStatus = $user->status == User::STATUS['active'] ? __('app.active') : __('app.blocked');
+                    $userStatus = $user->status == User::STATUS['active'] ? 'ACTIVE' : 'BLOCKED';
 
                     $userStatusClass = $user->status == User::STATUS['active'] ? 'success' : 'danger';
 
@@ -188,7 +188,7 @@ class UserService
                                 style='padding:4px 10px'
                                 type='button'>{$userStatus}
                                 </button>";
-                    $roleName = $user->roles[0]->name ?? __('app.add_role');
+                    $roleName = $user->roles[0]->name ?? 'Add Role';
 
                     if (checkUserPermission('delete_role')) {
                         $role = "<button
@@ -204,8 +204,8 @@ class UserService
                         $role = "<button class='main-btn success-btn-light btn-hover btn-sm' style='padding:4px 10px;' type='button' title='DELETE' > {$roleName}</button>";
                     }
 
-                    $view = __('app.view');
-                    $edit = __('app.edit');
+                    $view = 'View';
+                    $edit = 'Edit';
                     $userImage = asset($user->image);
                     $image = "<img class='rounded' src='{$userImage}' alt='{$user->fname}' width='75'>";
                     $detailsBtn = "<a  href='{$showLink}' title='Details' class='dropdown-item'>{$view}</a>";

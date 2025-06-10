@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.create_role'))
+@section('title', 'Create Role')
 @section('content')
 
     <!-- ========== section start ========== -->
@@ -10,7 +10,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.create_role') }}</h2>
+                            <h2>{{ 'Create Role' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -22,10 +22,10 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.role.index') }}">{{ __('app.roles') }}</a>
+                                        <a href="{{ route('admin.role.index') }}">{{ 'Roles' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.create') }}
+                                        {{ 'Create' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -43,7 +43,7 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
-                                    <x-input-group :type="'text'" :value="old('name')" :name="'name'" :placeholder="__('app.enter_name_of_role')"
+                                    <x-input-group :type="'text'" :value="old('name')" :name="'name'" :placeholder="'Enter name of role'"
                                         :id="'name'">
                                         <span class="mdi mdi-account-child-circle"></span>
                                     </x-input-group>
@@ -52,7 +52,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mt-3">
-                                    <h4>{{ __('app.permissions') }}</h4>
+                                    <h4>{{ 'Permissions' }}</h4>
                                     <hr>
                                 </div>
                                 @foreach ($permissions as $permission)
@@ -67,7 +67,7 @@
                                 @enderror
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ __('app.create') }}
+                                        {{ 'Create' }}
                                     </x-primary-button>
                                 </div>
                             </div>

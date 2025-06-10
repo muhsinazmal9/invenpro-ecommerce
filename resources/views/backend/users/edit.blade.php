@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.users'))
+@section('title', 'Users')
 @push('css')
 <link rel="stylesheet" href="{{ asset('assets/backend/css/image_cropper.css') }}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.4.1/croppie.min.js"></script>
@@ -37,7 +37,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.edit_user') }}</h2>
+                            <h2>{{ 'Edit User' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -49,10 +49,10 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.users.index') }}">{{ __('app.users') }}</a>
+                                        <a href="{{ route('admin.users.index') }}">{{ 'Users' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.edit') }}
+                                        {{ 'Edit' }}
                                     </li>
                                 </ol>
                             </nav>

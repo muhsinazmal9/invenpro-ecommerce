@@ -24,12 +24,12 @@ class TaxSettingsService
             $input['slug'] = generateSlug($request->code);
             $tax = TaxSettings::create($input);
 
-            return success(__('app.tax_settings_created_successfully'), $tax);
+            return success('TAX settings created successfully!', $tax);
 
         } catch (\Exception $e) {
             logError('Tax Settings Store Error ', $e);
 
-            return error(__('app.error_updating_settings'));
+            return error('Error updating settings');
         }
 
     }
@@ -48,12 +48,12 @@ class TaxSettingsService
             $input['slug'] = generateSlug($request->code);
             $tax->update($input);
 
-            return success(__('app.tax_settings_created_successfully'), $tax);
+            return success('TAX settings created successfully!', $tax);
 
         } catch (\Exception $e) {
             logError('Tax Settings Store Error ', $e);
 
-            return error(__('app.error_updating_settings'));
+            return error('Error updating settings');
         }
 
     }
@@ -61,7 +61,7 @@ class TaxSettingsService
     public function getList(Request $request): JsonResponse
     {
         if (! checkUserPermission(TaxSettings::TAX_SETTINGS)) {
-            return error(__('app.permission_denied'));
+            return error('Permission Denied!');
         }
 
         try {
@@ -119,7 +119,7 @@ class TaxSettingsService
             if (! empty($taxSettings)) {
                 foreach ($taxSettings as $taxSetting) {
 
-                    $taxStatus = $taxSetting->status ? __('app.enabled') : __('app.disabled');
+                    $taxStatus = $taxSetting->status ? 'Enabled' : 'Disabled';
                     $taxStatusClass = $taxSetting->status ? 'success' : 'danger';
                     $taxData = [
                         'slug' => $taxSetting->slug,
@@ -135,9 +135,9 @@ class TaxSettingsService
                                 class='main-btn {$taxStatusClass}-btn-light btn-hover btn-sm'
                                 style='padding:4px 10px'
                                 type='button'>{$taxStatus}</button>";
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     $editBtn = "<button data='{$taxData}' type='button' onclick=editTax(this) class='dropdown-item'>{$edit}</button>";
                     $deleteBtn = "<button type='button' onclick=deleteTax(':slug',this.parentElement.parentElement)  class='dropdown-item'>{$delete}</button>";
@@ -170,12 +170,12 @@ class TaxSettingsService
                 'data' => $data,
             ];
 
-            return success(__('app.tax_settings_list'), $json_data);
+            return success('Tax Settings List', $json_data);
 
         } catch (\Exception $e) {
             logError('Category List Error ', $e);
 
-            return error(__('app.error_getting_settings'));
+            return error('Error getting settings');
         }
 
     }

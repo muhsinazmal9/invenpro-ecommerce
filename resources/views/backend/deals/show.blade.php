@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.deals'))
+@section('title', 'Deals')
 @section('content')
 
 <!-- ========== section start ========== -->
@@ -11,7 +11,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ __('app.deals') }}</h2>
+                        <h2>{{ 'Deals' }}</h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -23,10 +23,10 @@
                                     <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                 </li>
                                 <li class="breadcrumb-item ">
-                                    <a href="{{ route('admin.deals.index') }}">{{ __('app.deals') }}</a>
+                                    <a href="{{ route('admin.deals.index') }}">{{ 'Deals' }}</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ __('app.deals') }}
+                                    {{ 'Deals' }}
                                 </li>
                             </ol>
                         </nav>
@@ -46,16 +46,16 @@
                         <thead>
                             <tr>
                                 <th>
-                                    <h6>{{ __('app.title') }}</h6>
+                                    <h6>{{ 'Title' }}</h6>
                                 </th>
                                 <th>
-                                    <h6>{{ __('app.date') }}</h6>
+                                    <h6>{{ 'Date' }}</h6>
                                 </th>
                                 <th>
-                                    <h6>{{ __('app.created_at') }}</h6>
+                                    <h6>{{ 'Created at' }}</h6>
                                 </th>
                                 <th>
-                                    <h6>{{ __('app.status') }}</h6>
+                                    <h6>{{ 'Status' }}</h6>
                                 </th>
 
                             </tr>

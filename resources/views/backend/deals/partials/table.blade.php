@@ -1,12 +1,12 @@
-<x-table :title="__('app.deals')" :addItemRoute="route('admin.deals.create')" :permissionName="App\Models\Banner::CREATE">
+<x-table :title="'Deals'" :addItemRoute="route('admin.deals.create')" :permissionName="App\Models\Banner::CREATE">
     <table class="table" id="dealsTable">
         <thead>
             <tr>
-                <th>{{ __('app.title') }}</th>
-                <th>{{ __('app.date') }}</th>
-                <th>{{ __('app.status') }}</th>
-                <th>{{ __('app.created_at') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Title' }}</th>
+                <th>{{ 'Date' }}</th>
+                <th>{{ 'Status' }}</th>
+                <th>{{ 'Created at' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
@@ -60,13 +60,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_change_the_status_of_this_deal') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want to change the status of this deal?' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_update_it') }}",
+            confirmButtonText: "{{ 'Yes, Update it' }}",
         }).then((result) => {
 
             if (result.value) {
@@ -81,18 +81,18 @@
                     success: function(response) {
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Status has been updated!' }}",
                                 icon: 'success',
                             });
 
 
                             if (response.data.status) {
-                                $(btn).text("{{ __('app.enabled') }}");
+                                $(btn).text("{{ 'Enabled' }}");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ __('app.disabled') }}");
+                                $(btn).text("{{ 'Disabled' }}");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }
@@ -110,13 +110,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You will not be able to revert this!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_delete_it') }}",
+            confirmButtonText: "{{ 'Yes, delete it!' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();

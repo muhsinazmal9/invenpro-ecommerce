@@ -7,25 +7,25 @@
     <table class="table" id="userTable">
         <thead>
             <tr>
-                <th>{{ __('app.image') }}</th>
-                <th>{{ __('app.first_name') }}</th>
-                <th>{{ __('app.last_name') }}</th>
-                <th>{{ __('app.email') }}</th>
-                <th>{{ __('app.status') }}</th>
-                <th>{{ __('app.role') }}</th>
-                <th>{{ __('app.created_at') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Image' }}</th>
+                <th>{{ 'First Name' }}</th>
+                <th>{{ 'Last Name' }}</th>
+                <th>{{ 'Email' }}</th>
+                <th>{{ 'Status' }}</th>
+                <th>{{ 'Role' }}</th>
+                <th>{{ 'Created at' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
 </x-table>
 
-<x-modal-center :success_btn="'Assign'" :id="'roleModal'" :modal_title="__('app.user_role')" :method="'PUT'" :action="'javascript:void(0)'"
+<x-modal-center :success_btn="'Assign'" :id="'roleModal'" :modal_title="'User Role'" :method="'PUT'" :action="'javascript:void(0)'"
 :submitBtnId="'assignRoleBtn'">
 <div class="row">
     <div class="col-md-6">
         <div class="form-group">
-            <label for="">{{ __('app.name') }}</label>
+            <label for="">{{ 'Name' }}</label>
             <x-input-group :type="'text'" :value="''" :id="'assign-role-selected-user'" :disabled="'disabled'">
                 <i class="lni lni-user"></i>
             </x-input-group>
@@ -35,14 +35,14 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <label for="">{{ __('app.role') }}</label>
+            <label for="">{{ 'Role' }}</label>
             <x-input-group :type="'text'" :id="'assign-role-name'" :disabled="'disabled'">
                 <span class="mdi mdi-account-key"></span>
             </x-input-group>
         </div>
     </div>
     <div class="col-md-12 mt-2">
-        <x-input-select :name="'role'" :id="'assign-role'" :label="__('app.change_role')">
+        <x-input-select :name="'role'" :id="'assign-role'" :label="'Change Role'">
             @foreach ($roles as $role)
                 <option value="{{ $role->id }}">{{ $role->name }}</option>
             @endforeach
@@ -185,13 +185,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_change_the_status_of_this_user') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want to change the status of this user' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_update_it') }}",
+            confirmButtonText: "{{ 'Yes, Update it' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -207,18 +207,18 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Status has been updated!' }}",
                                 icon: 'success',
                             });
 
                             if (response.data.status ==
                                 "{{ App\Models\User::STATUS['active'] }}") {
-                                $(btn).text("{{ __('app.active') }}");
+                                $(btn).text("{{ 'ACTIVE' }}");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ __('app.blocked') }}");
+                                $(btn).text("{{ 'BLOCKED' }}");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }

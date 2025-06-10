@@ -1,12 +1,12 @@
-<x-table :title="__('app.news_letter')" :addItemRoute="route('admin.newsletter.create')"
+<x-table :title="'News Letter'" :addItemRoute="route('admin.newsletter.create')"
     :permissionName="App\Models\Newsletter::CREATE">
     <table class="table" id="mailboxTable">
         <thead>
             <tr>
-                <th>{{ __('app.subject') }}</th>
-                <th>{{ __('app.status') }}</th>
-                <th>{{ __('app.created_at') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Subject' }}</th>
+                <th>{{ 'Status' }}</th>
+                <th>{{ 'Created at' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
@@ -59,14 +59,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-        title: "{{ __('app.are_you_sure') }}",
-        text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+        title: "{{ 'Are you sure?' }}",
+        text: "{{ 'You will not be able to revert this!' }}",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: "{{ __('app.yes_delete_it') }}",
-        cancelButtonText: "{{ __('app.cancel') }}",
+        confirmButtonText: "{{ 'Yes, delete it!' }}",
+        cancelButtonText: "{{ 'Cancel' }}",
         }).then((result) => {
         if (result.value) {
         event.preventDefault();

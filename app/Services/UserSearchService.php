@@ -11,7 +11,7 @@ class UserSearchService
     public function getList(Request $request): JsonResponse
     {
         if (! checkUserPermission(UserSearch::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -78,7 +78,7 @@ class UserSearchService
                 'data' => $data,
             ];
 
-            return success(__('app.user_searches'), $json_data);
+            return success('User searches', $json_data);
         } catch (\Exception $e) {
             logError('User Search List Error ', $e);
 

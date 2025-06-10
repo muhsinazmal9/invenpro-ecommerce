@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.news_letter'))
+@section('title', 'News Letter')
 @section('content')
 
     <!-- ========== section start ========== -->
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.news_letter') }}</h2>
+                            <h2>{{ 'News Letter' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -23,10 +23,10 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.newsletter.index') }}">{{ __('app.news_letter') }}</a>
+                                        <a href="{{ route('admin.newsletter.index') }}">{{ 'News Letter' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.create') }}
+                                        {{ 'Create' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -45,9 +45,9 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-12 my-2">
-                                    <label for="to_emails" class="mb-1"><strong>{{ __('app.to') }}</strong></label>
+                                    <label for="to_emails" class="mb-1"><strong>{{ 'To' }}</strong></label>
                                     <input type="text" id="to_emails" name="to_emails" class="form-control hideMe"
-                                        placeholder="{{ __('app.enter_to_emails') }}" />
+                                        placeholder="{{ 'Enter to emails' }}" />
 
                                     @error('to_emails')
                                         <span class="text-danger">{{ $message }}</span>
@@ -57,11 +57,11 @@
                                     @if (old('select_all'))
                                         <x-success-checkbox :id="'select_all'" :checked="true" :value="1"
                                             :name="'select_all'">
-                                            {{ __('app.select_all') }}
+                                            {{ 'Select all' }}
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'select_all'" :value="1" :name="'select_all'">
-                                            {{ __('app.select_all') }}
+                                            {{ 'Select all' }}
                                         </x-success-checkbox>
                                     @endif
                                     @error('select_all')
@@ -69,8 +69,8 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 my-2">
-                                    <label for="subject" class="mb-1"><strong>{{ __('app.subject') }}</strong></label>
-                                    <x-input-group :type="'text'" :value="old('subject')" :name="'subject'" :placeholder="__('app.enter_the_subject')"
+                                    <label for="subject" class="mb-1"><strong>{{ 'Subject' }}</strong></label>
+                                    <x-input-group :type="'text'" :value="old('subject')" :name="'subject'" :placeholder="'Enter the subject'"
                                         :id="'subject'">
                                     </x-input-group>
 
@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="col-md-12 mt-2">
 
-                                    <label for="body" class="mb-1"><strong>{{ __('app.body') }}</strong></label>
+                                    <label for="body" class="mb-1"><strong>{{ 'Body' }}</strong></label>
 
                                     <textarea name="body" id="body" class="form-control" rows="5">{{ old('body') }}</textarea>
 

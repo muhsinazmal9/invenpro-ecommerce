@@ -15,13 +15,13 @@
         <table class="table stripe" id="salesReportTable">
             <thead>
                 <tr>
-                    <th>{{ __('app.invoice_id') }}</th>
-                    <th>{{ __('app.customer') }}</th>
-                    <th>{{ __('app.subtotal') }}</th>
-                    <th>{{ __('app.shipping_charge') }}</th>
-                    <th>{{ __('app.tax') }}</th>    
-                    <th>{{ __('app.total_amount') }}</th>
-                    <th>{{ __('app.actions') }}</th>
+                    <th>{{ 'Invoice Id' }}</th>
+                    <th>{{ 'Customer' }}</th>
+                    <th>{{ 'Subtotal' }}</th>
+                    <th>{{ 'Shipping Charge' }}</th>
+                    <th>{{ 'TAX' }}</th>    
+                    <th>{{ 'Total Amount' }}</th>
+                    <th>{{ 'Actions' }}</th>
                 </tr>
             </thead>
         </table>

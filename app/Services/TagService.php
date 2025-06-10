@@ -18,7 +18,7 @@ class TagService
             $input['status'] = (bool) $request->status;
             $tags = Tag::create($input);
 
-            return success(__('app.tag_created_successfully'), $tags);
+            return success('Tag created successfully', $tags);
         } catch (\Exception $e) {
             logError('tags Store Error ', $e);
 
@@ -30,7 +30,7 @@ class TagService
     {
 
         if (! checkUserPermission(Tag::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -88,7 +88,7 @@ class TagService
             if (! empty($tags)) {
                 foreach ($tags as $tag) {
 
-                    $tagStatus = $tag->status ? __('app.enabled') : __('app.disabled');
+                    $tagStatus = $tag->status ? 'Enabled' : 'Disabled';
                     $tagStatusClass = $tag->status ? 'success' : 'danger';
                     $slug = $tag->slug;
 
@@ -98,9 +98,9 @@ class TagService
                                 style='padding:4px 10px'
                                 type='button'>{$tagStatus}
                                 </button>";
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
 
                     $editBtn = "<a
@@ -152,7 +152,7 @@ class TagService
                 'data' => $data,
             ];
 
-            return success(__('app.tag_list'), $json_data);
+            return success('Tag List', $json_data);
         } catch (\Exception $e) {
             logError('tags List Error ', $e);
 
@@ -169,7 +169,7 @@ class TagService
             $input['slug'] = generateSlug($request->title);
             $tags->update($input);
 
-            return success(__('app.tag_updated_successfully'), $tags);
+            return success('Tag updated successfully', $tags);
         } catch (\Exception $e) {
             logError('Tags Update Error ', $e);
 

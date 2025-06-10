@@ -1,4 +1,4 @@
-<x-table :title="__('app.addresses')" :addItemRoute="route('admin.addresses.create', $user->username)" :permissionName="App\Models\Address::CREATE">
+<x-table :title="'Addresses'" :addItemRoute="route('admin.addresses.create', $user->username)" :permissionName="App\Models\Address::CREATE">
     <style>
         .dataTable {
             width: calc(100% - 10px) !important;
@@ -7,11 +7,11 @@
     <table class="table" id="addressTable">
         <thead>
             <tr>
-                <th style="min-width: 200px">{{ __('app.title') }}</th>
-                <th style="min-width: 200px">{{ __('app.street_address') }}</th>
-                <th style="min-width: 200px">{{ __('app.apt_suite') }}</th>
-                <th style="min-width: 100px">{{ __('app.zip_code') }}</th>
-                <th style="min-width: 150px">{{ __('app.actions') }}</th>
+                <th style="min-width: 200px">{{ 'Title' }}</th>
+                <th style="min-width: 200px">{{ 'Street Address' }}</th>
+                <th style="min-width: 200px">{{ 'Apt, Suite' }}</th>
+                <th style="min-width: 100px">{{ 'Zip Code' }}</th>
+                <th style="min-width: 150px">{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
@@ -62,14 +62,14 @@
         const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_will_not_be_able_to_revert_this_address') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You will not be able to revert this address' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_delete_it') }}",
-            cancelButtonText: "{{ __('app.cancel') }}",
+            confirmButtonText: "{{ 'Yes, delete it!' }}",
+            cancelButtonText: "{{ 'Cancel' }}",
         }).then((result) => {
             if (result.value) {
                 // itemDelete(addressRemoveUrl, method, token, row)

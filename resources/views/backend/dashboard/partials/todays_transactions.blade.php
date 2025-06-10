@@ -1,7 +1,7 @@
  <div class="card-style mb-30">
     <div class="title d-flex flex-wrap justify-content-between align-items-center">
         <div class="left">
-        <h6 class="text-medium mb-30">{{ __('app.todays_transaction') }}</h6>
+        <h6 class="text-medium mb-30">{{ 'Todays Transaction' }}</h6>
         </div>
     </div>
     <!-- End Title -->
@@ -10,19 +10,19 @@
             <thead>
                 <tr>
                     <th>
-                        <h6 class="text-sm text-medium">{{ __('app.customer') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Customer' }}</h6>
                     </th>
                     <th>
-                        <h6 class="text-sm text-medium">{{ __('app.transaction_id') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Transaction ID' }}</h6>
                     </th>
                     <th class="min-width">
-                        <h6 class="text-sm text-medium">{{ __('app.payment_method') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Payment Method' }}</h6>
                     </th>
                     <th class="min-width">
-                        <h6 class="text-sm text-medium">{{ __('app.time') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Time' }}</h6>
                     </th>
                     <th class="min-width">
-                        <h6 class="text-sm text-medium">{{ __('app.amount') }}</h6>
+                        <h6 class="text-sm text-medium">{{ 'Amount' }}</h6>
                     </th>
                 </tr>
             </thead>

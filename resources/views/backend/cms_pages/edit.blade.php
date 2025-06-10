@@ -22,7 +22,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.edit_page') }}</h2>
+                            <h2>{{ 'Edit Page' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -34,10 +34,10 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.pages.index') }}">{{ __('app.pages') }}</a>
+                                        <a href="{{ route('admin.pages.index') }}">{{ 'Pages' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.edit') }}
+                                        {{ 'Edit' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -57,7 +57,7 @@
                             @method('PATCH')
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="title" class="mb-1"><strong>{{ __('app.title') }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
                                     <x-input-group :type="'text'" :value="old('title', $page->title)" :name="'title'" :placeholder="'Enter title of the page'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -68,7 +68,7 @@
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                    <label for="slug" class="mb-1"><strong>{{ __('app.slug') }}</strong></label>
+                                    <label for="slug" class="mb-1"><strong>{{ 'Slug' }}</strong></label>
 
                                     <x-input-group :type="'text'" :value="old('slug', $page->slug)" :name="'slug'" :placeholder="'Enter Slug'"
                                         :id="'slug'">
@@ -98,17 +98,17 @@
                                             {{-- <h5 class="card-title">SEO and Metadata</h3> --}}
                                             <div class="col-md-6 mb-2">
                                                 <label for="meta_title"
-                                                    class="mb-1"><strong>{{ __('app.meta_title') }}</strong></label>
+                                                    class="mb-1"><strong>{{ 'Meta Title' }}</strong></label>
                                                 <x-input-group :type="'text'" :name="'meta_title'" :value="old('meta_title', $page->meta_title)"
-                                                    :placeholder="__('app.enter_meta_title')" :id="'meta_title'">
+                                                    :placeholder="'Enter meta title'" :id="'meta_title'">
                                                     <span class="mdi mdi-shape"></span>
                                                 </x-input-group>
                                             </div>
                                             <div class="col-md-6 mb-2">
                                                 <label for="meta_description"
-                                                    class="mb-1"><strong>{{ __('app.meta_description') }}</strong></label>
+                                                    class="mb-1"><strong>{{ 'Meta Description' }}</strong></label>
 
-                                                <x-textarea-group :placeholder="__('app.meta_description')"
+                                                <x-textarea-group :placeholder="'Meta Description'"
                                                     :name="'meta_description'">{{ old('meta_description', $page->meta_description) }}</x-textarea-group>
 
                                             </div>
@@ -120,11 +120,11 @@
                                 @if ($page->status)
                                     <x-success-checkbox :id="'status'" :value="'1'" :name="'status'"
                                         :checked="'status'">
-                                        {{ __('app.status') }}
+                                        {{ 'Status' }}
                                     </x-success-checkbox>
                                 @else
                                     <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                        {{ __('app.status') }}
+                                        {{ 'Status' }}
                                     </x-success-checkbox>
                                 @endif
                                 @error('status')
@@ -133,7 +133,7 @@
                             </div>
                             <div class="col-md-12 mt-3">
                                 <x-primary-button :type="'submit'">
-                                    {{ __('app.update') }}
+                                    {{ 'Update' }}
                                 </x-primary-button>
                             </div>
                         </form>

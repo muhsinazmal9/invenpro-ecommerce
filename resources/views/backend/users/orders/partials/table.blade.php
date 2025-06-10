@@ -1,4 +1,4 @@
-<x-table :title="__('app.orders')" >
+<x-table :title="'Orders'" >
     <style>
         .dataTable {
             width: calc(100% - 10px) !important;
@@ -7,11 +7,11 @@
     <table class="table" id="orderTable">
         <thead>
             <tr>
-                <th style="min-width: 200px">{{ __('app.invoice_id') }}</th>
-                <th style="min-width: 200px">{{ __('app.amount') }}</th>
-                <th style="min-width: 200px">{{ __('app.status') }}</th>
-                <th style="min-width: 100px">{{ __('app.products') }}</th>
-                <th style="min-width: 150px">{{ __('app.actions') }}</th>
+                <th style="min-width: 200px">{{ 'Invoice Id' }}</th>
+                <th style="min-width: 200px">{{ 'Amount' }}</th>
+                <th style="min-width: 200px">{{ 'Status' }}</th>
+                <th style="min-width: 100px">{{ 'Products' }}</th>
+                <th style="min-width: 150px">{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>

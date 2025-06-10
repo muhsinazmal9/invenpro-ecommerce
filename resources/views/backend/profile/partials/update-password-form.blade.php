@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-12 my-1">
                 <div class="input-style-1">
-                    <input type="password" placeholder="{{ __('app.confirm_password') }}" name="password_confirmation"
+                    <input type="password" placeholder="{{ 'Confirm Password' }}" name="password_confirmation"
                         id="password_confirmation" autocomplete="new-password" value="{{ old('password') }}" />
                     <span class="mdi mdi-eye fs-5 toggle-password_confirmation cursor-pointer" toggle="#password_confirmation"
                         style="position: absolute; top: 50%; left: 95%; transform: translateY(-50%);"></span>
@@ -47,7 +47,7 @@
         <div class="flex items-center gap-4">
             <x-primary-button :type="'submit'">
                 <span class="mdi mdi-content-save-settings"></span>
-                {{ __('app.save') }}
+                {{ 'Save' }}
             </x-primary-button>
 
             @if (session('status') === 'password-updated')

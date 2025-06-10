@@ -1,10 +1,10 @@
-<x-table :title="__('app.user_searches')">
+<x-table :title="'User searches'">
     <table class="table" id="userSearchTable">
         <thead>
             <tr>
-                <th>{{ __('app.keyword') }}</th>
-                <th>{{ __('app.count') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Keyword' }}</th>
+                <th>{{ 'Count' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
@@ -54,14 +54,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You will not be able to revert this!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_delete_it') }}",
-            cancelButtonText: "{{ __('app.cancel') }}",
+            confirmButtonText: "{{ 'Yes, delete it!' }}",
+            cancelButtonText: "{{ 'Cancel' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();

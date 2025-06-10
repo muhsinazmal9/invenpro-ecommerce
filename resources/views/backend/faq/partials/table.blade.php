@@ -1,18 +1,18 @@
-<x-table :title="__('app.faqs')" :addItemRoute="route('admin.faq.create')" :permissionName="App\Models\Faq::CREATE">
+<x-table :title="'FAQs'" :addItemRoute="route('admin.faq.create')" :permissionName="App\Models\Faq::CREATE">
     <table class="table" id="faqTable">
         <thead>
             <tr>
-                <th>{{ __('app.question') }}</th>
+                <th>{{ 'Question' }}</th>
                 <th>{{ 'Category' }}</th>
-                <th>{{ __('app.status') }}</th>
-                <th>{{ __('app.created_at') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Status' }}</th>
+                <th>{{ 'Created at' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
 
 </x-table>
-<x-modal-center :id="'detailsModal'" :modal_title="__('app.faq_details')" :method="'PUT'" :action="'javascript:void(0)'">
+<x-modal-center :id="'detailsModal'" :modal_title="'FAQ Details'" :method="'PUT'" :action="'javascript:void(0)'">
     <div id="faq-details"></div>
 </x-modal-center>
 
@@ -62,11 +62,11 @@
                 <div class="">
                     <table  class="table-bordered p-5 mx-auto" style="border-color:#00000052 !important; width: 100%">
                         <tr>
-                            <th class="p-2">{{ __('app.question') }} </th>
+                            <th class="p-2">{{ 'Question' }} </th>
                             <td class="p-2">${faq['question']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.answer') }} </th>
+                            <th class="p-2">{{ 'Answer' }} </th>
                             <td class="p-2">${faq['answer']}</td>
                         </tr>
                         <tr class="mt-5">
@@ -74,8 +74,8 @@
                             <td class="p-2">${faq.category.name}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.status') }}</th>
-                            <td class="p-2">${faq['status'] ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ __('app.enabled') }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ __('app.disabled') }}</span"}</td>
+                            <th class="p-2">{{ 'Status' }}</th>
+                            <td class="p-2">${faq['status'] ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ 'Enabled' }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ 'Disabled' }}</span"}</td>
                         </tr>
                     </table>
                 </div>`;
@@ -89,14 +89,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You will not be able to revert this!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_delete_it') }}",
-            cancelButtonText: "{{ __('app.cancel') }}",
+            confirmButtonText: "{{ 'Yes, delete it!' }}",
+            cancelButtonText: "{{ 'Cancel' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -113,8 +113,8 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_change_the_status_of_this_faq') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You want to change the status of this FAQ!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
@@ -135,17 +135,17 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ __('app.updated') }}",
-                                text: "{{ __('app.status_has_been_updated') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Status has been updated!' }}",
                                 icon: 'success',
                             });
 
                             if (response.data.status) {
-                                $(btn).text("{{ __('app.enabled') }}");
+                                $(btn).text("{{ 'Enabled' }}");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ __('app.disabled') }}");
+                                $(btn).text("{{ 'Disabled' }}");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }

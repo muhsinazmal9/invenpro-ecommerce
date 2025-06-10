@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.delivery_schedules'))
+@section('title', 'Delivery Schedules')
 @section('content')
 
     <!-- ========== section start ========== -->
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.delivery_schedules') }} </h2>
+                            <h2>{{ 'Delivery Schedules' }} </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -23,7 +23,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.delivery_schedules') }}
+                                        {{ 'Delivery Schedules' }}
                                     </li>
                                 </ol>
                             </nav>

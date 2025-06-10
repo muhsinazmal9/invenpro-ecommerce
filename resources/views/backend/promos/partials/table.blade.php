@@ -1,14 +1,14 @@
-<x-table :title="__('app.promos')" :addItemRoute="route('admin.promo.create')" :permissionName="App\Models\Promo::CREATE">
+<x-table :title="'Promos'" :addItemRoute="route('admin.promo.create')" :permissionName="App\Models\Promo::CREATE">
     <table class="table" id="promoTable">
         <thead>
             <tr>
-                <th>{{ __('app.title') }}</th>
-                <th>{{ __('app.limit') }}</th>
-                <th>{{ __('app.code') }}</th>
-                <th>{{ __('app.discount') }}</th>
-                <th>{{ __('app.discount_type') }}</th>
-                <th>{{ __('app.status') }}</th>
-                <th>{{ __('app.actions') }}</th>
+                <th>{{ 'Title' }}</th>
+                <th>{{ 'Limit' }}</th>
+                <th>{{ 'Code' }}</th>
+                <th>{{ 'Discount' }}</th>
+                <th>{{ 'Discount Type' }}</th>
+                <th>{{ 'Status' }}</th>
+                <th>{{ 'Actions' }}</th>
             </tr>
         </thead>
     </table>
@@ -16,7 +16,7 @@
 </x-table>
 <x-modal-center
     :id="'detailsModal'"
-    :modal_title="__('app.promo_details')"
+    :modal_title="'Promo Details'"
     :method="'PUT'"
     :action="'javascript:void(0)'"
     >
@@ -90,27 +90,27 @@
                 <div class="">
                     <table  class="table-bordered p-5 mx-auto" style="border-color:#00000052 !important; width: 100%">
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.title') }} </th>
+                            <th class="p-2">{{ 'Title' }} </th>
                             <td class="p-2">${promo['title']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{__('app.limit')}} </th>
+                            <th class="p-2">{{'Limit'}} </th>
                             <td class="p-2">${promo['limit']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{__('app.code')}} </th>
+                            <th class="p-2">{{'Code'}} </th>
                             <td class="p-2">${promo['code']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{__('app.discount')}} </th>
+                            <th class="p-2">{{'Discount'}} </th>
                             <td class="p-2">${promo['discount']}%</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{__('app.discount_type')}} </th>
+                            <th class="p-2">{{'Discount Type'}} </th>
                             <td class="p-2">${promo['discount_type']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ __('app.status') }} </th>
+                            <th class="p-2">{{ 'Status' }} </th>
                             <td class="p-2">${promo['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm promoStatusUpdate'>Enabled</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>Disabled</span"}</td>
                         </tr>
                     </table>
@@ -125,13 +125,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_will_not_be_able_to_revert_this') }}",
+            title: "{{ 'Are you sure?' }}",
+            text: "{{ 'You will not be able to revert this!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_delete_it') }}"
+            confirmButtonText: "{{ 'Yes, delete it!' }}"
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -150,13 +150,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title:"{{ __('app.are_you_sure') }}",
-            text: "{{ __('app.you_want_to_change_the_status_of_this_promo!') }}",
+            title:"{{ 'Are you sure?' }}",
+            text: "{{ 'You want to change the status of this promo!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ __('app.yes_update_it!') }}",
+            confirmButtonText: "{{ 'Yes, Update it!' }}",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -170,8 +170,8 @@
 
                         if(response.success){
                             Swal.fire({
-                                title: "{{ __('app.updated!') }}",
-                                text: "{{ __('app.promo_status_has_been_updated.') }}",
+                                title: "{{ 'Updated!' }}",
+                                text: "{{ 'Promo status has been updated.' }}",
                                 icon: 'success',
                             });
 

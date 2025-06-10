@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.edit_subsubcategory'))
+@section('title', 'Edit Sub Subcategory')
 @push('css')
     <link rel="stylesheet" href="{{ asset('assets/backend/css/image_cropper.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.4.1/croppie.min.js"></script>
@@ -36,7 +36,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.edit_subsubcategory') }}</h2>
+                            <h2>{{ 'Edit Sub Subcategory' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -48,10 +48,10 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.subsub-category.index') }}">{{ __('app.subsubcategories') }}</a>
+                                        <a href="{{ route('admin.subsub-category.index') }}">{{ 'Sub Subcategories' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.edit') }}
+                                        {{ 'Edit' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -72,8 +72,8 @@
                             @method('patch')
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="name" class="mb-1"><strong>{{ __('app.title') }}</strong></label>
-                                    <x-input-group :type="'text'" :value="old('title', $SubsubCategory->title)" :name="'title'" :placeholder="__('app.enter_title_of_subsubcategory')"
+                                    <label for="name" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <x-input-group :type="'text'" :value="old('title', $SubsubCategory->title)" :name="'title'" :placeholder="'Enter title of Subsubcategory'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -83,8 +83,8 @@
                                 </div>
 
                                 <div class="col-md-6 my-2">
-                                    <x-input-select :label="__('app.select_a_parent_subcategory')" :name="'subcategory_id'" :id="'subcategory_id'">
-                                        <option value="">{{ __('app.select_a_parent_category') }}</option>
+                                    <x-input-select :label="'Select  Parent Subcategory'" :name="'subcategory_id'" :id="'subcategory_id'">
+                                        <option value="">{{ 'Select a parent category' }}</option>
                                         @foreach ($subcategories as $subcategory)
                                             <option value="{{ $subcategory->id }}" @selected(old('subcategory_id', $SubsubCategory->subcategory_id) == $subcategory->id)>
                                                 {{ $subcategory->title }}
@@ -98,7 +98,7 @@
                                 </div>
 
                                 <div class="col-md-12 my-2">
-                                    <label for="image" class="mb-1"><strong>{{ __('app.image') }}</strong></label>
+                                    <label for="image" class="mb-1"><strong>{{ 'Image' }}</strong></label>
                                     <div class="image-wrapper">
                                         <input type="hidden" name="image" id="image" value="{{ old('image', $SubsubCategory->image) }}">
                                         <input class="d-none image-crop" type="file" accept="image/*" name="image_input" id="image_input">
@@ -108,12 +108,12 @@
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                             id="choose_image">
                                             <span class="mdi mdi-file-image"></span>
-                                            {{ __('app.choose_image') }}
+                                            {{ 'Choose Image' }}
                                         </button>
                                         <button type="button" class="main-btn danger-btn btn-hover btn-sm"
                                             id="reset_image">
                                             <span class="mdi mdi-refresh"></span>
-                                            {{ __('app.reset') }}
+                                            {{ 'Reset' }}
                                         </button>
                                     </div>
                                     @error('image')
@@ -125,11 +125,11 @@
                                     @if ($SubsubCategory->status == '1')
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'"
                                             :checked="'status'">
-                                            {{ __('app.status') }}
+                                            {{ 'Status' }}
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                            {{ __('app.status') }}
+                                            {{ 'Status' }}
                                         </x-success-checkbox>
                                     @endif
                                     @error('status')
@@ -140,7 +140,7 @@
 
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ __('app.update') }}
+                                        {{ 'Update' }}
                                     </x-primary-button>
                                 </div>
 

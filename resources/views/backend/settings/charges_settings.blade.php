@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.charges_settings'))
+@section('title', 'Charges Settings')
 @section('content')
     <!-- ========== section start ========== -->
     <section class="section">
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.charges_settings') }} </h2>
+                            <h2>{{ 'Charges Settings' }} </h2>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -22,7 +22,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.charges_settings') }}
+                                        {{ 'Charges Settings' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -43,13 +43,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="shipping_charge"
-                                            class="mb-1"><strong>{{ __('app.shipping_charge') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Shipping Charge' }}</strong></label>
 
                                         <x-input-group :type="'number'" :step="0.01" :value="old(
                                             'shipping_charge',
                                             getSetting('shipping_charge') ?? '',
                                         )"
-                                            :name="'shipping_charge'" :placeholder="__('app.enter_shipping_charge')" :id="'shipping_charge'">
+                                            :name="'shipping_charge'" :placeholder="'Enter shipping charge'" :id="'shipping_charge'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -60,13 +60,13 @@
                                     </div>
                                     <div class="col-md-6 mt-3 mt-md-0">
                                         <label for="gift_wrapping_charge"
-                                            class="mb-1"><strong>{{ __('app.gift_wrapping_charge') }}</strong></label>
+                                            class="mb-1"><strong>{{ 'Gift Wrapping Charge' }}</strong></label>
 
                                         <x-input-group :type="'number'" :step="0.01" :value="old(
                                             'gift_wrapping_charge',
                                             getSetting('gift_wrapping_charge') ?? '',
                                         )"
-                                            :name="'gift_wrapping_charge'" :placeholder="__('app.enter_gift_wrapping_charge')" :id="'gift_wrapping_charge'">
+                                            :name="'gift_wrapping_charge'" :placeholder="'Enter Gift Wrapping Charge'" :id="'gift_wrapping_charge'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
 
@@ -76,12 +76,12 @@
 
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="service_charge" class="mb-1"><strong>{{ __('app.service_charge') }}</strong></label>
+                                        <label for="service_charge" class="mb-1"><strong>{{ 'Service Charge' }}</strong></label>
 
                                         <x-input-group :type="'number'" :step="0.01" :value="old(
                                                                                 'service_charge',
                                                                                 getSetting('service_charge') ?? '',
-                                                                            )" :name="'service_charge'" :placeholder="__('app.enter_service_charge')"
+                                                                            )" :name="'service_charge'" :placeholder="'Enter service charge'"
                                             :id="'service_charge'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
@@ -95,7 +95,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ __('app.update') }}
+                                            {{ 'Update' }}
                                         </x-primary-button>
                                     </div>
                                 </div>

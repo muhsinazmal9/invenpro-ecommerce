@@ -31,7 +31,7 @@ class SubsubCategoryService
 
             $SubsubCategory = SubsubCategory::create($input);
 
-            return success(__('app.subsubcategory_created_successfully'), $SubsubCategory);
+            return success('Subsubcategory Created Successfully', $SubsubCategory);
         } catch (\Exception $e) {
             logError('Subsubcategory Store error:', $e);
 
@@ -43,7 +43,7 @@ class SubsubCategoryService
     {
 
         if (! checkUserPermission(SubsubCategory::LIST)) {
-            return error(__('app.permission_denied'), 403);
+            return error('Permission Denied!', 403);
         }
 
         try {
@@ -104,15 +104,15 @@ class SubsubCategoryService
                      * HTMLs
                      */
                     $statusClass = $subsubcategory->status ? 'success' : 'danger';
-                    $SubsubcategoryStatus = $subsubcategory->status ? __('app.enabled') : __('app.disabled');
+                    $SubsubcategoryStatus = $subsubcategory->status ? 'Enabled' : 'Disabled';
 
                     $status = "<button type='button'' onclick=statusUpdate('{$subsubcategory->slug}',this) class='main-btn {$statusClass}-btn-light btn-hover btn-sm' style='padding:4px 10px'>
                                     {$SubsubcategoryStatus}
                                 </button>";
 
-                    $view = __('app.view');
-                    $edit = __('app.edit');
-                    $delete = __('app.delete');
+                    $view = 'View';
+                    $edit = 'Edit';
+                    $delete = 'Delete';
 
                     $editBtn = "<a href='".route('admin.subsub-category.edit', $subsubcategory->slug)."' class='dropdown-item' >{$edit}</a>";
                     $deleteBtn = "<button type='button' onclick=deleteSubsubCat('{$subsubcategory->slug}',this.parentElement.parentElement) class='dropdown-item' >{$delete}</button>";
@@ -151,7 +151,7 @@ class SubsubCategoryService
                 'data' => $data,
             ];
 
-            return success(__('app.subsubcategory_list'), $json_data);
+            return success('Subsubcategory list', $json_data);
 
         } catch (\Exception $e) {
             logError('Subcategory List Error ', $e);
@@ -182,7 +182,7 @@ class SubsubCategoryService
 
             $subsubcategory->update($input);
 
-            return success(__('app.subsubcategory_updated_successfully'), $subsubcategory);
+            return success('Subsubcategory updated Successfully', $subsubcategory);
         } catch (\Exception $e) {
             info('Subsubcategory Update error:', [$e]);
 

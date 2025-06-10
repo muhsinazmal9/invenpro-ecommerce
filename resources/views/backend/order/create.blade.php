@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', __('app.order'))
+@section('title', 'Order')
 
 @section('content')
     <section class="section">
@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.create_order') }}</h2>
+                            <h2>{{ 'Create Order' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -23,7 +23,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.orders') }}
+                                        {{ 'Orders' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -55,7 +55,7 @@
                                                         style="height: 50px; width: 50px;">
                                                         <i class="mdi mdi-map-marker fs-4"></i>
                                                     </div>
-                                                    {{ __('app.billing_details') }}&nbsp;<span>*</span>
+                                                    {{ 'Billing Details' }}&nbsp;<span>*</span>
                                                 </div>
                                             </h2>
                                             <div id="billingContent" class="accordion-collapse collapse show"
@@ -75,7 +75,7 @@
                                                         style="height: 50px; width: 50px;">
                                                         <i class="mdi mdi-bus-marker fs-4"></i>
                                                     </div>
-                                                    {{ __('app.shipping_details') }}&nbsp;<span>*</span>
+                                                    {{ 'Shipping Details' }}&nbsp;<span>*</span>
                                                 </div>
                                             </h2>
                                             <div id="shippingContent" class="accordion-collapse collapse"
@@ -96,7 +96,7 @@
                                                         <i class="mdi mdi-truck-delivery fs-4"></i>
                                                     </div>
 
-                                                    {{ __('app.delivery_instruction') }}
+                                                    {{ 'Delivery Instruction' }}
                                                 </div>
                                             </h2>
                                             <div id="deliveryInstructionContent" class="accordion-collapse collapse"
@@ -116,7 +116,7 @@
                                                         style="height: 50px; width: 50px;">
                                                         <i class="mdi mdi-calendar-clock fs-4"></i>
                                                     </div>
-                                                    {{ __('app.delivery_date') }}&nbsp;<span>*</span>
+                                                    {{ 'Delivery Date' }}&nbsp;<span>*</span>
                                                 </div>
                                             </h2>
                                             <div id="deliveryDateContent" class="accordion-collapse collapse"
@@ -136,7 +136,7 @@
                                                         style="height: 50px; width: 50px;">
                                                         <i class="mdi mdi-credit-card fs-4"></i>
                                                     </div>
-                                                    {{ __('app.payment_method') }} &nbsp;<span>*</span>
+                                                    {{ 'Payment Method' }} &nbsp;<span>*</span>
                                                 </div>
                                             </h2>
                                             <div id="paymentContent" class="accordion-collapse collapse"
@@ -148,11 +148,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="customer" class="mb-1"><strong>{{ __('app.customer') }}
+                                        <label for="customer" class="mb-1"><strong>{{ 'Customer' }}
                                                 <span class="text-danger">*</span></strong></label>
                                         <x-input-select :type="'text'" :value="old('customer')" :name="'customer'"
                                             :id="'customer'">
-                                            <option value="">{{ __('app.select_customer') }}</option>
+                                            <option value="">{{ 'Select Customer' }}</option>
                                         </x-input-select>
                                     </div>
                                 </div>
@@ -166,7 +166,7 @@
                                     <div>
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                             data-bs-toggle="modal"
-                                            data-bs-target="#addProductModal">{{ __('app.add_product') }}</button>
+                                            data-bs-target="#addProductModal">{{ 'Add Product' }}</button>
                                     </div>
                                 </div>
                                 <hr>
@@ -187,7 +187,7 @@
                                                 <button type="button" id="apply_promo_button"
                                                     class="main-btn primary-btn btn-hover btn-sm"
                                                     onclick="searchPromo(this)" id="promo">
-                                                    {{ __('app.apply') }}
+                                                    {{ 'Apply' }}
                                                 </button>
                                             </span>
                                         </div>
@@ -198,47 +198,47 @@
                                 </div>
                                 <hr>
                                 <div class="d-flex mb-3">
-                                    <div class="me-auto p-2"><span>{{ __('app.subtotal') }}</span></div>
+                                    <div class="me-auto p-2"><span>{{ 'Subtotal' }}</span></div>
                                     <div class="p-2">
                                         <strong id="subtotal"></strong>
                                     </div>
                                 </div>
 
                                 <div class="d-flex mb-3">
-                                    <div class="me-auto p-2"><span>{{ __('app.shipping_charge') }}</span></div>
+                                    <div class="me-auto p-2"><span>{{ 'Shipping Charge' }}</span></div>
                                     <div class="p-2">
                                         <strong id="shipping_charge"></strong>
                                     </div>
                                 </div>
                                 <div id="gift-wrapper-charge-wrapper" class="d-none">
                                     <div class="d-flex mb-3">
-                                        <div class="me-auto p-2"><span>{{ __('app.gift_wrapper_charge') }}</span></div>
+                                        <div class="me-auto p-2"><span>{{ 'Gift Wrapper Charge' }}</span></div>
                                         <div class="p-2">
                                             <strong id="gift_wrapper_charge"></strong>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex mb-3">
-                                    <div class="me-auto p-2"><span>{{ __('app.service_charge') }}</span></div>
+                                    <div class="me-auto p-2"><span>{{ 'Service Charge' }}</span></div>
                                     <div class="p-2">
                                         <strong id="service_charge"></strong>
                                     </div>
                                 </div>
                                 <div class="d-flex mb-3">
-                                    <div class="me-auto p-2"><span>{{ __('app.tax') }}</span></div>
+                                    <div class="me-auto p-2"><span>{{ 'TAX' }}</span></div>
                                     <div class="p-2">
                                         <strong id="tax"></strong>
                                     </div>
                                 </div>
                                 <div class="d-flex mb-3">
-                                    <div class="me-auto p-2"><span>{{ __('app.discount') }}</span></div>
+                                    <div class="me-auto p-2"><span>{{ 'Discount' }}</span></div>
                                     <div class="p-2">
                                         <strong id="discount"></strong>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="d-flex mb-3">
-                                    <div class="me-auto p-2"><strong>{{ __('app.total_to_pay') }}</strong></div>
+                                    <div class="me-auto p-2"><strong>{{ 'Total To Pay' }}</strong></div>
                                     <div class="p-2">
                                         <strong id="grand_total"></strong>
                                     </div>
@@ -247,7 +247,7 @@
 
                             <button type="button" id="checkout_button"
                                 class="mt-3 main-btn primary-btn btn-hover w-100">
-                                {{ __('app.checkout') }}
+                                {{ 'Checkout' }}
                             </button>
                         </div>
                     </div>
@@ -264,7 +264,7 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="addProductModalLabel">{{ __('app.add_product') }}</h1>
+                    <h1 class="modal-title fs-5" id="addProductModalLabel">{{ 'Add Product' }}</h1>
                     <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -293,7 +293,7 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="updateProductModalLabel">{{ __('app.edit_product') }}</h1>
+                    <h1 class="modal-title fs-5" id="updateProductModalLabel">{{ 'Edit Product' }}</h1>
                     <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -334,7 +334,7 @@
                 },
                 cache: true
             },
-            placeholder: "{{ __('app.select_customer') }}",
+            placeholder: "{{ 'Select Customer' }}",
             minimumInputLength: 1,
             templateResult: formatUser,
             templateSelection: formatUser
@@ -457,7 +457,7 @@
         $('#billing_state').on('change', function() {
             if ($(this).val()) {
                 $('#billing_city').empty();
-                $('#billing_city').append(`<option value="">{{ __('app.select_city') }}</option>`);
+                $('#billing_city').append(`<option value="">{{ 'Select City' }}</option>`);
                 getCities($(this).val(), '#billing_city');
             }
         });
@@ -466,7 +466,7 @@
         $('#shipping_state').on('change', function() {
             if ($(this).val()) {
                 $('#shipping_city').empty();
-                $('#shipping_city').append(`<option value="">{{ __('app.select_city') }}</option>`);
+                $('#shipping_city').append(`<option value="">{{ 'Select City' }}</option>`);
                 getCities($(this).val(), '#shipping_city');
             }
         });
@@ -747,7 +747,7 @@
                         if (selectedProduct.id === product.id) {
                             $('.spinner-border', `#select_button_${product_id}`).remove();
                             $(`#select_button_${product_id}`).after(
-                                `<span style="font-size: 13px;" id="already_exist_${product_id}" class="text-danger">{{ __('app.this_product_is_already_in_list') }}</span>`
+                                `<span style="font-size: 13px;" id="already_exist_${product_id}" class="text-danger">{{ 'This product is already in list' }}</span>`
                             );
                             $(`#select_button_${product_id}`).prop('disabled', false);
 

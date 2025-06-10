@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', __('app.profile'))
+@section('title', 'Profile')
 @section('content')
 
     <!-- ========== section start ========== -->
@@ -10,7 +10,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ __('app.profile') }}</h2>
+                            <h2>{{ 'Profile' }}</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -22,7 +22,7 @@
                                         <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ __('app.profile') }}
+                                        {{ 'Profile' }}
                                     </li>
                                 </ol>
                             </nav>
@@ -37,16 +37,16 @@
                 <div class="col-md-12">
 
                     <div class="card-style mb-30">
-                        <h6 class="mb-25">{{ __('app.update_profile_information') }}</h6>
+                        <h6 class="mb-25">{{ 'Update Profile Information' }}</h6>
                         @include('backend.profile.partials.update-profile-information-form')
                     </div>
 
                     <div class="card-style mb-30">
-                        <h6 class="mb-25">{{ __('app.update_password') }}</h6>
+                        <h6 class="mb-25">{{ 'Update Password' }}</h6>
                         @include('backend.profile.partials.update-password-form')
                     </div>
                     <div class="card-style mb-30">
-                        <h6 class="mb-25">{{ __('app.delete_account') }}</h6>
+                        <h6 class="mb-25">{{ 'Delete Account' }}</h6>
                         @include('backend.profile.partials.delete-user-form')
                     </div>
 
