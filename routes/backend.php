@@ -53,7 +53,7 @@ use App\Http\Controllers\SubsubCategoryController;
 use App\Http\Controllers\DeliveryScheduleController;
 use App\Http\Controllers\FeatureHighlightController;
 
-Route::name('admin.')->prefix('/')->middleware(['auth', 'verified'])->group(function () {
+Route::name('admin.')->prefix('/admin')->middleware(['auth', 'verified'])->group(function () {
     Route::controller(DashboardController::class)->name('dashboard.')->prefix('/')->group(function () {
         Route::get('/', '__invoke')->name('index');
         Route::get('/get-top-products', 'getTopProduct')->name('get.top.products');

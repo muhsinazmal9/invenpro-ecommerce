@@ -21,8 +21,8 @@
                             <div class="mb-60">
                                 <img class="img-fluid" src="{{ asset(getSetting(App\Models\Settings::PRIMARY_LOGO)) }}" alt="primary_logo" loading="lazy">
                             </div>
-                            <h2 class="mb-3 fusionshop-primary fw-bold text-uppercase">{{ 'Admin Panel' }}</h6>
-                            <p class="text-sm mb-25">{{ 'Welcome back login to your panel.' }}</p>
+                            <h2 class="mb-3 fusionshop-primary fw-bold text-uppercase">Admin Panel</h6>
+                            <p class="text-sm mb-25">Welcome back login to your panel.</p>
                         </div>
                         @include('auth.partials.login_form')
                         @env('local')
@@ -30,10 +30,10 @@
                                 <div class="d-flex justify-content-between">
                                     <div>
                                         <p>
-                                            {{ 'Email' }} : <span class="fw-bold" id="admin_email">admin@gmail.com</span>
+                                            Email : <span class="fw-bold" id="admin_email">admin@gmail.com</span>
                                         </p>
                                         <p>
-                                            {{ 'Password' }} : <span class="fw-bold" id="admin_password">admin</span>
+                                            Password : <span class="fw-bold" id="admin_password">admin</span>
                                         </p>
                                     </div>
                                     <button class="btn btn-sm btn-light" onclick="giveCredentials()">

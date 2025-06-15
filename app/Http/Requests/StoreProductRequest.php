@@ -31,9 +31,7 @@ class StoreProductRequest extends FormRequest
       return [
             'title' => 'required|string|max:255',
             'thumbnail' => 'required',
-            'size_chart' => 'required',
             'short_description' => 'required|string',
-            'long_description' => 'nullable|string',
             'sku' => 'required|string',
             'price' => 'required|numeric|min:0',
             'discount' => 'nullable|numeric|min:0',

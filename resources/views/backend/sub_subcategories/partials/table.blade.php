@@ -128,7 +128,7 @@
 
         Swal.fire({
             title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You want to change the status of this page!' }}",
+            text: "{{ 'You want to  the status of this subsubcategory!' }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',

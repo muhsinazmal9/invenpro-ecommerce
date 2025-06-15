@@ -122,7 +122,7 @@ if (! function_exists('getSetting')) {
 if (! function_exists('getPlaceholderImage')) {
     function getPlaceholderImage(string $width, string $height, ?string $text = null): ?string
     {
-        return "https://fakeimg.pl/{$width}x{$height}/?text={$text}&font=bebas";
+        return "https://placehold.co/{$width}x{$height}/?text={$text}&font=bebas";
     }
 }
 

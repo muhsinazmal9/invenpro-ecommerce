@@ -89,7 +89,7 @@
             <form action="{{ route('admin.products.store') }}" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-9">
-                        <div class="card-style">
+                        <div class="card-style mb-3">
                             @csrf
                             <div class="row">
                                 {{-- Title --}}
@@ -104,183 +104,15 @@
                                     @enderror
                                 </div>
 
-                                {{-- Category --}}
-
-                                <div class="col-md-6 mt-2">
-                                    <x-input-select :label="'Select a category'" :name="'category_id'" :id="'category_id'" :class="'select2'">
-                                        <option value="">{{ 'Select a category' }}</option>
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}" @selected(old('category_id') == $category->id)>
-                                                {{ $category->name }}
-                                            </option>
-                                        @endforeach
-
-                                    </x-input-select>
-
-                                    @error('category_id')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- Subcategory --}}
-                                <div class="col-md-6 mt-2">
-                                    <x-input-select :label="'Select a subcategory'" :name="'subcategory_id'" :id="'subcategory_id'"
-                                        :class="'select2'">
-                                        <option value="">{{ 'Select a subcategory' }}</option>
-                                        {{-- Subcategory will apear here when select any category --}}
-                                    </x-input-select>
-
-                                    @error('subcategory_id')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                {{-- Sub Subcategory --}}
-                                <div class="col-md-6 mt-2">
-                                    <x-input-select :label="'Select a Sub Subcategory'" :name="'subsub_category_id'" :id="'subsub_category_id'"
-                                        :class="'select2'">
-                                        <option value="">{{ 'Select a Sub Subcategory' }}</option>
-                                        {{-- Subcategory will apear here when select any category --}}
-                                    </x-input-select>
-
-                                    @error('subsub_category_id')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- Brand --}}
-                                <div class="col-md-6 mt-2">
-                                    <x-input-select :label="'Select a brand'" :name="'brand_id'" :id="'brand_id'"
-                                        :class="'select2'">
-                                        <option value="">{{ 'Select a brand' }}</option>
-                                        @foreach ($brands as $brand)
-                                            <option value="{{ $brand->id }}" @selected(old('brand_id') == $brand->id)>
-                                                {{ $brand->title }}
-                                            </option>
-                                        @endforeach
-
-                                    </x-input-select>
-
-                                    @error('brand_id')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- SKU --}}
-                                <div class="col-md-6 mt-2">
-                                    <label for="sku" class="mb-1"><strong>{{ 'SKU' }}</strong></label>
-                                    <x-input-group :type="'text'" :value="old('sku')" :name="'sku'"
-                                        :placeholder="'Enter SKU'" :id="'sku'">
-                                        <span class="mdi mdi-shape"></span>
-                                    </x-input-group>
-                                    @error('sku')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- Stock --}}
-                                <div class="col-md-6 mt-2">
-                                    <label for="stock" class="mb-1"><strong>{{ 'Stock' }}</strong></label>
-                                    <x-input-group :type="'number'" :value="old('stock')" :name="'stock'"
-                                        :placeholder="'Enter stock'" :id="'stock'">
-                                        <span class="mdi mdi-shape"></span>
-                                    </x-input-group>
-                                    @error('stock')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- Price  --}}
-                                <div class="col-md-6 mt-2">
-                                    <label for="price" class="mb-1"><strong>{{ 'Price' }}</strong></label>
-                                    <x-input-group :type="'number'" :step="'any'" :value="old('price')"
-                                        :name="'price'" :placeholder="'Enter price'" :id="'price'">
-                                        <span class="mdi mdi-shape"></span>
-                                    </x-input-group>
-                                    @error('price')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- Discount  --}}
-                                <div class="col-md-6 mt-2">
-                                    <label for="discount" class="mb-1"><strong>{{ 'Discount' }}</strong></label>
-                                    <x-input-group :type="'number'" :step="'any'" :value="old('discount')"
-                                        :name="'discount'" :placeholder="'Enter discount'" :id="'discount'">
-                                        <span class="mdi mdi-shape"></span>
-                                    </x-input-group>
-                                    @error('discount')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- Discount Type --}}
-                                <div class="col-md-6 mt-2">
-                                    <x-input-select :label="'Select discount type'" :name="'discount_type'" :id="'discount_type'"
-                                        :class="'select2'">
-                                        <option value="">{{ 'Select discount type' }}</option>
-
-                                        @foreach (App\Models\Product::DISCOUNT_TYPE as $discount)
-                                            <option @selected(old('discount_type') == $discount) value="{{ $discount }}">
-                                                {{ $discount }}
-                                            </option>
-                                        @endforeach
-
-                                    </x-input-select>
-                                    @error('discount_type')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                             {{--  Tax   --}}
-                               <div class="col-md-6 my-2">
-                                <x-input-select :label="'Select TAX'" :name="'tax_id'" :id="'tax_id'">
-                                    <option value="0" @selected(old('tax_id') == 0)>{{ 'No TAX' }}</option>
-                                    @foreach ($tax_settings as $tax_setting)
-                                    <option value="{{ $tax_setting->id }}" @selected(old('tax_id') == $tax_setting->id)>
-                                        {{ $tax_setting->code}}
-                                    </option>
-                                    @endforeach
-
-                                </x-input-select>
-
-                                @error('tax_id')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                               </div>
-
-                                {{-- TAGs  --}}
-                                <div class="col-md-12 mt-2">
-
-                                    <label for="tags" class="mb-1"><strong>{{ 'Tags' }}</strong></label>
-                                    <input type="text" id="tags" name="tags" value="{{ old('tags') }}"
-                                        class="form-control" placeholder="{{ 'Enter tags' }}">
-                                    @error('tags')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
                                 {{-- Short Description --}}
                                 <div class="col-md-12 mt-2">
 
                                     <label for="short_description"
-                                        class="mb-1"><strong>{{ 'Short Description' }}</strong></label>
+                                        class="mb-1"><strong>Short Description</strong></label>
 
-                                    <x-textarea-group :placeholder="'Enter short description of product'" :name="'short_description'" :id="'short_description'">
-                                        {{ old('short_description') }} </x-textarea-group>
+                                    <textarea name="short_description" id="short_description" class="form-control" rows="5">{{ old('short_description') }}</textarea>
 
                                     @error('short_description')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- Long Description --}}
-                                <div class="col-md-12 mt-2">
-
-                                    <label for="long_description"
-                                        class="mb-1"><strong>{{ 'Long Description' }}</strong></label>
-
-                                    <textarea name="long_description" id="long_description" class="form-control" rows="5">{{ old('long_description') }}</textarea>
-
-                                    @error('long_description')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -338,6 +170,127 @@
                             </div>
 
                         </div>
+                        <div class="card-style mb-3">
+                            <div class="row">
+                                {{-- Category --}}
+
+                                <div class="col-md-6 mt-2">
+                                    <x-input-select :label="'Select a category'" :name="'category_id'" :id="'category_id'" :class="'select2'">
+                                        <option value="">{{ 'Select a category' }}</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}" @selected(old('category_id') == $category->id)>
+                                                {{ $category->name }}
+                                            </option>
+                                        @endforeach
+
+                                    </x-input-select>
+
+                                    @error('category_id')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                {{-- Subcategory --}}
+                                <div class="col-md-6 mt-2">
+                                    <x-input-select :label="'Select a subcategory'" :name="'subcategory_id'" :id="'subcategory_id'"
+                                        :class="'select2'">
+                                        <option value="">{{ 'Select a subcategory' }}</option>
+                                        {{-- Subcategory will apear here when select any category --}}
+                                    </x-input-select>
+
+                                    @error('subcategory_id')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                {{-- Sub Subcategory --}}
+                                <div class="col-md-6 mt-2">
+                                    <x-input-select :label="'Select a Sub Subcategory'" :name="'subsub_category_id'" :id="'subsub_category_id'"
+                                        :class="'select2'">
+                                        <option value="">{{ 'Select a Sub Subcategory' }}</option>
+                                        {{-- Subcategory will apear here when select any category --}}
+                                    </x-input-select>
+
+                                    @error('subsub_category_id')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                {{-- Brand --}}
+                                <div class="col-md-6 mt-2">
+                                    <x-input-select :label="'Select a brand'" :name="'brand_id'" :id="'brand_id'"
+                                        :class="'select2'">
+                                        <option value="">{{ 'Select a brand' }}</option>
+                                        @foreach ($brands as $brand)
+                                            <option value="{{ $brand->id }}" @selected(old('brand_id') == $brand->id)>
+                                                {{ $brand->title }}
+                                            </option>
+                                        @endforeach
+
+                                    </x-input-select>
+
+                                    @error('brand_id')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-style mb-3">
+                            <div class="row">
+                                {{-- Price  --}}
+                                <div class="col-md-6 mt-2">
+                                    <label for="price" class="mb-1"><strong>{{ 'Price' }}</strong></label>
+                                    <x-input-group :type="'number'" :step="'any'" :value="old('price')"
+                                        :name="'price'" :placeholder="'Enter price'" :id="'price'">
+                                        <span class="mdi mdi-shape"></span>
+                                    </x-input-group>
+                                    @error('price')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                {{-- Discount  --}}
+                                <div class="col-md-6 mt-2">
+                                    <label for="discount" class="mb-1"><strong>{{ 'Discount' }}</strong></label>
+                                    <x-input-group :type="'number'" :step="'any'" :value="old('discount')"
+                                        :name="'discount'" :placeholder="'Enter discount'" :id="'discount'">
+                                        <span class="mdi mdi-shape"></span>
+                                    </x-input-group>
+                                    @error('discount')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                {{-- Discount Type --}}
+                                <div class="col-md-6 mt-2">
+                                    <x-input-select :label="'Select discount type'" :name="'discount_type'" :id="'discount_type'">
+                                        <option value="">{{ 'Select discount type' }}</option>
+
+                                        @foreach (App\Models\Product::DISCOUNT_TYPE as $discount)
+                                            <option @selected(old('discount_type') == $discount) value="{{ $discount }}">
+                                                {{ $discount }}
+                                            </option>
+                                        @endforeach
+
+                                    </x-input-select>
+                                    @error('discount_type')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                {{-- Stock --}}
+                                <div class="col-md-6 mt-2">
+                                    <label for="stock" class="mb-1"><strong>{{ 'Stock' }}</strong></label>
+                                    <x-input-group :type="'number'" :value="old('stock')" :name="'stock'"
+                                        :placeholder="'Enter stock'" :id="'stock'">
+                                        <span class="mdi mdi-shape"></span>
+                                    </x-input-group>
+                                    @error('stock')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-3">
 
@@ -372,38 +325,6 @@
                                             {{ 'Reset' }}
                                         </x-danger-button>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="size_chart"
-                                            class="mb-1"><strong>{{ 'Size Chart' }}</strong></label>
-                                        <div class="input-group">
-                                            <input type="file"
-                                                onchange=
-                                                "document.getElementById('size_chart_preview').src =
-                                                window.URL.createObjectURL(this.files[0])"
-                                                id="size_chart_image_input" class="d-none" name="size_chart">
-                                        </div>
-                                        <div class="mt-2 text-center ">
-                                            <img src="{{ old('size_chart') ?? asset('assets/backend/images/size-chart.jpg') }}"
-                                                alt="size_chart" id="size_chart_preview" class="img-fluid">
-                                        </div>
-
-                                        @error('size_chart')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="d-flex mt-2 justify-content-center">
-
-                                        <x-primary-button :id="'size_chart_image'" :class="'me-2 '">
-                                            <span class="mdi mdi-plus-circle" style="font-size: 20px"></span>
-                                            {{ 'Add' }}
-                                        </x-primary-button>
-
-                                        <x-danger-button :label="__('app.remove')" :id="'remove_size_chart'">
-                                            <span class="mdi mdi-reload" style="font-size: 20px"></span>
-                                            {{ 'Reset' }}
-                                        </x-danger-button>
-                                    </div>
-
 
                                     {{-- Multiple Images --}}
                                     <div class="multiple-images-wrapper">
@@ -527,15 +448,14 @@
     <script>
         $(".select2").select2();
         $(document).ready(function() {
-            $('#long_description').summernote({
-                height: 400,
+            $('#short_description').summernote({
+                height: 200,
 
                 toolbar: [
                     // hide font family button
                     ['font', ['bold', 'underline', 'clear']],
                     ['para', ['ul', 'ol', 'paragraph', 'style']],
-                    ['insert', ['link', 'picture', 'video']],
-                    ['view', ['fullscreen', 'codeview', 'help']]
+                    ['insert', ['link', 'picture']],
                 ]
             });
 

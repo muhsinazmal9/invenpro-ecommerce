@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
+use App\Models\Brand;
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\Attribute;
+use App\Models\Subcategory;
+use App\Models\TaxSettings;
+use App\Models\ProductImage;
+use Illuminate\Http\Request;
+use App\Models\SubsubCategory;
+use App\Services\ProductService;
+use Illuminate\Http\JsonResponse;
+use App\Http\Resources\TaxResource;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-use App\Http\Resources\TaxResource;
-use App\Models\Brand;
-use App\Models\Category;
-use App\Models\Product;
-use App\Models\ProductImage;
-use App\Models\Subcategory;
-use App\Models\SubsubCategory;
-use App\Models\Tag;
-use App\Models\TaxSettings;
-use App\Services\ProductService;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -42,12 +43,12 @@ class ProductController extends Controller
         $categories = Category::where('status', Category::STATUS['active'])->get(['id', 'name']);
         $subcategories = Subcategory::where('status', Subcategory::STATUS['active'])->get(['id', 'title', 'category_id']);
         $subsubcategories = SubsubCategory::where('status', SubsubCategory::STATUS['active'])->get(['id', 'title', 'subcategory_id']);
-
+        $attributes = Attribute::where('status', Attribute::STATUS['active'])->get(['id', 'name']);
         $brands = Brand::where('status', Brand::STATUS['active'])->get(['id', 'title']);
         $tags = Tag::where('status', Tag::STATUS['active'])->get(['id', 'title']);
         $tax_settings = TaxSettings::get(['id', 'code']);
 
-        return view('backend.products.create', compact('categories', 'subcategories', 'brands', 'tags', 'subsubcategories', 'tax_settings'));
+        return view('backend.products.create', compact('categories', 'subcategories', 'brands', 'tags', 'subsubcategories', 'tax_settings', 'attributes'));
     }
 
     public function store(StoreProductRequest $request): RedirectResponse

@@ -60,15 +60,6 @@ class SubscriberController extends Controller
         return view('backend.subscriber.unsubscribe_view');
     }
 
-    // public function statusUpdate(Subscriber $subscriber)
-    // {
-
-    //    $subscriber->is_subscribed =! $subscriber->is_subscribed;
-    //    $subscriber->save();
-
-    //     return success('Product featured status updated successfully', $subscriber);
-
-    // }
 
     public function store(RequestsStoreSubscriberRequest $request): JsonResponse
     {

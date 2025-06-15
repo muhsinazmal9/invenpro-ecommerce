@@ -15,7 +15,7 @@
 <div class="select-style-1 mb-0">
     @isset($label)
         <label @isset($id) for="{{ $id }}" @endisset
-            @isset($label_class) class="{{ $label_class }} mb-1" @endisset><strong>{{ $label }}</strong>
+            class="{{ isset($label_class) ? $label_class : '' }} mb-2"><strong>{{ $label }}</strong>
             {!! isset($tooltip)
                 ? "<span data-bs-toggle='tooltip' class='custom_tooltip' style='cursor: pointer;' title='{$tooltip}'><span class='mdi mdi-information'></span></span>"
                 : '' !!}
