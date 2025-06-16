@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Attribute;
 use Illuminate\Http\Request;
+use App\Services\AttributeService;
 
 class AttributeController extends Controller
 {
+
+    public function __construct(
+        private AttributeService $attributeService
+    ) {
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -20,7 +27,7 @@ class AttributeController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.attributes.create');
     }
 
     /**
@@ -28,7 +35,13 @@ class AttributeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $create = $this->attributeService->create($request);
+
+        if ($create->getData()->success) {
+            return redirect()->route('admin.attributes.index')->with('success', 'Attribute created successfully');
+        }
+
+        return back()->with('error', $create->getData()->message)->withInput();
     }
 
     /**
