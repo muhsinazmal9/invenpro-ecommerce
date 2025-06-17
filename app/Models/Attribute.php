@@ -19,4 +19,15 @@ class Attribute extends Model
         'active' => 1,
         'inactive' => 0,
     ];
+
+    protected $fillable = [
+        'name',
+        'slug',
+        'status',
+    ];
+
+    public function attributeValues()
+    {
+        return $this->hasMany(AttributeValue::class);
+    }
 }

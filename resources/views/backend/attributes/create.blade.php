@@ -5,6 +5,7 @@
         .color-preview {
             width: 30px;
             height: 30px;
+            aspect-ratio: 1;
             border-radius: 50%;
             display: inline-block;
             border: 1px solid #ccc;
@@ -27,7 +28,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Create Attribute' }}</h2>
+                            <h2>Create Attribute</h2>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -35,13 +36,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a href="{{ route('admin.attributes.index') }}">{{ 'Attributes' }}</a>
+                                        <a href="{{ route('admin.attributes.index') }}">Attributes</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Create' }}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -57,29 +58,29 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-5 my-2">
-                                    <label for="name" class="mb-1"><strong>{{ 'Name' }}</strong></label>
+                                    <label for="name" class="mb-1"><strong>Name</strong></label>
                                     <x-input-group :type="'text'" :value="old('name')" :name="'name'" :placeholder="'Enter attribute name'" :id="'name'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
-                                    <span class="error-message" id="name_error">{{ 'Name is required' }}</span>
+                                    <span class="error-message" id="name_error">Name is required</span>
                                 </div>
 
                                 <div class="col-md-5 my-2">
-                                    <label for="slug" class="mb-1"><strong>{{ 'Slug' }}</strong></label>
+                                    <label for="slug" class="mb-1"><strong>Slug</strong></label>
                                     <x-input-group :type="'text'" :value="old('slug')" :name="'slug'" :placeholder="'Enter slug'" :id="'slug'">
                                         <span class="mdi mdi-link"></span>
                                     </x-input-group>
                                     @error('slug')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
-                                    <span class="error-message" id="slug_error">{{ 'Slug is required and must be unique' }}</span>
+                                    <span class="error-message" id="slug_error">Slug is required and must be unique</span>
                                 </div>
 
                                 <div class="col-md-2">
-                                    <button type="button" class="main-btn primary-btn btn-hover btn-sm" data-bs-toggle="modal" style="margin-top:42px" data-bs-target="#addValueModal">{{ 'Add Value' }}</button>
+                                    <button type="button" class="main-btn primary-btn btn-hover btn-sm" data-bs-toggle="modal" style="margin-top:42px" data-bs-target="#addValueModal">Add Value</button>
                                 </div>
 
                                 <div class="col-md-12 my-2">
@@ -88,27 +89,27 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th class="text-center" width="30%">{{ 'Name' }}</th>
-                                                    <th class="text-center" width="30%">{{ 'Color Code' }}</th>
-                                                    <th class="text-center" width="10%">{{ 'Actions' }}</th>
+                                                    <th class="text-center" width="30%">Name</th>
+                                                    <th class="text-center" width="30%">Color Code</th>
+                                                    <th class="text-center" width="10%">Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="value_body">
                                                 <tr>
-                                                    <td class="text-center" colspan="3">{{ 'No Values' }}</td>
+                                                    <td class="text-center" colspan="3">No Values</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                         @error('attribute_values')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
-                                        <span class="error-message" id="values_error">{{ 'At least one value is required' }}</span>
+                                        <span class="error-message" id="values_error">At least one value is required</span>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12 my-2">
                                     <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                        {{ 'Status' }}
+                                        Status
                                     </x-success-checkbox>
                                     @error('status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -117,7 +118,7 @@
 
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Create' }}
+                                        Create
                                     </x-primary-button>
                                 </div>
                             </div>
@@ -136,36 +137,36 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="addValueModalLabel">{{ 'Add Attribute Value' }}</h1>
+                    <h1 class="modal-title fs-5" id="addValueModalLabel">Add Attribute Value</h1>
                     <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="value_name" class="form-label"><strong>{{ 'Value Name' }}</strong></label>
+                        <label for="value_name" class="form-label"><strong>Value Name</strong></label>
                         <input type="text" class="form-control" id="value_name" placeholder="Enter value name">
-                        <span class="error-message" id="value_name_error">{{ 'Value name is required' }}</span>
+                        <span class="error-message" id="value_name_error">Value name is required</span>
                     </div>
                     <div class="mb-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="is_color" name="is_color">
                             <label class="form-check-label" for="is_color">
-                                {{ 'Is Color?' }}
+                                Is Color?
                             </label>
                         </div>
                     </div>
                     <div class="mb-3" id="color_code_wrapper" style="display: none;">
-                        <label for="color_code" class="form-label"><strong>{{ 'Color Code' }}</strong></label>
+                        <label for="color_code" class="form-label"><strong>Color Code</strong></label>
                         <div class="d-flex align-items-center gap-2">
                             <input type="color" class="form-control form-control-color" id="color_code" value="#000000">
                             <input type="text" class="form-control" id="color_code_text" placeholder="Enter hex code (e.g., #FFFFFF)">
                             <span class="color-preview" id="color_preview" style="background-color: #000000;"></span>
                         </div>
-                        <span class="error-message" id="color_code_error">{{ 'Valid color code is required (e.g., #FFFFFF)' }}</span>
+                        <span class="error-message" id="color_code_error">Valid color code is required (e.g., #FFFFFF)</span>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="main-btn danger-btn btn-hover btn-sm" data-bs-dismiss="modal">{{ 'Close' }}</button>
-                    <button type="button" class="main-btn primary-btn btn-hover btn-sm" id="add_value">{{ 'Add Value' }}</button>
+                    <button type="button" class="main-btn danger-btn btn-hover btn-sm" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="main-btn primary-btn btn-hover btn-sm" id="add_value">Add Value</button>
                 </div>
             </div>
         </div>
@@ -173,21 +174,26 @@
 @endsection
 
 @push('script')
+    <script src="https://cdn.jsdelivr.net/npm/slugify@1.6.6/slugify.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Auto-generate slug from name
-            $('#name').on('input', function() {
-                const name = $(this).val().trim();
-                if (name) {
-                    const slug = name
-                        .toLowerCase()
-                        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-                        .replace(/\s+/g, '-')         // Replace spaces with hyphens
-                        .replace(/-+/g, '-');         // Replace multiple hyphens with single
-                    $('#slug').val(slug);
-                } else {
-                    $('#slug').val('');
-                }
+            $('#name').on('input', function () {
+                const val = $(this).val().trim();
+                const slug = slugify(val, {
+                    lower: true,
+                    strict: true,
+                    locale: 'en'
+                });
+                $('#slug').val(val ? slug : '');
+            });
+            $('#slug').on('input', function () {
+                const val = $(this).val().trim();
+                const slug = slugify(val, {
+                    lower: true,
+                    strict: true,
+                    locale: 'en'
+                });
+                $('#slug').val(val ? slug : '');
             });
 
             // Toggle color code input visibility
@@ -215,7 +221,6 @@
                 }
             });
 
-            // Add value with validation
             $('#add_value').click(function() {
                 const name = $('#value_name').val().trim();
                 const isColor = $('#is_color').is(':checked');
@@ -326,7 +331,7 @@
             if (values.length === 0) {
                 $('#value_body').append(`
                     <tr>
-                        <td class="text-center" colspan="3">{{ 'No Values' }}</td>
+                        <td class="text-center" colspan="3">No Values</td>
                     </tr>
                 `);
             } else {

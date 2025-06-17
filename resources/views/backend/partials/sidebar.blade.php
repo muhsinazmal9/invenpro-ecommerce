@@ -91,6 +91,14 @@ $sidebarItems = [
     ],
     [
         'type' => 'link',
+        'name' => 'Attributes',
+        'route' => 'admin.attributes.index',
+        'icon' => 'mdi mdi-shape',
+        'permission' => App\Models\Attribute::LIST,
+        'active' => Route::is('admin.attributes.*'),
+    ],
+    [
+        'type' => 'link',
         'name' => 'Deals',
         'route' => 'admin.deals.index',
         'icon' => 'mdi mdi-shape',
