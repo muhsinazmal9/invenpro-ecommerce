@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
+            $table->boolean('is_color')->default(false);
             $table->boolean('status')->default(0)->comment('0: Disabled, 1: Enabled');
             $table->timestamps();
         });

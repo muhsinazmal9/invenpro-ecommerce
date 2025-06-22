@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('attribute_values', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('is_color')->default(false);
             $table->string('color_code')->nullable();
             $table->foreignId('attribute_id')->constrained('attributes')->cascadeOnDelete();
             $table->timestamps();

@@ -10,6 +10,7 @@
             display: inline-block;
             border: 1px solid #ccc;
         }
+
         .error-message {
             color: #dc3545;
             font-size: 0.875rem;
@@ -51,15 +52,16 @@
                 </div>
             </div>
             <!-- ========== title-wrapper end ========== -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card-style">
-                        <form action="{{ route('admin.attributes.store') }}" method="post" id="attributeForm">
-                            @csrf
+            <form action="{{ route('admin.attributes.store') }}" method="post" id="attributeForm">
+                @csrf
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="card-style">
                             <div class="row">
-                                <div class="col-md-5 my-2">
+                                <div class="col-md-12 mb-3">
                                     <label for="name" class="mb-1"><strong>Name</strong></label>
-                                    <x-input-group :type="'text'" :value="old('name')" :name="'name'" :placeholder="'Enter attribute name'" :id="'name'">
+                                    <x-input-group :type="'text'" :value="old('name')" :name="'name'" :placeholder="'Enter attribute name'"
+                                        :id="'name'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
                                     @error('name')
@@ -68,9 +70,10 @@
                                     <span class="error-message" id="name_error">Name is required</span>
                                 </div>
 
-                                <div class="col-md-5 my-2">
+                                <div class="col-md-12 mb-3">
                                     <label for="slug" class="mb-1"><strong>Slug</strong></label>
-                                    <x-input-group :type="'text'" :value="old('slug')" :name="'slug'" :placeholder="'Enter slug'" :id="'slug'">
+                                    <x-input-group :type="'text'" :value="old('slug')" :name="'slug'" :placeholder="'Enter slug'"
+                                        :id="'slug'">
                                         <span class="mdi mdi-link"></span>
                                     </x-input-group>
                                     @error('slug')
@@ -79,18 +82,49 @@
                                     <span class="error-message" id="slug_error">Slug is required and must be unique</span>
                                 </div>
 
-                                <div class="col-md-2">
-                                    <button type="button" class="main-btn primary-btn btn-hover btn-sm" data-bs-toggle="modal" style="margin-top:42px" data-bs-target="#addValueModal">Add Value</button>
+                                <div class="col-md-12 mb-3">
+                                    <x-success-checkbox :id="'is_color'" :value="'1'" :name="'is_color'"
+                                        :checked="old('is_color', false)">
+                                        Is Color?
+                                    </x-success-checkbox>
+                                    @error('is_color')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
-
+                                <div class="col-md-12 mb-3">
+                                    <x-success-checkbox :id="'status'" :value="'1'" :name="'status'"
+                                        :checked="old('status', false)">
+                                        Status
+                                    </x-success-checkbox>
+                                    @error('status')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-12">
+                                    <x-primary-button :type="'submit'">
+                                        Create
+                                    </x-primary-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div人不 data:attributes class="col-md-7">
+                        <div class="card-style">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="button" class="main-btn primary-btn btn-hover btn-sm"
+                                        data-bs-toggle="modal" data-bs-target="#addValueModal">Add Value</button>
+                                </div>
                                 <div class="col-md-12 my-2">
-                                    <input type="hidden" name="attribute_values" id="attribute_values" value="[]">
+                                    <input type="hidden" name="attribute_values" id="attribute_values"
+                                        value="{{ old('attribute_values', '[]') }}">
                                     <div class="value_wrapper table-responsive">
                                         <table class="table">
                                             <thead>
                                                 <tr>
                                                     <th class="text-center" width="30%">Name</th>
-                                                    <th class="text-center" width="30%">Color Code</th>
+                                                    <th class="text-center color-code-column" width="30%"
+                                                        style="display: none;">Color Code</th>
                                                     <th class="text-center" width="10%">Actions</th>
                                                 </tr>
                                             </thead>
@@ -106,34 +140,19 @@
                                         <span class="error-message" id="values_error">At least one value is required</span>
                                     </div>
                                 </div>
-
-                                <div class="col-md-12 my-2">
-                                    <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                        Status
-                                    </x-success-checkbox>
-                                    @error('status')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="col-md-12 mt-3">
-                                    <x-primary-button :type="'submit'">
-                                        Create
-                                    </x-primary-button>
-                                </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
                 </div>
-            </div>
-            <!-- End Row -->
+                <!-- End Row -->
+            </form>
         </div>
         <!-- end container -->
     </section>
     <!-- ========== section end ========== -->
 
     <!-- Add Value Modal -->
-    <div class="modal fade" data-bs-backdrop="static" id="addValueModal" tabindex="-1" aria-labelledby="addValueModalLabel" aria-hidden="true">
+    <div class="modal fade" data-bs-backdrop="static" id="addValueModal" tabindex="-1" aria-labelledby="addValueModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -146,27 +165,61 @@
                         <input type="text" class="form-control" id="value_name" placeholder="Enter value name">
                         <span class="error-message" id="value_name_error">Value name is required</span>
                     </div>
-                    <div class="mb-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="is_color" name="is_color">
-                            <label class="form-check-label" for="is_color">
-                                Is Color?
-                            </label>
-                        </div>
-                    </div>
                     <div class="mb-3" id="color_code_wrapper" style="display: none;">
                         <label for="color_code" class="form-label"><strong>Color Code</strong></label>
                         <div class="d-flex align-items-center gap-2">
-                            <input type="color" class="form-control form-control-color" id="color_code" value="#000000">
-                            <input type="text" class="form-control" id="color_code_text" placeholder="Enter hex code (e.g., #FFFFFF)">
-                            <span class="color-preview" id="color_preview" style="background-color: #000000;"></span>
+                            <input type="text" class="form-control" id="color_code_text"
+                                placeholder="Enter hex code (e.g., #FFFFFF)">
+                            <input type="color" class="form-control form-control-color" id="color_code"
+                                value="#000000">
                         </div>
-                        <span class="error-message" id="color_code_error">Valid color code is required (e.g., #FFFFFF)</span>
+                        <span class="error-message" id="color_code_error">Valid color code is required (e.g.,
+                            #FFFFFF)</span>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="main-btn danger-btn btn-hover btn-sm" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="main-btn primary-btn btn-hover btn-sm" id="add_value">Add Value</button>
+                    <button type="button" class="main-btn danger-btn btn-hover btn-sm"
+                        data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="main-btn primary-btn btn-hover btn-sm" id="add_value">Add
+                        Value</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Value Modal -->
+    <div class="modal fade" data-bs-backdrop="static" id="editValueModal" tabindex="-1"
+        aria-labelledby="editValueModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editValueModalLabel">Edit Attribute Value</h1>
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="edit_value_id">
+                    <div class="mb-3">
+                        <label for="edit_value_name" class="form-label"><strong>Edit Value Name</strong></label>
+                        <input type="text" class="form-control" id="edit_value_name" placeholder="Enter value name">
+                        <span class="error-message" id="edit_value_name_error">Value name is required</span>
+                    </div>
+                    <div class="mb-3" id="edit_color_code_wrapper" style="display: none;">
+                        <label for="edit_color_code" class="form-label"><strong>Color Code</strong></label>
+                        <div class="d-flex align-items-center gap-2">
+                            <input type="text" class="form-control" id="edit_color_code_text"
+                                placeholder="Enter hex code (e.g., #FFFFFF)">
+                            <input type="color" class="form-control form-control-color" id="edit_color_code"
+                                value="#000000">
+                        </div>
+                        <span class="error-message" id="edit_color_code_error">Valid color code is required (e.g.,
+                            #FFFFFF)</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="main-btn danger-btn btn-hover btn-sm"
+                        data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="main-btn primary-btn btn-hover btn-sm" id="save_value">Save
+                        Changes</button>
                 </div>
             </div>
         </div>
@@ -174,198 +227,199 @@
 @endsection
 
 @push('script')
-    <script src="https://cdn.jsdelivr.net/npm/slugify@1.6.6/slugify.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#name').on('input', function () {
-                const val = $(this).val().trim();
-                const slug = slugify(val, {
-                    lower: true,
-                    strict: true,
-                    locale: 'en'
-                });
-                $('#slug').val(val ? slug : '');
-            });
-            $('#slug').on('input', function () {
-                const val = $(this).val().trim();
-                const slug = slugify(val, {
-                    lower: true,
-                    strict: true,
-                    locale: 'en'
-                });
-                $('#slug').val(val ? slug : '');
-            });
+<script src="https://cdn.jsdelivr.net/npm/slugify@1.6.6/slugify.min.js"></script>
+<script>
+$(document).ready(function () {
+    let attributeValues = parseInitialValues(@json(old('attribute_values', '[]')));
 
-            // Toggle color code input visibility
-            $('#is_color').on('change', function() {
-                $('#color_code_wrapper').toggle(this.checked);
-                if (!this.checked) {
-                    $('#color_code').val('#000000');
-                    $('#color_code_text').val('#000000');
-                    $('#color_preview').css('background-color', '#000000');
-                }
-            });
+    syncInputValues();
+    toggleColorFields($('#is_color').is(':checked'));
+    renderValues();
 
-            // Sync color picker and text input
-            $('#color_code').on('input', function() {
-                const color = $(this).val();
-                $('#color_code_text').val(color);
-                $('#color_preview').css('background-color', color);
-            });
+    $('#name, #slug').on('input', function () {
+        const input = $(this).val().trim();
+        $('#slug').val(input ? slugify(input, { lower: true, strict: true, locale: 'en' }) : '');
+    });
 
-            $('#color_code_text').on('input', function() {
-                const color = $(this).val();
-                if (/^#([0-9A-F]{3}){1,2}$/i.test(color)) {
-                    $('#color_code').val(color);
-                    $('#color_preview').css('background-color', color);
-                }
-            });
+    $('#is_color').on('change', function () {
+        toggleColorFields(this.checked);
+        resetColorInputs();
+        renderValues();
+    });
 
-            $('#add_value').click(function() {
-                const name = $('#value_name').val().trim();
-                const isColor = $('#is_color').is(':checked');
-                const colorCode = isColor ? $('#color_code').val() : null;
+    // Add Modal sync
+    bindColorInputSync('#color_code', '#color_code_text');
+    bindColorInputSync('#color_code_text', '#color_code');
 
-                // Validate value name
-                if (!name) {
-                    $('#value_name_error').show();
-                    return;
-                } else {
-                    $('#value_name_error').hide();
-                }
+    // Edit Modal sync
+    bindColorInputSync('#edit_color_code', '#edit_color_code_text');
+    bindColorInputSync('#edit_color_code_text', '#edit_color_code');
 
-                // Validate color code if is_color is checked
-                if (isColor && !/^#([0-9A-F]{3}){1,2}$/i.test(colorCode)) {
-                    $('#color_code_error').show();
-                    return;
-                } else {
-                    $('#color_code_error').hide();
-                }
+    $('#add_value').click(handleAddValue);
+    $('#save_value').click(handleEditValue);
+    $(document).on('click', '.edit-btn', showEditModal);
+    $('#attributeForm').on('submit', validateForm);
 
-                const values = JSON.parse(localStorage.getItem('attribute_values')) ?? [];
-                const value = {
-                    id: Date.now(), // Temporary unique ID
-                    name: name,
-                    color_code: isColor ? colorCode : null
-                };
+    // Modal show/hide hooks
+    $('#addValueModal').on('shown.bs.modal', () => {
+        $('#value_name').focus();
+        $('#color_code_wrapper').toggle($('#is_color').is(':checked'));
+    }).on('click', '.close', resetAddModal);
 
-                values.push(value);
-                localStorage.setItem('attribute_values', JSON.stringify(values));
-                $('#attribute_values').val(JSON.stringify(values.map(v => ({
-                    name: v.name,
-                    color_code: v.color_code
-                }))));
-                loopValues();
+    $('#editValueModal').on('shown.bs.modal', () => {
+        $('#edit_value_name').focus();
+        $('#edit_color_code_wrapper').toggle($('#is_color').is(':checked'));
+    }).on('click', '.close', resetEditModal);
 
-                // Reset modal
-                $('#value_name').val('');
-                $('#is_color').prop('checked', false);
-                $('#color_code').val('#000000');
-                $('#color_code_text').val('#000000');
-                $('#color_preview').css('background-color', '#000000');
-                $('#color_code_wrapper').hide();
-                $('#value_name_error').hide();
-                $('#color_code_error').hide();
-                $('#addValueModal').modal('hide');
-            });
+    function parseInitialValues(data) {
+        try {
+            let values = JSON.parse(data);
+            return Array.isArray(values) ? values.map((v, i) => ({
+                id: v.id || Date.now() + i,
+                name: v.name,
+                color_code: v.color_code
+            })) : [];
+        } catch {
+            return [];
+        }
+    }
 
-            // Form submission validation
-            $('#attributeForm').on('submit', function(e) {
-                let isValid = true;
+    function syncInputValues() {
+        $('#attribute_values').val(JSON.stringify(attributeValues.map(v => ({
+            name: v.name,
+            color_code: v.color_code
+        }))));
+    }
 
-                // Validate name
-                if (!$('#name').val().trim()) {
-                    $('#name_error').show();
-                    isValid = false;
-                } else {
-                    $('#name_error').hide();
-                }
-
-                // Validate slug
-                const slug = $('#slug').val().trim();
-                if (!slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
-                    $('#slug_error').show();
-                    isValid = false;
-                } else {
-                    $('#slug_error').hide();
-                }
-
-                // Validate attribute values
-                const values = JSON.parse(localStorage.getItem('attribute_values') ?? '[]');
-                if (values.length === 0) {
-                    $('#values_error').show();
-                    isValid = false;
-                } else {
-                    $('#values_error').hide();
-                }
-
-                if (!isValid) {
-                    e.preventDefault();
-                }
-            });
-
-            // Focus on name input when modal opens
-            $('#addValueModal').on('shown.bs.modal', function() {
-                $('#value_name').focus();
-            });
-
-            // Clear modal on close
-            $('#addValueModal .close').click(function() {
-                $('#value_name').val('');
-                $('#is_color').prop('checked', false);
-                $('#color_code').val('#000000');
-                $('#color_code_text').val('#000000');
-                $('#color_preview').css('background-color', '#000000');
-                $('#color_code_wrapper').hide();
-                $('#value_name_error').hide();
-                $('#color_code_error').hide();
-            });
-
-            loopValues();
+    function bindColorInputSync(source, target) {
+        $(source).on('input', function () {
+            const color = $(this).val();
+            if (/^#([0-9A-F]{3}){1,2}$/i.test(color)) {
+                $(target).val(color);
+            }
         });
+    }
 
-        function loopValues() {
-            const values = JSON.parse(localStorage.getItem('attribute_values')) ?? [];
-            $('#value_body').empty();
+    function toggleColorFields(show) {
+        $('.color-code-column, #color_code_wrapper, #edit_color_code_wrapper').toggle(show);
+    }
 
-            if (values.length === 0) {
-                $('#value_body').append(`
-                    <tr>
-                        <td class="text-center" colspan="3">No Values</td>
-                    </tr>
-                `);
-            } else {
-                values.forEach(value => {
-                    const html = `
-                        <tr>
-                            <td class="text-center" width="30%">${value.name}</td>
-                            <td class="text-center" width="30%">
-                                ${value.color_code ? `<span class="color-preview" style="background-color: ${value.color_code};"></span> ${value.color_code}` : 'N/A'}
-                            </td>
-                            <td class="text-center" width="10%">
-                                <button type="button" class="btn btn-danger btn-sm" onclick="removeValue(${value.id})">
-                                    <i class="mdi mdi-delete"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    `;
-                    $('#value_body').append(html);
-                });
-            }
+    function resetColorInputs() {
+        $('#color_code, #color_code_text, #edit_color_code, #edit_color_code_text').val('#000000');
+    }
+
+    function handleAddValue() {
+        const name = $('#value_name').val().trim();
+        const isColor = $('#is_color').is(':checked');
+        const colorCode = isColor ? $('#color_code').val() : null;
+
+        if (!name) return $('#value_name_error').show();
+        $('#value_name_error').hide();
+
+        if (isColor && !/^#([0-9A-F]{3}){1,2}$/i.test(colorCode)) return $('#color_code_error').show();
+        $('#color_code_error').hide();
+
+        attributeValues.push({ id: Date.now(), name, color_code: colorCode });
+        syncInputValues();
+        renderValues();
+        resetAddModal();
+        $('#addValueModal').modal('hide');
+    }
+
+    function showEditModal() {
+        const id = parseInt($(this).data('id'));
+        const value = attributeValues.find(v => v.id === id);
+        if (!value) return;
+
+        $('#edit_value_id').val(id);
+        $('#edit_value_name').val(value.name);
+        $('#edit_color_code, #edit_color_code_text').val(value.color_code || '#000000');
+        $('#editValueModal').modal('show');
+    }
+
+    function handleEditValue() {
+        const id = parseInt($('#edit_value_id').val());
+        const name = $('#edit_value_name').val().trim();
+        const isColor = $('#is_color').is(':checked');
+        const colorCode = isColor ? $('#edit_color_code').val() : null;
+
+        if (!name) return $('#edit_value_name_error').show();
+        $('#edit_value_name_error').hide();
+
+        if (isColor && !/^#([0-9A-F]{3}){1,2}$/i.test(colorCode)) return $('#edit_color_code_error').show();
+        $('#edit_color_code_error').hide();
+
+        const index = attributeValues.findIndex(v => v.id === id);
+        if (index !== -1) {
+            attributeValues[index] = { id, name, color_code: colorCode };
+            syncInputValues();
+            renderValues();
+            resetEditModal();
+            $('#editValueModal').modal('hide');
+        }
+    }
+
+    function renderValues() {
+        const isColor = $('#is_color').is(':checked');
+        const tbody = $('#value_body').empty();
+
+        if (attributeValues.length === 0) {
+            return tbody.append(`<tr><td class="text-center" colspan="${isColor ? 3 : 2}">No Values</td></tr>`);
         }
 
-        function removeValue(id) {
-            const values = JSON.parse(localStorage.getItem('attribute_values')) ?? [];
-            const index = values.findIndex(v => v.id === id);
-            if (index !== -1) {
-                values.splice(index, 1);
-                localStorage.setItem('attribute_values', JSON.stringify(values));
-                $('#attribute_values').val(JSON.stringify(values.map(v => ({
-                    name: v.name,
-                    color_code: v.color_code
-                }))));
-                loopValues();
-            }
+        attributeValues.forEach(value => {
+            const colorCell = isColor ? `<td class="text-center color-code-column"><span class="color-preview" style="background-color: ${value.color_code};"></span></td>` : '';
+            tbody.append(`
+                <tr>
+                    <td class="text-center">${value.name}</td>
+                    ${colorCell}
+                    <td class="text-center">
+                        <button type="button" class="btn btn-primary btn-sm edit-btn" data-id="${value.id}"><span class="mdi mdi-pencil"></span></button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="removeValue(${value.id})"><span class="mdi mdi-trash-can-outline"></span></button>
+                    </td>
+                </tr>
+            `);
+        });
+    }
+
+    window.removeValue = function (id) {
+        attributeValues = attributeValues.filter(v => v.id !== id);
+        syncInputValues();
+        renderValues();
+    };
+
+    function validateForm(e) {
+        let isValid = true;
+        const name = $('#name').val().trim();
+        const slug = $('#slug').val().trim();
+        const isColor = $('#is_color').is(':checked');
+
+        if (!name) { $('#name_error').show(); isValid = false; } else { $('#name_error').hide(); }
+        if (!slug || !/^[a-z0-9-]+$/.test(slug)) { $('#slug_error').show(); isValid = false; } else { $('#slug_error').hide(); }
+        if (attributeValues.length === 0) {
+            $('#values_error').text('At least one value is required.').show();
+            isValid = false;
+        } else if (isColor && attributeValues.some(v => !v.color_code)) {
+            $('#values_error').text('All values must have a valid color code when "Is Color?" is checked').show();
+            isValid = false;
+        } else {
+            $('#values_error').hide();
         }
-    </script>
+
+        if (!isValid) e.preventDefault();
+    }
+
+    function resetAddModal() {
+        $('#value_name').val('');
+        $('#color_code, #color_code_text').val('#000000');
+        $('#value_name_error, #color_code_error').hide();
+    }
+
+    function resetEditModal() {
+        $('#edit_value_name').val('');
+        $('#edit_color_code, #edit_color_code_text').val('#000000');
+        $('#edit_value_name_error, #edit_color_code_error').hide();
+    }
+});
+</script>
 @endpush

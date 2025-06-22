@@ -13,6 +13,7 @@ use App\Models\Product;
 use App\Models\Campaign;
 use App\Models\Category;
 use App\Models\Settings;
+use App\Models\Attribute;
 use App\Models\Newsletter;
 use App\Models\Subscriber;
 use App\Models\UserSearch;
@@ -360,6 +361,10 @@ Route::name('admin.')->prefix('/admin')->middleware(['auth', 'verified'])->group
             Route::get('/getList', 'getList')->name('getList')->middleware('can:'.UserSearch::LIST);
             Route::get('/getList', 'getList')->name('getList')->middleware('can:'.UserSearch::LIST);
         });
+
+    Route::controller(AttributeController::class)->prefix('/attributes')->name('attributes.')->group(function () {
+        Route::get('/getList', 'getList')->name('getList')->middleware('can:'.Attribute::LIST);
+    });
 
     //Email Routes
     Route::get('/send-mail', [OrderMailController::class, 'sendOrderConfirmation']);

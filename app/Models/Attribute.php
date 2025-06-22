@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Datatable;
 
 class Attribute extends Model
 {
+    use Datatable;
     use HasFactory;
 
     const LIST = 'list_attribute';

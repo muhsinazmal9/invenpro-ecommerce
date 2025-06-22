@@ -57,7 +57,7 @@ class AttributeController extends Controller
      */
     public function edit(Attribute $attribute)
     {
-        //
+        return view('backend.attributes.edit', compact('attribute'));
     }
 
     /**
@@ -65,7 +65,13 @@ class AttributeController extends Controller
      */
     public function update(Request $request, Attribute $attribute)
     {
-        //
+        $update = $this->attributeService->update($request, $attribute);
+
+        if ($update->getData()->success) {
+            return redirect()->route('admin.attributes.index')->with('success', 'Attribute updated successfully');
+        }
+
+        return back()->with('error', $update->getData()->message)->withInput();
     }
 
     /**
@@ -74,5 +80,11 @@ class AttributeController extends Controller
     public function destroy(Attribute $attribute)
     {
         //
+    }
+
+    public function getList(Request $request)
+    {
+        $attributes = $this->attributeService->getList($request);
+        return response()->json($attributes);
     }
 }

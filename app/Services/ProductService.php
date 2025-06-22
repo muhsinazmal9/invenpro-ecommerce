@@ -249,175 +249,63 @@ class ProductService
 
     public function getList(Request $request): JsonResponse
     {
-
         try {
-
             $columns = [
-                0 => 'thumbnail',
-                1 => 'title',
-                2 => 'sku',
-                3 => 'price',
-                4 => 'stock',
-                5 => 'category_id',
-                6 => 'subcategory_id',
-                7 => 'subsub_category_id',
-                8 => 'brand_id',
-                9 => 'featured',
-                10 => 'new_arrival',
-                11 => 'status',
-                12 => 'created_at',
-                13 => 'actions',
+                'thumbnail',
+                'title',
+                'sku',
+                'price',
+                'stock',
+                'category_id',
+                'subcategory_id',
+                'subsub_category_id',
+                'brand_id',
+                'featured',
+                'new_arrival',
+                'status',
+                'created_at',
+                'actions',
             ];
 
-            $products = Product::query()
-            ->with(['category:id,name', 'subcategory:id,title', 'subSubcategory:id,title', 'brand:id,title']);
-
-            $queryParam = explode(',', $request->input('query'));
-
-            if (in_array(Product::LOW_STOCK, $queryParam)) {
-                $products = $products->low();
-            }
-
-            if (in_array(Product::TOP_PRODUCT, $queryParam)) {
-                $products = $products
-                    ->whereHas('orders', function ($query) {
-                        $query->where('order_status', Order::ORDER_STATUS['delivered'])
+            $data = Product::datatable($request, $columns, [
+                'with' => ['category', 'subcategory', 'subSubcategory', 'brand'],
+                'searchables' => [
+                    'title', 'sku', 'price', 'stock',
+                    'category.name', 'subcategory.title', 'brand.title'
+                ],
+                'modifyQuery' => function ($query) use ($request) {
+                    $queryParams = explode(',', $request->input('query'));
+                    if (in_array(Product::LOW_STOCK, $queryParams)) {
+                        $query->low();
+                    }
+                    if (in_array(Product::TOP_PRODUCT, $queryParams)) {
+                        $query->whereHas('orders', function ($q) {
+                            $q->where('order_status', Order::ORDER_STATUS['delivered'])
                             ->where('payment_status', Order::PAYMENT_STATUS['paid']);
-                    });
-            }
+                        });
+                    }
+                    return $query;
+                },
+                'formatRow' => function ($row, $product) {
+                    $lowStock = getSetting('low_stock');
+                    $row['thumbnail'] = '<img src="' . asset($product->thumbnail) . '" class="img-fluid rounded" style="max-width: 100px">';
+                    $row['title'] = '<a href="' . route('admin.products.edit', $product->slug) . '" class="text-dark">' . e($product->title) . '</a>';
+                    $row['stock'] = $product->stock <= $lowStock ? "<span class='text-danger'>{$product->stock}</span>" : $product->stock;
+                    $row['price'] = number_format($product->price, 2);
 
-            $totalData = $products->count();
-            $totalFiltered = $totalData;
-
-            $limit = $request->input('length');
-            $start = $request->input('start');
-
-            $dir = $request->input('order.0.dir') ?? 'desc';
-            $order = $columns[$request->input('order.0.column')] ?? 'id';
-
-            if ($order == 'actions' || $order == 'thumbnail') {
-                $order = 'title';
-            }
-
-            if (empty($request->input('search.value'))) {
-                $products = $products
-                    ->offset($start)
-                    ->limit($limit)
-                    ->orderBy($order, $dir)
-                    ->get();
-            } else {
-                $searchInput = $request->input('search.value');
-                $products = $products
-                    ->where('title', 'like', "%{$searchInput}%")
-                    ->orWhere('sku', 'like', "%{$searchInput}%")
-                    ->orWhere('price', 'like', "%{$searchInput}%")
-                    ->orWhere('stock', 'like', "%{$searchInput}%")
-                    ->orWhereHas('category', function ($query) use ($searchInput) {
-                        $query->where('name', 'like', "%{$searchInput}%");
-                    })
-                    ->orWhereHas('subcategory', function ($query) use ($searchInput) {
-                        $query->where('title', 'like', "%{$searchInput}%");
-                    })
-                    // ->orWhereHas('sub_subcategory', function ($query) use ($searchInput) {
-                    //     $query->where('title', 'like', "%{$searchInput}%");
-                    // })
-                    ->orWhereHas('brand', function ($query) use ($searchInput) {
-                        $query->where('title', 'like', "%{$searchInput}%");
-                    })
-                    ->orWhere(function ($query) use ($searchInput) {
-                        if ($searchInput == 'enabled') {
-                            $query->where('status', true);
-                        }
-                        if ($searchInput == 'disabled') {
-                            $query->where('status', false);
-                        }
-                    })
-                    ->offset($start)
-                    ->limit($limit)
-                    ->orderBy($order, $dir)
-                    ->get();
-                $totalFiltered = $products->count();
-            }
-
-            $data = [];
-
-            $lowStock = getSetting('low_stock');
-
-            if (! empty($products)) {
-                foreach ($products as $product) {
-                    /**
-                     * HTMLs
-                     */
-                    $productStatus = $product->status == Product::STATUS['published'] ? 'Published' : 'Draft';
-                    $statusClass = $product->status == Product::STATUS['published'] ? 'success' : 'secondary';
-                    $isFeatured = $product->featured ? 'Yes' : 'No';
-                    $featuredClass = $product->featured ? 'success' : 'danger';
-                    $isNewArrival = $product->new_arrival ? 'Yes' : 'No';
-                    $newArrivalClass = $product->new_arrival ? 'success' : 'danger';
-
-                    $editLink = route('admin.products.edit', $product->slug);
-                    $detailsLink = route('admin.products.show', $product->slug);
-
-                    $status = "<button class='main-btn {$statusClass}-btn-light btn-hover btn-sm' style='padding:4px 10px' type='button' onclick=statusUpdate('{$product->slug}',this) >{$productStatus}</button>";
-                    $featuresHtml = "<button class='main-btn {$featuredClass}-btn-light btn-hover btn-sm' style='padding:4px 20px' type='button' onclick=featuredUpdate('{$product->slug}',this) >{$isFeatured}</button>";
-                    $newArrivalHtml = "<button class='main-btn {$newArrivalClass}-btn-light btn-hover btn-sm' style='padding:4px 20px' type='button' onclick=newarrivalUpdate('{$product->slug}',this) >{$isNewArrival}</button>";
-
-                    // action buttons
-                    $view = 'View';
-                    $edit = 'Edit';
-                    $delete = 'Delete';
-                    $detailsBtn = "<a href='{$detailsLink}' class='dropdown-item'>{$view}</a>";
-                    $editBtn = "<a href='{$editLink}' class='dropdown-item'>{$edit}</a>";
-                    $deleteBtn = "<button type='button' class='dropdown-item' onclick='deleteProduct(\"{$product->slug}\")'>{$delete}</a>";
-
-                    // image
-                    $thumbnail = '<img src="'.asset($product->thumbnail).'" alt="'.$product->title.'" class="img-fluid rounded" style="max-width: 100px">';
-
-                    $titleRow = "<a href='{$editLink}' class='text-dark'>{$product->title}</a>";
-
-                    $lowStockColor = ($product->stock <= $lowStock) ? 'text-danger' : '';
-                    $productStock = "<span class='{$lowStockColor}'>{$product->stock}</span>";
-
-                    $nestedData['thumbnail'] = $thumbnail;
-                    $nestedData['title'] = $titleRow;
-                    $nestedData['sku'] = $product->sku;
-                    $nestedData['price'] = number_format($product->price, 2);
-                    $nestedData['stock'] = $productStock;
-                    $nestedData['category_id'] = $product->category?->name;
-                    $nestedData['subcategory_id'] = $product->subcategory?->title;
-                    $nestedData['subsub_category_id'] = $product->subSubcategory?->title;
-                    $nestedData['brand_id'] = $product->brand?->title;
-                    $nestedData['featured'] = $featuresHtml;
-                    $nestedData['new_arrival'] = $newArrivalHtml;
-                    $nestedData['status'] = $status;
-                    $nestedData['created_at'] = $product->created_at?->format('d/m/y');
-                    $nestedData['actions'] = "<div class='dropdown text-center'>
-                        <button class='dropdown-toggle' onclick='toggleActions(this)' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                            <i class='fa-solid fa-ellipsis'></i>
-                        </button>
-                        <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                            {$detailsBtn}
-                            {$editBtn}
-                            {$deleteBtn}
-                        </div>
-                    </div>";
-                    $data[] = $nestedData;
+                    $row['status'] = /* view('components.datatable.status', ['product' => $product])->render() */ '';
+                    $row['featured'] = /* view('components.datatable.featured', ['product' => $product])->render() */ '';
+                    $row['new_arrival'] = /* view('components.datatable.new_arrival', ['product' => $product])->render() */ '';
+                    $row['actions'] = /* view('components.datatable.actions', ['product' => $product])->render() */ '';
+                    return $row;
                 }
-            }
+            ]);
 
-            $json_data = [
-                'draw' => intval($request->input('draw')),
-                'recordsTotal' => intval($totalData),
-                'recordsFiltered' => intval($totalFiltered),
-                'data' => $data,
-            ];
-
-            return success('Product List', $json_data);
-
+            return success('Product List', $data);
         } catch (\Exception $e) {
             logError('Product List Error', $e);
-
             return error('Something went wrong');
         }
     }
+
 }

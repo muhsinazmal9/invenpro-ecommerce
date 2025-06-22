@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Wishlist;
+use App\Traits\Datatable;
 use App\Traits\DefaultRouteKey;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -13,7 +14,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Product extends Model
 {
-    use DefaultRouteKey, HasFactory, SoftDeletes;
+    use DefaultRouteKey, HasFactory, SoftDeletes, Datatable;
 
     public const THUMBNAIL_DIRECTORY = 'assets/img/uploads/products/';
 
