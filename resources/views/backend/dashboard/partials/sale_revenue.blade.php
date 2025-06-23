@@ -1,7 +1,7 @@
  <div class="card-style mb-30">
   <div class="title d-flex flex-wrap align-items-center justify-content-between">
     <div class="left">
-      <h6 class="text-medium mb-30">{{ 'Sales/Revenue' }}</h6>
+      <h6 class="text-medium mb-30">Sales/Revenue</h6>
     </div>
     <div class="right">
         <div class="select-style-1">

@@ -4,14 +4,14 @@
             <input class="form-check-input" type="radio" name="payment_method" id="payment_method_cod" value="cod"
                 {{ old('payment_method') == 'cod' || !old('payment_method') ? 'checked' : '' }}>
             <label class="form-check-label" for="payment_method_cod">
-                {{ 'Cash On Delivery' }}
+                Cash On Delivery
             </label>
         </div>
         <div class="form-check payment-method-option">
             <input class="form-check-input" type="radio" name="payment_method" id="payment_method_online"
                 value="online" {{ old('payment_method') == 'online' ? 'checked' : '' }}>
             <label class="form-check-label" for="payment_method_online">
-                {{ 'Online' }}
+                Online
             </label>
         </div>
         <div id="online_payment_options" style="display: none" class="flex-grow-1">

@@ -7,14 +7,14 @@
     <table class="table" id="userTable">
         <thead>
             <tr>
-                <th>{{ 'Image' }}</th>
-                <th>{{ 'First Name' }}</th>
-                <th>{{ 'Last Name' }}</th>
-                <th>{{ 'Email' }}</th>
-                <th>{{ 'Status' }}</th>
-                <th>{{ 'Role' }}</th>
-                <th>{{ 'Created at' }}</th>
-                <th>{{ 'Actions' }}</th>
+                <th>Image</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Role</th>
+                <th>Created at</th>
+                <th>Actions</th>
             </tr>
         </thead>
     </table>
@@ -25,7 +25,7 @@
 <div class="row">
     <div class="col-md-6">
         <div class="form-group">
-            <label for="">{{ 'Name' }}</label>
+            <label for="">Name</label>
             <x-input-group :type="'text'" :value="''" :id="'assign-role-selected-user'" :disabled="'disabled'">
                 <i class="lni lni-user"></i>
             </x-input-group>
@@ -35,7 +35,7 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <label for="">{{ 'Role' }}</label>
+            <label for="">Role</label>
             <x-input-group :type="'text'" :id="'assign-role-name'" :disabled="'disabled'">
                 <span class="mdi mdi-account-key"></span>
             </x-input-group>
@@ -185,13 +185,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You want to change the status of this user' }}",
+            title: "Are you sure?",
+            text: "You want to change the status of this user",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, Update it' }}",
+            confirmButtonText: "Yes, Update it",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -207,18 +207,18 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ 'Updated!' }}",
-                                text: "{{ 'Status has been updated!' }}",
+                                title: "Updated!",
+                                text: "Status has been updated!",
                                 icon: 'success',
                             });
 
                             if (response.data.status ==
                                 "{{ App\Models\User::STATUS['active'] }}") {
-                                $(btn).text("{{ 'ACTIVE' }}");
+                                $(btn).text("ACTIVE");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ 'BLOCKED' }}");
+                                $(btn).text("BLOCKED");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }

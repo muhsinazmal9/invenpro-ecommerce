@@ -6,7 +6,7 @@
                     class="nav-item {{ Route::is('admin.settings.payment-gateway.stripe') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.payment-gateway.stripe') ? ' text-white' : ' text-dark ' }} "
                         href="{{ route('admin.settings.payment-gateway.stripe') }}">
-                        {{ 'Stripe' }}
+                        Stripe
                     </a>
                 </li>
             @endif

@@ -2,16 +2,16 @@
     <table class="table" id="campaignTable">
         <thead>
             <tr>
-                <th>{{ 'Title' }}</th>
-                <th>{{ 'Image' }}</th>
-                <th>{{ 'Discount' }}</th>
-                <th>{{ 'Discount Type' }}</th>
-                <th>{{ 'Start Date' }}</th>
-                 <th>{{ 'Start Time' }}</th>
-                 <th>{{ 'End Date' }}</th>
-                 <th>{{ 'End Time' }}</th>
-                 <th>{{ 'Status' }}</th>
-                <th>{{ 'Actions' }}</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Discount</th>
+                <th>Discount Type</th>
+                <th>Start Date</th>
+                 <th>Start Time</th>
+                 <th>End Date</th>
+                 <th>End Time</th>
+                 <th>Status</th>
+                <th>Actions</th>
             </tr>
         </thead>
     </table>
@@ -84,36 +84,36 @@
                             </td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Title' }}</th>
+                            <th class="p-2">Title</th>
                             <td class="p-2">${campaign['title']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Discount' }}</th>
+                            <th class="p-2">Discount</th>
                             <td class="p-2">${campaign['discount']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Discount Type' }}</th>
+                            <th class="p-2">Discount Type</th>
                             <td class="p-2">${campaign['discount_type']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Start Date' }}</th>
+                            <th class="p-2">Start Date</th>
                             <td class="p-2"> ${new Date(campaign['start_date']).toLocaleDateString('en-US')}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Start Time' }}</th>
+                            <th class="p-2">Start Time</th>
                             <td class="p-2">${campaign['start_time']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'End Date' }}</th>
+                            <th class="p-2">End Date</th>
                             <td class="p-2"> ${new Date(campaign['end_date']).toLocaleDateString('en-US')}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'End Time' }}</th>
+                            <th class="p-2">End Time</th>
                             <td class="p-2">${campaign['end_time']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Status' }}</th>
-                            <td class="p-2">${campaign['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ 'Enabled' }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ 'Disabled' }}</span"}</td>
+                            <th class="p-2">Status</th>
+                            <td class="p-2">${campaign['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>Enabled</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>Disabled</span"}</td>
 
                         </tr>
                     </table>
@@ -129,13 +129,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You want change the status' }}",
+            title: "Are you sure?",
+            text: "You want change the status",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, Update it' }}",
+            confirmButtonText: "Yes, Update it",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -151,17 +151,17 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ 'Updated!' }}",
-                                text: "{{ 'Status has been updated!' }}",
+                                title: "Updated!",
+                                text: "Status has been updated!",
                                 icon: 'success',
                             });
 
                             if (response.data.status) {
-                                $(btn).text("{{ 'Enabled' }}");
+                                $(btn).text("Enabled");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ 'Disabled' }}");
+                                $(btn).text("Disabled");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }
@@ -180,14 +180,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You will not be able to revert this!' }}",
+            title: "Are you sure?",
+            text: "You will not be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, delete it!' }}",
-            cancelButtonText: "{{ 'Cancel' }}",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "Cancel",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();

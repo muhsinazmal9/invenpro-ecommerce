@@ -22,7 +22,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Create Promo' }}</h2>
+                            <h2>Create Promo</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -31,13 +31,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.promo.index') }}">{{'Promos'}}</a>
+                                        <a href="{{ route('admin.promo.index') }}">Promos</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{'Create'}}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -55,7 +55,7 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>Title</strong></label>
                                     <x-input-group
                                         :type="'text'"
                                         :value="old('title')"
@@ -70,7 +70,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="limit" class="mb-1"><strong>{{ 'Limit' }}</strong></label>
+                                    <label for="limit" class="mb-1"><strong>Limit</strong></label>
                                     <x-input-group
                                         :type="'number'"
                                         :value="old('limit')"
@@ -85,7 +85,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="code" class="mb-1"><strong>{{ 'Code' }}</strong></label>
+                                    <label for="code" class="mb-1"><strong>Code</strong></label>
                                     <x-input-group
                                         :type="'text'"
                                         :value="old('code')"
@@ -101,7 +101,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="discount" class="mb-1"><strong>{{ 'Discount' }}</strong></label>
+                                    <label for="discount" class="mb-1"><strong>Discount</strong></label>
                                     <x-input-group
                                         :type="'number'"
                                         :value="old('discount')"
@@ -118,8 +118,8 @@
                                 <div class="col-md-6 my-2">
                                      <x-input-select :label="'Discount Type'" :name="'discount_type'" :id="'discount_type'">
 
-                                            <option value="FIXED" @selected(old('discount_type') == 'FIXED')>{{ 'Fixed' }}</option>
-                                            <option value="PERCENTAGE" @selected(old('discount_type') == 'PERCENTAGE')>{{ 'PERCENTAGE' }}</option>
+                                            <option value="FIXED" @selected(old('discount_type') == 'FIXED')>Fixed</option>
+                                            <option value="PERCENTAGE" @selected(old('discount_type') == 'PERCENTAGE')>PERCENTAGE</option>
 
                                     </x-input-select>
 
@@ -130,7 +130,7 @@
 
                                 <div class="col-md-12 my-2">
                                     <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                        {{ 'Status' }}
+                                        Status
                                     </x-success-checkbox>
                                     @error('status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -138,7 +138,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Create' }}
+                                        Create
                                     </x-primary-button>
                                 </div>
                             </div>

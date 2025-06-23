@@ -38,7 +38,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Create Subcategory' }}</h2>
+                            <h2>Create Subcategory</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -47,13 +47,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.subcategory.index') }}">{{ 'Subcategories' }}</a>
+                                        <a href="{{ route('admin.subcategory.index') }}">Subcategories</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Create' }}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -71,7 +71,7 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('title')" :name="'title'" :placeholder="'Enter title of subcategory'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -84,7 +84,7 @@
 
                                 <div class="col-md-6 my-2">
                                     <x-input-select :label="'Select a parent category'" :name="'category_id'" :id="'category_id'">
-                                        <option value="">{{ 'Select a parent category' }}</option>
+                                        <option value="">Select a parent category</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}" @selected(old('category_id'))>
                                                 {{ $category->name }}
@@ -100,7 +100,7 @@
 
                                 <div class="col-md-12 my-2">
                                     <label for="image"
-                                        class="mb-1"><strong>{{ 'Choose an image' }}</strong></label>
+                                        class="mb-1"><strong>Choose an image</strong></label>
                                     <div class="image-wrapper border-red-500 cursor-pointer">
                                         <label for="image_input">
                                             <input type="hidden" name="image" id="image" value="{{ old('image') }}">
@@ -108,19 +108,19 @@
 
                                             <img id="image-preview" class="img-fluid cursor-pointer"
                                                 src="{{ getPlaceholderImage('200', '200') }}"
-                                                alt="{{ 'your image' }}" loading="lazy" />
+                                                alt="your image" loading="lazy" />
                                         </label>
                                     </div>
                                     <div class="d-flex gap-2 mt-2">
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                             id="choose_image">
                                             <span class="mdi mdi-file-image"></span>
-                                            {{ 'Choose Image' }}
+                                            Choose Image
                                         </button>
                                         <button type="button" class="main-btn danger-btn btn-hover btn-sm"
                                             id="reset_image">
                                             <span class="mdi mdi-refresh"></span>
-                                            {{ 'Reset' }}
+                                            Reset
                                         </button>
                                     </div>
                                     @error('image')
@@ -131,7 +131,7 @@
 
                                 <div class="col-md-12 my-2">
                                     <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                        {{ 'Status' }}
+                                        Status
                                     </x-success-checkbox>
                                     @error('status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -141,7 +141,7 @@
 
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Create' }}
+                                        Create
                                     </x-primary-button>
                                 </div>
                             </div>
@@ -166,7 +166,7 @@
     </script>
     <script>
         $("#category_id").select2({
-            placeholder: "{{ 'Select Category' }}",
+            placeholder: "Select Category",
         });
 
         $(document).ready(function() {

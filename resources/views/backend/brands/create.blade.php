@@ -36,7 +36,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Create Brand' }}</h2>
+                            <h2>Create Brand</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -45,13 +45,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.brand.index') }}">{{ 'Brands' }}</a>
+                                        <a href="{{ route('admin.brand.index') }}">Brands</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Create' }}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -69,7 +69,7 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-12 my-2">
-                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('title')" :name="'title'" :placeholder="'Enter title of brand'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -81,7 +81,7 @@
                                 </div>
 
                                 <div class="col-md-12 my-2">
-                                    <label for="image" class="mb-1"><strong>{{ 'Image' }}</strong></label>
+                                    <label for="image" class="mb-1"><strong>Image</strong></label>
                                     <div class="image-wrapper border-red-500 cursor-pointer">
                                         <label for="image_input">
                                             <input type="hidden" name="image" id="image" value="{{ old('image') }}">
@@ -93,12 +93,12 @@
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                             id="choose_image">
                                             <span class="mdi mdi-file-image"></span>
-                                            {{ 'Choose Image' }}
+                                            Choose Image
                                         </button>
                                         <button type="button" class="main-btn danger-btn btn-hover btn-sm"
                                             id="reset_image">
                                             <span class="mdi mdi-refresh"></span>
-                                            {{ 'Reset' }}
+                                            Reset
                                         </button>
                                     </div>
                                     @error('image')
@@ -108,7 +108,7 @@
 
                                 <div class="col-md-12 my-2">
                                     <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                        {{ 'Status' }}
+                                        Status
                                     </x-success-checkbox>
                                     @error('status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Create' }}
+                                        Create
                                     </x-primary-button>
                                 </div>
                             </div>

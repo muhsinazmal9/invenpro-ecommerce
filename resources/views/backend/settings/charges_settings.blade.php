@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Charges Settings' }} </h2>
+                            <h2>Charges Settings </h2>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -19,10 +19,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Charges Settings' }}
+                                        Charges Settings
                                     </li>
                                 </ol>
                             </nav>
@@ -43,7 +43,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="shipping_charge"
-                                            class="mb-1"><strong>{{ 'Shipping Charge' }}</strong></label>
+                                            class="mb-1"><strong>Shipping Charge</strong></label>
 
                                         <x-input-group :type="'number'" :step="0.01" :value="old(
                                             'shipping_charge',
@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="col-md-6 mt-3 mt-md-0">
                                         <label for="gift_wrapping_charge"
-                                            class="mb-1"><strong>{{ 'Gift Wrapping Charge' }}</strong></label>
+                                            class="mb-1"><strong>Gift Wrapping Charge</strong></label>
 
                                         <x-input-group :type="'number'" :step="0.01" :value="old(
                                             'gift_wrapping_charge',
@@ -76,7 +76,7 @@
 
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="service_charge" class="mb-1"><strong>{{ 'Service Charge' }}</strong></label>
+                                        <label for="service_charge" class="mb-1"><strong>Service Charge</strong></label>
 
                                         <x-input-group :type="'number'" :step="0.01" :value="old(
                                                                                 'service_charge',
@@ -95,7 +95,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ 'Update' }}
+                                            Update
                                         </x-primary-button>
                                     </div>
                                 </div>

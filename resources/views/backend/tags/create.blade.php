@@ -22,7 +22,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Create Tag' }}</h2>
+                            <h2>Create Tag</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -31,13 +31,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.tags.index') }}">{{ 'Tags' }}</a>
+                                        <a href="{{ route('admin.tags.index') }}">Tags</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Create' }}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -55,7 +55,7 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-12 my-2">
-                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('title')" :name="'title'" :placeholder="'Enter title of tag'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="col-md-12 my-2">
                                     <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                        {{ 'Status' }}
+                                        Status
                                     </x-success-checkbox>
                                     @error('status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Create' }}
+                                        Create
                                     </x-primary-button>
                                 </div>
                             </div>

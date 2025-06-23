@@ -7,11 +7,11 @@
     <table class="table" id="addressTable">
         <thead>
             <tr>
-                <th style="min-width: 200px">{{ 'Title' }}</th>
-                <th style="min-width: 200px">{{ 'Street Address' }}</th>
-                <th style="min-width: 200px">{{ 'Apt, Suite' }}</th>
-                <th style="min-width: 100px">{{ 'Zip Code' }}</th>
-                <th style="min-width: 150px">{{ 'Actions' }}</th>
+                <th style="min-width: 200px">Title</th>
+                <th style="min-width: 200px">Street Address</th>
+                <th style="min-width: 200px">Apt, Suite</th>
+                <th style="min-width: 100px">Zip Code</th>
+                <th style="min-width: 150px">Actions</th>
             </tr>
         </thead>
     </table>
@@ -62,14 +62,14 @@
         const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You will not be able to revert this address' }}",
+            title: "Are you sure?",
+            text: "You will not be able to revert this address",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, delete it!' }}",
-            cancelButtonText: "{{ 'Cancel' }}",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "Cancel",
         }).then((result) => {
             if (result.value) {
                 // itemDelete(addressRemoveUrl, method, token, row)

@@ -10,7 +10,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Customers' }}</h2>
+                            <h2>Customers</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -19,11 +19,11 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item" aria-current="page">
                                         <a
-                                            href="{{ route('admin.users.index') }}?type=customers">{{ 'Customers' }}</a>
+                                            href="{{ route('admin.users.index') }}?type=customers">Customers</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         {{ $user->name }}
@@ -42,9 +42,9 @@
                 <div class="col-md-4">
                     <div class="card-style rounded-3">
                         <div class="d-flex justify-content-between align-items-stretch">
-                            <h4 class="card-header">{{ 'Customer details' }}</h4>
+                            <h4 class="card-header">Customer details</h4>
                             <a href="{{ route('admin.users.edit', $user->username) }}" type="button"
-                                class="main-btn primary-btn btn-hover btn-sm">{{ 'Edit' }}</a>
+                                class="main-btn primary-btn btn-hover btn-sm">Edit</a>
                         </div>
 
                         <div class="card-body d-flex align-items-center gap-3 my-3">
@@ -63,7 +63,7 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <p>{{ 'Name' }}:</p>
+                                            <p>Name:</p>
                                         </td>
                                         <td>
                                             <p class="text-muted fw-semibold">{{ $user->name }}</p>
@@ -71,7 +71,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p>{{ 'Username' }}:</p>
+                                            <p>Username:</p>
                                         </td>
                                         <td>
                                             <p class="text-muted fw-semibold">{{ $user->username }}</p>
@@ -79,7 +79,7 @@
                                     </tr>
                                     {{-- <tr>
                                         <td>
-                                            <p>{{ 'Email' }}:</p>
+                                            <p>Email:</p>
                                         </td>
                                         <td>
                                             <p class="text-muted fw-semibold">{{ $user->email }}</p>
@@ -87,7 +87,7 @@
                                     </tr> --}}
                                     <tr>
                                         <td>
-                                            <p>{{ 'Role' }}:</p>
+                                            <p>Role:</p>
                                         </td>
                                         <td>
                                             <p class="text-muted fw-semibold">{{ $user->roles[0]->name }}</p>
@@ -95,7 +95,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p>{{ 'Status' }}:</p>
+                                            <p>Status:</p>
                                         </td>
                                         <td>
                                             <p class="text-muted fw-semibold">{{ $user->status }}</p>

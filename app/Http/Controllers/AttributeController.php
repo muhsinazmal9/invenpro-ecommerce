@@ -19,7 +19,7 @@ class AttributeController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.attributes.index');
     }
 
     /**

@@ -39,7 +39,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Edit' }}</h2>
+                            <h2>Edit</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -48,13 +48,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.feature-highlights.index') }}">{{ 'Feature Highlight' }}</a>
+                                        <a href="{{ route('admin.feature-highlights.index') }}">Feature Highlight</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Edit' }}
+                                        Edit
                                     </li>
                                 </ol>
                             </nav>
@@ -74,7 +74,7 @@
                             @method('patch')
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('title', $featureHighlight->title)" :name="'title'" :placeholder="__('app.enter_title_of_feature_highlight')"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="col-md-6 my-2">
                                     <label for="description"
-                                        class="mb-1"><strong>{{ 'Description' }}</strong></label>
+                                        class="mb-1"><strong>Description</strong></label>
                                     <x-input-group :type="'text'" :value="old('description', $featureHighlight->description)" :name="'description'" :placeholder="'Enter description of feature highlight'"
                                         :id="'description'">
                                         <span class="mdi mdi-shape"></span>
@@ -98,7 +98,7 @@
                               
                                 <div class="col-md-12 my-2">
                                     <label for="image"
-                                        class="mb-1"><strong>{{ 'Change Image' }}</strong></label>
+                                        class="mb-1"><strong>Change Image</strong></label>
                                     <div class="image-wrapper border-red-500 cursor-pointer">
                                         <label for="image_input">
                                             <input type="hidden" name="image" id="image"
@@ -113,12 +113,12 @@
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                             id="change_image">
                                             <span class="mdi mdi-file-image"></span>
-                                            {{ 'Change Image' }}
+                                            Change Image
                                         </button>
                                         <button type="button" class="main-btn danger-btn btn-hover btn-sm"
                                             id="reset_image">
                                             <span class="mdi mdi-refresh"></span>
-                                            {{ 'Reset' }}
+                                            Reset
                                         </button>
                                     </div>
                                     @error('image')
@@ -129,11 +129,11 @@
                                     @if ($featureHighlight->status == '1')
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'"
                                             :checked="'status'">
-                                            {{ 'Status' }}
+                                            Status
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                            {{ 'Status' }}
+                                            Status
                                         </x-success-checkbox>
                                     @endif
                                     @error('status')
@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Update' }}
+                                        Update
                                     </x-primary-button>
                                 </div>
                             </div>

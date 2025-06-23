@@ -47,14 +47,14 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
                                         <a href="{{ route('admin.banner.index').((request()->input('type') == 'popup') ? '?type=popup' : '') }}">{{
                                             request()->input('type') == 'popup' ? \App\Models\Banner::POPUP : \App\Models\Banner::BANNER }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Create' }}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -73,7 +73,7 @@
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6 my-2">
-                                        <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                        <label for="title" class="mb-1"><strong>Title</strong></label>
                                         <x-input-group :type="'text'" :value="old('title')" :name="'title'" :placeholder="'Enter title of banner'" :id="'title'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
@@ -83,7 +83,7 @@
                                     </div>
 
                                     <div class="col-md-6 my-2">
-                                        <label for="link" class="mb-1"><strong>{{ 'Link' }}</strong></label>
+                                        <label for="link" class="mb-1"><strong>Link</strong></label>
                                         <x-input-group :type="'url'" :value="old('link')" :name="'link'" :placeholder="'Enter link of banner'" :id="'link'">
                                             <span class="mdi mdi-shape"></span>
                                         </x-input-group>
@@ -93,7 +93,7 @@
                                     </div>
                                     @if(request()->input('type') == 'popup')
                                     <div class="col-md-6 my-2">
-                                        <label for="countdown_start" class="mb-1"><strong>{{ 'Countdown Start' }}</strong></label>
+                                        <label for="countdown_start" class="mb-1"><strong>Countdown Start</strong></label>
                                         <x-input-group :type="'datetime-local'" :value="old('countdown_start')" :name="'countdown_start'" :placeholder="__('app.enter_countdown_start_of_banner')"
                                             :id="'countdown_start'">
                                             <span class="mdi mdi-shape"></span>
@@ -103,7 +103,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-6 my-2">
-                                        <label for="countdown_end" class="mb-1"><strong>{{ 'Countdown End' }}</strong></label>
+                                        <label for="countdown_end" class="mb-1"><strong>Countdown End</strong></label>
                                         <x-input-group :type="'datetime-local'" :value="old('countdown_end')" :name="'countdown_end'" :placeholder="__('app.enter_countdown_end_of_banner')"
                                             :id="'countdown_end'">
                                             <span class="mdi mdi-shape"></span>
@@ -118,7 +118,7 @@
 
                                     <div class="col-md-12 my-2">
 
-                                        <label for="image" class="mb-1"><strong>{{ 'Choose an image' }}</strong></label>
+                                        <label for="image" class="mb-1"><strong>Choose an image</strong></label>
                                         <div class="image-wrapper border-red-500 cursor-pointer">
                                             <label for="image_input">
                                                 <input type="hidden" name="image" id="image"
@@ -134,12 +134,12 @@
                                         <div class="d-flex gap-2 mt-2">
                                             <button type="button" class="main-btn primary-btn btn-hover btn-sm" id="choose_image">
                                                 <span class="mdi mdi-file-image"></span>
-                                                {{ 'Choose Image' }}
+                                                Choose Image
                                             </button>
                                             <button type="button" class="main-btn danger-btn btn-hover btn-sm"
                                                 id="reset_image">
                                                 <span class="mdi mdi-refresh"></span>
-                                                {{ 'Reset' }}
+                                                Reset
                                             </button>
                                         </div>
                                         @error('image')
@@ -148,7 +148,7 @@
                                     </div>
                                     <div class="col-md-12 my-2">
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                            {{ 'Status' }}
+                                            Status
                                         </x-success-checkbox>
                                         @error('status')
                                             <span class="text-danger">{{ $message }}</span>
@@ -156,7 +156,7 @@
                                     </div>
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ 'Create' }}
+                                            Create
                                         </x-primary-button>
                                     </div>
                                 </div>

@@ -58,7 +58,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Edit Product' }}</h2>
+                            <h2>Edit Product</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -67,13 +67,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.products.index') }}">{{ 'Products' }}</a>
+                                        <a href="{{ route('admin.products.index') }}">Products</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Edit' }}
+                                        Edit
                                     </li>
                                 </ol>
                             </nav>
@@ -94,7 +94,7 @@
                             <div class="row">
                                 {{-- Title --}}
                                 <div class="col-md-12 mt-2">
-                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('title', $product->title)" :name="'title'" :placeholder="'Enter title of product'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -108,7 +108,7 @@
 
                                 <div class="col-md-6 mt-2">
                                     <x-input-select :label="'Select a category'" :name="'category_id'" :id="'category_id'" :class="'select2'">
-                                        <option value="">{{ 'Select a category' }}</option>
+                                        <option value="">Select a category</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}" @selected(old('category_id', $product->category->id) == $category->id)>
                                                 {{ $category->name }}
@@ -126,7 +126,7 @@
                                 <div class="col-md-6 mt-2">
                                     <x-input-select :label="'Select a subcategory'" :name="'subcategory_id'" :id="'subcategory_id'"
                                         :class="'select2'">
-                                        <option value="">{{ 'Select a subcategory' }}</option>
+                                        <option value="">Select a subcategory</option>
                                         {{-- Subcategory will apear here when select any category --}}
                                     </x-input-select>
 
@@ -151,7 +151,7 @@
                                 <div class="col-md-6 mt-2">
                                     <x-input-select :label="'Select a brand'" :name="'brand_id'" :id="'brand_id'"
                                         :class="'select2'">
-                                        <option value="">{{ 'Select a brand' }}</option>
+                                        <option value="">Select a brand</option>
                                         @foreach ($brands as $brand)
                                             <option value="{{ $brand->id }}" @selected(old('brand_id', $product->brand?->id) == $brand->id)>
                                                 {{ $brand->title }}
@@ -167,7 +167,7 @@
 
                                 {{-- SKU --}}
                                 <div class="col-md-6 mt-2">
-                                    <label for="sku" class="mb-1"><strong>{{ 'SKU' }}</strong></label>
+                                    <label for="sku" class="mb-1"><strong>SKU</strong></label>
                                     <x-input-group :type="'text'" :value="old('sku', $product->sku)" :name="'sku'"
                                         :placeholder="'Enter SKU'" :id="'sku'">
                                         <span class="mdi mdi-shape"></span>
@@ -179,7 +179,7 @@
 
                                 {{-- Stock --}}
                                 <div class="col-md-6 mt-2">
-                                    <label for="stock" class="mb-1"><strong>{{ 'Stock' }}</strong></label>
+                                    <label for="stock" class="mb-1"><strong>Stock</strong></label>
                                     <x-input-group :type="'number'" :value="old('stock', $product->stock)" :name="'stock'"
                                         :placeholder="'Enter stock'" :id="'stock'">
                                         <span class="mdi mdi-shape"></span>
@@ -191,7 +191,7 @@
 
                                 {{-- Price  --}}
                                 <div class="col-md-6 mt-2">
-                                    <label for="price" class="mb-1"><strong>{{ 'Price' }}</strong></label>
+                                    <label for="price" class="mb-1"><strong>Price</strong></label>
                                     <x-input-group :type="'number'" :step="'any'" :value="old('price', $product->price)"
                                         :name="'price'" :placeholder="'Enter price'" :id="'price'">
                                         <span class="mdi mdi-shape"></span>
@@ -203,7 +203,7 @@
 
                                 {{-- Discount  --}}
                                 <div class="col-md-6 mt-2">
-                                    <label for="discount" class="mb-1"><strong>{{ 'Discount' }}</strong></label>
+                                    <label for="discount" class="mb-1"><strong>Discount</strong></label>
                                     <x-input-group :type="'number'" :step="'any'" :value="old('discount', $product->discount)"
                                         :name="'discount'" :placeholder="'Enter discount'" :id="'discount'">
                                         <span class="mdi mdi-shape"></span>
@@ -217,7 +217,7 @@
                                 <div class="col-md-6 mt-2">
                                     <x-input-select :label="'Select discount type'" :name="'discount_type'" :id="'discount_type'"
                                         :class="'select2'">
-                                        <option value="">{{ 'Select discount type' }}</option>
+                                        <option value="">Select discount type</option>
 
                                         @foreach (App\Models\Product::DISCOUNT_TYPE as $discount)
                                             <option @selected(old('discount_type', $product->discount_type) == $discount) value="{{ $discount }}">
@@ -232,7 +232,7 @@
                                 </div>
                                 <div class="col-md-6 my-2">
                                     <x-input-select :label="'Select TAX'" :name="'tax_id'" :id="'tax_id'">
-                                        <option value="0" @selected(old('tax_id', $product->tax_id) == 0)>{{ 'No TAX' }}</option>
+                                        <option value="0" @selected(old('tax_id', $product->tax_id) == 0)>No TAX</option>
                                         @foreach ($tax_settings as $tax_setting)
                                         <option value="{{ $tax_setting->id }}" @selected(old('tax_id',$product->tax_id) == $tax_setting->id)>
                                             {{ $tax_setting->code}}
@@ -249,10 +249,10 @@
                                 {{-- TAGs  --}}
 
                                 <div class="col-md-12 mt-2">
-                                    <label for="tags" class="mb-1"><strong>{{ 'Tags' }}</strong></label>
+                                    <label for="tags" class="mb-1"><strong>Tags</strong></label>
                                     <input type="text" id="tags" name="tags"
                                         value="{{ old('tags', $tagsData) }}" class="form-control"
-                                        placeholder="{{ 'Enter tags' }}">
+                                        placeholder="Enter tags">
                                     @error('tags')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -262,7 +262,7 @@
                                 <div class="col-md-12 mt-2">
 
                                     <label for="short_description"
-                                        class="mb-1"><strong>{{ 'Short Description' }}</strong></label>
+                                        class="mb-1"><strong>Short Description</strong></label>
 
                                     <x-textarea-group :placeholder="'Enter short description of product'" :name="'short_description'" :id="'short_description'">
                                         {{ old('short_description', $product->short_description) }} </x-textarea-group>
@@ -276,7 +276,7 @@
                                 <div class="col-md-12 mt-2">
 
                                     <label for="long_description"
-                                        class="mb-1"><strong>{{ 'Long Description' }}</strong></label>
+                                        class="mb-1"><strong>Long Description</strong></label>
 
                                     <textarea name="long_description" id="long_description" class="form-control" rows="5">{{ old('short_description', $product->long_description) }}</textarea>
 
@@ -288,14 +288,14 @@
                                 {{-- SEO --}}
                                 <div class="col-md-12 mt-3">
                                     {{-- SEO Section hr --}}
-                                    <h4>{{ 'Meta Section' }}</h4>
+                                    <h4>Meta Section</h4>
                                     <hr>
                                 </div>
 
                                 {{-- SEO title --}}
                                 <div class="col-md-12 mt-2">
                                     <label for="seo_title"
-                                        class="mb-1"><strong>{{ 'SEO Title' }}</strong></label>
+                                        class="mb-1"><strong>SEO Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('seo_title', $product->seo_title)" :name="'seo_title'"
                                         :placeholder="'Enter SEO title'" :id="'seo_title'">
                                         <span class="mdi mdi-shape"></span>
@@ -307,7 +307,7 @@
 
                                 {{-- SEO keywords --}}
                                 <div class="col-md-12 mt-2">
-                                    <label for="keywords" class="mb-1"><strong>{{ 'Keywords' }}</strong></label>
+                                    <label for="keywords" class="mb-1"><strong>Keywords</strong></label>
                                     <x-input-group :type="'text'" :value="old('keywords', $product->keywords)" :name="'keywords'"
                                         :placeholder="'Enter keywords'" :id="'keywords'">
                                         <span class="mdi mdi-shape"></span>
@@ -321,7 +321,7 @@
                                 <div class="col-md-12 mt-2">
 
                                     <label for="seo_description"
-                                        class="mb-1"><strong>{{ 'SEO Description' }}</strong></label>
+                                        class="mb-1"><strong>SEO Description</strong></label>
 
                                     <x-textarea-group :placeholder="'Enter SEO description'" :name="'seo_description'" :id="'seo_description'">
                                         {{ old('seo_description', $product->seo_description) }} </x-textarea-group>
@@ -350,7 +350,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="thumbnail"
-                                            class="mb-1"><strong>{{ 'Thumbnail' }}</strong></label>
+                                            class="mb-1"><strong>Thumbnail</strong></label>
                                         <div class="input-group">
                                             <input type="hidden" id="image" name="thumbnail"
                                                 value="{{ old('thumbnail') }}">
@@ -372,19 +372,19 @@
 
                                         <x-primary-button :id="'thumbnail_image'" :class="'me-2'">
                                             <span class="mdi mdi-plus-circle" style="font-size: 20px"></span>
-                                            {{ 'Change' }}
+                                            Change
                                         </x-primary-button>
 
                                         <x-danger-button :label="__('app.remove')" :id="'remove_thumbnail'">
                                             <span class="mdi mdi-reload" style="font-size: 20px"></span>
-                                            {{ 'Reset' }}
+                                            Reset
                                         </x-danger-button>
                                     </div>
 
                                 </div>
                                 <div class="form-group">
                                     <label for="size_chart"
-                                        class="mb-1"><strong>{{ 'Size Chart' }}</strong></label>
+                                        class="mb-1"><strong>Size Chart</strong></label>
                                     <div class="input-group">
                                         <input type="file"
                                             onchange=
@@ -406,19 +406,19 @@
 
                                     <x-primary-button :id="'size_chart_image'" :class="'me-2 '">
                                         <span class="mdi mdi-plus-circle" style="font-size: 20px"></span>
-                                        {{ 'Change' }}
+                                        Change
                                     </x-primary-button>
 
                                     <x-danger-button :label="__('app.remove')" :id="'remove_size_chart'">
                                         <span class="mdi mdi-reload" style="font-size: 20px"></span>
-                                        {{ 'Reset' }}
+                                        Reset
                                     </x-danger-button>
                                 </div>
                                 {{-- Multiple Images --}}
                                 <div class="multiple-images-wrapper">
                                     <div class="product-img mt-2">
 
-                                        <label class="mb-1"><strong>{{ 'Gallery Images' }}</strong></label>
+                                        <label class="mb-1"><strong>Gallery Images</strong></label>
 
                                         <div class="row g-4 mb-4 ">
                                             @if ($product->images->count())
@@ -490,7 +490,7 @@
 
                                         <x-primary-button :id="'gallery_image_btn'" :class="'me-2 '">
                                             <span class="mdi mdi-upload" style="font-size: 20px"></span>
-                                            {{ 'Choose' }}
+                                            Choose
                                         </x-primary-button>
                                     </div>
                                 </div>
@@ -499,11 +499,11 @@
                                     @if ($product->featured == '1')
                                         <x-success-checkbox :id="'featured'" :value="'1'" :name="'featured'"
                                             :checked="'featured'">
-                                            {{ 'Featured' }}
+                                            Featured
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'featured'" :value="'1'" :name="'featured'">
-                                            {{ 'Featured' }}
+                                            Featured
                                         </x-success-checkbox>
                                     @endif
 
@@ -512,11 +512,11 @@
                                     @if ($product->new_arrival == '1')
                                         <x-success-checkbox :id="'new_arrival'" :value="'1'" :name="'new_arrival'"
                                             :checked="'new_arrival'">
-                                            {{ 'New Arrival' }}
+                                            New Arrival
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'new_arrival'" :value="'1'" :name="'new_arrival'">
-                                            {{ 'New Arrival' }}
+                                            New Arrival
                                         </x-success-checkbox>
                                     @endif
 
@@ -526,7 +526,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <x-primary-button :type="'button'" :id="'publish_btn'" :class="'me-2 w-100'">
-                                                {{ 'Update' }}
+                                                Update
                                             </x-primary-button>
 
                                             <input class="main-btn primary-btn btn-hover btn-sm d-none" type="submit"
@@ -535,7 +535,7 @@
                                         </div>
                                         <div class="col">
                                             <x-secondary-button :type="'button'" :id="'draft_btn'" :class="'me-2 w-100'">
-                                                {{ 'Save as Draft' }}
+                                                Save as Draft
                                             </x-secondary-button>
 
                                             <input class="main-btn secondary-btn btn-hover btn-sm d-none" type="submit"
@@ -628,7 +628,7 @@
             const subcategorySelect = $('#subcategory_id');
             subcategorySelect.empty();
             subcategorySelect
-                .append('<option value="">{{ 'Select a subcategory' }}</option>');
+                .append('<option value="">Select a subcategory</option>');
 
             const old_subcategory_id = "{{ old('subcategory_id', $product->subcategory_id) }}";
 
@@ -661,7 +661,7 @@
             const subsubcategorySelect = $('#subsub_category_id');
             subsubcategorySelect.empty();
             subsubcategorySelect
-                .append('<option value="">{{ 'Select a Sub Subcategory' }}</option>');
+                .append('<option value="">Select a Sub Subcategory</option>');
 
             const old_subsub_category_id = "{{ old('subsub_category_id', $product->subsub_category_id) }}";
 
@@ -728,13 +728,13 @@
             const method = "DELETE";
 
             Swal.fire({
-                title: "{{ 'Are you sure?' }}",
-                text: "{{ 'You can not revert this image' }}",
+                title: "Are you sure?",
+                text: "You can not revert this image",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: "{{ 'Yes, delete it!' }}",
+                confirmButtonText: "Yes, delete it!",
             }).then((result) => {
                 if (result.value) {
                     event.preventDefault();
@@ -782,7 +782,7 @@
     </script>
     <script>
         $("#tax_id").select2({
-                    placeholder: "{{ 'Select TAX' }}",
+                    placeholder: "Select TAX",
                 });
     </script>
 @endpush

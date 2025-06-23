@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Business Settings' }} </h2>
+                            <h2>Business Settings </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,10 +20,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Business Settings' }}
+                                        Business Settings
                                     </li>
                                 </ol>
                             </nav>
@@ -47,7 +47,7 @@
                                 @method('patch')
                                 <div class="row">
                                     <div class="col-md-12 mt-1">
-                                        <label for="email" class="mb-1"><strong>{{ 'Email' }}</strong></label>
+                                        <label for="email" class="mb-1"><strong>Email</strong></label>
 
                                         <x-input-group :type="'email'" :value="old('email', getSetting('email') ?? '')" :name="'email'"
                                             :placeholder="'Enter email address'" :id="'email'">
@@ -62,7 +62,7 @@
 
                                     <div class="col-md-12 mt-2">
                                         <label for="business_description"
-                                            class="mb-1"><strong>{{ 'Business Description' }}</strong></label>
+                                            class="mb-1"><strong>Business Description</strong></label>
 
                                             <x-textarea-group :placeholder="'Business Description'"
                                             :name="'business_description'">{{ old('business_description') }}</x-textarea-group>
@@ -75,7 +75,7 @@
 
                                     <div class="col-md-6 mt-1">
                                         <label for="phone_1"
-                                            class="mb-1"><strong>{{ 'Phone 1' }}</strong></label>
+                                            class="mb-1"><strong>Phone 1</strong></label>
 
                                         <x-input-group :type="'number'" :value="old('phone_1', getSetting('phone_1') ?? '')" :name="'phone_1'"
                                             :placeholder="'Enter phone number'" :id="'phone_1'">
@@ -90,7 +90,7 @@
 
                                     <div class="col-md-6 mt-1">
                                         <label for="phone_2"
-                                            class="mb-1"><strong>{{ 'Phone 2' }}</strong></label>
+                                            class="mb-1"><strong>Phone 2</strong></label>
 
                                         <x-input-group :type="'number'" :value="old('phone_2', getSetting('phone_2') ?? '')" :name="'phone_2'"
                                             :placeholder="'Enter phone number'" :id="'phone_2'">
@@ -104,7 +104,7 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="phone_3"
-                                            class="mb-1"><strong>{{ 'Phone 3' }}</strong></label>
+                                            class="mb-1"><strong>Phone 3</strong></label>
 
                                         <x-input-group :type="'number'" :value="old('phone_3', getSetting('phone_3') ?? '')" :name="'phone_3'"
                                             :placeholder="'Enter phone number'" :id="'phone_3'">
@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="address"
-                                            class="mb-1"><strong>{{ 'Full Address' }}</strong></label>
+                                            class="mb-1"><strong>Full Address</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('address', getSetting('address') ?? '')" :name="'address'"
                                             :placeholder="'Enter address'" :id="'address'">
@@ -132,7 +132,7 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="latitude"
-                                            class="mb-1"><strong>{{ 'Latitude' }}</strong></label>
+                                            class="mb-1"><strong>Latitude</strong></label>
 
                                         <x-input-group :step="0.00000000001" :type="'number'" :value="old('latitude', getSetting('latitude') ?? '')"
                                             :name="'latitude'" :placeholder="'Enter latitude'" :id="'latitude'">
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="longitude"
-                                            class="mb-1"><strong>{{ 'Longitude' }}</strong></label>
+                                            class="mb-1"><strong>Longitude</strong></label>
 
                                         <x-input-group :step="0.00000000001" :type="'number'" :value="old('longitude', getSetting('longitude') ?? '')"
                                             :name="'longitude'" :placeholder="'Enter longitude'" :id="'longitude'">
@@ -159,9 +159,9 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="country_id"
-                                            class="mb-1"><strong>{{ 'Country' }}</strong></label>
+                                            class="mb-1"><strong>Country</strong></label>
                                         <x-input-select :name="'country_id'" :id="'country_id'" :class="'select2'">
-                                            <option value="">{{ 'Select Country' }}</option>
+                                            <option value="">Select Country</option>
                                             @foreach (json_decode($countries_json) as $country)
                                                 <option value="{{ $country->id }}" @selected(old('country_id', getSetting('country_id')) == $country->id)>
                                                     {{ $country->name }}
@@ -175,10 +175,10 @@
                                     </div>
 
                                     <div class="col-md-6 mt-1">
-                                        <label for="state_id" class="mb-1"><strong>{{ 'State' }}</strong></label>
+                                        <label for="state_id" class="mb-1"><strong>State</strong></label>
 
                                         <x-input-select :name="'state_id'" :id="'state_id'" :class="'select2'">
-                                            <option value="">{{ 'Select State' }}</option>
+                                            <option value="">Select State</option>
                                         </x-input-select>
 
                                         @error('state_id')
@@ -187,11 +187,11 @@
                                     </div>
 
                                     <div class="col-md-6 mt-1">
-                                        <label for="city_id" class="mb-1"><strong>{{ 'City' }}</strong></label>
+                                        <label for="city_id" class="mb-1"><strong>City</strong></label>
 
                                         <x-input-select :value="old('city_id', getSetting('city_id') ?? '')" :name="'city_id'" :id="'city_id'"
                                             :class="'select2'">
-                                            <option value="">{{ 'Select City' }}</option>
+                                            <option value="">Select City</option>
                                         </x-input-select>
 
                                         @error('city_id')
@@ -202,7 +202,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ 'Update' }}
+                                            Update
                                         </x-primary-button>
                                     </div>
                                 </div>
@@ -235,9 +235,9 @@
             $(country_id).on('change', function() {
                 if ($(this).val()) {
                     $(state_id).empty();
-                    $(state_id).append(`<option value="">{{ 'Select State' }}</option>`);
+                    $(state_id).append(`<option value="">Select State</option>`);
                     $(city_id).empty();
-                    $(city_id).append(`<option value="">{{ 'Select City' }}</option>`);
+                    $(city_id).append(`<option value="">Select City</option>`);
                     getStates(country_id)
                 }
             });
@@ -245,7 +245,7 @@
             $(state_id).on('change', function() {
                 if ($(this).val()) {
                     $(city_id).empty();
-                    $(city_id).append(`<option value="">{{ 'Select City' }}</option>`);
+                    $(city_id).append(`<option value="">Select City</option>`);
                     getCities(state_id)
                 }
             });

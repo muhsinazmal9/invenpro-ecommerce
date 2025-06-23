@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Logo and Favicon Settings' }} </h2>
+                            <h2>Logo and Favicon Settings </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,10 +20,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Logo and Favicon Settings' }}
+                                        Logo and Favicon Settings
                                     </li>
                                 </ol>
                             </nav>
@@ -52,7 +52,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <label for="primary_logo" class="mb-1">
-                                                    <strong>{{ 'Primary Logo' }}</strong>
+                                                    <strong>Primary Logo</strong>
                                                 </label>
 
                                                 <div class="input-style-3 row align-items-center">
@@ -83,7 +83,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <label for="secondary_logo" class="mb-1">
-                                                    <strong>{{ 'Secondary Logo' }}</strong>
+                                                    <strong>Secondary Logo</strong>
                                                 </label>
 
                                                 <div class="input-style-3 row align-items-center">
@@ -114,7 +114,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <label for="favicon"class="mb-1">
-                                                    <strong>{{ 'Favicon' }}</strong>
+                                                    <strong>Favicon</strong>
                                                 </label>
 
                                                 <div class="input-style-3 row align-items-center">
@@ -142,7 +142,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ 'Update' }}
+                                            Update
                                         </x-primary-button>
                                     </div>
                                 </div>

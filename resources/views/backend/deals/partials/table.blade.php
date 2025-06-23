@@ -2,11 +2,11 @@
     <table class="table" id="dealsTable">
         <thead>
             <tr>
-                <th>{{ 'Title' }}</th>
-                <th>{{ 'Date' }}</th>
-                <th>{{ 'Status' }}</th>
-                <th>{{ 'Created at' }}</th>
-                <th>{{ 'Actions' }}</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Created at</th>
+                <th>Actions</th>
             </tr>
         </thead>
     </table>
@@ -60,13 +60,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You want to change the status of this deal?' }}",
+            title: "Are you sure?",
+            text: "You want to change the status of this deal?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, Update it' }}",
+            confirmButtonText: "Yes, Update it",
         }).then((result) => {
 
             if (result.value) {
@@ -81,18 +81,18 @@
                     success: function(response) {
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ 'Updated!' }}",
-                                text: "{{ 'Status has been updated!' }}",
+                                title: "Updated!",
+                                text: "Status has been updated!",
                                 icon: 'success',
                             });
 
 
                             if (response.data.status) {
-                                $(btn).text("{{ 'Enabled' }}");
+                                $(btn).text("Enabled");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ 'Disabled' }}");
+                                $(btn).text("Disabled");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }
@@ -110,13 +110,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You will not be able to revert this!' }}",
+            title: "Are you sure?",
+            text: "You will not be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, delete it!' }}",
+            confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();

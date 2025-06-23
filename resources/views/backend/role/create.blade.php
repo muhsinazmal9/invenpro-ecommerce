@@ -10,7 +10,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Create Role' }}</h2>
+                            <h2>Create Role</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -19,13 +19,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.role.index') }}">{{ 'Roles' }}</a>
+                                        <a href="{{ route('admin.role.index') }}">Roles</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Create' }}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -52,7 +52,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mt-3">
-                                    <h4>{{ 'Permissions' }}</h4>
+                                    <h4>Permissions</h4>
                                     <hr>
                                 </div>
                                 @foreach ($permissions as $permission)
@@ -67,7 +67,7 @@
                                 @enderror
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Create' }}
+                                        Create
                                     </x-primary-button>
                                 </div>
                             </div>

@@ -127,7 +127,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Products' }}</h2>
+                            <h2>Products</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -136,13 +136,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.products.index') }}">{{ 'Products' }}</a>
+                                        <a href="{{ route('admin.products.index') }}">Products</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Deals'}}
+                                        Deals
                                     </li>
                                 </ol>
                             </nav>
@@ -204,7 +204,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h2 class="fw-bold">{{ $product->title }}</h2>
-                                <p class="text-sm mt-2">{{ 'Date' }}: {{ $product->created_at?->format('j/m/Y') }}</p>
+                                <p class="text-sm mt-2">Date: {{ $product->created_at?->format('j/m/Y') }}</p>
                                 <p class="text-sm pt-1">
                                     ( {{ $product->ratting }} )
                                         @for ($i = 0; $i < (int) $product->ratting; $i++)
@@ -218,11 +218,11 @@
                                         @for ($i = 0; $i < 5 - round($product->ratting) ; $i++)
                                             <i class="far fa-star text-warning"></i>
                                         @endfor
-                                    <span class="ps-1">{{ $product->reviews->count() }} {{ 'Reviews' }}</span>
+                                    <span class="ps-1">{{ $product->reviews->count() }} Reviews</span>
                                 </p>
 
                                 <div class="mt-4">
-                                    <p class="fw-bold">{{ 'Price' }}:</p>
+                                    <p class="fw-bold">Price:</p>
                                         <h3 >
                                            <del class=" text-muted fw-normal lh-base" style="font-size: 0.8rem; vertical-align: middle;">
                                                 {{ getSetting(\App\Models\Settings::CURRENCY_SYMBOL) }}{{ number_format($product->price, 2) }}
@@ -241,13 +241,13 @@
                                 </div>
 
                                 <div class="mt-4">
-                                    <p class="fw-bold">{{ 'Available Stock' }}:</p>
+                                    <p class="fw-bold">Available Stock:</p>
                                     <p>{{ $product->stock }}</p>
                                 </div>
 
                                 @if ($product->discount)
                                     <div class="mt-4">
-                                        <p class="fw-bold">{{ 'Discount information' }}:</p>
+                                        <p class="fw-bold">Discount information:</p>
                                         <p>
                                             {{ $product->discount }}@if($product->discount_type == \App\Models\Product::DISCOUNT_TYPE['percentage'])%@else {{ getSetting(\App\Models\Settings::DEFAULT_CURRENCY) }}@endif
                                             ({{ $product->discount_type }})
@@ -257,7 +257,7 @@
 
 
                                 <div class="mt-4">
-                                    <p class="fw-bold pb-2">{{ 'Attributes' }}:</p>
+                                    <p class="fw-bold pb-2">Attributes:</p>
 
                                     <div class="table-wrapper table-responsive">
                                         <!-- begin table -->
@@ -268,18 +268,18 @@
                                                     style="border-color:#00000052 !important; width: 100%">
                                                     <tbody class="">
                                                         <tr class="mt-5">
-                                                            <th class="p-2" colspan="2">{{ 'Name' }}: {{ $attribute->name }}
+                                                            <th class="p-2" colspan="2">Name: {{ $attribute->name }}
                                                             </th>
-                                                            <th class="p-2" colspan="2">{{ 'Type' }}: {{ $attribute->type }}
+                                                            <th class="p-2" colspan="2">Type: {{ $attribute->type }}
                                                             </th>
                                                         </tr>
                                                         <tr class="text-center">
-                                                            <th colspan="4" class="p-2">{{ 'Items' }}</th>
+                                                            <th colspan="4" class="p-2">Items</th>
                                                         </tr>
                                                         <tr>
-                                                            <th class="p-2">{{ 'Name' }} </th>
-                                                            <th class="p-2">{{ 'Price Adjustment' }} </th>
-                                                            <th class="p-2" colspan="2">{{ 'Code' }} </th>
+                                                            <th class="p-2">Name </th>
+                                                            <th class="p-2">Price Adjustment </th>
+                                                            <th class="p-2" colspan="2">Code </th>
                                                         </tr>
                                                         @foreach ($attribute->items as $item)
                                                             <tr>
@@ -295,7 +295,7 @@
                                                     style="border-color:#00000052 !important; width: 100%">
                                                     <tbody>
                                                         <tr>
-                                                            <td class="p-2" colspan="4">{{ 'No attributes' }}</td>
+                                                            <td class="p-2" colspan="4">No attributes</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -312,30 +312,30 @@
                                     <nav class="nav nav-pills mb-3 d-flex gap-3" id="pills-tab" role="tablist">
                                         <button class="nav-link tab-button active" id="nav-long-description-tab"
                                             data-bs-toggle="tab" data-bs-target="#nav-long-description" type="button"
-                                            role="tab" aria-controls="nav-long-description" aria-selected="true">{{ 'Long Description' }}</button>
+                                            role="tab" aria-controls="nav-long-description" aria-selected="true">Long Description</button>
 
                                         <button class="nav-link tab-button" id="nav-short-description-tab"
                                             data-bs-toggle="tab" data-bs-target="#nav-short-description" type="button"
                                             role="tab" aria-controls="nav-short-description"
-                                            aria-selected="false">{{ 'Short Description' }}</button>
+                                            aria-selected="false">Short Description</button>
 
                                         <button class="nav-link tab-button" id="nav-additional-information-tab"
                                             data-bs-toggle="tab" data-bs-target="#nav-additional-information"
                                             type="button" role="tab" aria-controls="nav-additional-information"
-                                            aria-selected="false">{{ 'Additional Information' }}</button>
+                                            aria-selected="false">Additional Information</button>
 
                                         <button class="nav-link tab-button" id="nav-size-chart-tab"
                                             data-bs-toggle="tab" data-bs-target="#nav-size-chart"
                                             type="button" role="tab" aria-controls="nav-size-chart"
-                                            aria-selected="false">{{ 'Size Chart' }}</button>
+                                            aria-selected="false">Size Chart</button>
 
                                         <button class="nav-link tab-button" id="nav-seo-information-tab"
                                             data-bs-toggle="tab" data-bs-target="#nav-seo-information" type="button"
-                                            role="tab" aria-controls="nav-seo-information" aria-selected="false">{{ 'SEO Information' }}</button>
+                                            role="tab" aria-controls="nav-seo-information" aria-selected="false">SEO Information</button>
 
                                         <button class="nav-link tab-button" id="nav-reviews-tab"
                                             data-bs-toggle="tab" data-bs-target="#nav-reviews" type="button"
-                                            role="tab" aria-controls="nav-reviews" aria-selected="false">{{ $product->reviews->count() }} {{ 'Reviews' }}</button>
+                                            role="tab" aria-controls="nav-reviews" aria-selected="false">{{ $product->reviews->count() }} Reviews</button>
 
                                     </nav>
 
@@ -358,73 +358,73 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <span class="fw-bold">{{ 'Brand' }}:</span>
+                                                                <span class="fw-bold">Brand:</span>
                                                                 {{ $product->brand?->title ?? 'None' }}
                                                             </td>
                                                             <td>
-                                                                <span class="fw-bold">{{ 'Category' }}:</span>
+                                                                <span class="fw-bold">Category:</span>
                                                                 {{ $product->category?->name ?? 'None' }}
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <span class="fw-bold">{{ 'Subcategory' }}:</span>
+                                                                <span class="fw-bold">Subcategory:</span>
                                                                 {{ $product->subcategory?->title ?? 'None' }}
                                                             </td>
                                                             <td>
-                                                                <span class="fw-bold">{{ 'sub subcategory' }}:</span>
+                                                                <span class="fw-bold">sub subcategory:</span>
                                                                 {{ $product->subsubCategory?->title ?? 'None' }}
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <span class="fw-bold">{{ 'SKU' }}:</span>
+                                                                <span class="fw-bold">SKU:</span>
                                                                 {{ $product->sku ?? 'None' }}
                                                             </td>
                                                             <td>
-                                                                <span class="fw-bold">{{ 'Status' }}:</span>
+                                                                <span class="fw-bold">Status:</span>
                                                                 @if ($product->status)
-                                                                    <span class="badge bg-success-subtle text-success">{{ 'Enabled' }}</span>
+                                                                    <span class="badge bg-success-subtle text-success">Enabled</span>
                                                                 @else
-                                                                    <span class="badge bg-danger-subtle text-danger">{{ 'Disabled' }}</span>
+                                                                    <span class="badge bg-danger-subtle text-danger">Disabled</span>
                                                                 @endif
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <span class="fw-bold">{{ 'Featured' }}:</span>
+                                                                <span class="fw-bold">Featured:</span>
                                                                 @if ($product->featured)
-                                                                    <span class="badge bg-success-subtle text-success">{{ 'Yes' }}</span>
+                                                                    <span class="badge bg-success-subtle text-success">Yes</span>
                                                                 @else
-                                                                    <span class="badge bg-danger-subtle text-danger">{{ 'No' }}</span>
+                                                                    <span class="badge bg-danger-subtle text-danger">No</span>
                                                                 @endif
                                                             </td>
                                                             <td>
-                                                                <span class="fw-bold">{{ 'New Arrival' }}:</span>
+                                                                <span class="fw-bold">New Arrival:</span>
                                                                 @if ($product->new_arrival)
-                                                                    <span class="badge bg-success-subtle text-success">{{ 'Yes' }}</span>
+                                                                    <span class="badge bg-success-subtle text-success">Yes</span>
                                                                 @else
-                                                                    <span class="badge bg-danger-subtle text-danger">{{ 'No' }}</span>
+                                                                    <span class="badge bg-danger-subtle text-danger">No</span>
                                                                 @endif
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <span class="fw-bold">{{ 'TAX' }}:</span>
+                                                                <span class="fw-bold">TAX:</span>
                                                                 @if ($product?->tax?->code)
                                                                     <span class="badge bg-success-subtle text-success">{{ $product->tax->code }}</span>
                                                                 @else
-                                                                    <span class="badge bg-danger-subtle text-danger">{{ 'No' }}</span>
+                                                                    <span class="badge bg-danger-subtle text-danger">No</span>
                                                                 @endif
                                                             </td>
                                                             <td>
-                                                                <span class="fw-bold">{{ 'Tags' }}:</span>
+                                                                <span class="fw-bold">Tags:</span>
                                                                 @if ($product->tags->isNotEmpty())
                                                                     @foreach ($product->tags as $tag)
                                                                         <span class="badge bg-success-subtle text-success mx-1">{{ $tag->title }}</span>
                                                                     @endforeach
                                                                 @else
-                                                                    {{ 'None' }}
+                                                                    None
                                                                 @endif
                                                             </td>
                                                         </tr>
@@ -442,10 +442,10 @@
                                                         @else
                                                             <tr>
                                                                 <td>
-                                                                    <span class="fw-bold">{{ 'Custom Attributes' }}:</span>
+                                                                    <span class="fw-bold">Custom Attributes:</span>
                                                                 </td>
                                                                 <td>
-                                                                    {{ 'None' }}
+                                                                    None
                                                                 </td>
                                                             </tr>
                                                         @endif
@@ -461,7 +461,7 @@
                                                 <table class="table striped-table">
                                                     <tbody>
                                                         <tr>
-                                                            <td><span class="fw-bold">{{ 'Size Chart' }}:</span><br>
+                                                            <td><span class="fw-bold">Size Chart:</span><br>
                                                                  <img class="img-fluid rounded" src="{{asset($product->size_chart ) }}" /></td>
 
                                                         </tr>
@@ -479,15 +479,15 @@
                                                 <table class="table striped-table">
                                                     <tbody>
                                                         <tr>
-                                                            <td><span class="fw-bold">{{ 'Meta Title' }}:</span>
+                                                            <td><span class="fw-bold">Meta Title:</span>
                                                                 {{ $product->seo_title }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><span class="fw-bold">{{ 'Keywords' }}:</span>
+                                                            <td><span class="fw-bold">Keywords:</span>
                                                                 {{ $product->keywords }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><span class="fw-bold">{{ 'Meta Description' }}:</span>
+                                                            <td><span class="fw-bold">Meta Description:</span>
                                                                 {{ $product->seo_description }}</td>
                                                         </tr>
                                                     </tbody>
@@ -535,7 +535,7 @@
                                                         </div>
                                                     </li>
                                                 @empty
-                                                    <li>{{ 'No Reviews' }}</li>
+                                                    <li>No Reviews</li>
                                                 @endforelse
                                             </ul>
 

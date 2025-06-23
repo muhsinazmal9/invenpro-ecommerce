@@ -58,13 +58,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
                                         <a href="{{ route('admin.users.index').((request()->input('type') == 'customers') ? '?type=customers' : '') }}">{{ request()->input('type') == 'customers' ? \App\Models\User::CUSTOMER : \App\Models\User::USER  }}</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Create' }}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -82,7 +82,7 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="fname" class="mb-1"><strong>{{ 'First Name' }}</strong></label>
+                                    <label for="fname" class="mb-1"><strong>First Name</strong></label>
                                     <x-input-group :type="'text'" :value="old('fname')" :name="'fname'" :placeholder="'First Name'"
                                         :id="'fname'">
                                         <span class="mdi mdi-shape"></span>
@@ -92,7 +92,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="lname" class="mb-1"><strong>{{ 'Last Name' }}</strong></label>
+                                    <label for="lname" class="mb-1"><strong>Last Name</strong></label>
                                     <x-input-group :type="'text'" :value="old('lname')" :name="'lname'" :placeholder="'Last Name'"
                                         :id="'lname'">
                                         <span class="mdi mdi-shape"></span>
@@ -102,7 +102,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="email" class="mb-1"><strong>{{ 'Email' }}</strong></label>
+                                    <label for="email" class="mb-1"><strong>Email</strong></label>
                                     <x-input-group :type="'email'" :value="old('email')" :name="'email'" :placeholder="'Email'"
                                         :id="'email'">
                                         <span class="mdi mdi-shape"></span>
@@ -113,9 +113,9 @@
                                 </div>
 
                                 <div class="col-md-6 my-2">
-                                    <label for="password" class="mb-1"><strong>{{ 'Password' }}</strong></label>
+                                    <label for="password" class="mb-1"><strong>Password</strong></label>
                                     <div class="input-style-1">
-                                        <input type="password" placeholder="{{ 'Password' }}" name="password" id="password" autocomplete="password"
+                                        <input type="password" placeholder="Password" name="password" id="password" autocomplete="password"
                                             value="{{ old('password') }}" />
                                         <span class="mdi mdi-eye fs-5 toggle-password cursor-pointer" toggle="#password"
                                             style="position: absolute; top: 50%; left: 95%; transform: translateY(-50%);"></span>
@@ -131,7 +131,7 @@
                                     <label for="password_confirmation"
                                         class="mb-1"><strong>{{ __('passwords.confirm_password') }}</strong></label>
                                     <div class="input-style-1">
-                                        <input type="password" placeholder="{{ 'Confirm Password' }}" name="password_confirmation"
+                                        <input type="password" placeholder="Confirm Password" name="password_confirmation"
                                             id="password_confirmation" autocomplete="password_confirmation" value="{{ old('password_confirmation') }}" />
                                         <span class="mdi mdi-eye fs-5 toggle-password_confirmation cursor-pointer" toggle="#password_confirmation"
                                             style="position: absolute; top: 50%; left: 95%; transform: translateY(-50%);"></span>
@@ -145,7 +145,7 @@
 
                                 <div class="col-md-6 my-2">
                                     <x-input-select :label="'Select Role'" :name="'role'" :id="'role'">
-                                        <option value="">{{ 'Select Role' }}</option>
+                                        <option value="">Select Role</option>
                                         @foreach ($roles as $role)
                                             <option value="{{ $role->name }}" @selected(old('role'))>
                                                 {{ $role->name }}
@@ -159,7 +159,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 my-2">
-                                    <label for="image" class="mb-1"><strong>{{ 'Choose an image' }}</strong></label>
+                                    <label for="image" class="mb-1"><strong>Choose an image</strong></label>
                                     <div class="image-wrapper border-red-500 cursor-pointer">
                                         <label for="image_input">
                                             <input type="hidden" name="image" id="image" value="{{ old('image') }}">
@@ -171,11 +171,11 @@
                                     <div class="d-flex gap-2 mt-2">
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm" id="choose_image">
                                             <span class="mdi mdi-file-image"></span>
-                                            {{ 'Choose Image' }}
+                                            Choose Image
                                         </button>
                                         <button type="button" class="main-btn danger-btn btn-hover btn-sm" id="reset_image">
                                             <span class="mdi mdi-refresh"></span>
-                                            {{ 'Reset' }}
+                                            Reset
                                         </button>
                                     </div>
                                     @error('image')
@@ -184,7 +184,7 @@
                                 </div>
                                 <div class="col-md-6 my-2 d-flex align-items-center">
                                     <x-success-checkbox :id="'status'" :value="'ACTIVE'" :name="'status'">
-                                        {{ 'Status' }}
+                                        Status
                                     </x-success-checkbox>
                                     @error('status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -193,7 +193,7 @@
 
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Create' }}
+                                        Create
                                     </x-primary-button>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@
 @push('script')
     <script>
         $("#role_id").select2({
-            placeholder: "{{ 'Select Role' }}",
+            placeholder: "Select Role",
         });
     </script>
     <script>

@@ -39,7 +39,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ 'Edit Deals' }}</h2>
+                        <h2>Edit Deals</h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -48,13 +48,13 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item ">
-                                    <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                    <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item ">
-                                    <a href="{{ route('admin.deals.index') }}">{{ 'Deals' }}</a>
+                                    <a href="{{ route('admin.deals.index') }}">Deals</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ 'Edit' }}
+                                    Edit
                                 </li>
                             </ol>
                         </nav>
@@ -74,7 +74,7 @@
                         @method('PUT')
                         <div class="row">
                             <div class="col-md-5 my-2">
-                                <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                <label for="title" class="mb-1"><strong>Title</strong></label>
                                 <x-input-group :type="'text'" :value="old('title', $deal->title)" :name="'title'"
                                     :placeholder="'Enter title of banner'" :id="'title'">
                                     <span class="mdi mdi-shape"></span>
@@ -85,7 +85,7 @@
                             </div>
 
                             <div class="col-md-5 my-2">
-                                <label for="date" class="mb-1"><strong>{{ 'Date' }}</strong></label>
+                                <label for="date" class="mb-1"><strong>Date</strong></label>
                                 <x-input-group :type="'date'" :value="old('date', $deal->date?->toDateString())"
                                     :name="'date'" :placeholder="__('app.enter_date')" :id="'link'">
                                     <span class="mdi mdi-shape"></span>
@@ -96,11 +96,10 @@
                             </div>
                             <div class="col-md-2 my-2">
                                 <button type="button" class="main-btn primary-btn btn-hover btn-sm"
-                                    data-bs-toggle="modal" style="margin-top:36px" data-bs-target="#addProductModal">{{
-                                    'Add More Product' }}</button>
+                                    data-bs-toggle="modal" style="margin-top:36px" data-bs-target="#addProductModal">Add More Product</button>
                             </div>
                             <div class="col-md-5 my-2">
-                                <label for="image" class="mb-1"><strong>{{ 'Choose an image' }}</strong></label>
+                                <label for="image" class="mb-1"><strong>Choose an image</strong></label>
                                 <div class="image-wrapper border-red-500 cursor-pointer">
                                     <label for="image_input">
                                         <input type="hidden" name="image" id="image" value="{{ old('image') }}">
@@ -115,11 +114,11 @@
                                     <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                         id="change_image">
                                         <span class="mdi mdi-file-image"></span>
-                                        {{ 'Change Image' }}
+                                        Change Image
                                     </button>
                                     <button type="button" class="main-btn danger-btn btn-hover btn-sm" id="reset_image">
                                         <span class="mdi mdi-refresh"></span>
-                                        {{ 'Reset' }}
+                                        Reset
                                     </button>
                                 </div>
                                 @error('image')
@@ -130,22 +129,22 @@
                                 <input type="hidden" name="product_ids" id="product_ids" value="[]">
                                 <div class="product_wrapper table-responsive" id="newly_selected_products">
                                     <label class="mb-1">
-                                        <strong>{{ 'Newly Selected Products' }}</strong>
+                                        <strong>Newly Selected Products</strong>
                                     </label>
                                     <table class="table mb-5">
                                         <thead>
                                             <tr>
                                                 <th class="text-center" width="10%">
-                                                    <span class="form-text">{{ 'Thumbnail' }}</span>
+                                                    <span class="form-text">Thumbnail</span>
                                                 </th>
                                                 <th class="text-center" width="20%">
-                                                    <span class="form-text">{{ 'Title' }}</span>
+                                                    <span class="form-text">Title</span>
                                                 </th>
                                                 <th class="text-center" width="15%">
-                                                    <span class="form-text">{{ 'Price' }}</span>
+                                                    <span class="form-text">Price</span>
                                                 </th>
                                                 <th class="text-center" width="10%">
-                                                    <span class="form-text">{{ 'Actions' }}</span>
+                                                    <span class="form-text">Actions</span>
                                                 </th>
                                             </tr>
                                         </thead>
@@ -157,21 +156,21 @@
                                 </div>
 
                                 <div class="product_wrapper table-responsive">
-                                    <label class="mb-1"><strong>{{ 'Saved Products' }}</strong></label>
+                                    <label class="mb-1"><strong>Saved Products</strong></label>
                                     <table class="table">
                                         <thead>
                                             <tr>
                                                 <th class="text-center" width="10%">
-                                                    <span class="form-text">{{ 'Thumbnail' }}</span>
+                                                    <span class="form-text">Thumbnail</span>
                                                 </th>
                                                 <th class="text-center" width="20%">
-                                                    <span class="form-text">{{ 'Title' }}</span>
+                                                    <span class="form-text">Title</span>
                                                 </th>
                                                 <th class="text-center" width="15%">
-                                                    <span class="form-text">{{ 'Price' }}</span>
+                                                    <span class="form-text">Price</span>
                                                 </th>
                                                 <th class="text-center" width="10%">
-                                                    <span class="form-text">{{ 'Actions' }}</span>
+                                                    <span class="form-text">Actions</span>
                                                 </th>
                                             </tr>
                                         </thead>
@@ -195,7 +194,7 @@
                                             @empty
                                             <tr>
                                                 <td class="text-center" colspan="4">
-                                                    <p>{{ 'No Products' }}</p>
+                                                    <p>No Products</p>
                                                 </td>
                                             </tr>
                                             @endforelse
@@ -208,11 +207,11 @@
                         <div class="col-md-12 my-2">
                             @if ($deal->status)
                             <x-success-checkbox :id="'status'" :checked="true" :value="'1'" :name="'status'">
-                                {{ 'Status' }}
+                                Status
                             </x-success-checkbox>
                             @else
                             <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                {{ 'Status' }}
+                                Status
                             </x-success-checkbox>
                             @endif
                             @error('status')
@@ -221,7 +220,7 @@
                         </div>
                         <div class="col-md-12 mt-3">
                             <x-primary-button :type="'submit'">
-                                {{ 'Update' }}
+                                Update
                             </x-primary-button>
                         </div>
                     </form>
@@ -240,7 +239,7 @@
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="addProductModalLabel">{{ 'Add Product' }}</h1>
+                <h1 class="modal-title fs-5" id="addProductModalLabel">Add Product</h1>
                 <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -519,14 +518,14 @@
             let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
             Swal.fire({
-                title: "{{ 'Are you sure?' }}",
-                text: "{{ 'You will not be able to revert this!' }}",
+                title: "Are you sure?",
+                text: "You will not be able to revert this!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: "{{ 'Yes, delete it!' }}",
-                cancelButtonText: "{{ 'Cancel' }}",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "Cancel",
             }).then((result) => {
                 if (result.value) {
                     event.preventDefault();

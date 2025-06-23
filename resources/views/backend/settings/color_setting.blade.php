@@ -11,7 +11,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ 'Color Settings' }} </h2>
+                        <h2>Color Settings </h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -20,10 +20,10 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item ">
-                                    <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                    <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ 'Color Settings' }}
+                                    Color Settings
                                 </li>
                             </ol>
                         </nav>
@@ -47,8 +47,7 @@
                             @method('patch')
                             <div class="row flex-column">
                                 <div class="col-md-2 mt-1 ">
-                                    <label for="primary_color" class="mb-1"><strong>{{ 'Primary Color'
-                                            }}</strong></label><br>
+                                    <label for="primary_color" class="mb-1"><strong>Primary Color</strong></label><br>
                                     <input name="primary_color" id="primary_color" type="color" class="form-control"
                                         value="{{ old('primary_color',getSetting('primary_color')) }}">
                                     @error('primary_color')
@@ -57,8 +56,7 @@
 
                                 </div>
                                 <div class="col-md-2 mt-1 ">
-                                    <label for="secondary_color" class="mb-1"><strong>{{ 'Secondary Color'
-                                            }}</strong></label><br>
+                                    <label for="secondary_color" class="mb-1"><strong>Secondary Color</strong></label><br>
                                     <input name="secondary_color" id="secondary_color" type="color"
                                         class="form-control" value="{{ old('secondary_color',getSetting('secondary_color')) }}">
                                     @error('secondary_color')
@@ -69,7 +67,7 @@
 
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Update' }}
+                                        Update
                                     </x-primary-button>
                                 </div>
                             </div>

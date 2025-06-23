@@ -33,7 +33,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ 'Social Media' }} </h2>
+                        <h2>Social Media </h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -42,10 +42,10 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item ">
-                                    <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                    <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ 'Social Media' }}
+                                    Social Media
                                 </li>
                             </ol>
                         </nav>
@@ -66,13 +66,13 @@
                     <div class="card-body">
                         <div class="title-section d-flex justify-content-between w-100">
                             <div class="title">
-                                <h3>{{ 'Social Media' }}</h3>
+                                <h3>Social Media</h3>
                             </div>
                             <div class="title">
                                 <button class='main-btn primary-btn icon-btn btn-hover btn-sm details-btn'
                                     data-bs-toggle='modal' data-bs-target='#createModal'>
                                     <i class="fas fa-plus"></i>
-                                    {{ 'Add Social' }}
+                                    Add Social
                                 </button>
                             </div>
                         </div>
@@ -80,12 +80,12 @@
                             <table class="table" id="socialTable">
                                 <thead>
                                     <tr>
-                                        <th>{{ 'Name' }}</th>
-                                        <th>{{ 'Icon' }}</th>
-                                        <th>{{ 'URL' }}</th>
-                                        <th>{{ 'Status' }}</th>
-                                        <th>{{ 'Created at' }}</th>
-                                        <th>{{ 'Actions' }}</th>
+                                        <th>Name</th>
+                                        <th>Icon</th>
+                                        <th>URL</th>
+                                        <th>Status</th>
+                                        <th>Created at</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -116,7 +116,7 @@
         </div>
 
         <div class="col-md-12 mt-2">
-            <label for="username" class="mb-1"><strong>{{ 'Username' }}</strong></label>
+            <label for="username" class="mb-1"><strong>Username</strong></label>
             <x-input-group :type="'text'" :name="'username'" :placeholder="'Enter username'" :id="'username'"
                 :class="'username'">
                 <span class="mdi mdi-shape"></span>
@@ -127,13 +127,13 @@
 
         <div class="col-md-6">
             <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                {{ 'Status' }}
+                Status
             </x-success-checkbox>
         </div>
 
         <div class="col-md-12 mt-3 text-center">
             <x-primary-button :id="'social_create_btn'" :type="'submit'" :style="'padding:8px 50px'">
-                {{ 'Save' }}
+                Save
             </x-primary-button>
         </div>
     </div>
@@ -156,7 +156,7 @@
         </div>
 
         <div class="col-md-12 mt-2">
-            <label for="username_edit" class="mb-1"><strong>{{ 'Username' }}</strong></label>
+            <label for="username_edit" class="mb-1"><strong>Username</strong></label>
             <x-input-group :type="'text'" :name="'username_edit'" :placeholder="'Enter username'"
                 :id="'username_edit'" :class="'username_edit'">
                 <span class="mdi mdi-shape"></span>
@@ -167,13 +167,13 @@
 
         <div class="col-md-6">
             <x-success-checkbox :id="'status_edit'" :value="'1'" :name="'status_edit'">
-                {{ 'Status' }}
+                Status
             </x-success-checkbox>
         </div>
 
         <div class="col-md-12 mt-3 text-center">
             <x-primary-button :id="'social_edit_btn'" :type="'submit'" :style="'padding:8px 50px'">
-                {{ 'Update' }}
+                Update
             </x-primary-button>
         </div>
     </div>
@@ -392,14 +392,14 @@
             let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
             Swal.fire({
-                title: "{{ 'Are you sure?' }}",
-                text: "{{ 'You will not be able to revert this!' }}",
+                title: "Are you sure?",
+                text: "You will not be able to revert this!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: "{{ 'Yes, delete it!' }}",
-                cancelButtonText: "{{ 'Cancel' }}",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "Cancel",
             }).then((result) => {
                 if (result.value) {
                     event.preventDefault();
@@ -418,13 +418,13 @@
             let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
             Swal.fire({
-                title: "{{ 'Are you sure?' }}",
-                text: "{{ 'You want to change the status of this social media?' }}",
+                title: "Are you sure?",
+                text: "You want to change the status of this social media?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: "{{ 'Yes, Update it' }}",
+                confirmButtonText: "Yes, Update it",
             }).then((result) => {
                 if (result.value) {
                     event.preventDefault();
@@ -438,8 +438,8 @@
 
                             if (response.success) {
                                 Swal.fire({
-                                    title: "{{ 'Updated!' }}",
-                                    text: "{{ 'Social status has been updated' }}",
+                                    title: "Updated!",
+                                    text: "Social status has been updated",
                                     icon: 'success',
                                 });
                                 if (response.data.status) {

@@ -36,7 +36,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Edit Subcategory' }}</h2>
+                            <h2>Edit Subcategory</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -45,13 +45,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.subcategory.index') }}">{{ 'Subcategory' }}</a>
+                                        <a href="{{ route('admin.subcategory.index') }}">Subcategory</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Edit' }}
+                                        Edit
                                     </li>
                                 </ol>
                             </nav>
@@ -71,7 +71,7 @@
                             @method('patch')
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="name" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <label for="name" class="mb-1"><strong>Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('title', $subcategory->title)" :name="'title'" :placeholder="'Enter title of subcategory'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -83,7 +83,7 @@
 
                                 <div class="col-md-6 my-2">
                                     <x-input-select :label="'Select a parent category'" :name="'category_id'" :id="'category_id'">
-                                        <option value="">{{ 'Select a parent category' }}</option>
+                                        <option value="">Select a parent category</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}" @selected(old('category_id', $subcategory->category_id) == $category->id)>
                                                 {{ $category->name }}
@@ -99,7 +99,7 @@
 
                                 <div class="col-md-12 my-2">
                                     <label for="image"
-                                        class="mb-1"><strong>{{ 'Change Image' }}</strong></label>
+                                        class="mb-1"><strong>Change Image</strong></label>
                                     <div class="image-wrapper border-red-500 cursor-pointer">
                                         <label for="image_input">
                                             <input type="hidden" name="image" id="image"
@@ -115,12 +115,12 @@
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                             id="change_image">
                                             <span class="mdi mdi-file-image"></span>
-                                            {{ 'Change Image' }}
+                                            Change Image
                                         </button>
                                         <button type="button" class="main-btn danger-btn btn-hover btn-sm"
                                             id="reset_image">
                                             <span class="mdi mdi-refresh"></span>
-                                            {{ 'Reset' }}
+                                            Reset
                                         </button>
                                     </div>
                                     @error('image')
@@ -133,11 +133,11 @@
                                     @if ($subcategory->status == '1')
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'"
                                             :checked="'status'">
-                                            {{ 'Status' }}
+                                            Status
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                            {{ 'Status' }}
+                                            Status
                                         </x-success-checkbox>
                                     @endif
                                     @error('status')
@@ -148,7 +148,7 @@
 
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Update' }}
+                                        Update
                                     </x-primary-button>
                                 </div>
 
@@ -172,7 +172,7 @@
     </script>
     <script>
         $("#category_id").select2({
-            placeholder: "{{ 'Select Category' }}",
+            placeholder: "Select Category",
         });
 
         $(document).ready(function() {

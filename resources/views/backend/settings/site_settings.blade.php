@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Site Settings' }} </h2>
+                            <h2>Site Settings </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,10 +20,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Site Settings' }}
+                                        Site Settings
                                     </li>
                                 </ol>
                             </nav>
@@ -48,7 +48,7 @@
                                 <div class="row">
                                     <div class="col-md-6 mt-1">
                                         <label for="site_title"
-                                            class="mb-1"><strong>{{ 'Site Title' }}</strong></label>
+                                            class="mb-1"><strong>Site Title</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('site_title', getSetting('site_title') ?? '')" :name="'site_title'"
                                             :placeholder="'Enter site title'" :id="'site_title'">
@@ -62,7 +62,7 @@
                                     {{-- <div class="col-md-6 mt-1">
 
                                         <label for="frontend_url"
-                                            class="mb-1"><strong>{{ 'Frontend URL' }}</strong></label>
+                                            class="mb-1"><strong>Frontend URL</strong></label>
 
                                         <x-input-group :type="'url'" :value="old('frontend_url', getSetting('frontend_url') ?? '')" :name="'frontend_url'"
                                             :placeholder="'Enter frontend URL'" :id="'frontend_url'">
@@ -124,7 +124,7 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="currency_symbol"
-                                            class="mb-1"><strong>{{ 'Currency Symbol' }}</strong></label>
+                                            class="mb-1"><strong>Currency Symbol</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('currency_symbol', getSetting('currency_symbol') ?? '')" :name="'currency_symbol'"
                                             :placeholder="'Enter currency symbol'" :id="'currency_symbol'">
@@ -152,7 +152,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-6 mt-1">
-                                        <label for="copy_right_text" class="mb-1"><strong>{{ 'Copy Right Text' }}</strong></label>
+                                        <label for="copy_right_text" class="mb-1"><strong>Copy Right Text</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('copy_right_text', getSetting('copy_right_text') ?? '')" :name="'copy_right_text'"
                                             :placeholder="'Enter copy right text'" :id="'copy_right_text'">
@@ -166,7 +166,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ 'Update' }}
+                                            Update
                                         </x-primary-button>
                                     </div>
                                 </div>

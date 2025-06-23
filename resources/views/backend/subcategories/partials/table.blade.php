@@ -3,11 +3,11 @@
     <table class="table" id="subcategoryTable">
         <thead>
             <tr>
-                <th>{{ 'Title' }}</th>
-                <th>{{ 'Parent Category' }}</th>
-                <th>{{ 'Status' }}</th>
-                <th>{{ 'Created at' }}</th>
-                <th>{{ 'Actions' }}</th>
+                <th>Title</th>
+                <th>Parent Category</th>
+                <th>Status</th>
+                <th>Created at</th>
+                <th>Actions</th>
             </tr>
         </thead>
     </table>
@@ -81,17 +81,17 @@
                             </td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Title' }}</th>
+                            <th class="p-2">Title</th>
                             <td class="p-2">${subcategory['title']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Parent Category' }}</th>
+                            <th class="p-2">Parent Category</th>
                             <td class="p-2">${subcategory.category?.name}</td>
 
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Status' }}</th>
-                            <td class="p-2">${subcategory['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ 'Enabled' }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ 'Disabled' }}</span"}</td>
+                            <th class="p-2">Status</th>
+                            <td class="p-2">${subcategory['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>Enabled</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>Disabled</span"}</td>
                         </tr>
                     </table>
                 </div>`;
@@ -108,14 +108,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-        title: "{{ 'Are you sure?' }}",
-        text: "{{ 'You will not be able to revert this!' }}",
+        title: "Are you sure?",
+        text: "You will not be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: "{{ 'Yes, delete it!' }}",
-        cancelButtonText: "{{ 'Cancel' }}",
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "Cancel",
            }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -132,8 +132,8 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You want to change the status of this subcategory!' }}",
+            title: "Are you sure?",
+            text: "You want to change the status of this subcategory!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
@@ -154,17 +154,17 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ 'Updated!' }}",
-                                text: "{{ 'Status has been updated!' }}",
+                                title: "Updated!",
+                                text: "Status has been updated!",
                                 icon: 'success',
                             });
                             console.log(response.data);
                             if (response.data.status) {
-                                $(btn).text("{{ 'Enabled' }}");
+                                $(btn).text("Enabled");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ 'Disabled' }}");
+                                $(btn).text("Disabled");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }

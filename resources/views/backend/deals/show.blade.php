@@ -11,7 +11,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ 'Deals' }}</h2>
+                        <h2>Deals</h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -20,13 +20,13 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item ">
-                                    <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                    <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item ">
-                                    <a href="{{ route('admin.deals.index') }}">{{ 'Deals' }}</a>
+                                    <a href="{{ route('admin.deals.index') }}">Deals</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ 'Deals' }}
+                                    Deals
                                 </li>
                             </ol>
                         </nav>
@@ -46,16 +46,16 @@
                         <thead>
                             <tr>
                                 <th>
-                                    <h6>{{ 'Title' }}</h6>
+                                    <h6>Title</h6>
                                 </th>
                                 <th>
-                                    <h6>{{ 'Date' }}</h6>
+                                    <h6>Date</h6>
                                 </th>
                                 <th>
-                                    <h6>{{ 'Created at' }}</h6>
+                                    <h6>Created at</h6>
                                 </th>
                                 <th>
-                                    <h6>{{ 'Status' }}</h6>
+                                    <h6>Status</h6>
                                 </th>
 
                             </tr>

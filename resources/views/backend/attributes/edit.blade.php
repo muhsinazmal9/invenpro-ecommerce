@@ -280,8 +280,7 @@ $(document).ready(function () {
 
     function parseInitialValues(data) {
         try {
-            let values = JSON.parse(data);
-            return Array.isArray(values) ? values.map((v, i) => ({
+            return Array.isArray(data) ? data.map((v, i) => ({
                 id: v.id || Date.now() + i,
                 name: v.name,
                 color_code: v.color_code

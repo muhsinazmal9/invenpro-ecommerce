@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'News Letter' }}</h2>
+                            <h2>News Letter</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,13 +20,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.newsletter.index') }}">{{ 'News Letter' }}</a>
+                                        <a href="{{ route('admin.newsletter.index') }}">News Letter</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Edit' }}
+                                        Edit
                                     </li>
                                 </ol>
                             </nav>
@@ -46,9 +46,9 @@
                             @method('PATCH')
                             <div class="row">
                                 <div class="col-md-12 my-2">
-                                    <label for="to_emails" class="mb-1"><strong>{{ 'To' }}</strong></label>
+                                    <label for="to_emails" class="mb-1"><strong>To</strong></label>
                                     <input type="text" id="to_emails" name="to_emails" class="form-control hideMe"
-                                        placeholder="{{ 'Enter to emails' }}"
+                                        placeholder="Enter to emails"
                                         value="{{ old('to_emails', !$newsletter->to_all ? $newsletter->receiver : '') }}" />
 
                                     @error('to_emails')
@@ -60,11 +60,11 @@
                                     @if ($newsletter->to_all || old('select_all'))
                                         <x-success-checkbox :id="'select_all'" :checked="true" :value="1"
                                             :name="'select_all'">
-                                            {{ 'Select all' }}
+                                            Select all
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'select_all'" :value="1" :name="'select_all'">
-                                            {{ 'Select all' }}
+                                            Select all
                                         </x-success-checkbox>
                                     @endif
 
@@ -74,7 +74,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 my-2">
-                                    <label for="subject" class="mb-1"><strong>{{ 'Subject' }}</strong></label>
+                                    <label for="subject" class="mb-1"><strong>Subject</strong></label>
                                     <x-input-group :type="'text'" :value="old('subject', $newsletter->subject)" :name="'subject'" :placeholder="'Enter the subject'"
                                         :id="'subject'">
                                     </x-input-group>
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="col-md-12 mt-2">
 
-                                    <label for="body" class="mb-1"><strong>{{ 'Body' }}</strong></label>
+                                    <label for="body" class="mb-1"><strong>Body</strong></label>
 
                                     <textarea name="body" id="body" class="form-control" rows="5">{{ old('body', $newsletter->body) }}</textarea>
 
@@ -95,11 +95,11 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     {{-- <x-primary-button :type="'submit'" :name="''" :id="'send_btn'">
-                                    {{ 'Send' }}
+                                    Send
                                 </x-primary-button>
                                 <x-secondary-button :type="'button'" :name="'status'" :id="'draft_btn'"
                                     :class="'me-2 w-10'">
-                                    {{ 'Save as Draft' }}
+                                    Save as Draft
                                 </x-secondary-button> --}}
 
                                     <input class="main-btn primary-btn btn-hover btn-sm " type="submit" name="status"

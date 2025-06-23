@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Stripe Settings' }} </h2>
+                            <h2>Stripe Settings </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,10 +20,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Stripe Settings' }}
+                                        Stripe Settings
                                     </li>
                                 </ol>
                             </nav>
@@ -42,7 +42,7 @@
                 <div class="col-md-9">
                     <ul class="nav nav-pills mb-4" id="paymentGatewayLinksTab">
                         <li class="nav-item">
-                            <a class="nav-link {{ Route::is('admin.settings.payment-gateway.stripe') ? 'active' : '' }}" href="{{ route('admin.settings.payment-gateway.stripe') }}">{{ 'Stripe' }}</a>
+                            <a class="nav-link {{ Route::is('admin.settings.payment-gateway.stripe') ? 'active' : '' }}" href="{{ route('admin.settings.payment-gateway.stripe') }}">Stripe</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ Route::is('admin.settings.payment-gateway.paypal') ? 'active' : '' }}" href="{{ route('admin.settings.payment-gateway.paypal') }}">Paypal</a>
@@ -56,7 +56,7 @@
                                 <div class="row">
                                     <div class="col-md-12 mt-1">
                                         <label for="stripe_publishable_key"
-                                            class="mb-1"><strong>{{ 'Publishable Key' }}</strong></label>
+                                            class="mb-1"><strong>Publishable Key</strong></label>
 
                                         <x-input-group :type="'text'" :value="old(
                                             'stripe_publishable_key',
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="col-md-12 mt-1">
                                         <label for="stripe_secret_key"
-                                            class="mb-1"><strong>{{ 'Secret Key' }}</strong></label>
+                                            class="mb-1"><strong>Secret Key</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('stripe_secret_key', getSetting('stripe_secret_key') ?? '')" :name="'stripe_secret_key'"
                                             :placeholder="'Enter secret Key'" :id="'stripe_secret_key'">
@@ -88,7 +88,7 @@
                                     <div class="col-md-12 mt-1">
                                         <x-success-checkbox :id="'stripe_status'" :checked="getSetting('stripe_status') == true ? true : null" :value="'1'"
                                             :name="'stripe_status'">
-                                            {{ 'Status' }}
+                                            Status
                                         </x-success-checkbox>
                                         @error('stripe_status')
                                             <span class="text-danger">{{ $message }}</span>
@@ -97,7 +97,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ 'Update' }}
+                                            Update
                                         </x-primary-button>
                                     </div>
                                 </div>

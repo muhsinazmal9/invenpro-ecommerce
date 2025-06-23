@@ -2,18 +2,18 @@
     <table class="table" id="dealsTable">
         <thead>
             <tr>
-                <th>{{ 'Thumbnail' }}</th>
-                <th>{{ 'Title' }}</th>
-                <th>{{ 'SKU' }}</th>
-                <th>{{ 'Price' }}</th>
-                <th>{{ 'Stock' }}</th>
-                <th>{{ 'Category' }}</th>
-                <th>{{ 'Subcategory' }}</th>
-                <th>{{ 'Sub subcategory' }}</th>
-                <th>{{ 'Brand' }}</th>
-                <th>{{ 'Featured' }}</th>
-                <th>{{ 'New Arrival' }}</th>
-                <th>{{ 'Status' }}</th>
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th>SKU</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Category</th>
+                <th>Subcategory</th>
+                <th>Sub subcategory</th>
+                <th>Brand</th>
+                <th>Featured</th>
+                <th>New Arrival</th>
+                <th>Status</th>
             </tr>
         </thead>
     </table>

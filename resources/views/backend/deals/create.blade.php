@@ -39,7 +39,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Create Deals' }}</h2>
+                            <h2>Create Deals</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -48,13 +48,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.deals.index') }}">{{ 'Deals' }}</a>
+                                        <a href="{{ route('admin.deals.index') }}">Deals</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Create' }}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -72,7 +72,7 @@
                             @csrf
                             <div class="row ">
                                 <div class="col-md-5 my-2">
-                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('title')" :name="'title'" :placeholder="'Enter title of the deal'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -83,7 +83,7 @@
                                 </div>
 
                                 <div class="col-md-5 my-2">
-                                    <label for="date" class="mb-1"><strong>{{ 'Date' }}</strong></label>
+                                    <label for="date" class="mb-1"><strong>Date</strong></label>
                                     <x-input-group :type="'date'" :value="old('date')" :name="'date'" :placeholder="__('app.enter_date')"
                                         :id="'link'">
                                         <span class="mdi mdi-shape"></span>
@@ -96,11 +96,11 @@
 
                                     <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                         data-bs-toggle="modal" style="margin-top:42px"
-                                        data-bs-target="#addProductModal">{{ 'Add Product' }}</button>
+                                        data-bs-target="#addProductModal">Add Product</button>
                                 </div>
                                 <div class="col-md-5 my-2">
                                     <label for="image"
-                                        class="mb-1"><strong>{{ 'Choose an image' }}</strong></label>
+                                        class="mb-1"><strong>Choose an image</strong></label>
                                     <div class="image-wrapper border-red-500 cursor-pointer">
                                         <label for="image_input">
                                             <input type="hidden" name="image" id="image"
@@ -116,12 +116,12 @@
                                         <button type="button" class="main-btn primary-btn btn-hover btn-sm"
                                             id="choose_image">
                                             <span class="mdi mdi-file-image"></span>
-                                            {{ 'Choose Image' }}
+                                            Choose Image
                                         </button>
                                         <button type="button" class="main-btn danger-btn btn-hover btn-sm"
                                             id="reset_image">
                                             <span class="mdi mdi-refresh"></span>
-                                            {{ 'Reset' }}
+                                            Reset
                                         </button>
                                     </div>
                                     @error('image')
@@ -136,15 +136,15 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th class="text-center" width="10%">{{ 'Thumbnail' }}</th>
-                                                    <th class="text-center" width="20%">{{ 'Title' }}</th>
-                                                    <th class="text-center" width="15%">{{ 'Price' }}</th>
-                                                    <th class="text-center" width="10%">{{ 'Actions' }}</th>
+                                                    <th class="text-center" width="10%">Thumbnail</th>
+                                                    <th class="text-center" width="20%">Title</th>
+                                                    <th class="text-center" width="15%">Price</th>
+                                                    <th class="text-center" width="10%">Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="product_body">
                                                 <tr>
-                                                    <td class="text-center" colspan="4">{{ 'No Products' }}</td>
+                                                    <td class="text-center" colspan="4">No Products</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -156,7 +156,7 @@
 
                                 <div class="col-md-12 my-2">
                                     <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                        {{ 'Status' }}
+                                        Status
                                     </x-success-checkbox>
                                     @error('status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -164,7 +164,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Create' }}
+                                        Create
                                     </x-primary-button>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="addProductModalLabel">{{ 'Add Product' }}</h1>
+                    <h1 class="modal-title fs-5" id="addProductModalLabel">Add Product</h1>
                     <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -395,7 +395,7 @@
             if (products.length == 0) {
                 $("#product_body").append(`
                     <tr>
-                        <td class="text-center" colspan="4">{{ 'No Products' }}</td>
+                        <td class="text-center" colspan="4">No Products</td>
                     </tr>
                 `);
             } else {

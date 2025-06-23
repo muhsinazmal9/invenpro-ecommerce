@@ -21,8 +21,8 @@
                                     <input type="hidden" name="attribute_wrapper[]" value="{{ uniqid() }}">
 
                                     {{-- Attribute Type --}}
-                                    <div class="col-12 my-1">
-                                        <x-input-select name="type_attr[]" class="type" label="Select Type">
+                                    <div class="col-11 my-1">
+                                        <x-input-select :name="'type_attr[]'" :class="'type select2'" :label="'Select Attribute'">
                                             @foreach ($attributes as $attribute)
                                                 <option value="{{ $attribute->id }}">{{ $attribute->name }}</option>
                                             @endforeach

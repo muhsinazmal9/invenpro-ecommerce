@@ -10,7 +10,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Profile' }}</h2>
+                            <h2>Profile</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -19,10 +19,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Profile' }}
+                                        Profile
                                     </li>
                                 </ol>
                             </nav>
@@ -37,16 +37,16 @@
                 <div class="col-md-12">
 
                     <div class="card-style mb-30">
-                        <h6 class="mb-25">{{ 'Update Profile Information' }}</h6>
+                        <h6 class="mb-25">Update Profile Information</h6>
                         @include('backend.profile.partials.update-profile-information-form')
                     </div>
 
                     <div class="card-style mb-30">
-                        <h6 class="mb-25">{{ 'Update Password' }}</h6>
+                        <h6 class="mb-25">Update Password</h6>
                         @include('backend.profile.partials.update-password-form')
                     </div>
                     <div class="card-style mb-30">
-                        <h6 class="mb-25">{{ 'Delete Account' }}</h6>
+                        <h6 class="mb-25">Delete Account</h6>
                         @include('backend.profile.partials.delete-user-form')
                     </div>
 

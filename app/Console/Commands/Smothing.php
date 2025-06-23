@@ -3,81 +3,42 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Finder\Finder;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 
 class Smothing extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'app:smothing';
+    protected $signature = 'smothing:clean';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Replaces app.php translation keys with actual values in PHP and Blade files.';
+    protected $description = 'Replaces Blade {{ \'string\' }} with plain string in views';
 
-    /**
-     * Execute the console command.
-     */
     public function handle()
     {
-        $translationFile = base_path('resources/lang/en/auth.php');
+        $directory = resource_path('views');
+        $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory));
 
-        if (!file_exists($translationFile)) {
-            $this->error("Translation file not found at: $translationFile");
-            return 1;
-        }
+        foreach ($iterator as $file) {
+            if ($file->isFile() && in_array($file->getExtension(), ['php', 'blade'])) {
+                $content = file_get_contents($file->getRealPath());
 
-        $translations = include $translationFile;
+                // Replace {{ 'string' }} or {{ "string" }} with string
+                $newContent = preg_replace_callback(
+                    "/\{\{\s*(['\"])(.*?)\\1\s*\}\}/",
+                    function ($matches) {
+                        return $matches[2]; // Only the inner content
+                    },
+                    $content
+                );
 
-        // Flatten nested translation array if necessary
-        $flatten = function ($array, $prefix = '') use (&$flatten) {
-            $result = [];
-            foreach ($array as $key => $value) {
-                $newKey = $prefix . $key;
-                if (is_array($value)) {
-                    $result += $flatten($value, $newKey . '.');
-                } else {
-                    $result[$newKey] = $value;
-                }
-            }
-            return $result;
-        };
-
-        $translations = $flatten($translations);
-
-        $finder = new Finder();
-        $finder->files()
-            ->in(base_path())
-            ->exclude(['vendor', 'node_modules', 'storage'])
-            ->ignoreDotFiles(true)
-            ->ignoreVCS(true)
-            ->name(['*.php', '*.blade.php']);
-
-        foreach ($translations as $key => $value) {
-            $escapedKey = preg_quote("auth.$key", '/');
-            $regex = '/(__|trans|@lang)\(\s*[\'"]' . $escapedKey . '[\'"]\s*\)/';
-            $replacement = "'$value'";
-
-            foreach ($finder as $file) {
-                $filePath = $file->getRealPath();
-                $content = file_get_contents($filePath);
-
-                $newContent = preg_replace($regex, $replacement, $content, -1, $count);
-
-                if ($count > 0) {
-                    file_put_contents($filePath, $newContent);
-                    $this->info("Replaced $count instances of 'app.$key' in {$filePath}");
+                // Save only if content changed
+                if ($content !== $newContent) {
+                    file_put_contents($file->getRealPath(), $newContent);
+                    $this->info("Updated: " . $file->getRealPath());
                 }
             }
         }
 
-        $this->info("Replacement complete.");
+        $this->info('Smothing done.');
         return 0;
     }
 }

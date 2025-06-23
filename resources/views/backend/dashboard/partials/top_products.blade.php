@@ -1,7 +1,7 @@
  <div class="card-style mb-30">
     <div class="title d-flex flex-wrap justify-content-between align-items-center">
         <div class="left">
-        <h6 class="text-medium mb-30">{{ 'Top Selling Products' }}</h6>
+        <h6 class="text-medium mb-30">Top Selling Products</h6>
         </div>
     </div>
     <!-- End Title -->
@@ -10,25 +10,25 @@
             <thead>
                 <tr>
                 <th>
-                    <h6 class="text-sm text-medium">{{ 'Products' }}</h6>
+                    <h6 class="text-sm text-medium">Products</h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium">{{ 'Category' }}</h6>
+                    <h6 class="text-sm text-medium">Category</h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium">{{ 'Subcategory' }}</h6>
+                    <h6 class="text-sm text-medium">Subcategory</h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium">{{ 'Price' }}</h6>
+                    <h6 class="text-sm text-medium">Price</h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium">{{ 'Sold' }}</h6>
+                    <h6 class="text-sm text-medium">Sold</h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium">{{ 'Stock' }}</h6>
+                    <h6 class="text-sm text-medium">Stock</h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium">{{ 'Actions' }}</h6>
+                    <h6 class="text-sm text-medium">Actions</h6>
                 </th>
                 </tr>
             </thead>

@@ -11,7 +11,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Edit Address' }}</h2>
+                            <h2>Edit Address</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,13 +20,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.users.index') }}?type=customers">{{ 'Customers' }}</a>
+                                        <a href="{{ route('admin.users.index') }}?type=customers">Customers</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Edit Address' }}
+                                        Edit Address
                                     </li>
                                 </ol>
                             </nav>
@@ -45,7 +45,7 @@
                             @method('PUT')
                             <div class="row">
                                 <div class="col-md-12 my-2">
-                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('title', $address->title)" :name="'title'" :placeholder="'Title'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -55,7 +55,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="customer_name" class="mb-1"><strong>{{ 'Customer Name' }}</strong></label>
+                                    <label for="customer_name" class="mb-1"><strong>Customer Name</strong></label>
                                     <x-input-group :type="'text'" :value="old('customer_name', $address->customer_name)" :name="'customer_name'" :placeholder="'Customer Name'"
                                         :id="'customer_name'">
                                         <span class="mdi mdi-shape"></span>
@@ -66,7 +66,7 @@
                                 </div>
 
                                 <div class="col-md-6 my-2">
-                                    <label for="email" class="mb-1"><strong>{{ 'Email' }}</strong></label>
+                                    <label for="email" class="mb-1"><strong>Email</strong></label>
                                     <x-input-group :type="'text'" :value="old('email', $address->email)" :name="'email'" :placeholder="'Email'"
                                         :id="'email'">
                                         <span class="mdi mdi-shape"></span>
@@ -77,7 +77,7 @@
                                 </div>
 
                                 <div class="col-md-6 my-2">
-                                    <label for="phone" class="mb-1"><strong>{{ 'Phone' }}</strong></label>
+                                    <label for="phone" class="mb-1"><strong>Phone</strong></label>
                                     <x-input-group :type="'tel'" :value="old('phone', $address->phone)" :name="'phone'" :placeholder="'Phone'"
                                         :id="'phone'">
                                         <span class="mdi mdi-shape"></span>
@@ -90,7 +90,7 @@
 
 
                                 <div class="col-md-6 my-2">
-                                    <label for="street_address" class="mb-1"><strong>{{ 'Street Address' }}</strong></label>
+                                    <label for="street_address" class="mb-1"><strong>Street Address</strong></label>
                                     <x-input-group :type="'text'" :value="old('street_address', $address->street_address)" :name="'street_address'" :placeholder="'Street Address'"
                                         :id="'street_address'">
                                         <span class="mdi mdi-shape"></span>
@@ -100,7 +100,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 my-2">
-                                    <label for="apt_or_floor" class="mb-1"><strong>{{ 'Apt, Floor, Suite, etc.' }}</strong></label>
+                                    <label for="apt_or_floor" class="mb-1"><strong>Apt, Floor, Suite, etc.</strong></label>
                                     <x-input-group :type="'apt_or_floor'" :value="old('apt_or_floor', $address->apt_or_floor)" :name="'apt_or_floor'" :placeholder="'Apt, Floor, Suite, etc.'" :id="'apt_or_floor'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -110,7 +110,7 @@
                                 </div>
 
                                 <div class="col-md-6 my-2">
-                                    <label for="zip_code" class="mb-1"><strong>{{ 'Zip Code' }}</strong></label>
+                                    <label for="zip_code" class="mb-1"><strong>Zip Code</strong></label>
                                     <x-input-group :type="'zip_code'" :value="old('zip_code', $address->zip_code)" :name="'zip_code'" :placeholder="'Zip Code'" :id="'zip_code'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -120,7 +120,7 @@
                                 </div>
 
                                 <div class="col-md-6 my-2">
-                                    <label for="city" class="mb-1"><strong>{{ 'City' }}</strong></label>
+                                    <label for="city" class="mb-1"><strong>City</strong></label>
                                     <x-input-group :type="'city'" :value="old('city', $address->city)" :name="'city'" :placeholder="'City'" :id="'city'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -130,7 +130,7 @@
                                 </div>
 
                                 <div class="col-md-6 my-2">
-                                    <label for="country" class="mb-1"><strong>{{ 'Country' }}</strong></label>
+                                    <label for="country" class="mb-1"><strong>Country</strong></label>
                                     <x-input-group :type="'country'" :value="old('country', $address->country)" :name="'country'" :placeholder="'Country'" :id="'country'">
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -140,7 +140,7 @@
                                 </div>
 
                                 <div class="col-md-6 my-2">
-                                    <label for="coordinate" class="mb-1"><strong>{{ 'Coordinate' }}</strong></label>
+                                    <label for="coordinate" class="mb-1"><strong>Coordinate</strong></label>
                                     <x-input-group :type="'text'" :value="old('coordinate', $address->coordinate)" :name="'coordinate'" :placeholder="'Coordinate'"
                                         :id="'coordinate'">
                                         <span class="mdi mdi-shape"></span>
@@ -151,7 +151,7 @@
                                 </div>
                                 <div class="col-md-6 my-2">
                                     <x-input-select :label="'Select Type'" :name="'type'" :id="'type'">
-                                        <option value="">{{ 'Select Type' }}</option>
+                                        <option value="">Select Type</option>
 
                                         @foreach (array_keys(\App\Models\Address::TYPE) as $type)
                                             <option @selected(old('type', $address->type) == \App\Models\Address::TYPE[$type]) value="{{ \App\Models\Address::TYPE[$type] }}">{{ ucwords($type) }}</option>
@@ -167,7 +167,7 @@
 
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Update' }}
+                                        Update
                                     </x-primary-button>
                                 </div>
                             </div>

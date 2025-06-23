@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Banners' }}
+                            <h2>Banners
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,10 +20,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Banners' }}
+                                        Banners
                                     </li>
                                 </ol>
                             </nav>
@@ -38,20 +38,20 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card-style mb-30">
-                        <h4 class="mb-10">{{ 'Fixed Banners' }}</h4>
+                        <h4 class="mb-10">Fixed Banners</h4>
 
                         <div class="table-wrapper table-responsive">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>
-                                            <h6>{{ 'Banner Name' }}</h6>
+                                            <h6>Banner Name</h6>
                                         </th>
                                         <th>
-                                            <h6>{{ 'Banner Image' }}</h6>
+                                            <h6>Banner Image</h6>
                                         </th>
                                         <th>
-                                            <h6>{{ 'Actions' }}</h6>
+                                            <h6>Actions</h6>
                                         </th>
                                     </tr>
                                     <!-- end table row-->

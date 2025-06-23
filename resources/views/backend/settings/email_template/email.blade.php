@@ -11,7 +11,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ 'Email Template' }} </h2>
+                        <h2>Email Template </h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -20,10 +20,10 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item ">
-                                    <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                    <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ 'Email Template' }}
+                                    Email Template
                                 </li>
                             </ol>
                         </nav>
@@ -72,8 +72,7 @@
                             @method('patch')
                             <div class="row">
                                 <div class="col-md-12 mt-1">
-                                    <label for="email_template" class="mb-1"><strong>{{ 'Description'
-                                            }}</strong></label>
+                                    <label for="email_template" class="mb-1"><strong>Description</strong></label>
 
                                     <x-textarea-group :type="'text'"
                                         :value="old('email_template', getSetting('email_template') ?? '')"
@@ -87,7 +86,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Update' }}
+                                        Update
                                     </x-primary-button>
                                 </div>
                             </div>

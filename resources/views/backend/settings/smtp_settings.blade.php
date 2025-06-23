@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'SMTP Settings' }} </h2>
+                            <h2>SMTP Settings </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,10 +20,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'SMTP Settings' }}
+                                        SMTP Settings
                                     </li>
                                 </ol>
                             </nav>
@@ -47,7 +47,7 @@
                                 @method('patch')
                                 <div class="row">
                                     <div class="col-md-6 mt-1">
-                                        <label for="smtp_host" class="mb-1"><strong>{{ 'Host' }}</strong></label>
+                                        <label for="smtp_host" class="mb-1"><strong>Host</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('smtp_host', getSetting('smtp_host') ?? '')" :name="'smtp_host'"
                                             :placeholder="'Enter host'" :id="'smtp_host'">
@@ -60,7 +60,7 @@
                                     </div>
 
                                     <div class="col-md-6 mt-1">
-                                        <label for="smtp_port" class="mb-1"><strong>{{ 'Port' }}</strong></label>
+                                        <label for="smtp_port" class="mb-1"><strong>Port</strong></label>
 
                                         <x-input-group :type="'number'" :value="old('smtp_port', getSetting('smtp_port') ?? '')" :name="'smtp_port'"
                                             :placeholder="'Enter port number'" :id="'smtp_port'">
@@ -75,7 +75,7 @@
 
                                     <div class="col-md-6 mt-1">
                                         <label for="smtp_username"
-                                            class="mb-1"><strong>{{ 'Username' }}</strong></label>
+                                            class="mb-1"><strong>Username</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('smtp_username', getSetting('smtp_username') ?? '')" :name="'smtp_username'"
                                             :placeholder="'Enter username'" :id="'smtp_username'">
@@ -115,7 +115,7 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="smtp_from_address"
-                                            class="mb-1"><strong>{{ 'From Email Address' }}</strong></label>
+                                            class="mb-1"><strong>From Email Address</strong></label>
 
                                         <x-input-group :type="'email'" :value="old('smtp_from_address', getSetting('smtp_from_address') ?? '')" :name="'smtp_from_address'"
                                             :placeholder="'Enter from Email  address'" :id="'smtp_from_address'">
@@ -128,7 +128,7 @@
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <label for="smtp_from_name"
-                                            class="mb-1"><strong>{{ 'From Name' }}</strong></label>
+                                            class="mb-1"><strong>From Name</strong></label>
 
                                         <x-input-group :type="'text'" :value="old('smtp_from_name', getSetting('smtp_from_name') ?? '')" :name="'smtp_from_name'"
                                             :placeholder="'Enter from name'" :id="'smtp_from_name'">
@@ -141,7 +141,7 @@
                                     </div>
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ 'Update' }}
+                                            Update
                                         </x-primary-button>
                                     </div>
                                 </div>

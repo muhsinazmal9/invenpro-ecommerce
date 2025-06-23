@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Sales Report' }}</h2>
+                            <h2>Sales Report</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,10 +20,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        {{ 'Sales Report' }}
+                                        Sales Report
                                     </li>
                                     
                                 </ol>
@@ -42,7 +42,7 @@
                             <i class="lni lni-cart-full"></i>
                         </div>
                         <div class="content">
-                            <h6 class="mb-10">{{ 'Total Orders' }}</h6>
+                            <h6 class="mb-10">Total Orders</h6>
                             <h3 class="text-bold mb-10"> {{ $totalOrders }}</h3>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <i class="lni lni-cart-full"></i>
                         </div>
                         <div class="content">
-                            <h6 class="mb-10">{{ 'Todays Sales' }}</h6>
+                            <h6 class="mb-10">Todays Sales</h6>
                             <h3 class="text-bold mb-10"> {{ getSetting('currency_symbol').number_format($todaysSales,2) }}</h3>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <i class="lni lni-cart-full"></i>
                         </div>
                         <div class="content">
-                            <h6 class="mb-10">{{ 'Total Sales' }}</h6>
+                            <h6 class="mb-10">Total Sales</h6>
                             <h3 class="text-bold mb-10"> {{ getSetting('currency_symbol').number_format($totalSales,2) }}</h3>
                         </div>
                     </div>
@@ -75,12 +75,12 @@
                             <div class="dropdown d-inline-block">
                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    {{ 'Export' }}
+                                    Export
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item send-quotation" href="{{ route('admin.reports.sales.export','xlsx') }}">{{ 'Excel' }}</a></li>
-                                    <li><a class="dropdown-item send-confirmation" href="{{ route('admin.reports.sales.export','csv') }}">{{ 'CSV' }}</a></li>
-                                    <li><a class="dropdown-item send-confirmation" href="{{ route('admin.reports.sales.export','pdf') }}">{{ 'PDF' }}</a></li>
+                                    <li><a class="dropdown-item send-quotation" href="{{ route('admin.reports.sales.export','xlsx') }}">Excel</a></li>
+                                    <li><a class="dropdown-item send-confirmation" href="{{ route('admin.reports.sales.export','csv') }}">CSV</a></li>
+                                    <li><a class="dropdown-item send-confirmation" href="{{ route('admin.reports.sales.export','pdf') }}">PDF</a></li>
                                 </ul>
                             </div>
                         </div>

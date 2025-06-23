@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Stock Settings' }} </h2>
+                            <h2>Stock Settings </h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,10 +20,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Stock Settings' }}
+                                        Stock Settings
                                     </li>
                                 </ol>
                             </nav>
@@ -47,7 +47,7 @@
                                 @method('patch')
                                 <div class="row">
                                     <div class="col-md-6 mt-1">
-                                        <label for="low_stock" class="mb-1"><strong>{{ 'Minimum Products for Alert' }}</strong></label>
+                                        <label for="low_stock" class="mb-1"><strong>Minimum Products for Alert</strong></label>
 
                                         <x-input-group :type="'number'" :value="old('low_stock', getSetting('low_stock') ?? '')" :name="'low_stock'"
                                             :placeholder="'Minimum Products for Alert'" :id="'low_stock'">
@@ -65,7 +65,7 @@
 
                                     <div class="col-md-12 mt-3">
                                         <x-primary-button :type="'submit'">
-                                            {{ 'Update' }}
+                                            Update
                                         </x-primary-button>
                                     </div>
                                 </div>

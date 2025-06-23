@@ -22,7 +22,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Pages' }}</h2>
+                            <h2>Pages</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -31,10 +31,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.pages.index') }}">{{ 'Pages' }}</a>
+                                        <a href="{{ route('admin.pages.index') }}">Pages</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         {{ $page->title }}

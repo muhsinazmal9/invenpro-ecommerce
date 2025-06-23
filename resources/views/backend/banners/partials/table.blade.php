@@ -2,10 +2,10 @@
     <table class="table" id="bannerTable">
         <thead>
             <tr>
-                <th>{{ 'Title' }}</th>
-                <th>{{ 'Status' }}</th>
-                <th>{{ 'Created at' }}</th>
-                <th>{{ 'Actions' }}</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Created at</th>
+                <th>Actions</th>
             </tr>
         </thead>
     </table>
@@ -86,27 +86,27 @@
                             </td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Title' }}</th>
+                            <th class="p-2">Title</th>
                             <td class="p-2">${banner['title']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Link' }}</th>
+                            <th class="p-2">Link</th>
                             <td class="p-2">${banner['link']}</td>
                         </tr>
                         @if (request()->input('type') == 'popup')
 
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Countdown Start' }}</th>
+                            <th class="p-2">Countdown Start</th>
                             <td class="p-2">${new Date(banner['countdown_start']).toLocaleString('en-US')}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Countdown End' }}</th>
+                            <th class="p-2">Countdown End</th>
                             <td class="p-2">${new Date(banner['countdown_end']).toLocaleString('en-US')}</td>
                         </tr>
                         @endif
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Status' }}</th>
-                            <td class="p-2">${banner['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ 'Enabled' }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ 'Disabled' }}</span"}</td>
+                            <th class="p-2">Status</th>
+                            <td class="p-2">${banner['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>Enabled</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>Disabled</span"}</td>
                         </tr>
                     </table>
                 </div>`;
@@ -121,13 +121,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You want to change the status of this card!' }}",
+            title: "Are you sure?",
+            text: "You want to change the status of this card!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, Update it' }}",
+            confirmButtonText: "Yes, Update it",
         }).then((result) => {
 
             if (result.value) {
@@ -142,17 +142,17 @@
                     success: function(response) {
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ 'Updated!' }}",
-                                text: "{{ 'Status has been updated!' }}",
+                                title: "Updated!",
+                                text: "Status has been updated!",
                                 icon: 'success',
                             });
 
                             if (response.data.status) {
-                                $(btn).text("{{ 'Enabled' }}");
+                                $(btn).text("Enabled");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ 'Disabled' }}");
+                                $(btn).text("Disabled");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }
@@ -170,13 +170,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You will not be able to revert this!' }}",
+            title: "Are you sure?",
+            text: "You will not be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, delete it!' }}",
+            confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();

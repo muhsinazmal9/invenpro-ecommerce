@@ -42,13 +42,13 @@ trait Datatable
                     }
                 }
 
-                // status toggle example
-                if (strtolower($search) === 'enabled') {
-                    $q->orWhere('status', true);
-                }
-                if (strtolower($search) === 'disabled') {
-                    $q->orWhere('status', false);
-                }
+                // // status toggle example
+                // if (strtolower($search) === 'enabled') {
+                //     $q->orWhere('status', true);
+                // }
+                // if (strtolower($search) === 'disabled') {
+                //     $q->orWhere('status', false);
+                // }
             });
         }
 

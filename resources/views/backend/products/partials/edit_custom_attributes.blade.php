@@ -1,6 +1,6 @@
 <div class="col-md-12 mt-4">
     <h4 class="d-flex align-items-center">
-        <span>{{ 'Custom Attributes' }}</span>
+        <span>Custom Attributes</span>
     </h4>
     <hr>
     <div id="custom-attributes-list">

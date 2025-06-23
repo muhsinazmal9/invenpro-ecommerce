@@ -14,7 +14,7 @@
             @enderror
         </div> --}}
         <div class="col-md-6 my-2">
-            <label for="fname" class="mb-1"><strong>{{ 'First Name' }}</strong></label>
+            <label for="fname" class="mb-1"><strong>First Name</strong></label>
             <x-input-group :type="'text'" :value="old('fname', $user->fname)" :name="'fname'" :placeholder="'First Name'"
                 :id="'fname'">
                 <span class="mdi mdi-shape"></span>
@@ -24,7 +24,7 @@
             @enderror
         </div>
         <div class="col-md-6 my-2">
-            <label for="lname" class="mb-1"><strong>{{ 'Last Name' }}</strong></label>
+            <label for="lname" class="mb-1"><strong>Last Name</strong></label>
             <x-input-group :type="'text'" :value="old('lname', $user->lname)" :name="'lname'" :placeholder="'Last Name'"
                 :id="'lname'">
                 <span class="mdi mdi-shape"></span>
@@ -34,7 +34,7 @@
             @enderror
         </div>
          <div class="col-md-6 my-1">
-            <label for="fname" class="mb-1"><strong>{{ 'Email' }}</strong></label>
+            <label for="fname" class="mb-1"><strong>Email</strong></label>
              <x-input-group :type="'email'" :placeholder="'Email Address'" :id="'email'" :name="'email'" :value="old('email', $user->email)"
                  :autocomplete="'email'">
                  <i class="lni lni-envelope"></i>
@@ -46,9 +46,9 @@
              @enderror
          </div>
          <div class="col-md-6 my-2">
-            <label for="password" class="mb-1"><strong>{{ 'Password' }}</strong></label>
+            <label for="password" class="mb-1"><strong>Password</strong></label>
              <div class="input-style-1">
-                <input type="password" placeholder="{{ 'Password' }}" name="password" id="password" autocomplete="password"
+                <input type="password" placeholder="Password" name="password" id="password" autocomplete="password"
                     value="{{ old('password') }}" />
                 <span class="mdi mdi-eye fs-5 toggle-password cursor-pointer" toggle="#password"
                     style="position: absolute; top: 50%; left: 95%; transform: translateY(-50%);"></span>
@@ -63,7 +63,7 @@
              <label for="password_confirmation"class="mb-1"><strong>{{ __('passwords.confirm_password') }}</strong></label>
 
              <div class="input-style-1">
-                <input type="password" placeholder="{{ 'Confirm Password' }}" name="password_confirmation" id="password_confirmation" autocomplete="password_confirmation"
+                <input type="password" placeholder="Confirm Password" name="password_confirmation" id="password_confirmation" autocomplete="password_confirmation"
                     value="{{ old('password_confirmation') }}" />
                 <span class="mdi mdi-eye fs-5 toggle-password_confirmation cursor-pointer" toggle="#password_confirmation"
                     style="position: absolute; top: 50%; left: 95%; transform: translateY(-50%);"></span>
@@ -79,7 +79,7 @@
          <div class="col-md-6 my-2">
 
              <x-input-select :label="'Select Role'" :name="'role'" :id="'role'">
-                 <option value="">{{ 'Select Role' }}</option>
+                 <option value="">Select Role</option>
                  @foreach ($roles as $role)
                      <option value="{{ $role->name }}" @selected(old('role', empty($user->roles()->pluck('name')[0]) ? '' : $user->roles()->pluck('name')[0]) == $role->name)>
                          {{ $role->name }}
@@ -93,7 +93,7 @@
              @enderror
          </div>
          <div class="col-md-12 my-2">
-            <label for="image" class="mb-1"><strong>{{ 'Change Image' }}</strong></label>
+            <label for="image" class="mb-1"><strong>Change Image</strong></label>
             <div class="image-wrapper border-red-500 cursor-pointer">
                 <label for="image_input">
                     <input type="hidden" name="image" id="image" value="{{ old('image') }}">
@@ -105,11 +105,11 @@
             <div class="d-flex gap-2 mt-2">
                 <button type="button" class="main-btn primary-btn btn-hover btn-sm" id="change_image">
                     <span class="mdi mdi-file-image"></span>
-                    {{ 'Change Image' }}
+                    Change Image
                 </button>
                 <button type="button" class="main-btn danger-btn btn-hover btn-sm" id="reset_image">
                     <span class="mdi mdi-refresh"></span>
-                    {{ 'Reset' }}
+                    Reset
                 </button>
             </div>
             @error('image')
@@ -119,11 +119,11 @@
          <div class="col-md-6 my-2 d-flex align-items-center">
              @if ($user->status == 'ACTIVE')
                  <x-success-checkbox :id="'status'" :value="'ACTIVE'" :name="'status'" :checked="'status'">
-                     {{ 'Status' }}
+                     Status
                  </x-success-checkbox>
              @else
                  <x-success-checkbox :id="'status'" :value="'ACTIVE'" :name="'status'">
-                     {{ 'Status' }}
+                     Status
                  </x-success-checkbox>
              @endif
              @error('status')
@@ -133,7 +133,7 @@
          <div class="col-md-12 my-1">
              <x-primary-button :type="'submit'">
                  <span class="mdi mdi-content-save-settings"></span>
-                 {{ 'Save' }}
+                 Save
              </x-primary-button>
          </div>
      </div>

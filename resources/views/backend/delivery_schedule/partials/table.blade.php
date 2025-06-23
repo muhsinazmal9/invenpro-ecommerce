@@ -2,8 +2,8 @@
     <table class="table" id="deliveryscheduleTable">
         <thead>
             <tr>
-                <th>{{ 'Name' }}</th>
-                <th>{{ 'Status' }}</th>
+                <th>Name</th>
+                <th>Status</th>
             </tr>
         </thead>
     </table>
@@ -49,8 +49,8 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You want to change the status of this delivery schedule status' }}",
+            title: "Are you sure?",
+            text: "You want to change the status of this delivery schedule status",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
@@ -71,8 +71,8 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ 'Updated!' }}",
-                                text: "{{ 'Status has been updated!' }}",
+                                title: "Updated!",
+                                text: "Status has been updated!",
                                 icon: 'success',
                             });
                             $('#deliveryscheduleTable').DataTable().ajax.reload();

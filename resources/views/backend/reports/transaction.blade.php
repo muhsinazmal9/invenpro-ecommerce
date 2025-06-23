@@ -11,7 +11,7 @@
 
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Transaction Report' }}</h2>
+                            <h2>Transaction Report</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -20,10 +20,10 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Transaction Report' }}
+                                        Transaction Report
                                     </li>
                                 </ol>
                             </nav>
@@ -43,7 +43,7 @@
                         <div class="dropdown d-inline-block">
                             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                {{ 'Export' }}
+                                Export
                             </button>
                             @php
                                 $exportToXlsx = route('admin.reports.transactions.export','xlsx');
@@ -57,17 +57,17 @@
                                 }
                             @endphp
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item send-quotation" href="{{ $exportToXlsx }}">{{ 'Excel' }}</a></li>
-                                <li><a class="dropdown-item send-confirmation" href="{{ $exportToCsv }}">{{ 'CSV' }}</a></li>
-                                <li><a class="dropdown-item send-confirmation" href="{{ $exportToPdf }}">{{ 'PDF' }}</a></li>
+                                <li><a class="dropdown-item send-quotation" href="{{ $exportToXlsx }}">Excel</a></li>
+                                <li><a class="dropdown-item send-confirmation" href="{{ $exportToCsv }}">CSV</a></li>
+                                <li><a class="dropdown-item send-confirmation" href="{{ $exportToPdf }}">PDF</a></li>
                             </ul>
                         </div>
                         <div>
                             <x-primary-anchor :href="route('admin.reports.transactions.index')" :style="'padding:8px 30px'">
-                                {{ 'All' }}
+                                All
                             </x-primary-anchor>
                             <x-primary-anchor :href="route('admin.reports.transactions.index').'?status=success'">
-                                {{ 'Success' }}
+                                Success
                             </x-primary-anchor>
                         </div>
                     </div>

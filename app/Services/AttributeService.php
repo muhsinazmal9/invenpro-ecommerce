@@ -98,6 +98,37 @@ class AttributeService
 
     public function getList(Request $request)
     {
-        return Attribute::datatable($request, ['id', 'name', 'slug', 'status', 'created_at'], ['id', 'name', 'slug', 'status', 'created_at']);
+        $columns = [
+            'id',
+            'name',
+            'slug',
+            'status',
+            // 'created_at',
+            'actions',
+        ];
+
+        $searchables = [
+            'name',
+        ];
+
+        return Attribute::datatable($request, $columns, [
+            'searchables' => $searchables,
+            'defaultOrderBy' => 'id',
+            'defaultOrderDir' => 'desc',
+            'with' => [],
+            'modifyQuery' => fn($query) => $query,
+            'formatRow' => function ($row, $model) {
+                $row['created_at'] = $model->created_at->format('Y-m-d');
+                $row['actions'] = "<div class='action-btns'>
+                <a href='" . route('admin.attributes.edit', $model->id) . "' class='main-btn primary-btn btn-hover btn-sm'>
+                    Edit
+                </a>
+                <button type='button' class='main-btn danger-btn btn-hover btn-sm' data-bs-toggle='modal' data-bs-target='#deleteModal' data-id='" . $model->id . "'>
+                    Delete
+                </button>
+            </div>";
+                return $row;
+            },
+        ]);
     }
 }

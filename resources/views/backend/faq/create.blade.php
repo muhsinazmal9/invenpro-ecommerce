@@ -22,7 +22,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Create FAQ' }}</h2>
+                            <h2>Create FAQ</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -31,13 +31,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.faq.index') }}">{{ 'FAQs' }}</a>
+                                        <a href="{{ route('admin.faq.index') }}">FAQs</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Create' }}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -55,7 +55,7 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 my-2">
-                                    <label for="question" class="mb-1"><strong>{{ 'Question' }}</strong></label>
+                                    <label for="question" class="mb-1"><strong>Question</strong></label>
                                     <x-input-group :type="'text'" :value="old('question')" :name="'question'" :placeholder="'Question'" {{-- :id="'question'" --}}>
                                         <span class="mdi mdi-shape"></span>
                                     </x-input-group>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="col-md-6 my-2">
                                     <x-input-select :label="'Select Category'" :name="'category_id'" :id="'category_id'">
-                                        <option value="">{{ 'Select Category' }}</option>
+                                        <option value="">Select Category</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}" @selected(old('category_id'))>
                                                 {{ $category->name }}
@@ -79,7 +79,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 my-2">
-                                    <label for="answer" class="mb-1"><strong>{{ 'Answer' }}</strong></label>
+                                    <label for="answer" class="mb-1"><strong>Answer</strong></label>
                                     <x-textarea-group :placeholder="'Answer'" :name="'answer'">
                                         {{ old('answer') }}
                                     </x-textarea-group>
@@ -91,7 +91,7 @@
 
                                 <div class="col-md-12 my-2">
                                     <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                        {{ 'Status' }}
+                                        Status
                                     </x-success-checkbox>
                                     @error('status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -100,7 +100,7 @@
 
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Create' }}
+                                        Create
                                     </x-primary-button>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
 @push('script')
     <script>
         $("#category_id").select2({
-            placeholder: "{{ 'Select Category' }}",
+            placeholder: "Select Category",
         });
     </script>
 @endpush

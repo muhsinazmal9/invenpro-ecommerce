@@ -2,17 +2,17 @@
     <table class="table" id="orderTable">
         <thead>
             <tr>
-                <th>{{ 'Invoice Id' }}</th>
-                <th>{{ 'Customer' }}</th>
-                <th>{{ 'Email' }}</th>
-                <th>{{ 'Amount' }}</th>
-                <th>{{ 'Payment Method' }}</th>
-                <th>{{ 'Payment Status' }}</th>
-                <th>{{ 'Status' }}</th>
+                <th>Invoice Id</th>
+                <th>Customer</th>
+                <th>Email</th>
+                <th>Amount</th>
+                <th>Payment Method</th>
+                <th>Payment Status</th>
+                <th>Status</th>
                 @if (request()->input('cancel_request') == 'true')
-                    <th>{{ 'Cancel Request' }}</th>
+                    <th>Cancel Request</th>
                 @endif
-                <th>{{ 'Actions' }}</th>
+                <th>Actions</th>
             </tr>
         </thead>
     </table>
@@ -132,7 +132,7 @@
                     "{{ App\Models\Order::ORDER_STATUS['cancelled'] }}": "{{ Str::ucfirst(App\Models\Order::ORDER_STATUS['cancelled']) }}",
                 },
                 showCancelButton: true,
-                confirmButtonText: "{{ 'Confirm ' }}",
+                confirmButtonText: "Confirm ",
                 allowOutsideClick: () => !Swal.isLoading(),
                 showLoaderOnConfirm: true,
 
@@ -140,8 +140,8 @@
                 if (status.isConfirmed) {
 
                     Swal.fire({
-                        title: "{{ 'Loading...' }}",
-                        text: "{{ 'Please wait...' }}",
+                        title: "Loading...",
+                        text: "Please wait...",
                         allowOutsideClick: false,
                         showConfirmButton: false,
                         willOpen: () => {
@@ -165,7 +165,7 @@
 
                                 setTimeout(() => {
                                     Swal.fire({
-                                        title: "{{ 'Updated!' }}",
+                                        title: "Updated!",
                                         text: response.message,
                                         icon: "success",
                                     });
@@ -176,7 +176,7 @@
 
                                 setTimeout(() => {
                                     Swal.fire({
-                                        title: "{{ 'Error' }}",
+                                        title: "Error",
                                         text: response.message,
                                         icon: "error",
                                     });
@@ -187,7 +187,7 @@
                         error: function(response) {
                             setTimeout(() => {
                                 Swal.fire({
-                                    title: "{{ 'Error' }}",
+                                    title: "Error",
                                     text: response.message,
                                     icon: "error",
                                 });
@@ -210,7 +210,7 @@
                     "3": "Reject",
                 },
                 showCancelButton: true,
-                confirmButtonText: "{{ 'Confirm ' }}",
+                confirmButtonText: "Confirm ",
                 allowOutsideClick: () => !Swal.isLoading(),
                 showLoaderOnConfirm: true,
 
@@ -218,8 +218,8 @@
                 if (status.isConfirmed) {
 
                     Swal.fire({
-                        title: "{{ 'Loading...' }}",
-                        text: "{{ 'Please wait...' }}",
+                        title: "Loading...",
+                        text: "Please wait...",
                         allowOutsideClick: false,
                         showConfirmButton: false,
                         willOpen: () => {
@@ -243,7 +243,7 @@
 
                                 setTimeout(() => {
                                     Swal.fire({
-                                        title: "{{ 'Updated!' }}",
+                                        title: "Updated!",
                                         text: response.message,
                                         icon: "success",
                                     });
@@ -261,7 +261,7 @@
 
                                 setTimeout(() => {
                                     Swal.fire({
-                                        title: "{{ 'Error' }}",
+                                        title: "Error",
                                         text: response.message,
                                         icon: "error",
                                     });
@@ -273,7 +273,7 @@
                         error: function(response) {
                             setTimeout(() => {
                                 Swal.fire({
-                                    title: "{{ 'Error' }}",
+                                    title: "Error",
                                     text: response.message,
                                     icon: "error",
                                 });

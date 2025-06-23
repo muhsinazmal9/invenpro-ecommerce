@@ -5,7 +5,7 @@
                 <li class="nav-item {{ Route::is('admin.settings.site') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.site') ? ' text-white' : ' text-dark ' }} "
                         href="{{ route('admin.settings.site') }}">
-                        {{ 'Site Settings' }}
+                        Site Settings
                     </a>
                 </li>
             @endif
@@ -15,7 +15,7 @@
                 <li class="nav-item {{ Route::is('admin.settings.business') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.business') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.business') }}">
-                        {{ 'Business Settings' }}
+                        Business Settings
                     </a>
                 </li>
             @endif
@@ -24,7 +24,7 @@
                 <li class="nav-item {{ Route::is('admin.settings.logo') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.logo') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.logo') }}">
-                        {{ 'Logo and Favicon' }}
+                        Logo and Favicon
                     </a>
                 </li>
             @endif
@@ -33,7 +33,7 @@
                 <li class="nav-item {{ Route::is('admin.settings.smtp') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.smtp') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.smtp') }}">
-                        {{ 'SMTP' }}
+                        SMTP
                     </a>
                 </li>
             @endif
@@ -43,7 +43,7 @@
                     class="nav-item {{ Route::is('admin.settings.charges') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.charges') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.charges') }}">
-                        {{ 'Charges' }}
+                        Charges
                     </a>
                 </li>
             @endif
@@ -53,7 +53,7 @@
                     class="nav-item {{ Route::is('admin.settings.stock') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.stock') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.stock') }}">
-                        {{ 'Stock' }}
+                        Stock
                     </a>
                 </li>
             @endif
@@ -63,7 +63,7 @@
                     class="nav-item {{ Route::is('admin.settings.tax.index') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.tax.index') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.tax.index') }}">
-                        {{ 'TAX' }}
+                        TAX
                     </a>
                 </li>
             @endif
@@ -73,7 +73,7 @@
                     class="nav-item {{ Route::is('admin.settings.social-media.index') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.social-media.index') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.social-media.index') }}">
-                        {{ 'Social Media' }}
+                        Social Media
                     </a>
                 </li>
             @endif
@@ -82,7 +82,7 @@
                     class="nav-item {{ Route::is('admin.settings.order') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.order') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.order') }}">
-                        {{ 'Order' }}
+                        Order
                     </a>
                 </li>
             @endif
@@ -91,7 +91,7 @@
                 <li class="nav-item {{ Route::is('admin.settings.color') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.color') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.color') }}">
-                        {{ 'Color Settings' }}
+                        Color Settings
                     </a>
                 </li>
 
@@ -101,7 +101,7 @@
                 <li class="nav-item {{ Route::is('admin.settings.authentication') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.authentication') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.authentication') }}">
-                        {{ 'Authentication' }}
+                        Authentication
                     </a>
                 </li>
             @endif
@@ -111,7 +111,7 @@
                     class="nav-item {{ Route::is('admin.settings.payment-gateway.stripe') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.payment-gateway.stripe') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.payment-gateway.stripe') }}">
-                        {{ 'Payment Gateway' }}
+                        Payment Gateway
                     </a>
                 </li>
             @endif
@@ -123,7 +123,7 @@
                     class="nav-item {{ Route::is('admin.settings.external-api') ? ' primary-btn btn-hover rounded' : '' }} ">
                     <a class="nav-link fw-600 {{ Route::is('admin.settings.external-api') ? ' text-white' : ' text-dark ' }}"
                         href="{{ route('admin.settings.external-api') }}">
-                        {{ 'External API Keys' }}
+                        External API Keys
                     </a>
                 </li>
             @endif

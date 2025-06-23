@@ -22,7 +22,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Edit Tag' }}</h2>
+                            <h2>Edit Tag</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -32,16 +32,16 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
                                         <a href="{{ route('admin.dashboard.index') }}">
-                                            {{ 'Dashboard' }}
+                                            Dashboard
                                         </a>
                                     </li>
                                     <li class="breadcrumb-item ">
                                         <a href="{{ route('admin.tags.index') }}">
-                                            {{ 'Tags' }}
+                                            Tags
                                         </a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Edit' }}
+                                        Edit
                                     </li>
                                 </ol>
                             </nav>
@@ -61,7 +61,7 @@
                             <div class="row">
                                 <div class="col-md-12 my-2">
                                     <label for="name" class="mb-1"><strong>
-                                            {{ 'Title' }}
+                                            Title
                                         </strong></label>
                                     <x-input-group :type="'text'" :value="old('title', $tag->title)" :name="'title'" :placeholder="'Enter title of tag'"
                                         :id="'title'">
@@ -75,11 +75,11 @@
                                     @if ($tag->status == '1')
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'"
                                             :checked="'status'">
-                                            {{ 'Status' }}
+                                            Status
                                         </x-success-checkbox>
                                     @else
                                         <x-success-checkbox :id="'status'" :value="'1'" :name="'status'">
-                                            {{ 'Status' }}
+                                            Status
                                         </x-success-checkbox>
                                     @endif
                                     @error('status')
@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Update' }}
+                                        Update
                                     </x-primary-button>
                                 </div>
                             </div>

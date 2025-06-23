@@ -4,8 +4,8 @@
     <div class="row">
         <div class="col-12">
             <div class="input-style-1">
-                <label>{{ 'Your Email' }}</label>
-                <input type="email" placeholder="{{ 'Email' }}" name="email" id="email" autofocus autocomplete="email" value="{{ old('email', $request->email) }}" />
+                <label>Your Email</label>
+                <input type="email" placeholder="Email" name="email" id="email" autofocus autocomplete="email" value="{{ old('email', $request->email) }}" />
                 @error('email')
                     <span class="text-sm text-danger" role="alert">
                         {{ $message }}

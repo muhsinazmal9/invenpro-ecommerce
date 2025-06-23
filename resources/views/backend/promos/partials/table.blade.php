@@ -2,13 +2,13 @@
     <table class="table" id="promoTable">
         <thead>
             <tr>
-                <th>{{ 'Title' }}</th>
-                <th>{{ 'Limit' }}</th>
-                <th>{{ 'Code' }}</th>
-                <th>{{ 'Discount' }}</th>
-                <th>{{ 'Discount Type' }}</th>
-                <th>{{ 'Status' }}</th>
-                <th>{{ 'Actions' }}</th>
+                <th>Title</th>
+                <th>Limit</th>
+                <th>Code</th>
+                <th>Discount</th>
+                <th>Discount Type</th>
+                <th>Status</th>
+                <th>Actions</th>
             </tr>
         </thead>
     </table>
@@ -90,27 +90,27 @@
                 <div class="">
                     <table  class="table-bordered p-5 mx-auto" style="border-color:#00000052 !important; width: 100%">
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Title' }} </th>
+                            <th class="p-2">Title </th>
                             <td class="p-2">${promo['title']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{'Limit'}} </th>
+                            <th class="p-2">Limit </th>
                             <td class="p-2">${promo['limit']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{'Code'}} </th>
+                            <th class="p-2">Code </th>
                             <td class="p-2">${promo['code']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{'Discount'}} </th>
+                            <th class="p-2">Discount </th>
                             <td class="p-2">${promo['discount']}%</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{'Discount Type'}} </th>
+                            <th class="p-2">Discount Type </th>
                             <td class="p-2">${promo['discount_type']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Status' }} </th>
+                            <th class="p-2">Status </th>
                             <td class="p-2">${promo['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm promoStatusUpdate'>Enabled</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>Disabled</span"}</td>
                         </tr>
                     </table>
@@ -125,13 +125,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You will not be able to revert this!' }}",
+            title: "Are you sure?",
+            text: "You will not be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, delete it!' }}"
+            confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -150,13 +150,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title:"{{ 'Are you sure?' }}",
-            text: "{{ 'You want to change the status of this promo!' }}",
+            title:"Are you sure?",
+            text: "You want to change the status of this promo!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, Update it!' }}",
+            confirmButtonText: "Yes, Update it!",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -170,8 +170,8 @@
 
                         if(response.success){
                             Swal.fire({
-                                title: "{{ 'Updated!' }}",
-                                text: "{{ 'Promo status has been updated.' }}",
+                                title: "Updated!",
+                                text: "Promo status has been updated.",
                                 icon: 'success',
                             });
 

@@ -2,9 +2,9 @@
     <table class="table" id="userSearchTable">
         <thead>
             <tr>
-                <th>{{ 'Keyword' }}</th>
-                <th>{{ 'Count' }}</th>
-                <th>{{ 'Actions' }}</th>
+                <th>Keyword</th>
+                <th>Count</th>
+                <th>Actions</th>
             </tr>
         </thead>
     </table>
@@ -54,14 +54,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You will not be able to revert this!' }}",
+            title: "Are you sure?",
+            text: "You will not be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, delete it!' }}",
-            cancelButtonText: "{{ 'Cancel' }}",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "Cancel",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();

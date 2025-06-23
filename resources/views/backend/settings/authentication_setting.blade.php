@@ -11,7 +11,7 @@
 
                 <div class="col-md-6">
                     <div class="title">
-                        <h2>{{ 'Authentication settings' }} </h2>
+                        <h2>Authentication settings </h2>
                     </div>
                 </div>
                 <!-- end col -->
@@ -20,10 +20,10 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item ">
-                                    <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                    <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ 'Authentication settings' }}
+                                    Authentication settings
                                 </li>
                             </ol>
                         </nav>
@@ -47,8 +47,7 @@
                             @method('patch')
                             <div class="row">
                                 <div class="col-md-6 mt-1">
-                                    <label for="otp_validation_time" class="mb-1"><strong>{{ 'OTP Expiry time (Min)'
-                                            }}</strong></label>
+                                    <label for="otp_validation_time" class="mb-1"><strong>OTP Expiry time (Min)</strong></label>
 
                                     <x-input-group :type="'text'"
                                         :value="old('otp_validation_time', getSetting('otp_validation_time') ?? '')"
@@ -63,7 +62,7 @@
 
                                 </div>
                                 <div class="col-md-6 mt-1">
-                                    <label for="default_avatar" class="mb-1"><strong>{{ 'Default Avatar'}}</strong></label>
+                                    <label for="default_avatar" class="mb-1"><strong>Default Avatar</strong></label>
 
                                     <div class="input-style-3 row align-items-center">
                                         <div class="col-10">
@@ -88,7 +87,7 @@
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <x-primary-button :type="'submit'">
-                                        {{ 'Update' }}
+                                        Update
                                     </x-primary-button>
                                 </div>
                             </div>

@@ -2,10 +2,10 @@
     <table class="table" id="attributeTable">
         <thead>
             <tr>
-                <th>{{ 'Title' }}</th>
-                <th>{{ 'Status' }}</th>
-                <th>{{ 'Created at' }}</th>
-                <th>{{ 'Actions' }}</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Created at</th>
+                <th>Actions</th>
             </tr>
         </thead>
     </table>
@@ -67,16 +67,16 @@
                 <div class="">
                     <table  class="table-bordered p-5 mx-auto" style="border-color:#00000052 !important; width: 100%">
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Image' }}</th>
+                            <th class="p-2">Image</th>
                             <td class="p-2"><img src="${brand['image'] ? (brand['image'].startsWith('/') ? '' : '/') + brand['image'] : '{{ getPlaceholderImage('160','100') }}'}" alt="brand image" style="width:100px;height:60px;object-fit:cover;border-radius:4px;" onerror="this.onerror=null;this.src='{{ getPlaceholderImage('160','100') }}';"></td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Title' }} </th>
+                            <th class="p-2">Title </th>
                             <td class="p-2">${brand['title']}</td>
                         </tr>
                         <tr class="mt-5">
-                            <th class="p-2">{{ 'Status' }} </th>
-                            <td class="p-2">${brand['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>{{ 'Enabled' }}</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>{{ 'Disabled' }}</span"}</td>
+                            <th class="p-2">Status </th>
+                            <td class="p-2">${brand['status'] == '1' ? "<span class='main-btn success-btn-light btn-hover btn-sm'>Enabled</span" : "<span class='main-btn danger-btn-light btn-hover btn-sm'>Disabled</span"}</td>
                         </tr>
                     </table>
                 </div>`;
@@ -90,14 +90,14 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You will not be able to revert this!' }}",
+            title: "Are you sure?",
+            text: "You will not be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, delete it!' }}",
-            cancelButtonText: "{{ 'Cancel' }}"
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "Cancel"
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -106,7 +106,7 @@
         })
     }
 
-    function statusUpdate(slug, btn) {
+    {{-- function statusUpdate(slug, btn) {
         let url = "{{ route('admin.attributes.status.update', ':slug') }}";
         url = url.replace(':slug', slug);
 
@@ -114,13 +114,13 @@
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         Swal.fire({
-            title: "{{ 'Are you sure?' }}",
-            text: "{{ 'You want to change the status of this attribute?' }}",
+            title: "Are you sure?",
+            text: "You want to change the status of this attribute?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085D6',
             cancelButtonColor: '#d33',
-            confirmButtonText: "{{ 'Yes, change it' }}",
+            confirmButtonText: "Yes, change it",
         }).then((result) => {
             if (result.value) {
                 event.preventDefault();
@@ -136,17 +136,17 @@
 
                         if (response.success) {
                             Swal.fire({
-                                title: "{{ 'Updated!' }}",
-                                text: "{{ 'Status has been updated!' }}",
+                                title: "Updated!",
+                                text: "Status has been updated!",
                                 icon: 'success',
                             });
 
                             if (response.data.status) {
-                                $(btn).text("{{ 'Enabled' }}");
+                                $(btn).text("Enabled");
                                 $(btn).removeClass('danger-btn-light ');
                                 $(btn).addClass('success-btn-light ');
                             } else {
-                                $(btn).text("{{ 'Disabled' }}");
+                                $(btn).text("Disabled");
                                 $(btn).addClass('danger-btn-light ');
                                 $(btn).removeClass('success-btn-light ');
                             }
@@ -155,7 +155,7 @@
                 });
             }
         })
-    }
+    } --}}
     function toggleActions(dropdown) {
         dropdown.parentElement.classList.toggle('show')
         dropdown.nextElementSibling.classList.toggle('show')

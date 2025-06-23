@@ -60,7 +60,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>{{ 'Create Product' }}</h2>
+                            <h2>Create Product</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -69,13 +69,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.dashboard.index') }}">{{ 'Dashboard' }}</a>
+                                        <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item ">
-                                        <a href="{{ route('admin.products.index') }}">{{ 'Products' }}</a>
+                                        <a href="{{ route('admin.products.index') }}">Products</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        {{ 'Create' }}
+                                        Create
                                     </li>
                                 </ol>
                             </nav>
@@ -94,7 +94,7 @@
                             <div class="row">
                                 {{-- Title --}}
                                 <div class="col-md-12 mt-2">
-                                    <label for="title" class="mb-1"><strong>{{ 'Title' }}</strong></label>
+                                    <label for="title" class="mb-1"><strong>Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('title')" :name="'title'" :placeholder="'Enter title of product'"
                                         :id="'title'">
                                         <span class="mdi mdi-shape"></span>
@@ -120,14 +120,14 @@
                                 {{-- SEO --}}
                                 <div class="col-md-12 mt-3">
                                     {{-- SEO Section hr --}}
-                                    <h4>{{ 'Meta Section' }}</h4>
+                                    <h4>Meta Section</h4>
                                     <hr>
                                 </div>
 
                                 {{-- SEO title --}}
                                 <div class="col-md-12 mt-2">
                                     <label for="seo_title"
-                                        class="mb-1"><strong>{{ 'SEO Title' }}</strong></label>
+                                        class="mb-1"><strong>SEO Title</strong></label>
                                     <x-input-group :type="'text'" :value="old('seo_title')" :name="'seo_title'"
                                         :placeholder="'Enter SEO title'" :id="'seo_title'">
                                         <span class="mdi mdi-shape"></span>
@@ -139,7 +139,7 @@
 
                                 {{-- SEO keywords --}}
                                 <div class="col-md-12 mt-2">
-                                    <label for="keywords" class="mb-1"><strong>{{ 'Keywords' }}</strong></label>
+                                    <label for="keywords" class="mb-1"><strong>Keywords</strong></label>
                                     <x-input-group :type="'text'" :value="old('keywords')" :name="'keywords'"
                                         :placeholder="'Enter keywords'" :id="'keywords'">
                                         <span class="mdi mdi-shape"></span>
@@ -153,7 +153,7 @@
                                 <div class="col-md-12 mt-2">
 
                                     <label for="seo_description"
-                                        class="mb-1"><strong>{{ 'SEO Description' }}</strong></label>
+                                        class="mb-1"><strong>SEO Description</strong></label>
 
                                     <x-textarea-group :placeholder="'Enter SEO description'" :name="'seo_description'" :id="'seo_description'">
                                         {{ old('seo_description') }} </x-textarea-group>
@@ -176,7 +176,7 @@
 
                                 <div class="col-md-6 mt-2">
                                     <x-input-select :label="'Select a category'" :name="'category_id'" :id="'category_id'" :class="'select2'">
-                                        <option value="">{{ 'Select a category' }}</option>
+                                        <option value="">Select a category</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}" @selected(old('category_id') == $category->id)>
                                                 {{ $category->name }}
@@ -194,7 +194,7 @@
                                 <div class="col-md-6 mt-2">
                                     <x-input-select :label="'Select a subcategory'" :name="'subcategory_id'" :id="'subcategory_id'"
                                         :class="'select2'">
-                                        <option value="">{{ 'Select a subcategory' }}</option>
+                                        <option value="">Select a subcategory</option>
                                         {{-- Subcategory will apear here when select any category --}}
                                     </x-input-select>
 
@@ -207,7 +207,7 @@
                                 <div class="col-md-6 mt-2">
                                     <x-input-select :label="'Select a Sub Subcategory'" :name="'subsub_category_id'" :id="'subsub_category_id'"
                                         :class="'select2'">
-                                        <option value="">{{ 'Select a Sub Subcategory' }}</option>
+                                        <option value="">Select a Sub Subcategory</option>
                                         {{-- Subcategory will apear here when select any category --}}
                                     </x-input-select>
 
@@ -220,7 +220,7 @@
                                 <div class="col-md-6 mt-2">
                                     <x-input-select :label="'Select a brand'" :name="'brand_id'" :id="'brand_id'"
                                         :class="'select2'">
-                                        <option value="">{{ 'Select a brand' }}</option>
+                                        <option value="">Select a brand</option>
                                         @foreach ($brands as $brand)
                                             <option value="{{ $brand->id }}" @selected(old('brand_id') == $brand->id)>
                                                 {{ $brand->title }}
@@ -239,7 +239,7 @@
                             <div class="row">
                                 {{-- Price  --}}
                                 <div class="col-md-6 mt-2">
-                                    <label for="price" class="mb-1"><strong>{{ 'Price' }}</strong></label>
+                                    <label for="price" class="mb-1"><strong>Price</strong></label>
                                     <x-input-group :type="'number'" :step="'any'" :value="old('price')"
                                         :name="'price'" :placeholder="'Enter price'" :id="'price'">
                                         <span class="mdi mdi-shape"></span>
@@ -251,7 +251,7 @@
 
                                 {{-- Discount  --}}
                                 <div class="col-md-6 mt-2">
-                                    <label for="discount" class="mb-1"><strong>{{ 'Discount' }}</strong></label>
+                                    <label for="discount" class="mb-1"><strong>Discount</strong></label>
                                     <x-input-group :type="'number'" :step="'any'" :value="old('discount')"
                                         :name="'discount'" :placeholder="'Enter discount'" :id="'discount'">
                                         <span class="mdi mdi-shape"></span>
@@ -264,7 +264,7 @@
                                 {{-- Discount Type --}}
                                 <div class="col-md-6 mt-2">
                                     <x-input-select :label="'Select discount type'" :name="'discount_type'" :id="'discount_type'">
-                                        <option value="">{{ 'Select discount type' }}</option>
+                                        <option value="">Select discount type</option>
 
                                         @foreach (App\Models\Product::DISCOUNT_TYPE as $discount)
                                             <option @selected(old('discount_type') == $discount) value="{{ $discount }}">
@@ -280,7 +280,7 @@
 
                                 {{-- Stock --}}
                                 <div class="col-md-6 mt-2">
-                                    <label for="stock" class="mb-1"><strong>{{ 'Stock' }}</strong></label>
+                                    <label for="stock" class="mb-1"><strong>Stock</strong></label>
                                     <x-input-group :type="'number'" :value="old('stock')" :name="'stock'"
                                         :placeholder="'Enter stock'" :id="'stock'">
                                         <span class="mdi mdi-shape"></span>
@@ -299,10 +299,10 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="image_input"
-                                            class="mb-1"><strong>{{ 'Thumbnail' }}</strong></label>
+                                            class="mb-1"><strong>Thumbnail</strong></label>
                                         <div class="input-group">
                                             <input type="hidden" id="image" name="thumbnail" value="{{ old('thumbnail') }}">
-                                            <input type="file" id="image_input" class="d-none image-crop">
+                                            <input type="file" accept="image/*" id="image_input" class="d-none image-crop">
                                         </div>
                                         <div class="mt-2 text-center ">
                                             <img src="{{ old('thumbnail') ?? getPlaceholderImage(285, 250) }}"
@@ -317,12 +317,12 @@
                                     <div class="d-flex mt-2 justify-content-center">
                                         <x-primary-button :id="'thumbnail_image'" :class="'me-2 '" :name="'thumbnail'">
                                             <span class="mdi mdi-plus-circle" style="font-size: 20px"></span>
-                                            {{ 'Add' }}
+                                            Add
                                         </x-primary-button>
 
                                         <x-danger-button :label="__('app.remove')" :id="'remove_thumbnail'">
                                             <span class="mdi mdi-reload" style="font-size: 20px"></span>
-                                            {{ 'Reset' }}
+                                            Reset
                                         </x-danger-button>
                                     </div>
 
@@ -383,20 +383,20 @@
 
                                             <x-primary-button :id="'gallery_image_btn'" :class="'me-2 '">
                                                 <span class="mdi mdi-upload" style="font-size: 20px"></span>
-                                                {{ 'Choose' }}
+                                                Choose
                                             </x-primary-button>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12 mt-2">
                                         <x-success-checkbox :id="'featured'" :value="'1'" :name="'featured'">
-                                            {{ 'Featured' }}
+                                            Featured
                                         </x-success-checkbox>
 
                                     </div>
                                     <div class="col-md-12 mt-2">
                                         <x-success-checkbox :id="'new_arrival'" :value="'1'" :name="'new_arrival'">
-                                            {{ 'New Arrival' }}
+                                            New Arrival
                                         </x-success-checkbox>
 
                                     </div>
@@ -405,7 +405,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <x-primary-button :type="'button'" :id="'publish_btn'" :class="'me-2 w-100'">
-                                                    {{ 'Publish' }}
+                                                    Publish
                                                 </x-primary-button>
 
                                                 <input class="main-btn primary-btn btn-hover btn-sm d-none" type="submit"
@@ -415,7 +415,7 @@
                                             <div class="col">
                                                 <x-secondary-button :type="'button'" :id="'draft_btn'"
                                                     :class="'me-2 w-100'">
-                                                    {{ 'Save as Draft' }}
+                                                    Save as Draft
                                                 </x-secondary-button>
 
                                                 <input class="main-btn secondary-btn btn-hover btn-sm d-none"
@@ -506,7 +506,7 @@
             const subcategorySelect = $('#subcategory_id');
             subcategorySelect.empty();
             subcategorySelect
-                .append('<option value="">{{ 'Select a subcategory' }}</option>');
+                .append('<option value="">Select a subcategory</option>');
 
             const old_subcategory_id = "{{ old('subcategory_id') }}";
 
@@ -537,7 +537,7 @@
 
             subsubcategorySelect.empty();
             subsubcategorySelect
-                .append('<option value="">{{ 'Select a Sub Subcategory' }}</option>');
+                .append('<option value="">Select a Sub Subcategory</option>');
 
             const old_subsub_category_id = "{{ old('subsub_category_id') }}";
 
@@ -596,7 +596,7 @@
     </script>
     <script>
         $("#tax_id").select2({
-                placeholder: "{{ 'Select TAX' }}",
+                placeholder: "Select TAX",
             });
     </script>
 @endpush
