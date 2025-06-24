@@ -1,4 +1,4 @@
-<div class="col-md-12 mt-4 mx-auto">
+<div class="col-md-12 mx-auto">
     <h3 class="d-flex align-items-center">
         <span>Variant</span>
         <span class="add-field text-primary ms-1 cursor-pointer">
@@ -17,59 +17,22 @@
                     <div class="row card-body">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="row align-items-center">
-                                    <input type="hidden" name="attribute_wrapper[]" value="{{ uniqid() }}">
+                                <div class="col-12">
+                                    <div class="row align-items-center">
+                                        <input type="hidden" name="attribute_wrapper[]" value="{{ uniqid() }}">
 
-                                    {{-- Attribute Type --}}
-                                    <div class="col-11 my-1">
-                                        <x-input-select :name="'type_attr[]'" :class="'type select2'" :label="'Select Attribute'">
-                                            @foreach ($attributes as $attribute)
-                                                <option value="{{ $attribute->id }}">{{ $attribute->name }}</option>
-                                            @endforeach
-                                        </x-input-select>
-                                    </div>
-                                    {{-- Attribute Delete Button --}}
-                                    <div class="col-1 my-1">
-                                        <div class="col-md-1 input-group-append remove-field">
-                                            <span class="mt-4 py-3 d-flex justify-content-center text-danger"
-                                                style="cursor:pointer">
-                                                <i class="fas fa-minus-circle"></i>
-                                            </span>
+                                        {{-- Attribute Type --}}
+                                        <div class="col-11 my-1">
+                                            <x-input-select :name="'type_attr[]'" :class="'type'"
+                                                label="Select Attribute">
+                                                @foreach ($attributes as $attribute)
+                                                    <option value="{{ $attribute->id }}">{{ $attribute->name }}</option>
+                                                @endforeach
+                                            </x-input-select>
                                         </div>
-                                    </div>
-                                </div>
-                                {{-- Attribute Items Template --}}
-                                <div class="attribute-items-template" data-template="attribute-item">
-                                    <div class="row attribute-items align-items-center">
-                                        <div class="col-md-11">
-                                            <div class="row">
-                                                {{-- Item Name --}}
-                                                <div class="col my-1">
-                                                    <label class="mb-1"><strong>Item</strong></label>
-                                                    <x-input-group type="text"
-                                                        name="item_name_attr_{{ uniqid() }}[]" style="padding:10px"
-                                                        placeholder="Enter name" class="item_name_attr"></x-input-group>
-                                                </div>
-                                                {{-- Item Price --}}
-                                                <div class="col my-1">
-                                                    <label class="mb-1"><strong>Price Adjustment</strong></label>
-                                                    <x-input-group type="number" step="any" style="padding:10px"
-                                                        name="price_adjustment_attr_{{ uniqid() }}[]"
-                                                        placeholder="Enter price"
-                                                        class="price_adjustment_attr"></x-input-group>
-                                                </div>
-                                                {{-- Item Code --}}
-                                                <div class="col my-1">
-                                                    <label class="mb-1"><strong>Code</strong></label>
-                                                    <x-input-group type="text" style="padding:10px"
-                                                        name="code_attr_{{ uniqid() }}[]" placeholder="Enter code"
-                                                        class="codesAttr"></x-input-group>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{-- Item Delete --}}
-                                        <div class="col-md-1">
-                                            <div class="col-md-1 input-group-append remove-item-field">
+                                        {{-- Attribute Delete Button --}}
+                                        <div class="col-1 my-1">
+                                            <div class="col-md-1 input-group-append remove-field">
                                                 <span class="mt-4 py-3 d-flex justify-content-center text-danger"
                                                     style="cursor:pointer">
                                                     <i class="fas fa-minus-circle"></i>
@@ -78,14 +41,35 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- Add Attribute Items Button --}}
-                                <div class="row mt-1">
-                                    <div class="col-md-12">
-                                        <button type="button"
-                                            class="add-attr-items btn btn-primary ms-1 cursor-pointer">
-                                            <span class="mdi mdi-plus-circle"></span>
-                                        </button>
+                                <div class="col-12">
+                                    {{-- Attribute Items Template --}}
+                                    <div class="attribute-items-template" data-template="attribute-item">
+                                        <div class="row attribute-items align-items-center">
+                                            <div class="col my-1">
+                                                <span class="text-danger remove-item-field" style="cursor:pointer" >
+                                                    <i class="mdi mdi-close-circle"></i>
+                                                </span>
+                                                <label class="mb-1"><strong>Value</strong></label>
+                                                <x-input-group type="text" :name="'item_name_attr_{{ uniqid() }}[]'" style="padding:10px"
+                                                    placeholder="Enter value" class="item_name_attr">
+                                                </x-input-group>
+
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="col-12">
+                                    {{-- Add Attribute Items Button --}}
+                                    {{-- <div class="row mt-1">
+                                        <div class="col-md-12"> --}}
+                                            <button type="button"
+                                                class="add-attr-items btn btn-primary cursor-pointer">
+                                                Add Value
+                                                <span class="mdi mdi-plus-circle"></span>
+                                            </button>
+                                        {{-- </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -140,8 +124,7 @@
                                                     <x-input-group type="text"
                                                         name="item_name_attr_{{ $key }}[]"
                                                         value="{{ $item }}" style="padding:10px"
-                                                        placeholder="Enter name"
-                                                        class="item_name_attr"></x-input-group>
+                                                        placeholder="Enter name" class="item_name_attr"></x-input-group>
                                                 </div>
                                                 {{-- Item Price --}}
                                                 <div class="col my-1">
@@ -165,7 +148,7 @@
                                         </div>
                                         {{-- Item Delete --}}
                                         <div class="col-md-1">
-                                            <div class="col-md-1 input-group-append remove-item-field">
+                                            <div class="col-md-1 remove-item-field">
                                                 <span class="mt-4 py-3 d-flex justify-content-center text-danger"
                                                     style="cursor:pointer">
                                                     <i class="fas fa-minus-circle"></i>
@@ -195,67 +178,84 @@
 
 
 <script>
-    $(document).ready(function() {
-        $('.multi-field-wrapper').each(function() {
-            var $wrapper = $('.multi-fields', this);
+    $(document).ready(function () {
+        const $wrapper = $('.multi-fields');
 
-            // Add new attribute
-            $('.add-field').click(function() {
-                var $template = $('.multi-field-template').clone().removeClass(
-                    'd-none multi-field-template');
+        // Helper: Generate unique name for attribute group
+        const generateWrapperNo = () => Date.now();
 
-                var wrapperNo = Date.now();
-                $template.find('input[name="attribute_wrapper[]"]').val(wrapperNo);
-                // Update names to ensure uniqueness
-                $template.find('[name^="item_name_attr_"]').each(function() {
-                    $(this).attr('name', `item_name_attr_${wrapperNo}[]`);
-                });
-                $template.find('[name^="price_adjustment_attr_"]').each(function() {
-                    $(this).attr('name', `price_adjustment_attr_${wrapperNo}[]`);
-                });
-                $template.find('[name^="code_attr_"]').each(function() {
-                    $(this).attr('name', `code_attr_${wrapperNo}[]`);
-                });
-                $wrapper.append($template);
-            });
+        // Helper: Update dynamic input names inside a cloned item group
+        function updateInputNames($container, wrapperNo) {
+            $container.find('[name^="item_name_attr_"]').attr('name', `item_name_attr_${wrapperNo}[]`);
+            $container.find('[name^="price_adjustment_attr_"]').attr('name', `price_adjustment_attr_${wrapperNo}[]`);
+            $container.find('[name^="code_attr_"]').attr('name', `code_attr_${wrapperNo}[]`);
+        }
 
-            // Remove attribute
-            $(document).on('click', '.remove-field', function() {
-                $(this).closest('.multi-field').remove();
-            });
+        // Add new attribute block
+        function addAttributeField() {
+            const wrapperNo = generateWrapperNo();
+            const $template = $('.multi-field-template')
+                .clone()
+                .removeClass('d-none multi-field-template')
+                .attr('data-wrapper-no', wrapperNo);
 
-            // Add new attribute item
-            $(document).on('click', '.add-attr-items', function() {
-                var $multiField = $(this).closest('.multi-field');
-                var lastItemName = $multiField.find('.item_name_attr').last().val();
-                if (lastItemName === '') {
-                    alert('Please fill the last item name');
-                    return;
-                }
-                var wrapperNo = $multiField.find('input[name="attribute_wrapper[]"]').val();
-                var $itemTemplate = $multiField.find('.attribute-items-template').children()
-                    .first().clone();
-                // Update names for the new item
-                $itemTemplate.find('[name^="item_name_attr_"]').attr('name',
-                    `item_name_attr_${wrapperNo}[]`);
-                $itemTemplate.find('[name^="price_adjustment_attr_"]').attr('name',
-                    `price_adjustment_attr_${wrapperNo}[]`);
-                $itemTemplate.find('[name^="code_attr_"]').attr('name',
-                    `code_attr_${wrapperNo}[]`);
-                $multiField.find('.attribute-items').last().after($itemTemplate);
-            });
+            $template.find('input[name="attribute_wrapper[]"]').val(wrapperNo);
+            updateInputNames($template, wrapperNo);
+            $wrapper.append($template);
+        }
 
-            // Remove attribute item
-            $(document).on('click', '.remove-item-field', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                var $multiField = $(this).closest('.multi-field');
-                if ($multiField.find('.row.attribute-items').length > 1) {
-                    $(this).closest('.row.attribute-items').remove();
-                } else {
-                    alert('You cannot remove this item. At least one item is required.');
-                }
-            });
+        // Add new item under a specific attribute
+        function addAttributeItem($btn) {
+            const $multiField = $btn.closest('.multi-field');
+            const wrapperNo = $multiField.find('input[name="attribute_wrapper[]"]').val();
+            const $lastItemInput = $multiField.find('.item_name_attr').last();
+
+            if (!$lastItemInput.val()) {
+                alert('Please fill the last item name');
+                return;
+            }
+
+            const $itemTemplate = $multiField.find('.attribute-items-template .attribute-items').first().clone();
+            $itemTemplate.find('input').val('');
+            updateInputNames($itemTemplate, wrapperNo);
+
+            $multiField.find('.attribute-items').last().after($itemTemplate);
+        }
+
+        // Remove attribute block
+        function removeAttributeField($btn) {
+            $btn.closest('.multi-field').remove();
+        }
+
+        // Remove item inside attribute, ensure at least one remains
+        function removeAttributeItem($btn) {
+            const $multiField = $btn.closest('.multi-field');
+            const $items = $multiField.find('.row.attribute-items');
+            if ($items.length > 1) {
+                $btn.closest('.row.attribute-items').remove();
+            } else {
+                alert('You cannot remove this item. At least one item is required.');
+            }
+        }
+
+        // Event: Add attribute
+        $('.add-field').on('click', function () {
+            addAttributeField();
+        });
+
+        // Delegated Events:
+        $wrapper.on('click', '.add-attr-items', function () {
+            addAttributeItem($(this));
+        });
+
+        $wrapper.on('click', '.remove-field', function () {
+            removeAttributeField($(this));
+        });
+
+        $wrapper.on('click', '.remove-item-field', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            removeAttributeItem($(this));
         });
     });
 </script>

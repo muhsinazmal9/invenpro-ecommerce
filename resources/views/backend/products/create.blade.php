@@ -162,11 +162,6 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                {{-- Attributes --}}
-
-                                @include('backend.products.partials.create_attributes')
-
-                                @include('backend.products.partials.create_custom_attributes')
                             </div>
 
                         </div>
@@ -288,6 +283,15 @@
                                     @error('stock')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Attributes --}}
+                        <div class="card-style mb-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @include('backend.products.partials.create_attributes')
+                                    @include('backend.products.partials.create_custom_attributes')
                                 </div>
                             </div>
                         </div>
