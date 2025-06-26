@@ -26,6 +26,12 @@ class Attribute extends Model
         'name',
         'slug',
         'status',
+        'is_color',
+    ];
+
+    protected $casts = [
+        'status' => 'boolean',
+        'is_color' => 'boolean',
     ];
 
     public function attributeValues()

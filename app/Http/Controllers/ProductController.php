@@ -43,7 +43,7 @@ class ProductController extends Controller
         $categories = Category::where('status', Category::STATUS['active'])->get(['id', 'name']);
         $subcategories = Subcategory::where('status', Subcategory::STATUS['active'])->get(['id', 'title', 'category_id']);
         $subsubcategories = SubsubCategory::where('status', SubsubCategory::STATUS['active'])->get(['id', 'title', 'subcategory_id']);
-        $attributes = Attribute::where('status', Attribute::STATUS['active'])->get(['id', 'name']);
+        $attributes = Attribute::where('status', Attribute::STATUS['active'])->with('attributeValues')->get();
         $brands = Brand::where('status', Brand::STATUS['active'])->get(['id', 'title']);
         $tags = Tag::where('status', Tag::STATUS['active'])->get(['id', 'title']);
         $tax_settings = TaxSettings::get(['id', 'code']);

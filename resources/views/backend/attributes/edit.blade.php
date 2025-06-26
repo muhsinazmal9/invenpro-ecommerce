@@ -85,8 +85,8 @@
                                 </div>
 
                                 <div class="col-md-12 mb-3">
-                                    <x-success-checkbox :id="'is_color'" :value="'1'" :name="'is_color'"
-                                        :checked="old('is_color', $attribute->is_color)">
+                                    <x-success-checkbox :id="'is_color'" :name="'is_color'"
+                                        :checked="old('is_color', $attribute->is_color ? true : null)">
                                         Is Color?
                                     </x-success-checkbox>
                                     @error('is_color')
