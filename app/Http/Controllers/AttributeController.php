@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Attribute;
 use Illuminate\Http\Request;
 use App\Services\AttributeService;
+use App\Http\Requests\StoreAttributeRequest;
+use App\Http\Requests\UpdateAttributeRequest;
 
 class AttributeController extends Controller
 {
@@ -33,7 +35,7 @@ class AttributeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAttributeRequest $request)
     {
         $create = $this->attributeService->create($request);
 
@@ -63,7 +65,7 @@ class AttributeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Attribute $attribute)
+    public function update(UpdateAttributeRequest $request, Attribute $attribute)
     {
         $update = $this->attributeService->update($request, $attribute);
 
@@ -79,7 +81,9 @@ class AttributeController extends Controller
      */
     public function destroy(Attribute $attribute)
     {
-        //
+        $attribute->delete();
+
+        return success('Attribute deleted successfully');
     }
 
     public function getList(Request $request)

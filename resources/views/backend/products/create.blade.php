@@ -291,7 +291,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     @include('backend.products.partials.create_attributes')
-                                    @include('backend.products.partials.create_custom_attributes')
+                                    {{-- @include('backend.products.partials.create_custom_attributes') --}}
                                 </div>
                             </div>
                         </div>
@@ -557,7 +557,7 @@
         });
         $('#subcategory_id').trigger('change');
     </script>
-    <script>
+    {{-- <script>
         // tagify
         var inputElem = document.querySelector(
             '#tags')
@@ -575,7 +575,7 @@
                 maxItems: 5
             }
         })
-    </script>
+    </script> --}}
 
     <script>
         $("#gallery_image_btn").click(function() {

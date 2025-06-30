@@ -11,8 +11,9 @@
     'data_id',
     'data_extra',
     'tooltip',
+    'mainClass'
 ])
-<div class="select-style-1 mb-0">
+<div class="select-style-1 mb-0 {{ isset($mainClass) ? $mainClass : '' }}">
     @isset($label)
         <label @isset($id) for="{{ $id }}" @endisset
             class="{{ isset($label_class) ? $label_class : '' }} mb-2"><strong>{{ $label }}</strong>

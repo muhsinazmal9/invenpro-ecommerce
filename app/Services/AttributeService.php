@@ -5,10 +5,12 @@ namespace App\Services;
 use App\Models\Attribute;
 use Illuminate\Http\Request;
 use App\Models\AttributeValue;
+use App\Http\Requests\StoreAttributeRequest;
+use App\Http\Requests\UpdateAttributeRequest;
 
 class AttributeService
 {
-    public function create(Request $request)
+    public function create(StoreAttributeRequest $request)
     {
         try {
             $input = $request->except('_token', 'attribute_values');
@@ -49,7 +51,7 @@ class AttributeService
             return error('Failed to create attribute: ' . $e->getMessage());
         }
     }
-    public function update(Request $request, Attribute $attribute)
+    public function update(UpdateAttributeRequest $request, Attribute $attribute)
     {
         try {
             $input = $request->except('_token', 'attribute_values');
