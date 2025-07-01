@@ -17,7 +17,7 @@ class ProductService
 {
     public function store(StoreProductRequest $request): JsonResponse
     {
-
+        dd($request->all());
         try {
             $request['slug'] = generateSlug($request->title); 
  

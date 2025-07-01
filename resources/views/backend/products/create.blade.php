@@ -117,51 +117,7 @@
                                     @enderror
                                 </div>
 
-                                {{-- SEO --}}
-                                <div class="col-md-12 mt-3">
-                                    {{-- SEO Section hr --}}
-                                    <h4>Meta Section</h4>
-                                    <hr>
-                                </div>
-
-                                {{-- SEO title --}}
-                                <div class="col-md-12 mt-2">
-                                    <label for="seo_title"
-                                        class="mb-1"><strong>SEO Title</strong></label>
-                                    <x-input-group :type="'text'" :value="old('seo_title')" :name="'seo_title'"
-                                        :placeholder="'Enter SEO title'" :id="'seo_title'">
-                                        <span class="mdi mdi-shape"></span>
-                                    </x-input-group>
-                                    @error('seo_title')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- SEO keywords --}}
-                                <div class="col-md-12 mt-2">
-                                    <label for="keywords" class="mb-1"><strong>Keywords</strong></label>
-                                    <x-input-group :type="'text'" :value="old('keywords')" :name="'keywords'"
-                                        :placeholder="'Enter keywords'" :id="'keywords'">
-                                        <span class="mdi mdi-shape"></span>
-                                    </x-input-group>
-                                    @error('keywords')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- SEO description --}}
-                                <div class="col-md-12 mt-2">
-
-                                    <label for="seo_description"
-                                        class="mb-1"><strong>SEO Description</strong></label>
-
-                                    <x-textarea-group :placeholder="'Enter SEO description'" :name="'seo_description'" :id="'seo_description'">
-                                        {{ old('seo_description') }} </x-textarea-group>
-
-                                    @error('seo_description')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
+                                
                             </div>
 
                         </div>
@@ -291,7 +247,14 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     @include('backend.products.partials.create_attributes')
-                                    {{-- @include('backend.products.partials.create_custom_attributes') --}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-style mb-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @include('backend.products.partials.create_custom_attributes')
                                 </div>
                             </div>
                         </div>

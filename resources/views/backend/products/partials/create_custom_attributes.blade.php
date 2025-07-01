@@ -1,4 +1,4 @@
-<div class="col-md-12 mt-4">
+<div class="col-md-12">
     <h4 class="d-flex align-items-center">
         <span>Custom Attributes</span>
     </h4>

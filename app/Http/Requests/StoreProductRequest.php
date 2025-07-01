@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Product;
+use Illuminate\Validation\Rule;
 
 class StoreProductRequest extends FormRequest
 {
@@ -14,12 +15,6 @@ class StoreProductRequest extends FormRequest
     {
         return checkUserPermission(Product::CREATE);
     }
-    public function prepareForValidation()
-    {
-        $this->merge([
-            'tax_id' => $this->tax_id == 0 ? null : $this->tax_id,
-        ]);
-    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -28,26 +23,50 @@ class StoreProductRequest extends FormRequest
      */
     public function rules(): array
     {
-      return [
+        return [
             'title' => 'required|string|max:255',
             'thumbnail' => 'required',
             'short_description' => 'required|string',
-            'sku' => 'required|string',
-            'price' => 'required|numeric|min:0',
+            'price' => [
+                Rule::requiredIf(fn () => empty($this->variants)),
+                'nullable',
+                'numeric',
+                'min:0',
+            ],
             'discount' => 'nullable|numeric|min:0',
             'discount_type' => 'nullable|required_with:discount|in:FIXED,PERCENTAGE',
-            'stock' => 'required|numeric|min:0',
+            'stock' => [
+                Rule::requiredIf(fn () => empty($this->variants)),
+                'nullable',
+                'numeric',
+                'min:0',
+            ],
+            'variants' => 'nullable|array',
+            'variants.*.price' => ['required', 'numeric', 'min:0'],
+            'variants.*.stock' => ['required', 'numeric', 'min:0'],
             'category_id' => 'required|exists:categories,id',
-            'subcategory_id' => 'required|exists:subcategories,id',
-            'subsub_category_id' => 'required|exists:subsub_categories,id',
-            'brand_id' => 'required|exists:brands,id',
+            'subcategory_id' => 'nullable|exists:subcategories,id',
+            'subsub_category_id' => 'nullable|exists:subsub_categories,id',
+            'brand_id' => 'nullable|exists:brands,id',
             'featured' => 'nullable|boolean',
             'new_arrival' => 'nullable|boolean',
             'status' => 'required|in:PUBLISHED,DRAFT',
-            'tax_id' => 'nullable|integer|exists:tax_settings,id',
             'custom_attributes' => 'nullable|array',
             'custom_attributes.*.key' => 'required|string',
             'custom_attributes.*.value' => 'required|string',
-        ]; 
+        ];
+    }
+
+    /**
+     * Get custom error messages for validation.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'price.required' => 'The price is required when no variants are provided or variants are empty.',
+            'stock.required' => 'The stock is required when no variants are provided or variants are empty.',
+        ];
     }
 }
