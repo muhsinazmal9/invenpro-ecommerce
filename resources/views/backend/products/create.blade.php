@@ -265,37 +265,37 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="image_input"
-                                            class="mb-1"><strong>Thumbnail</strong></label>
+                                        <label for="image_input" class="mb-1"><strong>Thumbnail</strong></label>
                                         <div class="input-group">
                                             <input type="hidden" id="image" name="thumbnail" value="{{ old('thumbnail') }}">
                                             <input type="file" accept="image/*" id="image_input" class="d-none image-crop">
                                         </div>
-                                        <div class="mt-2 text-center ">
-                                            <img src="{{ old('thumbnail') ?? getPlaceholderImage(285, 250) }}"
-                                                alt="thumbnail" id="image-preview" class="img-fluid">
+                                        <div class="mt-2 p-3 border rounded">
+                                            <div class="text-center">
+                                                <img src="{{ old('thumbnail') ?? getPlaceholderImage(285, 250) }}" alt="thumbnail" id="image-preview" class="img-fluid w-100">
+                                            </div>
+    
+                                            @error('thumbnail')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                            {{--  choose button and reset button --}}
+                                            <div class="d-flex mt-3 justify-content-center">
+                                                <x-primary-button :id="'thumbnail_image'" :class="'me-2 '" :name="'thumbnail'">
+                                                    <span class="mdi mdi-plus-circle" style="font-size: 20px"></span>
+                                                    Add
+                                                </x-primary-button>
+        
+                                                <x-danger-button :label="__('app.remove')" :id="'remove_thumbnail'">
+                                                    <span class="mdi mdi-reload" style="font-size: 20px"></span>
+                                                    Reset
+                                                </x-danger-button>
+                                            </div>
                                         </div>
-
-                                        @error('thumbnail')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    {{--  choose button and reset button --}}
-                                    <div class="d-flex mt-2 justify-content-center">
-                                        <x-primary-button :id="'thumbnail_image'" :class="'me-2 '" :name="'thumbnail'">
-                                            <span class="mdi mdi-plus-circle" style="font-size: 20px"></span>
-                                            Add
-                                        </x-primary-button>
-
-                                        <x-danger-button :label="__('app.remove')" :id="'remove_thumbnail'">
-                                            <span class="mdi mdi-reload" style="font-size: 20px"></span>
-                                            Reset
-                                        </x-danger-button>
                                     </div>
 
                                     {{-- Multiple Images --}}
                                     <div class="multiple-images-wrapper">
-                                        <div class="product-img mt-2">
+                                        <div class="product-img mt-4">
 
                                             <label class="mb-1"><strong>Gallery Images</strong></label>
 
@@ -323,39 +323,40 @@
                                             {{-- </div> --}}
                                         </div>
 
-                                        <div class="text-center gallery-image-preview-placeholder">
-                                            @if (!old('image_gallery'))
-                                                <img class="img-fluid" src="{{ getPlaceholderImage(285, 250) }}"
-                                                    alt="product images">
-                                            @endif
-                                        </div>
-
-                                        <div class="featured_input_wrapper">
-                                            <input type="file" multiple id="gallery_images_input" accept="image/*"
-                                                class="d-none">
-
-                                            <div id="multiple_images">
-                                                @if (old('image_gallery') != null)
-                                                    @foreach (old('image_gallery') as $image)
-                                                        <input type="hidden" name="image_gallery[]"
-                                                            value="{{ $image }}">
-                                                    @endforeach
+                                        <div class="border p-3 mt-3 rounded">
+                                            <div class="text-center gallery-image-preview-placeholder">
+                                                @if (!old('image_gallery'))
+                                                    <img class="img-fluid w-100" src="{{ getPlaceholderImage(285, 250) }}" alt="product images">
                                                 @endif
                                             </div>
-                                        </div>
-
-                                        {{-- Buttons --}}
-
-                                        <div class="d-flex mt-2 justify-content-center">
-
-                                            <x-primary-button :id="'gallery_image_btn'" :class="'me-2 '">
-                                                <span class="mdi mdi-upload" style="font-size: 20px"></span>
-                                                Choose
-                                            </x-primary-button>
+    
+                                            <div class="featured_input_wrapper">
+                                                <input type="file" multiple id="gallery_images_input" accept="image/*"
+                                                    class="d-none">
+    
+                                                <div id="multiple_images">
+                                                    @if (old('image_gallery') != null)
+                                                        @foreach (old('image_gallery') as $image)
+                                                            <input type="hidden" name="image_gallery[]"
+                                                                value="{{ $image }}">
+                                                        @endforeach
+                                                    @endif
+                                                </div>
+                                            </div>
+    
+                                            {{-- Buttons --}}
+    
+                                            <div class="d-flex mt-3 justify-content-center">
+    
+                                                <x-primary-button :id="'gallery_image_btn'" :class="'me-2 '">
+                                                    <span class="mdi mdi-upload" style="font-size: 20px"></span>
+                                                    Choose
+                                                </x-primary-button>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12 mt-2">
+                                    <div class="col-md-12 mt-3">
                                         <x-success-checkbox :id="'featured'" :value="'1'" :name="'featured'">
                                             Featured
                                         </x-success-checkbox>
@@ -368,7 +369,7 @@
 
                                     </div>
 
-                                    <div class="col-md-12 mt-2">
+                                    <div class="col-md-12 mt-3">
                                         <div class="row">
                                             <div class="col">
                                                 <x-primary-button :type="'button'" :id="'publish_btn'" :class="'me-2 w-100'">
