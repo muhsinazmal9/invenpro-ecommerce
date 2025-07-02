@@ -14,7 +14,7 @@
 </div>
 
 
-<div class="true-variants mt-3 d-none">
+<div class="true-variants mt-3 d-none" id="trueVariants">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -113,12 +113,14 @@
 
             function getUsedAttributeIds() {
                 const summaryContainer = document.getElementById('sortableSummaryContainer');
-                return Array.from(summaryContainer.querySelectorAll('.summary-hidden-attributes input[name$="[attribute_id]"]')).map(input => input.value);
+                return Array.from(summaryContainer.querySelectorAll(
+                    '.summary-hidden-attributes input[name$="[attribute_id]"]')).map(input => input.value);
             }
 
             function getAvailableAttributes(keepId = null) {
                 const usedIds = getUsedAttributeIds();
-                return attributes.filter(attr => !usedIds.includes(attr.id.toString()) || attr.id.toString() === keepId);
+                return attributes.filter(attr => !usedIds.includes(attr.id.toString()) || attr.id.toString() ===
+                    keepId);
             }
 
             function initializeSelect2(select, keepId = null) {
@@ -248,34 +250,40 @@
                 let combinations = [
                     []
                 ];
-                let attributeData = [];
+
                 summaryCards.forEach(card => {
+                    console.log('card', card);
                     const attributeId = card.querySelector('input[name$="[attribute_id]"]').value;
-                    const values = Array.from(card.querySelectorAll('input[name$="[name]"]')).map((input, index) => ({
-                        name: input.value,
-                        color_code: $(`input[name="attributes[${card.parentNode.children.length - 1}][values][${index}][color_code]"]`, card).val() || null,
+                    const valueInputs = Array.from(card.querySelectorAll('input[name$="[name]"]'));
+                    const colorInputs = Array.from(card.querySelectorAll('input[name$="[color_code]"]'));
+
+                    const values = valueInputs.map((input, index) => ({
+                        name: input.value.trim(),
+                        color_code: colorInputs[index] ? colorInputs[index].value || null :
+                            null,
                         attribute_id: attributeId
-                    }));
-                    console.log('values', values);
-                    attributeData.push({
-                        attribute_id: attributeId,
-                        values
-                    });
-                    console.log('attributeData', attributeData);
+                    })).filter(value => value.name !== '');
+
+                    // Skip this attribute if it has no non-empty values
+                    if (values.length === 0) return;
+
                     const newCombinations = [];
                     combinations.forEach(combo => {
                         values.forEach(value => {
-                            newCombinations.push([...combo, {
-                                name: value.name,
-                                attribute_id: value.attribute_id,
-                                color_code: value.color_code
-                            }]);
+                            newCombinations.push([
+                                ...combo,
+                                {
+                                    name: value.name,
+                                    attribute_id: value.attribute_id,
+                                    color_code: value.color_code
+                                }
+                            ]);
                         });
                     });
                     combinations = newCombinations;
                 });
 
-                return combinations.map(combo => ({
+                return combinations[0]?.length > 0 ? combinations.map(combo => ({
                     variant: combo.map(v => v.name).join(' / '),
                     attributes: combo.map(v => ({
                         attribute_id: v.attribute_id,
@@ -284,64 +292,71 @@
                             color_code: v.color_code
                         }
                     }))
-                }));
+                })) : [];
             }
+
 
             function updateVariantTable() {
                 variantTableBody.innerHTML = '';
-                const combinations = generateVariantCombinations();
+                const combinations = generateVariantCombinations() || [];
+                console.log('combinations from updateVariantTable', combinations);
+                if (combinations.length > 0) {
 
-                combinations.forEach((variant, index) => {
-                    const row = document.createElement('tr');
-                    const suggestedSku = `sku-${variant.variant.replace(/ /g, '').replace(/\//g, '-')}`;
-                    row.innerHTML = `
-                        <td>
-                            <div class="input-style-1">
-                                <input type="text" placeholder="SKU" class="bg-transparent" name="variants[${index}][sku]" value="${suggestedSku}">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-style-1">
-                                <input type="text" placeholder="Variant" class="bg-transparent" readonly disabled name="variants[${index}][variant]" value="${variant.variant}">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-style-1">
-                                <input type="text" placeholder="Price" class="bg-transparent" name="variants[${index}][price]" value="">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-style-1">
-                                <input type="text" placeholder="Discount" class="bg-transparent" name="variants[${index}][discount]" value="">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="select-style-1">
-                                <div class="select-position">
-                                    <select name="variants[${index}][discount_type]">
-                                        <option value="percentage">Percentage</option>
-                                        <option value="fixed">Fixed</option>
-                                    </select>
+                    combinations.forEach((variant, index) => {
+                        const row = document.createElement('tr');
+                        const suggestedSku = `sku-${variant.variant.replace(/ /g, '').replace(/\//g, '-')}`;
+                        row.innerHTML = `
+                            <td>
+                                <div class="input-style-1">
+                                    <input type="text" placeholder="SKU" class="bg-transparent" name="variants[${index}][sku]" value="${suggestedSku}">
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-style-1">
-                                <input type="text" placeholder="Stock" class="bg-transparent" name="variants[${index}][stock]" value="">
-                            </div>
-                        </td>
-                        <td class="d-none">
-                            <div class="variant-attributes">
-                                ${variant.attributes.map((attr, attrIndex) => `
-                                        <input type="hidden" name="variants[${index}][attributes][${attrIndex}][attribute_id]" value="${attr.attribute_id}">
-                                        <input type="hidden" name="variants[${index}][attributes][${attrIndex}][value][name]" value="${attr.value.name}">
-                                        ${attr.value.color_code ? `<input type="hidden" name="variants[${index}][attributes][${attrIndex}][value][color_code]" value="${attr.value.color_code}">` : ''}
-                                    `).join('')}
-                            </div>
-                        </td>
-                    `;
-                    variantTableBody.appendChild(row);
-                });
+                            </td>
+                            <td>
+                                <div class="input-style-1">
+                                    <input type="text" placeholder="Variant" class="bg-transparent" readonly disabled name="variants[${index}][variant]" value="${variant.variant}">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-style-1">
+                                    <input type="text" placeholder="Price" class="bg-transparent" name="variants[${index}][price]" value="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-style-1">
+                                    <input type="text" placeholder="Discount" class="bg-transparent" name="variants[${index}][discount]" value="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="select-style-1">
+                                    <div class="select-position">
+                                        <select name="variants[${index}][discount_type]">
+                                            <option value="percentage">Percentage</option>
+                                            <option value="fixed">Fixed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-style-1">
+                                    <input type="text" placeholder="Stock" class="bg-transparent" name="variants[${index}][stock]" value="">
+                                </div>
+                            </td>
+                            <td class="d-none">
+                                <div class="variant-attributes">
+                                    ${variant.attributes.map((attr, attrIndex) => `
+                                                <input type="hidden" name="variants[${index}][attributes][${attrIndex}][attribute_id]" value="${attr.attribute_id}">
+                                                <input type="hidden" name="variants[${index}][attributes][${attrIndex}][value][name]" value="${attr.value.name}">
+                                                ${attr.value.color_code ? `<input type="hidden" name="variants[${index}][attributes][${attrIndex}][value][color_code]" value="${attr.value.color_code}">` : ''}
+                                            `).join('')}
+                                </div>
+                            </td>
+                        `;
+                        variantTableBody.appendChild(row);
+                    });
+                    trueVariants.classList.remove('d-none');
+                } else {
+                    trueVariants.classList.add('d-none');
+                }
             }
 
             function editSummaryCard(card, attributeData) {
@@ -429,7 +444,7 @@
                     });
                 });
 
-                
+
 
                 card.remove();
                 addAttributeBtn.classList.add('d-none');
@@ -508,6 +523,7 @@
 
                     attributeCard.remove();
                     addAttributeBtn.classList.remove('d-none');
+                    trueVariants.classList.remove('d-none');
                     updateVariantTable();
 
                     const remainingCards = variantAttributeContainer.querySelectorAll('.attribute-card');

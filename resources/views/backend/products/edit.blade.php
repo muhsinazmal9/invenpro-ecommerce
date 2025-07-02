@@ -416,9 +416,9 @@
                                 </div>
                                 {{-- Multiple Images --}}
                                 <div class="multiple-images-wrapper">
+                                    <label class="mb-1"><strong>Gallery Images</strong></label>
                                     <div class="product-img mt-2">
 
-                                        <label class="mb-1"><strong>Gallery Images</strong></label>
 
                                         <div class="row g-4 mb-4 ">
                                             @if ($product->images->count())

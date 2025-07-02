@@ -17,7 +17,6 @@ class ProductService
 {
     public function store(StoreProductRequest $request): JsonResponse
     {
-        dd($request->all());
         try {
             $request['slug'] = generateSlug($request->title); 
  
@@ -49,8 +48,8 @@ class ProductService
             if ($request->tags) {
                 $this->syncTags($product, $request->tags);
             }
-            $this->addAttributes($product, $request);
-            $this->addCustomAttributes($product, $request);
+            // $this->addAttributes($product, $request);
+            // $this->addCustomAttributes($product, $request);
 
             return success('Product created successfully', $product);
 
