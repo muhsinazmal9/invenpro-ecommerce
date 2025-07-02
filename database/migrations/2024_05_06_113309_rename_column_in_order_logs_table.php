@@ -24,7 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('order_logs', function (Blueprint $table) {
-            $table->string('order_status')->after('order_status');
+            $table->string('order_status')->after('event');
             $table->dropColumn('event');
             $table->dropColumn('activity');
 

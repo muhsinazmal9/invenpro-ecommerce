@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center gap-3">
     <h3>Variant</h3>
     <div class="form-check form-switch toggle-switch">
-        <input class="form-check-input" type="checkbox" id="enableVariantProduct">
+        <input class="form-check-input" type="checkbox" name="enable_variant" id="enableVariantProduct">
     </div>
 </div>
 <div id="sortableSummaryContainer" class="mt-3"></div>
