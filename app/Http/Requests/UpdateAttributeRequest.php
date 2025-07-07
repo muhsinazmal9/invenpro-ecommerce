@@ -26,7 +26,7 @@ class UpdateAttributeRequest extends FormRequest
             'name' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:attributes,slug,' . $this->route('attribute')->id,
             'is_color' => 'nullable|boolean',
-            'status' => 'required|boolean',
+            'status' => 'nullable|boolean',
             'attribute_values' => 'nullable',
         ];
     }

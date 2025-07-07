@@ -1705,12 +1705,12 @@ h6,
 .table > :not(:last-child) > :last-child > * {
     border-bottom-color: #efefef;
 }
-.table tbody tr:first-child > * {
+/* .table tbody tr:first-child > * {
     padding-top: 20px;
-}
+} */
 .table tbody tr:last-child > * {
     border-bottom-color: transparent;
-    padding-bottom: 0px;
+    /* padding-bottom: 0px; */
 }
 .table th h6 {
     font-weight: 500;
@@ -6187,4 +6187,16 @@ h6,
     padding: 12px 16px;
     background-color: #E8ECFC !important;
     color: #0652DF !important;
+}
+
+
+/* datatables */
+.dataTables_length label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.status-badge {
+    cursor: default; user-select: text; padding: 3px 16px; border-radius: 99px;
 }

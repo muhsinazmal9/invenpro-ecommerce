@@ -1,4 +1,4 @@
-<div class="mb-2 d-flex gap-2">
+<div class="mb-3 d-flex gap-2">
     <x-primary-anchor :href="route('admin.products.index')">
         All
     </x-primary-anchor>

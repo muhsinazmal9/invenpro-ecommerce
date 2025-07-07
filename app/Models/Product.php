@@ -200,4 +200,9 @@ class Product extends Model
     {
         return $this->hasMany(Wishlist::class, 'product_id');
     }
+
+    public function variants(): HasMany
+    {
+        return $this->hasMany(Variant::class, 'product_id');
+    }
 }

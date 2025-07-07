@@ -18,6 +18,7 @@ class ProductService
     public function store(StoreProductRequest $request): JsonResponse
     {
         try {
+            $this->addVariants(Product::where('id', 31)->first(), $request);
             $request['slug'] = generateSlug($request->title); 
  
             $product = Product::create($request->except('thumbnail', 'image_gallery', 'size_chart'));
@@ -48,8 +49,8 @@ class ProductService
             if ($request->tags) {
                 $this->syncTags($product, $request->tags);
             }
-            // $this->addAttributes($product, $request);
-            // $this->addCustomAttributes($product, $request);
+            
+            $this->addCustomAttributes($product, $request);
 
             return success('Product created successfully', $product);
 
@@ -175,63 +176,63 @@ class ProductService
         }
     }
 
-    private function addAttributes(Product $product, StoreProductRequest|UpdateProductRequest $request): void
-    {
+    // private function addAttributes(Product $product, StoreProductRequest|UpdateProductRequest $request): void
+    // {
 
-        if ($request->has('name_attr')) {
+    //     if ($request->has('name_attr')) {
 
-            $attributesData = [];
+    //         $attributesData = [];
 
-            foreach ($request->name_attr as $keyData => $attrName) {
-                $key = $request->attribute_wrapper[$keyData];
-                $itemNameAttr = $request->{'item_name_attr_'.$key};
+    //         foreach ($request->name_attr as $keyData => $attrName) {
+    //             $key = $request->attribute_wrapper[$keyData];
+    //             $itemNameAttr = $request->{'item_name_attr_'.$key};
 
-                if (empty($attrName) || empty($request->type_attr[$keyData]) || $itemNameAttr == null || empty($itemNameAttr[0])) {
-                    continue;
-                }
+    //             if (empty($attrName) || empty($request->type_attr[$keyData]) || $itemNameAttr == null || empty($itemNameAttr[0])) {
+    //                 continue;
+    //             }
 
-                $attributesData[] = [
-                    'product_id' => $product->id,
-                    'name' => $attrName,
-                    'type' => $request->type_attr[$keyData],
-                ];
-            }
+    //             $attributesData[] = [
+    //                 'product_id' => $product->id,
+    //                 'name' => $attrName,
+    //                 'type' => $request->type_attr[$keyData],
+    //             ];
+    //         }
 
-            ProductAttribute::insert($attributesData);
+    //         ProductAttribute::insert($attributesData);
 
-            $attributes = ProductAttribute::where('product_id', $product->id)->get('id');
+    //         $attributes = ProductAttribute::where('product_id', $product->id)->get('id');
 
-            $productAttrItemsData = [];
-            foreach ($request->name_attr as $keyData => $attrName) {
-                $key = $request->attribute_wrapper[$keyData];
-                $itemNameAttr = $request->{'item_name_attr_'.$key};
+    //         $productAttrItemsData = [];
+    //         foreach ($request->name_attr as $keyData => $attrName) {
+    //             $key = $request->attribute_wrapper[$keyData];
+    //             $itemNameAttr = $request->{'item_name_attr_'.$key};
 
-                if (empty($attrName) || empty($request->type_attr[$keyData]) || $itemNameAttr == null || empty($itemNameAttr[0])) {
-                    continue;
-                }
+    //             if (empty($attrName) || empty($request->type_attr[$keyData]) || $itemNameAttr == null || empty($itemNameAttr[0])) {
+    //                 continue;
+    //             }
 
-                foreach ($itemNameAttr as $itemKey => $item) {
+    //             foreach ($itemNameAttr as $itemKey => $item) {
 
-                    if (empty($item)) {
-                        continue;
-                    }
+    //                 if (empty($item)) {
+    //                     continue;
+    //                 }
 
-                    $priceAdjustment = $request->{'price_adjustment_attr_'.$key}[$itemKey] ?? 0;
-                    $code = $request->{'code_attr_'.$key}[$itemKey];
+    //                 $priceAdjustment = $request->{'price_adjustment_attr_'.$key}[$itemKey] ?? 0;
+    //                 $code = $request->{'code_attr_'.$key}[$itemKey];
 
-                    $productAttrItemsData[] = [
-                        'attribute_id' => $attributes[$keyData]->id,
-                        'name' => $item,
-                        'price_adjustment' => $priceAdjustment,
-                        'code' => $code,
-                    ];
-                }
-            }
+    //                 $productAttrItemsData[] = [
+    //                     'attribute_id' => $attributes[$keyData]->id,
+    //                     'name' => $item,
+    //                     'price_adjustment' => $priceAdjustment,
+    //                     'code' => $code,
+    //                 ];
+    //             }
+    //         }
 
-            ProductAttributeItem::insert($productAttrItemsData);
+    //         ProductAttributeItem::insert($productAttrItemsData);
 
-        }
-    }
+    //     }
+    // }
 
     private function addCustomAttributes(Product $product, StoreProductRequest|UpdateProductRequest $request): void
     {
@@ -243,6 +244,20 @@ class ProductService
             ])->all();
             
             $product->customAttributes()->createMany($customAttributesData);
+        }
+    }
+
+    private function addVariants(Product $product, StoreProductRequest|UpdateProductRequest $request): void
+    {
+        if ($request->filled('variants')) {
+            $variantsData = collect($request->variants)->map(fn($variant) => [
+                'product_id' => $product->id,
+                'sku' => $variant['sku'],
+                'price' => $variant['price'],
+                'stock' => $variant['stock'],
+            ])->all();
+            dd($variantsData);
+            $product->variants()->createMany($variantsData);
         }
     }
 
