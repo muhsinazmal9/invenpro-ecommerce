@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    //
+    public function category($slug)
+    {
+        return view('frontend.category.index');
+    }
 }

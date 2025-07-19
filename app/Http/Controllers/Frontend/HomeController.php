@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        $categories = Category::all();
+        $categories = Category::where('show_in_home_page', true)->get();
         
         return view('frontend.home.index', compact('categories'));
     }
