@@ -2,12 +2,13 @@
 
 namespace App\Services;
 
+use App\Models\Brand;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreBrandRequest;
 use App\Http\Requests\UpdateBrandRequest;
-use App\Models\Brand;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 class BrandService
 {
@@ -143,8 +144,7 @@ class BrandService
                                         {$delete}
                                     </button>";
                     $detailsBtn = "<button onclick='detailsModal({$brand})' data-bs-toggle='modal' data-bs-target='#detailsModal' class='dropdown-item'>{$view}</button>";
-
-                    $image = !empty($brand->image) ? "<img class='rounded' src='{$brand->image}' alt='{$brand->title}' width='75'>" : "<img class='rounded' src=". getPlaceholderImage('160','100') ." alt='{$brand->title}' width='75'>";
+                    $image = "<img class='rounded' src='{$brand->imageURL}' alt='{$brand->title}' width='75'>";
                     $nestedData['title'] = $image . '&nbsp;&nbsp;&nbsp;' . $brand->title;
                     $nestedData['status'] = $status;
                     $nestedData['created_at'] = $brand->created_at?->format('d/m/Y');

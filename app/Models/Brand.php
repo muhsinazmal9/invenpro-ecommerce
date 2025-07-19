@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
 
 class Brand extends Model
 {
@@ -34,6 +35,20 @@ class Brand extends Model
     protected $casts = [
         'status' => 'boolean',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('order', function (Builder $builder) {
+            $builder->orderBy('updated_at', 'desc');
+        });
+    }
+
+    public function getImageURLAttribute()
+    {
+        return $this->image ? asset($this->image) : getPlaceholderImage('160','100');
+    }
 
     public function scopeActive($query)
     {

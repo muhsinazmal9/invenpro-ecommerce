@@ -9,6 +9,6 @@ Route::name('guest.')->group(function () {
     Route::get('/newsletter/unsubscribe/{subscriber}', [SubscriberController::class, 'toggleSubscribe'])->name('unsubscribe');
 });
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 Route::get('/category/{slug}', [ProductController::class, 'category'])->name('frontend.category');
