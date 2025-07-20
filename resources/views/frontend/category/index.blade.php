@@ -134,9 +134,14 @@
         </div>
     </div>
     <!-- /Sub Collection --> --}}
-    <!-- Breadcrumb -->
-    <div class="tf-breadcrumb mt-0">
-        <div class="container">
+    <!-- Title & Breadcrumb Page -->
+    <section class="page-title flat-spacing-4 mt-0 tf-breadcrumb bg-light">
+        <div class="container d-flex flex-column align-items-center">
+            <div class="box-title text-center justify-items-center">
+                <h4 class="title">{{ $category->name }}</h4>
+                <p class="text-main text-md">{{ $category->description }}</p>
+            </div>
+
             <ul class="breadcrumb-list">
                 <li class="item-breadcrumb">
                     <a href="index.html" class="text">Home</a>
@@ -155,25 +160,14 @@
                 </li>
             </ul>
         </div>
-    </div>
-    <!-- /Breadcrumb -->
-    <!-- Title Page -->
-    <section class="page-title flat-spacing-4 pt-0">
-        <div class="container">
-            <div class="box-title text-center justify-items-center">
-                <h4 class="title">{{ $category->name }}</h4>
-                <p class="text-main text-md">{{ $category->description }}</p>
-            </div>
-        </div>
     </section>
     <!-- /Title Page -->
-    {{-- <!-- Section Product -->
+    <!-- Section Product -->
     <section class="flat-spacing-2 pt-0">
         <div class="container">
             <div class="tf-shop-control">
                 <div class="tf-group-filter">
-                    <a href="#filterShop" data-bs-toggle="offcanvas" aria-controls="filterShop"
-                        class="tf-btn-filter">
+                    <a href="#filterShop" data-bs-toggle="offcanvas" aria-controls="filterShop" class="tf-btn-filter">
                         <span class="icon icon-filter"></span><span class="text">Filter</span></a>
                     <div class="tf-dropdown-sort" data-bs-toggle="dropdown">
                         <div class="btn-select">
@@ -302,8 +296,7 @@
                                     <span class="icon icon-heart2"></span>
                                     <span class="tooltip">Add to Wishlist</span>
                                 </a>
-                                <a href="#quickView" data-bs-toggle="modal"
-                                    class="box-icon hover-tooltip quickview">
+                                <a href="#quickView" data-bs-toggle="modal" class="box-icon hover-tooltip quickview">
                                     <span class="icon icon-view"></span>
                                     <span class="tooltip">Quick View</span>
                                 </a>
@@ -377,8 +370,7 @@
                                     <span class="icon icon-heart2"></span>
                                     <span class="tooltip">Add to Wishlist</span>
                                 </a>
-                                <a href="#quickView" data-bs-toggle="modal"
-                                    class="box-icon hover-tooltip quickview">
+                                <a href="#quickView" data-bs-toggle="modal" class="box-icon hover-tooltip quickview">
                                     <span class="icon icon-view"></span>
                                     <span class="tooltip">Quick View</span>
                                 </a>
@@ -395,8 +387,7 @@
                     <div class="card-product style-list" data-availability="In stock" data-brand="Vineta">
                         <div class="card-product-wrapper">
                             <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload"
-                                    data-src="images/products/fashion/women-grey-2.jpg"
+                                <img class="img-product lazyload" data-src="images/products/fashion/women-grey-2.jpg"
                                     src="images/products/fashion/women-grey-2.jpg" alt="image-product">
                                 <img class="img-hover lazyload" data-src="images/products/fashion/women-grey-1.jpg"
                                     src="images/products/fashion/women-grey-1.jpg" alt="image-product">
@@ -435,10 +426,8 @@
                                     <li class="list-color-item color-swatch hover-tooltip">
                                         <span class="tooltip color-filter">Light Grey</span>
                                         <span class="swatch-value bg-light-blue-2"></span>
-                                        <img class="lazyload"
-                                            data-src="images/products/fashion/women-light-blue-1.jpg"
-                                            src="images/products/fashion/women-light-blue-1.jpg"
-                                            alt="image-product">
+                                        <img class="lazyload" data-src="images/products/fashion/women-light-blue-1.jpg"
+                                            src="images/products/fashion/women-light-blue-1.jpg" alt="image-product">
                                     </li>
                                 </ul>
                             </div>
@@ -451,8 +440,7 @@
                                     <span class="icon icon-heart2"></span>
                                     <span class="tooltip">Add to Wishlist</span>
                                 </a>
-                                <a href="#quickView" data-bs-toggle="modal"
-                                    class="box-icon hover-tooltip quickview">
+                                <a href="#quickView" data-bs-toggle="modal" class="box-icon hover-tooltip quickview">
                                     <span class="icon icon-view"></span>
                                     <span class="tooltip">Quick View</span>
                                 </a>
@@ -521,8 +509,7 @@
                                     <span class="icon icon-heart2"></span>
                                     <span class="tooltip">Add to Wishlist</span>
                                 </a>
-                                <a href="#quickView" data-bs-toggle="modal"
-                                    class="box-icon hover-tooltip quickview">
+                                <a href="#quickView" data-bs-toggle="modal" class="box-icon hover-tooltip quickview">
                                     <span class="icon icon-view"></span>
                                     <span class="tooltip">Quick View</span>
                                 </a>
@@ -590,8 +577,7 @@
                                     <span class="icon icon-heart2"></span>
                                     <span class="tooltip">Add to Wishlist</span>
                                 </a>
-                                <a href="#quickView" data-bs-toggle="modal"
-                                    class="box-icon hover-tooltip quickview">
+                                <a href="#quickView" data-bs-toggle="modal" class="box-icon hover-tooltip quickview">
                                     <span class="icon icon-view"></span>
                                     <span class="tooltip">Quick View</span>
                                 </a>
@@ -621,86 +607,87 @@
                     </ul>
                 </div>
                 <div class="wrapper-shop tf-grid-layout tf-col-4" id="gridLayout">
-                    <!-- Card Product 1 -->
-                    <div class="card-product grid card-product-size" data-availability="In stock"
-                        data-brand="Vineta">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-19.jpg"
-                                    src="images/products/fashion/product-19.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/women-grey-2.jpg"
-                                    src="images/products/fashion/women-grey-2.jpg" alt="image-product">
-                            </a>
-                            <div class="on-sale-wrap"><span class="on-sale-item">20% Off</span></div>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="hover-tooltip tooltip-left box-icon">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="hover-tooltip tooltip-left box-icon quickview">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="hover-tooltip tooltip-left box-icon">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">XS</li>
-                                <li class="size-item text-xs text-white">S</li>
-                                <li class="size-item text-xs text-white">M</li>
-                                <li class="size-item text-xs text-white">L</li>
-                                <li class="size-item text-xs text-white">XL</li>
-                                <li class="size-item text-xs text-white">2XL</li>
-                            </ul>
+                    @foreach ($products as $product)
+                        <div class="card-product grid card-product-size" data-availability="In stock"
+                            data-brand="Vineta">
+                            <div class="card-product-wrapper">
+                                <a href="{{ route('frontend.product', $product->slug) }}" class="product-img">
+                                    <img class="img-product lazyload" data-src="{{ asset($product->thumbnail) }}"
+                                        src="{{ asset($product->thumbnail) }}" alt="image-product">
+                                    <img class="img-hover lazyload" data-src="{{ asset($product->thumbnail) }}"
+                                        src="{{ asset($product->thumbnail) }}" alt="image-product">
+                                </a>
+                                <div class="on-sale-wrap"><span class="on-sale-item">20% Off</span></div>
+                                <ul class="list-product-btn">
+                                    <li>
+                                        <a href="#shoppingCart" data-bs-toggle="offcanvas"
+                                            class="hover-tooltip tooltip-left box-icon">
+                                            <span class="icon icon-cart2"></span>
+                                            <span class="tooltip">Add to Cart</span>
+                                        </a>
+                                    </li>
+                                    <li class="wishlist">
+                                        <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                            <span class="icon icon-heart2"></span>
+                                            <span class="tooltip">Add to Wishlist</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#productQuickView" data-bs-toggle="modal"
+                                            class="hover-tooltip tooltip-left box-icon quickview">
+                                            <span class="icon icon-view"></span>
+                                            <span class="tooltip">Quick View</span>
+                                        </a>
+                                    </li>
+                                    <li class="compare">
+                                        <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
+                                            class="hover-tooltip tooltip-left box-icon">
+                                            <span class="icon icon-compare"></span>
+                                            <span class="tooltip">Add to Compare</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="size-box">
+                                    <li class="size-item text-xs text-white">XS</li>
+                                    <li class="size-item text-xs text-white">S</li>
+                                    <li class="size-item text-xs text-white">M</li>
+                                    <li class="size-item text-xs text-white">L</li>
+                                    <li class="size-item text-xs text-white">XL</li>
+                                    <li class="size-item text-xs text-white">2XL</li>
+                                </ul>
 
+                            </div>
+                            <div class="card-product-info">
+                                <a href="{{ route('frontend.product', $product->slug) }}"
+                                    class="name-product link fw-medium text-md">{{ $product->title }}</a>
+                                <p class="price-wrap fw-medium">
+                                    <span class="price-new">{{ $product->price }}</span>
+                                    <span class="price-old">{{ $product->old_price }}</span>
+                                </p>
+                                <ul class="list-color-product">
+                                    <li class="list-color-item hover-tooltip tooltip-bot color-swatch active">
+                                        <span class="tooltip color-filter">Grey</span>
+                                        <span class="swatch-value bg-grey-4"></span>
+                                        <img class=" lazyload" data-src="images/products/fashion/product-19.jpg"
+                                            src="images/products/fashion/product-19.jpg" alt="image-product">
+                                    </li>
+                                    <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
+                                        <span class="tooltip color-filter">Black</span>
+                                        <span class="swatch-value bg-dark"></span>
+                                        <img class=" lazyload" data-src="images/products/fashion/product-9.jpg"
+                                            src="images/products/fashion/product-9.jpg" alt="image-product">
+                                    </li>
+                                    <li class="list-color-item color-swatch hover-tooltip tooltip-bot line">
+                                        <span class="tooltip color-filter">White</span>
+                                        <span class="swatch-value bg-white"></span>
+                                        <img class=" lazyload" data-src="images/products/fashion/product-4.jpg"
+                                            src="images/products/fashion/product-4.jpg" alt="image-product">
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Loose Fit
-                                Tee</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$120.00</span>
-                                <span class="price-old">$150.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item hover-tooltip tooltip-bot color-swatch active">
-                                    <span class="tooltip color-filter">Grey</span>
-                                    <span class="swatch-value bg-grey-4"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-19.jpg"
-                                        src="images/products/fashion/product-19.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Black</span>
-                                    <span class="swatch-value bg-dark"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-9.jpg"
-                                        src="images/products/fashion/product-9.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot line">
-                                    <span class="tooltip color-filter">White</span>
-                                    <span class="swatch-value bg-white"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-4.jpg"
-                                        src="images/products/fashion/product-4.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 2 -->
+                    @endforeach
+                    {{-- <!-- Card Product 2 -->
                     <div class="card-product grid out-of-stock" data-availability="Out of stock" data-brand="Zotac">
                         <div class="card-product-wrapper">
                             <a href="product-detail.html" class="product-img">
@@ -718,1035 +705,146 @@
                             </p>
 
                         </div>
-                    </div>
-                    <!-- Card Product 3 -->
-                    <div class="card-product grid card-product-size" data-availability="In stock"
-                        data-brand="Vineta">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-3.jpg"
-                                    src="images/products/fashion/product-3.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-4.jpg"
-                                    src="images/products/fashion/product-4.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="hover-tooltip tooltip-left box-icon">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="hover-tooltip tooltip-left box-icon quickview">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="hover-tooltip tooltip-left box-icon">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="countdown-box">
-                                <div class="js-countdown" data-timer="1007500" data-labels="D  :,H  :,M  :,S"></div>
-                            </div>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">S</li>
-                                <li class="size-item text-xs text-white">M</li>
-                                <li class="size-item text-xs text-white">L</li>
-                                <li class="size-item text-xs text-white">XL</li>
-                            </ul>
-                            <div class="on-sale-wrap"><span class="on-sale-item">20% Off</span></div>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Long Regular
-                                Fit Tee</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$60.00</span>
-                                <span class="price-old">$70.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot active">
-                                    <span class="tooltip color-filter">Yellow</span>
-                                    <span class="swatch-value bg-yellow"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-3.jpg"
-                                        src="images/products/fashion/product-3.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Grey</span>
-                                    <span class="swatch-value bg-grey-4"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-6.jpg"
-                                        src="images/products/fashion/product-6.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot line">
-                                    <span class="tooltip color-filter">White</span>
-                                    <span class="swatch-value bg-white"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-4.jpg"
-                                        src="images/products/fashion/product-4.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 4 -->
-                    <div class="card-product grid card-product-size" data-availability="In stock"
-                        data-brand="Vineta">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-17.jpg"
-                                    src="images/products/fashion/product-17.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-1.jpg"
-                                    src="images/products/fashion/product-1.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">S</li>
-                                <li class="size-item text-xs text-white">M</li>
-                                <li class="size-item text-xs text-white">L</li>
-                            </ul>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Regular Fit
-                                Pima Cotton Polo Shirt</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$80.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch active hover-tooltip tooltip-bot line">
-                                    <span class="tooltip color-filter">White</span>
-                                    <span class="swatch-value bg-white"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-17.jpg"
-                                        src="images/products/fashion/product-17.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Light Orange</span>
-                                    <span class="swatch-value bg-light-orange"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-16.jpg"
-                                        src="images/products/fashion/product-16.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Light Grey</span>
-                                    <span class="swatch-value bg-grey-4"></span>
-                                    <img class="lazyload" data-src="images/products/fashion/product-5.jpg"
-                                        src="images/products/fashion/product-5.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 5 -->
-                    <div class="card-product grid card-product-size" data-availability="In stock"
-                        data-brand="Vineta">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-25.jpg"
-                                    src="images/products/fashion/product-25.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-24.jpg"
-                                    src="images/products/fashion/product-24.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">XS</li>
-                                <li class="size-item text-xs text-white">M</li>
-                                <li class="size-item text-xs text-white">XL</li>
-                            </ul>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Midi Knit
-                                Dress</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$40.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch active hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Beige</span>
-                                    <span class="swatch-value bg-beige"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-25.jpg"
-                                        src="images/products/fashion/product-25.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Black</span>
-                                    <span class="swatch-value bg-dark"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-22.jpg"
-                                        src="images/products/fashion/product-22.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Grey</span>
-                                    <span class="swatch-value bg-grey-4"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/women-grey-2.jpg"
-                                        src="images/products/fashion/women-grey-2.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 6 -->
-                    <div class="card-product grid card-product-size" data-availability="In stock"
-                        data-brand="Vineta">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-6.jpg"
-                                    src="images/products/fashion/product-6.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-21.jpg"
-                                    src="images/products/fashion/product-21.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">XS</li>
-                                <li class="size-item text-xs text-white">S</li>
-                                <li class="size-item text-xs text-white">M</li>
-                                <li class="size-item text-xs text-white">L</li>
-                            </ul>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Oversized Fit
-                                Tee</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$60.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot line active">
-                                    <span class="tooltip color-filter">White</span>
-                                    <span class="swatch-value bg-white"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-6.jpg"
-                                        src="images/products/fashion/product-6.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Dark Green</span>
-                                    <span class="swatch-value bg-dark-green"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-21.jpg"
-                                        src="images/products/fashion/product-21.jpg" alt="image-product">
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 7 -->
-                    <div class="card-product grid" data-availability="In stock" data-brand="Zotac">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload"
-                                    data-src="images/products/fashion/women-yellow-2.jpg"
-                                    src="images/products/fashion/women-yellow-2.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-28.jpg"
-                                    src="images/products/fashion/product-28.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Puff Sleeve
-                                Shirred Blouse</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$57.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot active">
-                                    <span class="tooltip color-filter">Yellow</span>
-                                    <span class="swatch-value bg-yellow-2"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/women-yellow-2.jpg"
-                                        src="images/products/fashion/women-yellow-2.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Light Orange</span>
-                                    <span class="swatch-value bg-light-orange-2"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-28.jpg"
-                                        src="images/products/fashion/product-28.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Beige</span>
-                                    <span class="swatch-value bg-beige"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-7.jpg"
-                                        src="images/products/fashion/product-7.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 8 -->
-                    <div class="card-product grid card-product-size" data-availability="In stock"
-                        data-brand="Zotac">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-26.jpg"
-                                    src="images/products/fashion/product-26.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-26.jpg"
-                                    src="images/products/fashion/product-26.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">S</li>
-                                <li class="size-item text-xs text-white">M</li>
-                                <li class="size-item text-xs text-white">L</li>
-                            </ul>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Printed
-                                T-shirt</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$120.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch line hover-tooltip tooltip-bot active">
-                                    <span class="tooltip color-filter">White</span>
-                                    <span class="swatch-value bg-white"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-26.jpg"
-                                        src="images/products/fashion/product-26.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Grey</span>
-                                    <span class="swatch-value bg-grey-4"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/women-grey-1.jpg"
-                                        src="images/products/fashion/women-grey-1.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Black</span>
-                                    <span class="swatch-value bg-dark"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/women-black-6.jpg"
-                                        src="images/products/fashion/women-black-6.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 9 -->
-                    <div class="card-product grid card-product-size" data-availability="In stock"
-                        data-brand="Zotac">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-27.jpg"
-                                    src="images/products/fashion/product-27.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-23.jpg"
-                                    src="images/products/fashion/product-23.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">M</li>
-                                <li class="size-item text-xs text-white">L</li>
-                                <li class="size-item text-xs text-white">XL</li>
-                            </ul>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Basic Sports
-                                T-Shirt Crew Neck Ribbed</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">80.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot active">
-                                    <span class="tooltip color-filter">Light Purple</span>
-                                    <span class="swatch-value bg-light-purple-3"></span>
-                                    <img class="lazyload" data-src="images/products/fashion/product-27.jpg"
-                                        src="images/products/fashion/product-27.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Light Grey</span>
-                                    <span class="swatch-value bg-grey-4"></span>
-                                    <img class="lazyload" data-src="images/products/fashion/product-11.jpg"
-                                        src="images/products/fashion/product-11.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Light Orange</span>
-                                    <span class="swatch-value bg-light-orange"></span>
-                                    <img class="lazyload" data-src="images/products/fashion/product-12.jpg"
-                                        src="images/products/fashion/product-12.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 10 -->
-                    <div class="card-product grid" data-availability="In stock" data-brand="Zotac">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-10.jpg"
-                                    src="images/products/fashion/product-10.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-20.jpg"
-                                    src="images/products/fashion/product-20.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Regular Fit
-                                Fine Knit Polo Shirt</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$130.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot active">
-                                    <span class="tooltip color-filter">Light Blue</span>
-                                    <span class="swatch-value bg-light-blue-2"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-10.jpg"
-                                        src="images/products/fashion/product-10.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Black</span>
-                                    <span class="swatch-value bg-dark"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-13.jpg"
-                                        src="images/products/fashion/product-13.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Purple</span>
-                                    <span class="swatch-value bg-light-purple"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-14.jpg"
-                                        src="images/products/fashion/product-14.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 11 -->
-                    <div class="card-product grid" data-availability="In stock" data-brand="Vineta">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-21.jpg"
-                                    src="images/products/fashion/product-21.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/women-black-3.jpg"
-                                    src="images/products/fashion/women-black-3.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Crop College
-                                T-Shirt</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$82.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot active">
-                                    <span class="tooltip color-filter">Dark Green</span>
-                                    <span class="swatch-value bg-dark-green"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-21.jpg"
-                                        src="images/products/fashion/product-21.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Black</span>
-                                    <span class="swatch-value bg-dark"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/women-black-3.jpg"
-                                        src="images/products/fashion/women-black-3.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Light Purple</span>
-                                    <span class="swatch-value bg-light-purple-3"></span>
-                                    <img class="lazyload" data-src="images/products/fashion/product-23.jpg"
-                                        src="images/products/fashion/product-23.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 12 -->
-                    <div class="card-product grid card-product-size" data-availability="In stock"
-                        data-brand="Vineta">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-22.jpg"
-                                    src="images/products/fashion/product-22.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-5.jpg"
-                                    src="images/products/fashion/product-5.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">XS</li>
-                                <li class="size-item text-xs text-white">S</li>
-                                <li class="size-item text-xs text-white">M</li>
-                                <li class="size-item text-xs text-white">L</li>
-                                <li class="size-item text-xs text-white">XL</li>
-                                <li class="size-item text-xs text-white">2XL</li>
-                            </ul>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Bow-Tie
-                                T-Shirt</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$92.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot active">
-                                    <span class="tooltip color-filter">Black</span>
-                                    <span class="swatch-value bg-dark"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-22.jpg"
-                                        src="images/products/fashion/product-22.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Beige</span>
-                                    <span class="swatch-value bg-beige"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-5.jpg"
-                                        src="images/products/fashion/product-5.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip line tooltip-bot">
-                                    <span class="tooltip color-filter">White</span>
-                                    <span class="swatch-value bg-white"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-1.jpg"
-                                        src="images/products/fashion/product-1.jpg" alt="image-product">
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 13 -->
-                    <div class="card-product grid card-product-size" data-availability="In stock"
-                        data-brand="Vineta">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-13.jpg"
-                                    src="images/products/fashion/product-13.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-14.jpg"
-                                    src="images/products/fashion/product-14.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">L</li>
-                                <li class="size-item text-xs text-white">XL</li>
-                                <li class="size-item text-xs text-white">2XL</li>
-                            </ul>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">COOLMAX® Loose
-                                Fit Tee</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$66.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot active">
-                                    <span class="tooltip color-filter">Black</span>
-                                    <span class="swatch-value bg-dark"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-13.jpg"
-                                        src="images/products/fashion/product-13.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Light Purple</span>
-                                    <span class="swatch-value bg-purple-3"></span>
-                                    <img class="lazyload" data-src="images/products/fashion/product-14.jpg"
-                                        src="images/products/fashion/product-14.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 14 -->
-                    <div class="card-product grid card-product-size" data-availability="In stock"
-                        data-brand="Vineta">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-20.jpg"
-                                    src="images/products/fashion/product-20.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-9.jpg"
-                                    src="images/products/fashion/product-9.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">XS</li>
-                                <li class="size-item text-xs text-white">S</li>
-                                <li class="size-item text-xs text-white">M</li>
-                                <li class="size-item text-xs text-white">L</li>
-                                <li class="size-item text-xs text-white">XL</li>
-                                <li class="size-item text-xs text-white">2XL</li>
-                            </ul>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Long Sleeve
-                                T-Shirt</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$100.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot active">
-                                    <span class="tooltip color-filter">Black</span>
-                                    <span class="swatch-value bg-dark"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-20.jpg"
-                                        src="images/products/fashion/product-20.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Light Orange</span>
-                                    <span class="swatch-value bg-light-orange"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-16.jpg"
-                                        src="images/products/fashion/product-16.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch line hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">White</span>
-                                    <span class="swatch-value bg-white"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-1.jpg"
-                                        src="images/products/fashion/product-1.jpg" alt="image-product">
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 15 -->
-                    <div class="card-product grid card-product-size" data-availability="Out of stock"
-                        data-brand="Zotac">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-7.jpg"
-                                    src="images/products/fashion/product-7.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-11.jpg"
-                                    src="images/products/fashion/product-11.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="size-box">
-                                <li class="size-item text-xs text-white">S</li>
-                                <li class="size-item text-xs text-white">M</li>
-                                <li class="size-item text-xs text-white">L</li>
-                                <li class="size-item text-xs text-white">XL</li>
-                                <li class="size-item text-xs text-white">2XL</li>
-                            </ul>
-
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Muscle Fit
-                                Polo Shirt</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$111.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot active">
-                                    <span class="tooltip color-filter">Beige</span>
-                                    <span class="swatch-value bg-beige"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-7.jpg"
-                                        src="images/products/fashion/product-7.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch line hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">White</span>
-                                    <span class="swatch-value bg-white"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-11.jpg"
-                                        src="images/products/fashion/product-11.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Light Orange</span>
-                                    <span class="swatch-value bg-light-orange"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-18.jpg"
-                                        src="images/products/fashion/product-18.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Card Product 16 -->
-                    <div class="card-product grid" data-availability="Out of stock" data-brand="Zotac">
-                        <div class="card-product-wrapper">
-                            <a href="product-detail.html" class="product-img">
-                                <img class="img-product lazyload" data-src="images/products/fashion/product-17.jpg"
-                                    src="images/products/fashion/product-16.jpg" alt="image-product">
-                                <img class="img-hover lazyload" data-src="images/products/fashion/product-26.jpg"
-                                    src="images/products/fashion/product-26.jpg" alt="image-product">
-                            </a>
-                            <ul class="list-product-btn">
-                                <li>
-                                    <a href="#shoppingCart" data-bs-toggle="offcanvas"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-cart2"></span>
-                                        <span class="tooltip">Add to Cart</span>
-                                    </a>
-                                </li>
-                                <li class="wishlist">
-                                    <a href="javascript:void(0);" class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-heart2"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#quickView" data-bs-toggle="modal"
-                                        class="box-icon quickview hover-tooltip tooltip-left">
-                                        <span class="icon icon-view"></span>
-                                        <span class="tooltip">Quick View</span>
-                                    </a>
-                                </li>
-                                <li class="compare">
-                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                        class="box-icon hover-tooltip tooltip-left">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-product-info">
-                            <a href="product-detail.html" class="name-product link fw-medium text-md">Graphic
-                                Printed Drop Shoulder Sleeves</a>
-                            <p class="price-wrap fw-medium">
-                                <span class="price-new">$88.00</span>
-                            </p>
-                            <ul class="list-color-product">
-                                <li class="list-color-item color-swatch hover-tooltip line tooltip-bot active">
-                                    <span class="tooltip color-filter">White</span>
-                                    <span class="swatch-value bg-white"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-17.jpg"
-                                        src="images/products/fashion/product-17.jpg" alt="image-product">
-                                </li>
-                                <li class="list-color-item color-swatch hover-tooltip tooltip-bot">
-                                    <span class="tooltip color-filter">Light Purple</span>
-                                    <span class="swatch-value bg-light-purple-3"></span>
-                                    <img class=" lazyload" data-src="images/products/fashion/product-23.jpg"
-                                        src="images/products/fashion/product-23.jpg" alt="image-product">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Pagination -->
-                    <ul class="wg-pagination">
-                        <li class="active">
-                            <div class="pagination-item">1</div>
-                        </li>
-                        <li>
-                            <a href="#" class="pagination-item">2</a>
-                        </li>
-                        <li>
-                            <a href="#" class="pagination-item">3</a>
-                        </li>
-                        <li>
-                            <a href="#" class="pagination-item"><i class="icon-arr-right2"></i></a>
-                        </li>
-                    </ul>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </section>
-    <!-- /Section Product --> --}}
+    <!-- /Section Product -->
+
+
+    <!-- modal quickView -->
+    <div class="modal fade modalCentered modal-quick-view" id="productQuickView">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
+                <div class="tf-product-media-wrap">
+                    <div dir="ltr" class="swiper tf-single-slide">
+                        <div class="swiper-wrapper">
+                            <!-- Images will be dynamically inserted here -->
+                        </div>
+                        <div class="swiper-button-prev nav-swiper arrow-1 nav-prev-cls single-slide-prev"></div>
+                        <div class="swiper-button-next nav-swiper arrow-1 nav-next-cls single-slide-next"></div>
+                    </div>
+                </div>
+                <div class="tf-product-info-wrap">
+                    <div class="tf-product-info-inner">
+                        <div class="tf-product-info-heading">
+                            <h6 class="product-info-name"><a href="product-detail.html" class="link"></a></h6>
+                            <div class="product-info-price">
+                                <h6 class="price-new price-on-sale"></h6>
+                                <h6 class="price-old"></h6>
+                                <span class="badge-sale"></span>
+                            </div>
+                            <p class="text"></p>
+                        </div>
+                        <div class="tf-product-info-variant">
+                            <div class="variant-picker-item variant-color">
+                                <div class="variant-picker-label">
+                                    Color:<span class="variant-picker-label-value value-currentColor">Black</span>
+                                </div>
+                                <div class="variant-picker-values">
+                                    <div class="hover-tooltip color-btn active" data-color="black">
+                                        <span class="check-color bg-dark"></span>
+                                        <span class="tooltip">Black</span>
+                                    </div>
+                                    <div class="hover-tooltip color-btn" data-color="red">
+                                        <span class="check-color bg-red-2"></span>
+                                        <span class="tooltip">Red</span>
+                                    </div>
+                                    <div class="hover-tooltip color-btn" data-color="pink">
+                                        <span class="check-color bg-light-pink-10"></span>
+                                        <span class="tooltip">Pink</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tf-product-total-quantity">
+                            <div class="group-btn">
+                                <div class="wg-quantity">
+                                    <button class="btn-quantity minus-btn">-</button>
+                                    <input class="quantity-product font-4" type="text" name="number" value="1">
+                                    <button class="btn-quantity plus-btn">+</button>
+                                </div>
+                                <a href="#shoppingCart" data-bs-toggle="offcanvas" class="tf-btn hover-primary">Add to
+                                    cart</a>
+                            </div>
+                            <a href="checkout.html" class="tf-btn w-100 animate-btn paypal btn-primary">Buy It Now</a>
+                            <a href="checkout.html" class="more-choose-payment link">More payment options</a>
+                        </div>
+                        <a href="product-detail.html" class="view-details link">View full details <i
+                                class="icon icon-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modal quickView -->
 @endsection
+
+
+@push('script')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const quickViewButtons = document.querySelectorAll('.quickview');
+            const modal = document.querySelector('#productQuickView');
+            const modalImageContainer = modal.querySelector('.swiper-wrapper');
+            const modalName = modal.querySelector('.product-info-name a');
+            const modalPriceNew = modal.querySelector('.price-new');
+            const modalPriceOld = modal.querySelector('.price-old');
+            const modalBadge = modal.querySelector('.badge-sale');
+            const modalDescription = modal.querySelector('.text');
+            const colorButtons = modal.querySelectorAll('.color-btn');
+            const colorLabelValue = modal.querySelector('.variant-picker-label-value');
+
+            // console.log('Quick view clicked');
+            quickViewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.card-product');
+                    const productName = card.querySelector('.name-product').textContent;
+                    const priceNew = card.querySelector('.price-new').textContent;
+                    const priceOld = card.querySelector('.price-old').textContent;
+                    const badge = card.querySelector('.on-sale-item')?.textContent || '';
+                    const productImg = card.querySelector('.img-product').getAttribute('data-src');
+
+                    // Update modal content
+                    modalName.textContent = productName;
+                    modalPriceNew.textContent = priceNew;
+                    modalPriceOld.textContent = priceOld;
+                    modalBadge.textContent = badge;
+                    modalDescription.textContent =
+                        'Wireless earbuds with a sleek, ergonomic design for all-day comfort. Features active noise cancellation, touch controls, and a long-lasting battery.';
+
+                    // Update images
+                    modalImageContainer.innerHTML = `
+                        <div class="swiper-slide" data-color="black">
+                            <div class="item">
+                                <img class="lazyload" data-src="${productImg}" src="${productImg}" alt="">
+                            </div>
+                        </div>
+                    `;
+
+                    // Initialize Swiper
+                    new Swiper('.tf-single-slide', {
+                        navigation: {
+                            nextEl: '.single-slide-next',
+                            prevEl: '.single-slide-prev',
+                        },
+                        loop: true
+                    });
+
+                    // Color selection
+                    colorButtons.forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            colorButtons.forEach(b => b.classList.remove('active'));
+                            this.classList.add('active');
+                            const color = this.getAttribute('data-color');
+                            colorLabelValue.textContent = color.charAt(0)
+                                .toUpperCase() + color.slice(1);
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+@endpush

@@ -12,3 +12,5 @@ Route::name('guest.')->group(function () {
 Route::get('/', HomeController::class)->name('home');
 
 Route::get('/category/{slug}', [ProductController::class, 'category'])->name('frontend.category');
+Route::get('/product/{slug}', [ProductController::class, 'product'])->name('frontend.product');
+

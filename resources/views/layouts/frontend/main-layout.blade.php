@@ -181,24 +181,12 @@
                 <div class="container">
                     <nav class="box-navigation text-center">
                         <ul class="box-nav-menu">
-                            <li class="menu-item"><a
-                                    href="/"
-                                    target="_blank" class="item-link active">Home</a></li>
-                                <li class="menu-item"><a
-                                    href="/"
-                                    target="_blank" class="item-link">Store</a></li>
-                                <li class="menu-item"><a
-                                    href="/"
-                                    target="_blank" class="item-link">Phones</a></li>
-                                <li class="menu-item"><a
-                                    href="/"
-                                    target="_blank" class="item-link">Tablets</a></li>
-                                <li class="menu-item"><a
-                                    href="/"
-                                    target="_blank" class="item-link">TV & Smart Home</a></li>
-                                <li class="menu-item"><a
-                                    href="/"
-                                    target="_blank" class="item-link">Smart Watch & Audio</a></li>
+                            <li class="menu-item"><a href="{{ route('home') }}" class="item-link active">Home</a></li>
+                            <li class="menu-item"><a href="#" class="item-link">Store</a></li>
+                            <li class="menu-item"><a href="#" class="item-link">Phones</a></li>
+                            <li class="menu-item"><a href="#" class="item-link">Tablets</a></li>
+                            <li class="menu-item"><a href="#" class="item-link">TV & Smart Home</a></li>
+                            <li class="menu-item"><a href="#" class="item-link">Smart Watch & Audio</a></li>
                         </ul>
                     </nav>
                 </div>
