@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Brand;
+use App\Models\Banner;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -18,6 +19,8 @@ class HomeController extends Controller
             ->with('brand', 'category')
             ->get();
         // dd($topPickes->toArray()[0]);
+        $banners = Banner::all();
+        // dd($banners->toArray());
         
         return view('frontend.home.index', compact('categories', 'brands', 'topPickes'));
     }

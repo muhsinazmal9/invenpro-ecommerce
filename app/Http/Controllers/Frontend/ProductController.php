@@ -20,4 +20,9 @@ class ProductController extends Controller
         $product = Product::where('slug', $slug)->first();
         return view('frontend.product.index', compact('product'));
     }
+    public function quickView($slug)
+    {
+        $product = Product::where('slug', $slug)->first();
+        return view('frontend.product.quickView', compact('product'));
+    }
 }
