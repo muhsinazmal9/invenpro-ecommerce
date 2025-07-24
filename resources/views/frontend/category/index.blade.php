@@ -234,7 +234,7 @@
                 </div>
                 <div class="tf-list-layout wrapper-shop" id="listLayout" style="display: none;">
                     <!-- Card Product 1 -->
-                    <div class="card-product style-list" data-availability="In stock" data-brand="Vineta">
+                    <div class="card-product style-list" data-availability="In stock" data-brand="invenpro">
                         <div class="card-product-wrapper">
                             <a href="product-detail.html" class="product-img">
                                 <img class="img-product lazyload" data-src="images/products/fashion/product-16.jpg"
@@ -310,7 +310,7 @@
                         </div>
                     </div>
                     <!-- Card Product 2 -->
-                    <div class="card-product style-list" data-availability="In stock" data-brand="Vineta">
+                    <div class="card-product style-list" data-availability="In stock" data-brand="invenpro">
                         <div class="card-product-wrapper">
                             <a href="product-detail.html" class="product-img">
                                 <img class="img-product lazyload" data-src="images/products/fashion/product-17.jpg"
@@ -384,7 +384,7 @@
                         </div>
                     </div>
                     <!-- Card Product 3 -->
-                    <div class="card-product style-list" data-availability="In stock" data-brand="Vineta">
+                    <div class="card-product style-list" data-availability="In stock" data-brand="invenpro">
                         <div class="card-product-wrapper">
                             <a href="product-detail.html" class="product-img">
                                 <img class="img-product lazyload" data-src="images/products/fashion/women-grey-2.jpg"
@@ -609,7 +609,7 @@
                 <div class="wrapper-shop tf-grid-layout tf-col-4" id="gridLayout">
                     @foreach ($products as $product)
                         <div class="card-product grid card-product-size" data-availability="In stock"
-                            data-brand="Vineta">
+                            data-brand="invenpro">
                             <div class="card-product-wrapper">
                                 <a href="{{ route('frontend.product', $product->slug) }}" class="product-img">
                                     <img class="img-product lazyload" data-src="{{ asset($product->thumbnail) }}"
