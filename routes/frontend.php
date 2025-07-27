@@ -6,6 +6,10 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController;
 
 Route::name('guest.')->group(function () {
+    // auths
+    Route::get('/login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create'])->name('login');
+    Route::get('/register', [\App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register');
+
     Route::get('/newsletter/unsubscribe/{subscriber}', [SubscriberController::class, 'toggleSubscribe'])->name('unsubscribe');
 });
 
