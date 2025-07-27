@@ -1,4 +1,4 @@
-<form action="{{ route('password.email') }}" method="POST" id="forgotPasswordForm">
+<form action="{{ route('admin.password.email') }}" method="POST" id="forgotPasswordForm">
     @csrf
     <div class="row">
         <div class="col-12">

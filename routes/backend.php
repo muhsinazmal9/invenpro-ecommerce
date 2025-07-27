@@ -1,59 +1,25 @@
 <?php
 
-use App\Models\Tag;
-use App\Models\Deal;
-use App\Models\User;
-use App\Models\Brand;
-use App\Models\Order;
-use App\Models\Promo;
-use App\Models\Banner;
-use App\Models\Address;
-use App\Models\CmsPage;
-use App\Models\Product;
-use App\Models\Campaign;
-use App\Models\Category;
-use App\Models\Settings;
-use App\Models\Attribute;
-use App\Models\Newsletter;
-use App\Models\Subscriber;
-use App\Models\UserSearch;
-use App\Models\SocialMedia;
-use App\Models\Subcategory;
-use App\Models\TaxSettings;
-use App\Models\SubsubCategory;
-use App\Models\DeliverySchedule;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FaqController;
-use App\Http\Controllers\TagController;
-use App\Http\Controllers\DealController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\BrandController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\PromoController;
-use App\Http\Controllers\BannerController;
-use App\Http\Controllers\ReportController;
-use App\Http\Controllers\AddressController;
-use App\Http\Controllers\CmsPageController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CampaignController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\SettingsController;
-use App\Http\Controllers\AttributeController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\OrderMailController;
-use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\SubscriberController;
-use App\Http\Controllers\UserSearchController;
-use App\Http\Controllers\SocialMediaController;
-use App\Http\Controllers\SubcategoryController;
-use App\Http\Controllers\TaxSettingsController;
-use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\RoleManagementController;
-use App\Http\Controllers\SubsubCategoryController;
-use App\Http\Controllers\DeliveryScheduleController;
-use App\Http\Controllers\FeatureHighlightController;
+
+use App\Models\{
+    Tag, Deal, User, Brand, Order, Promo, Banner, Address, CmsPage,
+    Product, Campaign, Category, Settings, Attribute, Newsletter,
+    Subscriber, UserSearch, SocialMedia, Subcategory, TaxSettings,
+    SubsubCategory, DeliverySchedule
+};
+
+use App\Http\Controllers\{
+    TagController, DealController, UserController, BrandController, OrderController,
+    PromoController, BannerController, ReportController, AddressController, CmsPageController,
+    ProductController, ProfileController, CampaignController, CategoryController, SettingsController,
+    AttributeController, DashboardController, OrderMailController, NewsletterController,
+    SubscriberController, UserSearchController, SocialMediaController, SubcategoryController,
+    TaxSettingsController, TransactionController, RoleManagementController,
+    SubsubCategoryController, DeliveryScheduleController, FeatureHighlightController,
+    FaqController
+};
 
 Route::name('admin.')->prefix('/admin')->middleware(['auth', 'verified'])->group(function () {
     Route::controller(DashboardController::class)->name('dashboard.')->prefix('/')->group(function () {

@@ -1,4 +1,4 @@
-<form action="{{ route('login') }}" method="POST" id="loginForm">
+<form action="{{ route('admin.login') }}" method="POST" id="loginForm">
     @csrf
     <div class="row">
         <div class="col-12">
@@ -32,7 +32,7 @@
         </div>
         <div class="col-xxl-6 col-lg-12 col-md-6">
             <div class="text-start text-md-end text-lg-start text-xxl-end mb-30">
-                <a href="{{ route('password.request') }}" class="hover-underline fusionshop-primary">
+                <a href="{{ route('admin.password.request') }}" class="hover-underline fusionshop-primary">
                     Forgot Password ?
                 </a>
             </div>

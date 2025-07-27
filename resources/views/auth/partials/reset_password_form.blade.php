@@ -1,4 +1,4 @@
-<form action="{{ route('password.store') }}" method="POST" id="resetPasswordForm">
+<form action="{{ route('admin.password.store') }}" method="POST" id="resetPasswordForm">
     @csrf
     <input type="hidden" name="token" value="{{ $request->route('token') }}">
     <div class="row">
